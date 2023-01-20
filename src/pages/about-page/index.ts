@@ -1,0 +1,1 @@
+export { AboutPageAsync } from './aboutPage.async';

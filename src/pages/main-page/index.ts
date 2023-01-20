@@ -1,0 +1,1 @@
+export { MainPageAsync } from './mainPage.async';
