@@ -3,6 +3,19 @@ import webpack from 'webpack';
 
 export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
 
+    const fontLoaders = {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      }
+
     const cssLoaders = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -37,6 +50,7 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
     }
 
     return [
+        fontLoaders,
         typeScriptLoader,
         cssLoaders,
     ]
