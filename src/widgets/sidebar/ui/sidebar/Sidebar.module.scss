@@ -11,7 +11,13 @@
 }
 
 .switchers {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     bottom: 10px;
     right: 10px;
+}
+
+.theme {
+    margin-bottom: var(--common-margin);
 }
