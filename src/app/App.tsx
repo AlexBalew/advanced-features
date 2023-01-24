@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import { useTheme } from './providers';
 import { classNames } from 'shared/utils';
 import { AppRouter } from './providers/router';
+import { Navbar } from 'widgets';
 import './styles/index.scss';
+
 
 export const App = () => {
 
@@ -10,11 +12,9 @@ export const App = () => {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button onClick={toggleTheme}>Switch theme</button>
-            <br />
-            <Link to={'/'}>Main page</Link>
-            <Link to={'/about'}>About</Link>
+            <Navbar />
             <AppRouter />
+            <button onClick={toggleTheme}>Switch theme</button>
         </div>
     )
 }
