@@ -5,4 +5,4 @@ export const it = {
     PAGINA_PRINCIPALE: 'Caricamento in corso',
     TEST: 'test',
     INTERRUTTORE: 'interruttore',
-}
+};

@@ -13,15 +13,15 @@ interface IProps {
 }
 
 export const ThemeSwitcher: FC<IProps> = ({ className }) => {
-
-    const { theme, toggleTheme } = useTheme()
+    const { theme, toggleTheme } = useTheme();
 
     return (
-        <Button className={classNames(classes.root, {}, [className])}
+        <Button
+            className={classNames(classes.root, {}, [className])}
             theme={AppButtonTheme.Pure}
             onClick={toggleTheme}
         >
             {theme === Theme.Dark ? <DarkTheme /> : <LightTheme />}
         </Button>
-    )
-}
+    );
+};

@@ -1,6 +1,6 @@
-import { BuildMode, BuildEnv } from './config/build/types/config';
-import webpack from 'webpack'
+import webpack from 'webpack';
 import path from 'path';
+import { BuildMode, BuildEnv } from './config/build/types/config';
 import { BuildPaths, buildWebpackConfig } from './config/build';
 
 export default (env: BuildEnv) => {
@@ -9,7 +9,7 @@ export default (env: BuildEnv) => {
         build: path.resolve(__dirname, 'build'),
         html: path.resolve(__dirname, 'public', 'index.html'),
         src: path.resolve(__dirname, 'src'),
-    }
+    };
 
     const port = env.port || '3000';
 
@@ -20,8 +20,8 @@ export default (env: BuildEnv) => {
         mode,
         paths,
         isDev,
-        port
-    })
+        port,
+    });
 
-    return config
+    return config;
 };

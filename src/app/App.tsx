@@ -1,23 +1,22 @@
-import { useTheme } from './providers';
 import { classNames } from 'shared/utils';
-import { AppRouter } from './providers/router';
 import { Navbar, Sidebar } from 'widgets';
 import { Suspense } from 'react';
+import { AppRouter } from './providers/router';
+import { useTheme } from './providers';
 import './styles/index.scss';
 
 export const App = () => {
-
-    const { theme } = useTheme()
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <Suspense fallback={''}>
+            <Suspense fallback="">
                 <Navbar />
-                <div className='content'>
+                <div className="content">
                     <Sidebar />
                     <AppRouter />
                 </div>
             </Suspense>
         </div>
-    )
-}
+    );
+};

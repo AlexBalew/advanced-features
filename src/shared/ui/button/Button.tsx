@@ -8,12 +8,14 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: AppButtonTheme;
 }
 
-export const Button: FC<IProps> = ({ className, children, theme, ...otherProps }) => {
-
-    return (
-        <button className={classNames(classes.root, {}, [className, classes[theme]])}
-            {...otherProps}>
-            {children}
-        </button>
-    )
-}
+export const Button: FC<IProps> = ({
+    className, children, theme, ...otherProps
+}) => (
+    <button
+        type="button"
+        className={classNames(classes.root, {}, [className, classes[theme]])}
+        {...otherProps}
+    >
+        {children}
+    </button>
+);

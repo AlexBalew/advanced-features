@@ -6,5 +6,5 @@ export function buildDevServer(port: string): DevServerConfiguration {
         open: true,
         historyApiFallback: true,
         hot: true,
-    }
+    };
 }

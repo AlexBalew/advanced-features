@@ -10,22 +10,28 @@ interface IProps {
 }
 
 export const Sidebar = ({ className }: IProps) => {
-
-    const [collapsed, setCollapsed] = useState<boolean>(true)
-    const { t } = useTranslation()
+    const [collapsed, setCollapsed] = useState<boolean>(true);
+    const { t } = useTranslation();
 
     const onToggle = () => {
-        setCollapsed(prev => !prev)
-    }
+        setCollapsed((prev) => !prev);
+    };
 
     return (
         <div
-            className={classNames(classes.root, { [classes.collapsed]: collapsed }, [className])}>
-            <button onClick={onToggle}>{collapsed ? '+' : '-'}</button>
+            className={classNames(classes.root, { [classes.collapsed]: collapsed }, [className])}
+        >
+            <button
+                type="button"
+                onClick={onToggle}
+            >
+                {collapsed ? '+' : '-'}
+
+            </button>
             <div className={classes.switchers}>
                 <ThemeSwitcher className={classes.theme} />
                 <LangSwitcher />
             </div>
         </div>
-    )
-}
+    );
+};

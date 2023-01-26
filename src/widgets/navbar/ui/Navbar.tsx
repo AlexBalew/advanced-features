@@ -10,15 +10,20 @@ interface IProps {
 }
 
 export const Navbar = ({ className }: IProps) => {
-
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <div className={classNames(classes.root, {}, [className])}>
             <div className={classes.links}>
-                <AppLink theme={AppLinkTheme.Secondary} to={'/'} className={classes.mainLink}>{t(enGB.MAIN_INFO)}</AppLink>
-                <AppLink theme={AppLinkTheme.Secondary} to={'/about'}>{t(enGB.ABOUT)}</AppLink>
+                <AppLink
+                    theme={AppLinkTheme.Secondary}
+                    to="/"
+                    className={classes.mainLink}
+                >
+                    {t(enGB.MAIN_INFO)}
+                </AppLink>
+                <AppLink theme={AppLinkTheme.Secondary} to="/about">{t(enGB.ABOUT)}</AppLink>
             </div>
         </div>
-    )
-}
+    );
+};

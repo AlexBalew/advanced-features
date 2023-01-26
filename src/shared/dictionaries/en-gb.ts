@@ -6,4 +6,4 @@ export const enGB = {
     TEST: 'test',
     SWITCH_LANG: 'Switch lang',
     LANGUAGE: 'Language',
-}
+};
