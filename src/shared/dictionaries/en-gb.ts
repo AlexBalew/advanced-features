@@ -6,4 +6,6 @@ export const enGB = {
     TEST: 'test',
     SWITCH_LANG: 'Switch lang',
     LANGUAGE: 'Language',
+    NOT_FOUND: 'The page is not found',
+    404: '404',
 };

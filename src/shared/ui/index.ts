@@ -1,2 +1,3 @@
-export * from './app-link/AppLink';
-export * from './button/Button';
+export * from './app-link';
+export * from './button';
+export * from './loader';
