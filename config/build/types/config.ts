@@ -1,4 +1,4 @@
-export enum BuildMode {
+export const enum BuildMode {
     Production = 'production',
     Development = 'development',
 }

@@ -7,12 +7,13 @@
     Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
     - The "symbol *" part is to solve Firefox SVG sprite bug
  */
- *:where(:not(html, iframe, canvas, img, svg, video, audio, button):not(svg *, symbol *)) {
+*:where(:not(html, iframe, canvas, img, svg, video, audio, button):not(svg *, symbol *)) {
     all: unset;
     display: revert;
 }
 
 /* Preferred box-sizing value */
+/* stylelint-disable-next-line no-descending-specificity */
 *,
 *::before,
 *::after {
@@ -20,12 +21,15 @@
 }
 
 /* Reapply the pointer cursor for anchor tags */
-a, button {
+a,
+button {
     cursor: pointer;
 }
 
 /* Remove list styles (bullets/numbers) */
-ol, ul, menu {
+ol,
+ul,
+menu {
     list-style: none;
 }
 
@@ -41,8 +45,8 @@ table {
 }
 
 /* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
-input, textarea {
-    -webkit-user-select: auto;
+input,
+textarea {
     user-select: auto;
 }
 
@@ -53,7 +57,6 @@ textarea {
 
 /* minimum style to allow to style meter element */
 meter {
-    -webkit-appearance: revert;
     appearance: revert;
 }
 
@@ -72,23 +75,16 @@ pre {
     content: initial;
 }
 
+/* Revert Modal native behavior */
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+:where(dialog:modal) {
+    all: revert;
+}
+
 /* fix the feature of 'hidden' attribute.
    display:revert; revert to element instead of attribute */
 :where([hidden]) {
     display: none;
-}
-
-/* revert for bug in Chromium browsers
-   - fix for the content editable attribute will work properly.
-   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
-:where([contenteditable]:not([contenteditable="false"])) {
-    -moz-user-modify: read-write;
-    -webkit-user-modify: read-write;
-    overflow-wrap: break-word;
-    -webkit-line-break: after-white-space;
-    line-break: after-white-space;
-    -webkit-user-select: auto;
-    user-select: auto;
 }
 
 /* apply back the draggable feature - exist only in Chromium and Safari */
@@ -96,7 +92,14 @@ pre {
     -webkit-user-drag: element;
 }
 
-/* Revert Modal native behavior */
-:where(dialog:modal) {
-    all: revert;
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    line-break: after-white-space;
+    user-select: auto;
 }

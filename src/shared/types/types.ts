@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const enum Theme {
     Dark = 'dark',
     Light = 'light',

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const enum AppLinkTheme {
     Primary = 'primary',
     Secondary = ' secondary',

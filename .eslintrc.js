@@ -1,5 +1,3 @@
-const { off } = require('process');
-
 module.exports = {
     env: {
         browser: true,
@@ -37,14 +35,14 @@ module.exports = {
         'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
+        'react/jsx-props-no-spreading': 'off',
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'linebreak-style': 0,
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string': 'off',
+        'i18next/no-literal-string': ['warn', { markupOnly: true }],
         'max-len': ['error', { code: 100, ignoreComments: true }],
     },
     globals: {

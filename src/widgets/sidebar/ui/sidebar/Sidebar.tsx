@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/utils';
 import { LangSwitcher } from 'widgets/lang-switcher';
 import { ThemeSwitcher } from 'widgets/theme-switcher';
@@ -11,7 +10,6 @@ interface IProps {
 
 export const Sidebar = ({ className }: IProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(true);
-    const { t } = useTranslation();
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
