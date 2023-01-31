@@ -1,3 +1,4 @@
+import { BugButton } from 'app/providers';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
 
@@ -5,7 +6,10 @@ const MainPage = () => {
     const { t } = useTranslation();
 
     return (
-        <div>{t(enGB.MAIN_PAGE)}</div>
+        <div>
+            <BugButton />
+            {t(enGB.MAIN_PAGE)}
+        </div>
     );
 };
 

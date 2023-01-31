@@ -1,0 +1,77 @@
+.root {
+    position: relative;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.notFound {
+    max-width: 520px;
+    width: 100%;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.root .notFound {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFound .notFoundText {
+    position: relative;
+    height: 200px;
+    margin: 0 auto 20px;
+    z-index: -1;
+}
+
+.notFound .notFoundText h1 {
+    font-family: Montserrat, sans-serif;
+    font-size: 236px;
+    font-weight: 200;
+    margin: 0;
+    color: #211b19;
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.notFound .notFoundText h2 {
+    font-family: Montserrat, sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #211b19;
+    background: #fff;
+    padding: 10px 5px;
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .notFound .notFoundText h1 {
+        font-size: 148px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .notFound .notFoundText {
+        height: 148px;
+        margin: 0 auto 10px;
+    }
+
+    .notFound .notFoundText h1 {
+        font-size: 86px;
+    }
+
+    .notFound .notFoundText h2 {
+        font-size: 16px;
+    }
+}

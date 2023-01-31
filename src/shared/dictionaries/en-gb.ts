@@ -8,4 +8,7 @@ export const enGB = {
     LANGUAGE: 'Language',
     NOT_FOUND: 'The page is not found',
     404: '404',
+    OOPS: 'Oops',
+    THE_PAGE_CAN_NOT_BE_FOUND: 'The Page can not be found',
+    RELOAD: 'Reload',
 };
