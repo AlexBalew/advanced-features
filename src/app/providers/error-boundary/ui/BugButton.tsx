@@ -18,6 +18,7 @@ export const BugButton = () => {
     return (
         <Button
             onClick={onThrow}
+            style={{ color: 'red' }}
         >
             {t('Crash app')}
         </Button>
