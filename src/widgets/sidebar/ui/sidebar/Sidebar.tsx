@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { classNames } from 'shared/utils';
 import { LangSwitcher } from 'widgets/lang-switcher';
 import { ThemeSwitcher } from 'widgets/theme-switcher';
+import { Button } from 'shared/ui/button';
 import classes from './Sidebar.module.scss';
 
 interface IProps {
@@ -17,15 +18,17 @@ export const Sidebar = ({ className }: IProps) => {
 
     return (
         <div
+            data-testid="sidebar"
             className={classNames(classes.root, { [classes.collapsed]: collapsed }, [className])}
         >
-            <button
+            <Button
+                data-testid="sidebar-toggle"
                 type="button"
                 onClick={onToggle}
             >
                 {collapsed ? '+' : '-'}
 
-            </button>
+            </Button>
             <div className={classes.switchers}>
                 <ThemeSwitcher className={classes.theme} />
                 <LangSwitcher />

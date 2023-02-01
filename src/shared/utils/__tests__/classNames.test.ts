@@ -1,4 +1,4 @@
-import { classNames } from '../classNames';
+import { classNames } from 'shared/utils';
 
 const addedClass1 = 'addClass1';
 const addedClass2 = 'addClass2';
