@@ -3,6 +3,7 @@ node_modules
 .idea
 .env
 .vscode/
+/storybook-static
 
 # Local History for Visual Studio Code
 .history/
