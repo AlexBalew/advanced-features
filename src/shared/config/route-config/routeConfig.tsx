@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
-import { AboutPage, MainPage, NotFoundPage } from 'pages';
+import { AboutPage } from 'pages/about-page';
+import { MainPage } from 'pages/main-page';
+import { NotFoundPage } from 'pages/not-found-page';
 import { RouteProps } from 'react-router-dom';
 
 export const enum AppRoutes {
