@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
 import classes from './NotFoundPage.module.scss';
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
     const { t } = useTranslation();
 
     return (
@@ -12,5 +12,3 @@ const NotFoundPage = () => {
         </div>
     );
 };
-
-export default NotFoundPage;
