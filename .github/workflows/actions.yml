@@ -1,0 +1,30 @@
+name: advanced front
+run-name: let the checks begin
+on: 
+  push: 
+    branches: [ master ]
+  pull_request: [ master ]
+jobs:
+  pipeline:
+    runs-on: windows-latest
+    strategy:
+      matrix: 
+        node-version: [ 17.x ]
+    steps:
+      -uses: actions/checkout@v2
+      -name: Staring Node.js ${{ matrix.node-version }}
+       uses: actions/setup-node@v1
+       with:
+        node-version: ${{ matrix.node-version }}
+      -name: modules installation
+       run: npm install
+      -name: build project
+       run: npm run build:prod
+      -name: ts linting
+       run: npm run lint:ts
+      -name: style linting
+       run: npm run lint:scss
+      -name: unit tests
+       run: npm run test:unit
+      -name: storybook build
+       run: npm storybook:build
