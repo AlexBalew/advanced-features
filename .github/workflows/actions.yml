@@ -1,30 +1,38 @@
-name: advanced front
-run-name: let the checks begin
-on: 
-  push: 
+name: linting, testing, building
+on:
+  push:
     branches: [ master ]
-  pull_request: [ master ]
+  pull_request:
+    branches: [ master ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
-      matrix: 
+      matrix:
         node-version: [ 17.x ]
+
     steps:
-      -uses: actions/checkout@v3
-      -name: Staring Node.js ${{ matrix.node-version }}
-       uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      -name: modules installation
-       run: npm install
-      -name: build project
-       run: npm run build:prod
-      -name: ts linting
-       run: npm run lint:ts
-      -name: style linting
-       run: npm run lint:scss
-      -name: unit tests
-       run: npm run test:unit
-      -name: storybook build
-       run: npm storybook:build
+      - name: install modules
+        run: npm install
+      - name: build production project
+        run: npm run build:prod
+        if: always()
+      - name: linting typescript
+        run: npm run lint:ts
+        if: always()
+      - name: linting css
+        run: npm run lint:scss
+      - name: unit testing
+        if: always()
+        run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+      - name: screenshot testing
+        run: npm run test:ui:ci
+        if: always()
