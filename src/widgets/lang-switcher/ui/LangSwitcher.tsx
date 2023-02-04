@@ -14,6 +14,7 @@ export const LangSwitcher: FC<IProps> = ({ className }) => {
     const { t, i18n } = useTranslation();
 
     const switchLanguage = () => {
+        /* i18next-extract-disable-next-line */
         i18n.changeLanguage(i18n.language === 'en' ? 'it' : 'en');
     };
 
