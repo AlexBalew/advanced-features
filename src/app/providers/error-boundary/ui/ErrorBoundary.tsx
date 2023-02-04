@@ -2,7 +2,7 @@ import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from 'widgets';
 
 interface IProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 interface IState {
