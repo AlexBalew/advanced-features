@@ -10,3 +10,10 @@ export const enum AppButtonTheme {
     Background = 'background',
     Background_inverted = 'backgroundInverted',
 }
+
+export const enum AppButtonSize {
+    S = 'size-s',
+    M = 'size-m',
+    L = 'size-l',
+    Xl = 'size-xl',
+}

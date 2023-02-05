@@ -29,6 +29,35 @@
 }
 
 .square {
-    width: 40px;
-    height: 40px;
+    padding: 0;
+}
+
+.square.size-s {
+    width: var(--size-s);
+    height: var(--size-s);
+    font: var(--font-size-s);
+}
+
+.square.size-m {
+    width: var(--size-m);
+    height: var(--size-m);
+    font: var(--font-size-m);
+}
+
+.square.size-l {
+    width: var(--size-l);
+    height: var(--size-l);
+    font: var(--font-size-l);
+}
+
+.square.size-xl {
+    width: var(--size-xl);
+    height: var(--size-xl);
+    font: var(--font-size-xl);
+}
+
+.square.size-xxl {
+    width: var(--size-xxl);
+    height: var(--size-xxl);
+    font: var(--font-size-xxl);
 }

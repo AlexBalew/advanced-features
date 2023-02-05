@@ -3,7 +3,7 @@ import { classNames } from 'shared/utils';
 import { LangSwitcher } from 'widgets/lang-switcher';
 import { ThemeSwitcher } from 'widgets/theme-switcher';
 import { Button } from 'shared/ui/button';
-import { AppButtonTheme } from 'shared/ui/types';
+import { AppButtonSize, AppButtonTheme } from 'shared/ui/types';
 import classes from './Sidebar.module.scss';
 
 interface IProps {
@@ -26,6 +26,7 @@ export const Sidebar = ({ className }: IProps) => {
                 data-testid="sidebar-toggle"
                 type="button"
                 square
+                size={AppButtonSize.L}
                 theme={AppButtonTheme.Background_inverted}
                 className={classes.collapsedBtn}
                 onClick={onToggle}
