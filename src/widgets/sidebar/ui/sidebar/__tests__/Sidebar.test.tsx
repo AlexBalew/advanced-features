@@ -1,4 +1,5 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+import { componentRender } from 'shared/utils';
 import { Sidebar } from '../Sidebar';
 
 jest.mock('react-i18next', () => ({
@@ -13,12 +14,12 @@ jest.mock('react-i18next', () => ({
 
 describe('sidebar tests', () => {
     test('should be rendered correctly', () => {
-        render(<Sidebar />);
+        componentRender(<Sidebar />);
         expect(screen.getByTestId('sidebar')).toBeInTheDocument();
     });
 
     test('should have passed class when siderbar was clicked', () => {
-        render(<Sidebar />);
+        componentRender(<Sidebar />);
         const toggleButton = screen.getByTestId('sidebar-toggle');
         fireEvent.click(toggleButton);
         expect(screen.getByTestId('sidebar')).toHaveClass('root');

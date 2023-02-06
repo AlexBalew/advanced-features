@@ -1,2 +1,2 @@
 export { classNames } from './classNames';
-// export { renderWithTransation } from './renderWithTranslation';
+export { componentRender } from './componentRender';

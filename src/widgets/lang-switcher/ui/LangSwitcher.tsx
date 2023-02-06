@@ -8,9 +8,10 @@ import classes from './LangSwitcher.module.scss';
 
 interface IProps {
     className?: string;
+    shortened?: boolean;
 }
 
-export const LangSwitcher: FC<IProps> = ({ className }) => {
+export const LangSwitcher: FC<IProps> = ({ className, shortened }) => {
     const { t, i18n } = useTranslation();
 
     const switchLanguage = () => {
@@ -24,7 +25,9 @@ export const LangSwitcher: FC<IProps> = ({ className }) => {
             theme={AppButtonTheme.Pure}
             onClick={switchLanguage}
         >
-            {t(enGB.LANGUAGE)}
+            {shortened
+                ? t(enGB.LANGUAGE_SHORTENED)
+                : t(enGB.LANGUAGE)}
         </Button>
     );
 };
