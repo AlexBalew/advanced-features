@@ -3,10 +3,14 @@ import { LOCAL_STORAGE_THEME_KEY } from 'shared/constants';
 import { Theme } from 'shared/types';
 import { ThemeContext } from '../hooks';
 
-const ThemeProvider: FC = ({ children }) => {
+interface IProps {
+    initialTheme?: Theme;
+}
+
+const ThemeProvider: FC<IProps> = ({ children, initialTheme }) => {
     const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme || Theme.Light;
 
-    const [theme, setTheme] = useState<Theme>(defaultTheme);
+    const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
     const defaultProps = useMemo(() => ({
         theme,

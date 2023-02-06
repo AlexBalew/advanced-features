@@ -25,6 +25,12 @@ Pure.args = {
     theme: AppButtonTheme.Pure,
 };
 
+export const PureInverted = Template.bind({});
+PureInverted.args = {
+    children: 'Text',
+    theme: AppButtonTheme.Background_inverted,
+};
+
 export const PureDark = Template.bind({});
 PureDark.args = {
     children: 'Text',

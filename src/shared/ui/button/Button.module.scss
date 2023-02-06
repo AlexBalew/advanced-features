@@ -3,11 +3,16 @@
     padding: var(--button-padding);
 }
 
-.pure {
+.pure,
+.pureInverted {
     border: none;
     outline: none;
     background: none;
     padding: var(--button-padding);
+}
+
+.pureInverted {
+    color: var(--inverted-primary-color);
 }
 
 .outline {

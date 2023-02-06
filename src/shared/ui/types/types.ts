@@ -6,6 +6,7 @@ export const enum AppLinkTheme {
 
 export const enum AppButtonTheme {
     Pure = 'pure',
+    Pure_inverted = 'pureInverted',
     Outline = 'outline',
     Background = 'background',
     Background_inverted = 'backgroundInverted',

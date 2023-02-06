@@ -12,4 +12,5 @@ export const enGB = {
     THE_PAGE_CAN_NOT_BE_FOUND: 'The Page can not be found',
     RELOAD: 'Reload',
     LANGUAGE_SHORTENED: 'Language shortened',
+    LOGIN: 'Login',
 };
