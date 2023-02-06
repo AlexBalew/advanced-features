@@ -7,6 +7,7 @@ import React, {
 } from 'react';
 import { MODAL_CLOSE_DELAY } from 'shared/constants';
 import { classNames } from 'shared/utils';
+import { Portal } from '../portal';
 import classes from './Modal.module.scss';
 
 interface IProps {
@@ -61,12 +62,14 @@ export const Modal = ({
     }, [isOpened, onClose, onKeyDown]);
 
     return (
-        <div className={classNames(classes.root, mods, [className])}>
-            <div className={classes.overlay} onClick={onCloseHandler}>
-                <div className={classes.content} onClick={onContentClick}>
-                    {children}
+        <Portal>
+            <div className={classNames(classes.root, mods, [className])}>
+                <div className={classes.overlay} onClick={onCloseHandler}>
+                    <div className={classes.content} onClick={onContentClick}>
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Portal>
     );
 };
