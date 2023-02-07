@@ -15,6 +15,7 @@ export const useTheme = (): useThemeResult => {
         const newTheme = theme === Theme.Light ? Theme.Dark : Theme.Light;
 
         setTheme(newTheme);
+        document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 

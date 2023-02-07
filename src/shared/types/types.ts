@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 export const enum Theme {
-    Dark = 'dark',
-    Light = 'light',
+    Dark = 'app_dark_theme',
+    Light = 'app_light_theme',
 }
 
 export interface IThemeContextProps {
