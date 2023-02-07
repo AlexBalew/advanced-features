@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+}
+
+.input {
+    border: none;
+    outline: none;
+    background: var(--inverted-primary-color);
+}
+
+.placeholder {
+    margin-right: 6px;
+    min-width: 80px;
+}

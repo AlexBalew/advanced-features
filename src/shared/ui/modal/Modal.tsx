@@ -14,16 +14,19 @@ interface IProps {
     className?: string;
     children?: ReactNode;
     isOpened?: boolean;
-    onClose?: () => void
+    onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal = ({
     className,
     children,
     isOpened,
+    lazy,
     onClose,
 }: IProps) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [isMounted, setIsMounted] = useState<boolean>(false);
     const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
     const onCloseHandler = useCallback(() => {
@@ -53,6 +56,12 @@ export const Modal = ({
 
     useEffect(() => {
         if (isOpened) {
+            setIsMounted(true);
+        }
+    }, [isOpened]);
+
+    useEffect(() => {
+        if (isOpened) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
@@ -60,6 +69,10 @@ export const Modal = ({
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpened, onClose, onKeyDown]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

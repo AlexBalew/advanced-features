@@ -13,4 +13,6 @@ export const enGB = {
     RELOAD: 'Reload',
     LANGUAGE_SHORTENED: 'Language shortened',
     LOGIN: 'Login',
+    LOGIN_NO_CAP: 'login',
+    PASSWORD_NO_CAP: 'password',
 };

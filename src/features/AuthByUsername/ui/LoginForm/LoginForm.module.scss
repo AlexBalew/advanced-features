@@ -1,0 +1,14 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+
+.input {
+    margin-top: var(--common-margin);
+}
+
+.loginButton {
+    margin-top: var(--common-margin);
+    margin-left: auto;
+}
