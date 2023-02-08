@@ -15,4 +15,7 @@ export const enGB = {
     LOGIN: 'Login',
     LOGIN_NO_CAP: 'login',
     PASSWORD_NO_CAP: 'password',
+    AUTORIZATION: 'Authorization',
+    AUTH_FAILED_MESSAGE: 'Wrong username or password',
+    LOGOUT: 'Logout',
 };

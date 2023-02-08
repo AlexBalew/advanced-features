@@ -18,3 +18,8 @@ export const enum AppButtonSize {
     L = 'size-l',
     Xl = 'size-xl',
 }
+
+export const enum TextTheme {
+    Primary = 'primary',
+    Error = 'error',
+}

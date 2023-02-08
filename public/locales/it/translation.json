@@ -8,5 +8,8 @@
     "The Page can not be found": "La pagina non può essere trovata",
     "Language shortened": "En",
     "login": "login",
-    "password": "parola d'ordine"
+    "password": "parola d'ordine",
+    "Authorization": "Autorizzazione",
+    "Wrong username or password": "Nome utente o password errati",
+    "Logout": "Disconnettersi"
 }

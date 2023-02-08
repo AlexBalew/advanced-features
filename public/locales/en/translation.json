@@ -9,5 +9,8 @@
     "Crash app": "Crash app",
     "Language shortened": "It",
     "Login": "Login",
-    "Password": "Password"
+    "Password": "Password",
+    "Authorization": "Authorization",
+    "Wrong username or password": "Wrong username or password",
+    "Logout": "Logout"
 }

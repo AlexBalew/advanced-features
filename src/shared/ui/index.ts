@@ -4,3 +4,4 @@ export * from './loader';
 export * from './modal';
 export * from './portal';
 export * from './input';
+export * from './text';

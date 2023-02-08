@@ -8,6 +8,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: AppButtonTheme;
     square?: boolean;
     size?: AppButtonSize;
+    disabled?: boolean;
 }
 
 export const Button: FC<IProps> = ({
@@ -15,17 +16,20 @@ export const Button: FC<IProps> = ({
     children,
     theme,
     square,
+    disabled,
     size = AppButtonSize.M,
     ...otherProps
 }) => {
     const mods: Record<string, boolean> = {
         [classes.square]: square,
+        [classes.disabled]: disabled,
     };
 
     return (
         <button
             type="button"
             className={classNames(classes.root, mods, [className, classes[theme], classes[size]])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

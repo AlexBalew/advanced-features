@@ -129,3 +129,10 @@ SizeXL.args = {
     theme: AppButtonTheme.Outline,
     size: AppButtonSize.Xl,
 };
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'text',
+    theme: AppButtonTheme.Outline,
+    disabled: true,
+};
