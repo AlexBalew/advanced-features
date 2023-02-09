@@ -22,7 +22,7 @@ export const loginByUserName = createAsyncThunk<User, IProps, { rejectValue: str
             thunkAPI.dispatch(userActions.setAuthData(response.data));
             return response.data;
         } catch (error) {
-            return thunkAPI.rejectWithValue(error.message);
+            return thunkAPI.rejectWithValue('invalid username or password');
         }
     },
 );
