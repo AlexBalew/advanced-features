@@ -1,4 +1,5 @@
-import { Modal } from 'shared/ui';
+import { Suspense } from 'react';
+import { Loader, Modal } from 'shared/ui';
 import { classNames } from 'shared/utils';
 import { LoginForm } from '../LoginForm';
 
@@ -15,6 +16,8 @@ export const LoginModal = ({ className, isOpened, onClose }: IProps) => (
         onClose={onClose}
         lazy
     >
-        <LoginForm />
+        <Suspense fallback={<Loader />}>
+            <LoginForm />
+        </Suspense>
     </Modal>
 );

@@ -33,7 +33,7 @@ module.exports = {
         ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',
@@ -46,7 +46,7 @@ module.exports = {
         'i18next/no-literal-string':
             ['error', {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'type', 'className'],
+                ignoreAttribute: ['data-testid', 'to', 'type', 'className', 'reducerName'],
             },
             ],
         'max-len': ['error', { code: 100, ignoreComments: true }],

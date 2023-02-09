@@ -54,10 +54,12 @@ export const Navbar = ({ className }: IProps) => {
             >
                 {t(enGB.LOGIN)}
             </Button>
-            <LoginModal
-                isOpened={isAuthModalOpened}
-                onClose={onCloseModal}
-            />
+            {isAuthModalOpened && (
+                <LoginModal
+                    isOpened={isAuthModalOpened}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 };
