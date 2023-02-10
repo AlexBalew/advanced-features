@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { configureStore, DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
@@ -25,3 +26,5 @@ export function createReduxStore(
 
     return store;
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];

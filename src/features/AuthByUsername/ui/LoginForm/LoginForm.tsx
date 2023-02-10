@@ -1,11 +1,15 @@
 import { memo, useCallback } from 'react';
 import { loginActions, loginByUserName } from 'features/AuthByUsername/model';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
 import { Button, Input, Text } from 'shared/ui';
-import { classNames, DinamicComponentLoader } from 'shared/utils';
+import {
+    classNames,
+    DynamicComponentLoader,
+    ReducersList,
+    useAppDispatch,
+} from 'shared/utils';
 import { TextTheme } from 'shared/ui/types';
-import { ReducersList } from 'shared/utils/components/DinamicComponentLoader';
 import { loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
 import {
@@ -17,14 +21,15 @@ import {
 
 export interface ILoginFormProps {
     className?: string;
+    onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 
-const LoginForm = memo(({ className }: ILoginFormProps) => {
-    const dispatch = useDispatch();
+const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
+    const dispatch = useAppDispatch();
 
     const userName = useSelector(getLoginUserName);
     const password = useSelector(getLoginPassword);
@@ -39,12 +44,15 @@ const LoginForm = memo(({ className }: ILoginFormProps) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch]);
 
-    const onLogin = useCallback(() => {
-        dispatch(loginByUserName({ userName, password }));
-    }, [dispatch, password, userName]);
+    const onLogin = useCallback(async () => {
+        const result = await dispatch(loginByUserName({ userName, password }));
+        if (result.meta.requestStatus === 'fulfilled') {
+            onSuccess();
+        }
+    }, [dispatch, onSuccess, password, userName]);
 
     return (
-        <DinamicComponentLoader
+        <DynamicComponentLoader
             reducers={initialReducers}
             removeAfterUnmount
         >
@@ -72,7 +80,7 @@ const LoginForm = memo(({ className }: ILoginFormProps) => {
                     {enGB.LOGIN}
                 </Button>
             </div>
-        </DinamicComponentLoader>
+        </DynamicComponentLoader>
     );
 });
 

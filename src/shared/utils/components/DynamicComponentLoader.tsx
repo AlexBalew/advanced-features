@@ -15,7 +15,7 @@ interface IProps {
     removeAfterUnmount?: boolean;
 }
 
-export const DinamicComponentLoader: FC<IProps> = ({
+export const DynamicComponentLoader: FC<IProps> = ({
     reducers,
     children,
     removeAfterUnmount,
