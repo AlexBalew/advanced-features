@@ -18,4 +18,5 @@ export const enGB = {
     AUTORIZATION: 'Authorization',
     AUTH_FAILED_MESSAGE: 'Wrong username or password',
     LOGOUT: 'Logout',
+    PROFILE_PAGE: 'Profile page',
 };
