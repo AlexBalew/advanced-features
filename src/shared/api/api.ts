@@ -7,6 +7,6 @@ import { USER_LS_KEY } from 'shared/constants';
 export const api = axios.create({
     baseURL: __API__,
     headers: {
-        authoriazation: localStorage.getItem(USER_LS_KEY),
+        authorization: localStorage.getItem(USER_LS_KEY),
     },
 });

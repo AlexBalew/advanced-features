@@ -1,6 +1,10 @@
 type Mode = Record<string, boolean | string>
 
-export const classNames = (cls: string, mode: Mode = {}, optionalClss: string[] = []): string => [
+export const classNames = (
+    cls: string,
+    mode: Mode = {},
+    optionalClss: Array<string | undefined> = [],
+): string => [
     cls,
     ...optionalClss.filter(Boolean),
     ...Object.entries(mode)

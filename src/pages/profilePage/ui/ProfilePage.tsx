@@ -1,7 +1,7 @@
-import { profileReducer } from 'entities/Profile';
+import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { enGB } from 'shared/dictionaries';
-import { DynamicComponentLoader, ReducersList } from 'shared/utils';
+import { DynamicComponentLoader, ReducersList, useAppDispatch } from 'shared/utils';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -9,12 +9,15 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
     const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
 
     return (
         <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
-            <div>
-                {t(enGB.PROFILE_PAGE)}
-            </div>
+            <ProfileCard />
         </DynamicComponentLoader>
 
     );

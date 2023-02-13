@@ -10,7 +10,7 @@
     "users": [
         {
           "id": "1",
-          "userName": "admin",
+          "userName": "neo",
           "password": "4848"
         }
       ],
@@ -21,7 +21,7 @@
       "currency": "USD",
       "country": "USA",
       "city": "Jacksonville",
-      "username": "Neo",
+      "username": "neo",
       "avatar": "https://wallpapersafari.com/w/y1oxIS#google_vignette"
      }
   }
