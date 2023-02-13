@@ -1,6 +1,6 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
@@ -13,7 +13,7 @@ interface IProps {
     className?: string;
 }
 
-export const Navbar = ({ className }: IProps) => {
+export const Navbar = memo(({ className }: IProps) => {
     const [isAuthModalOpened, setIsAuthModalOpened] = useState<boolean>(false);
     const { t } = useTranslation();
     const dispatch = useDispatch();
@@ -62,4 +62,4 @@ export const Navbar = ({ className }: IProps) => {
             )}
         </div>
     );
-};
+});

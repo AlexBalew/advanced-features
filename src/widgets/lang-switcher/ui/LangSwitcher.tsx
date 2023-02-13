@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/utils';
 import { AppButtonTheme } from 'shared/ui/types';
 import { Button } from 'shared/ui';
@@ -11,7 +11,7 @@ interface IProps {
     shortened?: boolean;
 }
 
-export const LangSwitcher: FC<IProps> = ({ className, shortened }) => {
+export const LangSwitcher = memo(({ className, shortened }: IProps) => {
     const { t, i18n } = useTranslation();
 
     const switchLanguage = () => {
@@ -30,4 +30,4 @@ export const LangSwitcher: FC<IProps> = ({ className, shortened }) => {
                 : t(enGB.LANGUAGE)}
         </Button>
     );
-};
+});

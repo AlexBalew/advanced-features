@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames } from 'shared/utils';
 import { AppButtonSize, AppButtonTheme } from '../types';
 import classes from './Button.module.scss';
@@ -9,9 +9,10 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: AppButtonSize;
     disabled?: boolean;
+    children?: ReactNode;
 }
 
-export const Button: FC<IProps> = ({
+export const Button = memo(({
     className,
     children,
     theme,
@@ -19,7 +20,7 @@ export const Button: FC<IProps> = ({
     disabled,
     size = AppButtonSize.M,
     ...otherProps
-}) => {
+}: IProps) => {
     const mods: Record<string, boolean> = {
         [classes.square]: square,
         [classes.disabled]: disabled,
@@ -35,4 +36,4 @@ export const Button: FC<IProps> = ({
             {children}
         </button>
     );
-};
+});

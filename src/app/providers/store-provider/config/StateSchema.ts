@@ -5,12 +5,14 @@ import {
     AnyAction,
     CombinedState,
 } from '@reduxjs/toolkit';
+import { IProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 
 export interface StateSchema {
     user: UserSchema;
     loginForm?: LoginSchema;
+    profile?: IProfileSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -1,5 +1,5 @@
 import { useTheme } from 'app/providers';
-import { FC } from 'react';
+import { memo } from 'react';
 import { classNames } from 'shared/utils';
 import LightTheme from 'shared/assets/icons/light-mode.svg';
 import DarkTheme from 'shared/assets/icons/dark-mode.svg';
@@ -12,7 +12,7 @@ interface IProps {
     className?: string;
 }
 
-export const ThemeSwitcher: FC<IProps> = ({ className }) => {
+export const ThemeSwitcher = memo(({ className }: IProps) => {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -24,4 +24,4 @@ export const ThemeSwitcher: FC<IProps> = ({ className }) => {
             {theme === Theme.Dark ? <DarkTheme /> : <LightTheme />}
         </Button>
     );
-};
+});

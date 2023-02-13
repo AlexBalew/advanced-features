@@ -14,5 +14,14 @@
           "password": "4848"
         }
       ],
-    "profile": { "name": "typicode" }
+    "profile": { 
+      "firstname": "John",
+      "lastname": "Wick",
+      "age": 48,
+      "currency": "USD",
+      "country": "USA",
+      "city": "Jacksonville",
+      "username": "Neo",
+      "avatar": "https://wallpapersafari.com/w/y1oxIS#google_vignette"
+     }
   }
