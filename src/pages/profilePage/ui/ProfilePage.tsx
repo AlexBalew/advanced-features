@@ -28,11 +28,11 @@ const ProfilePage = () => {
     const readOnly = useSelector(getProfileReadOnly);
 
     const onChangeFirstName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ firstname: value }));
+        dispatch(profileActions.updateProfile({ firstname: value || '' }));
     }, [dispatch]);
 
     const onChangeLastName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ lastname: value }));
+        dispatch(profileActions.updateProfile({ lastname: value || '' }));
     }, [dispatch]);
 
     const onChangeAge = useCallback((value?: string) => {
@@ -40,7 +40,15 @@ const ProfilePage = () => {
     }, [dispatch]);
 
     const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ city: value }));
+        dispatch(profileActions.updateProfile({ city: value || '' }));
+    }, [dispatch]);
+
+    const onChangeUserName = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
     useEffect(() => {
@@ -61,6 +69,8 @@ const ProfilePage = () => {
                 onChangeLastName={onChangeLastName}
                 onChangeAge={onChangeAge}
                 onChangeCity={onChangeCity}
+                onChangeUserName={onChangeUserName}
+                onChangeAvatar={onChangeAvatar}
             />
         </DynamicComponentLoader>
 

@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
 import {
+    Avatar,
     Input,
     Loader,
     Text,
@@ -17,10 +18,12 @@ interface IProps {
     isLoading?: boolean;
     error?: string;
     readOnly?: boolean;
-    onChangeFirstName: (value?: string) => void;
-    onChangeLastName: (value?: string) => void;
-    onChangeAge: (value?: string) => void;
-    onChangeCity: (value?: string) => void;
+    onChangeFirstName?: (value?: string) => void;
+    onChangeLastName?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUserName?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
 }
 
 export const ProfileCard = memo(({
@@ -33,6 +36,8 @@ export const ProfileCard = memo(({
     onChangeLastName,
     onChangeAge,
     onChangeCity,
+    onChangeUserName,
+    onChangeAvatar,
 }: IProps) => {
     const { t } = useTranslation('profile');
 
@@ -63,6 +68,12 @@ export const ProfileCard = memo(({
     return (
         <div className={classNames(classes.root, mods, [className])}>
             <div className={classes.data}>
+                {data?.avatar
+                    && (
+                        <div className={classes.avatarWrapper}>
+                            <Avatar src={data?.avatar} alt={t(enGB.AVATAR)} />
+                        </div>
+                    )}
                 <Input
                     value={data?.firstname}
                     placeholder={t(enGB.YOUR_NAME)}
@@ -92,6 +103,20 @@ export const ProfileCard = memo(({
                     className={classes.input}
                     readOnly={readOnly}
                     onChange={onChangeCity}
+                />
+                <Input
+                    value={data?.username}
+                    placeholder={t(enGB.USERNAME)}
+                    className={classes.input}
+                    readOnly={readOnly}
+                    onChange={onChangeUserName}
+                />
+                <Input
+                    value={data?.avatar}
+                    placeholder={t(enGB.INSERT_AVATAR_LINK)}
+                    className={classes.input}
+                    readOnly={readOnly}
+                    onChange={onChangeAvatar}
                 />
             </div>
         </div>

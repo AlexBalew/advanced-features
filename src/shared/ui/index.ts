@@ -6,3 +6,4 @@ export * from './portal';
 export * from './input';
 export * from './text';
 export * from './icon';
+export * from './avatar';

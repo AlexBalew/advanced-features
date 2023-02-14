@@ -29,4 +29,7 @@ export const enGB = {
     SAVE: 'Save',
     YOUR_AGE: 'Your age',
     CITY: 'Your city',
+    USERNAME: 'Username',
+    INSERT_AVATAR_LINK: 'Insert avatar link',
+    AVATAR: 'Avatar',
 };
