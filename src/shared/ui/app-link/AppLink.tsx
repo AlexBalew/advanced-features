@@ -14,7 +14,7 @@ export const AppLink = memo(({
     to,
     className,
     children,
-    theme,
+    theme = AppLinkTheme.Primary,
     ...otherProps
 }: IProps) => (
     <Link

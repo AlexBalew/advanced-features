@@ -10,6 +10,7 @@ const mockedAxios = jest.mocked(axios, true);
 
 const dispatch: Dispatch = jest.fn();
 const getState: () => StateSchema = jest.fn();
+const mockNavigate = jest.fn();
 
 describe('loginByUserName test', () => {
     test('loginByUserName should work correctly id data feom server was returned', async () => {
@@ -18,7 +19,10 @@ describe('loginByUserName test', () => {
             data: userData,
         }));
         const action = loginByUserName({ userName: 'admin', password: '344' });
-        const result = await action(dispatch, getState, undefined);
+        const result = await action(dispatch, getState, {
+            api: mockedAxios,
+            navigate: mockNavigate,
+        });
         expect(dispatch).toHaveBeenCalledTimes(3);
         expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userData));
         expect(mockedAxios.post).toHaveBeenCalled();
@@ -33,7 +37,10 @@ describe('loginByUserName test', () => {
                 status: 403,
             }));
             const action = loginByUserName({ userName: 'admin', password: '344' });
-            const result = await action(dispatch, getState, undefined);
+            const result = await action(dispatch, getState, {
+                api: mockedAxios,
+                navigate: mockNavigate,
+            });
             expect(mockedAxios.post).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');
             expect(dispatch).toHaveBeenCalledTimes(2);

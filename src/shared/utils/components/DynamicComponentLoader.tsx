@@ -23,14 +23,14 @@ export const DynamicComponentLoader: FC<IProps> = ({
     const store = useStore() as StoreWithManager;
 
     useEffect(() => {
-        Object.entries(reducers).forEach(([reducerName, reducer]: ReducersListEntry) => {
-            store.reducerManager.add(reducerName, reducer);
+        Object.entries(reducers).forEach(([reducerName, reducer]) => {
+            store.reducerManager.add(reducerName as StateSchemaKey, reducer);
         });
 
         return () => {
             if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([reducerName]: ReducersListEntry) => {
-                    store.reducerManager.remove(reducerName);
+                Object.entries(reducers).forEach(([reducerName]) => {
+                    store.reducerManager.remove(reducerName as StateSchemaKey);
                 });
             }
         };

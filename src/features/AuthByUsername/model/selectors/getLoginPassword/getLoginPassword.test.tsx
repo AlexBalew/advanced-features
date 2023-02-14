@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers';
 import { getLoginPassword } from './getLoginPassword';
 
@@ -9,7 +8,7 @@ describe('getLoginPassword test', () => {
                 password: '4848',
             },
         };
-        expect(getLoginPassword(state as StateSchema)).toEqual(state.loginForm.password);
+        expect(getLoginPassword(state as StateSchema)).toEqual(state.loginForm?.password);
     });
 
     test('getLoginPassword should return empty string if there is no password in state', () => {

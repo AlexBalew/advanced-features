@@ -1,6 +1,8 @@
 import {
+    CombinedState,
     configureStore,
     getDefaultMiddleware,
+    Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
@@ -14,7 +16,7 @@ export function createReduxStore(
     asyncReducers?: ReducersMapObject<StateSchema>,
     navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
-    const rootReducer: ReducersMapObject = {
+    const rootReducer: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         user: userReducer,
     };
@@ -22,7 +24,7 @@ export function createReduxStore(
     const reducerManager = createReducerManager(rootReducer);
 
     const store = configureStore({
-        reducer: reducerManager.reduce,
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
         middleware: (getDefaultMiddleware) => getDefaultMiddleware({

@@ -15,9 +15,9 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = memo(({
     className,
     children,
-    theme,
-    square,
-    disabled,
+    theme = AppButtonTheme.Outline,
+    square = false,
+    disabled = false,
     size = AppButtonSize.M,
     ...otherProps
 }: IProps) => {

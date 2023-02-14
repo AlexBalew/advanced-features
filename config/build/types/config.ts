@@ -16,6 +16,7 @@ export interface BuildOptions {
     isDev: boolean;
     port: string;
     apiUrl: string;
+    project: 'strybook' | 'frontend' | 'jest';
 }
 
 export interface BuildEnv {

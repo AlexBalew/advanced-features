@@ -47,7 +47,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
     const onLogin = useCallback(async () => {
         const result = await dispatch(loginByUserName({ userName, password }));
         if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess();
+            onSuccess?.();
         }
     }, [dispatch, onSuccess, password, userName]);
 

@@ -23,4 +23,7 @@ export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'profile page',
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.Dark), StoreDecorator({})];
+PrimaryDark.decorators = [
+    ThemeDecorator(Theme.Dark),
+    StoreDecorator({}),
+];

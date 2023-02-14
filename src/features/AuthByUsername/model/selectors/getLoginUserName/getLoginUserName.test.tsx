@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers';
 import { getLoginUserName } from './getLoginUserName';
 
@@ -9,7 +8,7 @@ describe('getLoginUserName test', () => {
                 userName: 'userX',
             },
         };
-        expect(getLoginUserName(state as StateSchema)).toEqual(state.loginForm.userName);
+        expect(getLoginUserName(state as StateSchema)).toEqual(state.loginForm?.userName);
     });
 
     test('getLoginUserName should return empty string if there is no userName in state', () => {

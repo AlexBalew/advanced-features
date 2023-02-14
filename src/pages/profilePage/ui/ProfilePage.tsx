@@ -1,6 +1,5 @@
 import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
 import { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { DynamicComponentLoader, ReducersList, useAppDispatch } from 'shared/utils';
 
 const reducers: ReducersList = {
@@ -8,11 +7,12 @@ const reducers: ReducersList = {
 };
 
 const ProfilePage = () => {
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     return (
