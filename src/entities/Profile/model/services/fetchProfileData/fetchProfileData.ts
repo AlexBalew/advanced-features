@@ -7,7 +7,6 @@ export const fetchProfileData = createAsyncThunk<IProfile, void, ThunkConfig<str
     async (_, { dispatch, extra, rejectWithValue }) => {
         try {
             const response = await extra.api.get<IProfile>('/profile');
-
             return response.data;
         } catch (error) {
             return rejectWithValue('error');

@@ -1,6 +1,19 @@
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
-import { useEffect } from 'react';
+import {
+    fetchProfileData,
+    profileActions,
+    ProfileCard,
+    profileReducer,
+} from 'entities/Profile';
+import {
+    getProfileError,
+    getProfileFormData,
+    getProfileIsLoading,
+    getProfileReadOnly,
+} from 'entities/Profile/model/selectors';
+import { useCallback, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { DynamicComponentLoader, ReducersList, useAppDispatch } from 'shared/utils';
+import { ProfilePageHeader } from './ProfilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -8,6 +21,27 @@ const reducers: ReducersList = {
 
 const ProfilePage = () => {
     const dispatch = useAppDispatch();
+
+    const formData = useSelector(getProfileFormData);
+    const error = useSelector(getProfileError);
+    const isLoading = useSelector(getProfileIsLoading);
+    const readOnly = useSelector(getProfileReadOnly);
+
+    const onChangeFirstName = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ firstname: value }));
+    }, [dispatch]);
+
+    const onChangeLastName = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ lastname: value }));
+    }, [dispatch]);
+
+    const onChangeAge = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+    }, [dispatch]);
+
+    const onChangeCity = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ city: value }));
+    }, [dispatch]);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -17,7 +51,17 @@ const ProfilePage = () => {
 
     return (
         <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard />
+            <ProfilePageHeader />
+            <ProfileCard
+                data={formData}
+                error={error}
+                isLoading={isLoading}
+                readOnly={readOnly}
+                onChangeFirstName={onChangeFirstName}
+                onChangeLastName={onChangeLastName}
+                onChangeAge={onChangeAge}
+                onChangeCity={onChangeCity}
+            />
         </DynamicComponentLoader>
 
     );

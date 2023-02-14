@@ -2,5 +2,11 @@
   "Profile": "Profile",
   "Your name": "Your name",
   "Your last name": "Your last name",
-  "Edit": "Edit"
+  "Edit": "Edit",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Some error occurred": "Some error ocured",
+  "Try to reload the page": "Try to reload the page",
+  "Your age": "Your age",
+  "Your city": "Your city"
 }

@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
-import { TextTheme } from '../types';
+import { Mode } from 'shared/utils/classNames';
+import { TextAlign, TextTheme } from '../types';
 import classes from './Text.module.scss';
 
 interface IProps {
@@ -8,6 +9,7 @@ interface IProps {
     title?: string;
     text?: string;
     theme?: TextTheme;
+    align?: TextAlign;
 }
 
 export const Text = memo(({
@@ -15,9 +17,16 @@ export const Text = memo(({
     title,
     text,
     theme = TextTheme.Primary,
-}: IProps) => (
-    <div className={classNames(classes.root, {}, [className, classes[theme]])}>
-        {title && <p className={classes.title}>{title}</p>}
-        {text && <p className={classes.text}>{text}</p>}
-    </div>
-));
+    align = TextAlign.Left,
+}: IProps) => {
+    const mods: Mode = {
+        [classes[align]]: true,
+    };
+
+    return (
+        <div className={classNames(classes.root, mods, [className, classes[theme]])}>
+            {title && <p className={classes.title}>{title}</p>}
+            {text && <p className={classes.text}>{text}</p>}
+        </div>
+    );
+});

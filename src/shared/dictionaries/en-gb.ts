@@ -23,4 +23,10 @@ export const enGB = {
     EDIT: 'Edit',
     YOUR_NAME: 'Your name',
     YOUR_LAST_NAME: 'Your last name',
+    COMMON_ERROR_TITLE: 'Some error occurred',
+    COMMON_ERROR_DESCR: 'Try to reload the page',
+    CANCEL: 'Cancel',
+    SAVE: 'Save',
+    YOUR_AGE: 'Your age',
+    CITY: 'Your city',
 };

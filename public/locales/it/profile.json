@@ -2,5 +2,11 @@
   "Profile": "Profilo",
   "Your name": "Il tuo nome",
   "Your last name": "Il tuo cognome",
-  "Edit": "Modificare"
+  "Edit": "Modificare",
+  "Cancel": "Annulla",
+  "Save": "Salva",
+  "Some error occurred": "Si è verificato un errore",
+  "Try to reload the page": "Prova a ricaricare la pagina",
+  "Your age": "Della tua età",
+  "Your city": "La tua città"
 }

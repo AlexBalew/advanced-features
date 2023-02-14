@@ -1,27 +1,43 @@
 {
-    "posts": [
-      { "id": "1", "title": "json-server", "author": "typicode" },
-      { "id": "2", "title": "json-serve", "author": "typicode" },
-      { "id": "3", "title": "json-servers", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": "1", "body": "some comment", "postId": "1" }
-    ],
-    "users": [
-        {
-          "id": "1",
-          "userName": "neo",
-          "password": "4848"
-        }
-      ],
-    "profile": { 
-      "firstname": "John",
-      "lastname": "Wick",
-      "age": 48,
-      "currency": "USD",
-      "country": "USA",
-      "city": "Jacksonville",
-      "username": "neo",
-      "avatar": "https://wallpapersafari.com/w/y1oxIS#google_vignette"
-     }
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-serve",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-servers",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "userName": "neo",
+      "password": "4848"
+    }
+  ],
+  "profile": {
+    "firstname": "John",
+    "lastname": "Wick",
+    "age": 48,
+    "currency": "USD",
+    "country": "USA",
+    "city": "LA",
+    "username": "neo",
+    "avatar": "https://wallpapersafari.com/w/y1oxIS#google_vignette"
   }
+}

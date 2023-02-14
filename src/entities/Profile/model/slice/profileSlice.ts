@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { fetchProfileData } from '../services';
+import { fetchProfileData, updateProfileData } from '../services';
 import { IProfile, IProfileSchema } from '../types/profile';
 
 const initialState: IProfileSchema = {
@@ -12,7 +12,21 @@ const initialState: IProfileSchema = {
 export const profileSlice = createSlice({
     name: 'profile',
     initialState,
-    reducers: {},
+    reducers: {
+        setReadOnly: (state, action: PayloadAction<boolean>) => {
+            state.readonly = action.payload;
+        },
+        updateProfile: (state, action: PayloadAction<IProfile>) => {
+            state.form = {
+                ...state.data,
+                ...action.payload,
+            };
+        },
+        cancelEdit: (state) => {
+            state.readonly = true;
+            state.form = state.data;
+        },
+    },
     extraReducers: (builder) => {
         builder.addCase(fetchProfileData.pending, (state) => {
             state.error = undefined;
@@ -21,8 +35,22 @@ export const profileSlice = createSlice({
         builder.addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<IProfile>) => {
             state.isLoading = false;
             state.data = action.payload;
+            state.form = action.payload;
         });
         builder.addCase(fetchProfileData.rejected, (state, action) => {
+            state.isLoading = false;
+            state.error = action.payload;
+        });
+        builder.addCase(updateProfileData.pending, (state) => {
+            state.error = undefined;
+            state.isLoading = true;
+        });
+        builder.addCase(updateProfileData.fulfilled, (state, action: PayloadAction<IProfile>) => {
+            state.isLoading = false;
+            state.data = action.payload;
+            state.form = action.payload;
+        });
+        builder.addCase(updateProfileData.rejected, (state, action) => {
             state.isLoading = false;
             state.error = action.payload;
         });
