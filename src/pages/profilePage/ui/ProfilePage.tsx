@@ -20,14 +20,23 @@ import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
 import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/types';
-import { DynamicComponentLoader, ReducersList, useAppDispatch } from 'shared/utils';
+import {
+    classNames,
+    DynamicComponentLoader,
+    ReducersList,
+    useAppDispatch,
+} from 'shared/utils';
 import { ProfilePageHeader } from './ProfilePageHeader';
 
 const reducers: ReducersList = {
     profile: profileReducer,
 };
 
-const ProfilePage = () => {
+interface IProps {
+    className?: string;
+}
+
+const ProfilePage = ({ className }: IProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('profile');
 
@@ -85,28 +94,30 @@ const ProfilePage = () => {
 
     return (
         <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
-            <ProfilePageHeader />
-            {validationErrors?.length && validationErrors.map((error) => (
-                <Text
-                    key={error}
-                    theme={TextTheme.Error}
-                    text={validationErrorDictionary[error]}
+            <div className={classNames('', {}, [className])}>
+                <ProfilePageHeader />
+                {validationErrors?.length && validationErrors.map((error) => (
+                    <Text
+                        key={error}
+                        theme={TextTheme.Error}
+                        text={validationErrorDictionary[error]}
+                    />
+                ))}
+                <ProfileCard
+                    data={formData}
+                    error={error}
+                    isLoading={isLoading}
+                    readOnly={readOnly}
+                    onChangeFirstName={onChangeFirstName}
+                    onChangeLastName={onChangeLastName}
+                    onChangeAge={onChangeAge}
+                    onChangeCity={onChangeCity}
+                    onChangeUserName={onChangeUserName}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                 />
-            ))}
-            <ProfileCard
-                data={formData}
-                error={error}
-                isLoading={isLoading}
-                readOnly={readOnly}
-                onChangeFirstName={onChangeFirstName}
-                onChangeLastName={onChangeLastName}
-                onChangeAge={onChangeAge}
-                onChangeCity={onChangeCity}
-                onChangeUserName={onChangeUserName}
-                onChangeAvatar={onChangeAvatar}
-                onChangeCurrency={onChangeCurrency}
-                onChangeCountry={onChangeCountry}
-            />
+            </div>
         </DynamicComponentLoader>
 
     );
