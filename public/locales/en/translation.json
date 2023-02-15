@@ -12,5 +12,8 @@
     "Password": "Password",
     "Authorization": "Authorization",
     "Wrong username or password": "Wrong username or password",
-    "Logout": "Logout"
+    "Logout": "Logout",
+    "Currency": "Currency",
+    "Country": "Country",
+    "Edit": "Edit"
 }

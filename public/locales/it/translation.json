@@ -11,5 +11,8 @@
     "password": "parola d'ordine",
     "Authorization": "Autorizzazione",
     "Wrong username or password": "Nome utente o password errati",
-    "Logout": "Disconnettersi"
+    "Logout": "Disconnettersi",
+    "Currency": "Valuta",
+    "Country": "Paese",
+    "Edit": "Modificare"
 }

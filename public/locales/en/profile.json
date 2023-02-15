@@ -2,7 +2,6 @@
   "Profile": "Profile",
   "Your name": "Your name",
   "Your last name": "Your last name",
-  "Edit": "Edit",
   "Cancel": "Cancel",
   "Save": "Save",
   "Some error occurred": "Some error ocured",
@@ -11,6 +10,9 @@
   "Your city": "Your city",
   "Username": "Username",
   "Avatar": "Avatar",
-  "Currency": "Currency",
-  "Country": "Country"
+  "Some server error": "Some server error",
+  "Incorrect country": "Incorrect country",
+  "Incorrect city": "Incorrect city",
+  "No data was presented": "No data was presenred",
+  "Name and first name must not be empty": "Name and firstname must not be empty"
 }

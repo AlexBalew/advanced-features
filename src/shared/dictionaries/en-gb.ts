@@ -34,4 +34,9 @@ export const enGB = {
     AVATAR: 'Avatar',
     CURRENCY: 'Currency',
     COUNTRY: 'Country',
+    SERVER_ERROR: 'Some server error',
+    INCORRECT_COUNTRY: 'Incorrect country',
+    INCORRECT_CITY: 'Incorrect city',
+    NO_DATA_ERROR: 'No data was presented',
+    USER_NAME_ERROR: 'Name and first name must not be empty',
 };

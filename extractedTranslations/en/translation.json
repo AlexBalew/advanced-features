@@ -1,3 +1,8 @@
 {
-  "Crash app": ""
+  "Crash app": "",
+  "Incorrect city": "Incorrect city",
+  "Incorrect country": "Incorrect country",
+  "Name and firstname must not be empty": "Name and firstname must not be empty",
+  "No data was presenred": "No data was presenred",
+  "Some server error": "Some server error"
 }

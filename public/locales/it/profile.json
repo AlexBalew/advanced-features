@@ -2,7 +2,6 @@
   "Profile": "Profilo",
   "Your name": "Il tuo nome",
   "Your last name": "Il tuo cognome",
-  "Edit": "Modificare",
   "Cancel": "Annulla",
   "Save": "Salva",
   "Some error occurred": "Si è verificato un errore",
@@ -11,6 +10,9 @@
   "Your city": "La tua città",
   "Username": "Nome utente",
   "Avatar": "Avatar",
-"Currency": "Valuta",
-  "Country": "Paese"
+  "Some server error": "Qualche errore del server",
+  "Incorrect country": "Paese errato",
+  "Incorrect city": "Città sbagliata",
+  "No data was presented": "Non è stato presentato alcun dato",
+  "Name and first name must not be empty": "Nome e nome non devono essere vuoti"
 }
