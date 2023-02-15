@@ -20,7 +20,11 @@ export const Sidebar = memo(({ className }: IProps) => {
     };
 
     const linkItems = useMemo(() => SidebarItemList.map((item) => (
-        <SidebarItem key={item.linkTitle} item={item} collapsed={collapsed} />
+        <SidebarItem
+            key={item.linkTitle}
+            item={item}
+            collapsed={collapsed}
+        />
     )), [collapsed]);
 
     return (

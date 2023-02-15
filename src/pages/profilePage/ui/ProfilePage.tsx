@@ -1,3 +1,5 @@
+import { Countries } from 'entities/Counrty';
+import { Currency } from 'entities/Currency';
 import {
     fetchProfileData,
     profileActions,
@@ -51,6 +53,14 @@ const ProfilePage = () => {
         dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((currency?: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country?: Countries) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
+
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
             dispatch(fetchProfileData());
@@ -71,6 +81,8 @@ const ProfilePage = () => {
                 onChangeCity={onChangeCity}
                 onChangeUserName={onChangeUserName}
                 onChangeAvatar={onChangeAvatar}
+                onChangeCurrency={onChangeCurrency}
+                onChangeCountry={onChangeCountry}
             />
         </DynamicComponentLoader>
 

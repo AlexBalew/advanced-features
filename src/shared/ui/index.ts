@@ -7,3 +7,4 @@ export * from './input';
 export * from './text';
 export * from './icon';
 export * from './avatar';
+export * from './select';

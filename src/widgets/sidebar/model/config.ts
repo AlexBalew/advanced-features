@@ -5,6 +5,7 @@ export interface ISidebarItem {
     path: string;
     IconNname: IconName;
     linkTitle: string;
+    isAuth?: boolean;
 }
 
 export const SidebarItemList: ISidebarItem[] = [
@@ -22,5 +23,6 @@ export const SidebarItemList: ISidebarItem[] = [
         path: RoutePath.profile,
         IconNname: 'Profile',
         linkTitle: 'Profile',
+        isAuth: true,
     },
 ];

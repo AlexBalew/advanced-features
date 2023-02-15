@@ -1,3 +1,5 @@
+import { Countries, CountrySelect } from 'entities/Counrty';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { IProfile } from 'entities/Profile';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -24,6 +26,8 @@ interface IProps {
     onChangeCity?: (value?: string) => void;
     onChangeUserName?: (value?: string) => void;
     onChangeAvatar?: (value?: string) => void;
+    onChangeCurrency?: (currency?: Currency) => void;
+    onChangeCountry?: (country?: Countries) => void;
 }
 
 export const ProfileCard = memo(({
@@ -38,6 +42,8 @@ export const ProfileCard = memo(({
     onChangeCity,
     onChangeUserName,
     onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
 }: IProps) => {
     const { t } = useTranslation('profile');
 
@@ -97,12 +103,22 @@ export const ProfileCard = memo(({
                     readOnly={readOnly}
                     onChange={onChangeAge}
                 />
+                <CountrySelect
+                    pickedOption={data?.country}
+                    onChange={onChangeCountry}
+                    readOnly={readOnly}
+                />
                 <Input
                     value={data?.city}
                     placeholder={t(enGB.CITY)}
                     className={classes.input}
                     readOnly={readOnly}
                     onChange={onChangeCity}
+                />
+                <CurrencySelect
+                    pickedOption={data?.currency}
+                    onChange={onChangeCurrency}
+                    readOnly={readOnly}
                 />
                 <Input
                     value={data?.username}

@@ -1,0 +1,21 @@
+.root {
+    display: flex;
+    margin-top: 10px;
+}
+
+.label {
+    margin-right: 10px;
+}
+
+.select {
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    font: var(--font-m);
+    border: 1px solid var(--primary-color);
+}
+
+.option {
+    color: var(--inverted-primary-color);
+    background: var(--inverted-bg-color);
+}

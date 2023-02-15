@@ -29,3 +29,8 @@ export const enum TextAlign {
     Left = 'left',
     Center = 'center',
 }
+
+export interface SelectOption {
+    value: string;
+    label: string;
+}

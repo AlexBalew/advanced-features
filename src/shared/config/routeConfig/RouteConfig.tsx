@@ -6,6 +6,10 @@ import {
 } from 'pages';
 import { RouteProps } from 'react-router-dom';
 
+type AppAuthRoutes = RouteProps & {
+    isAuthorized?: boolean;
+}
+
 export const enum AppRoutes {
     Main = 'main',
     About = 'about',
@@ -20,7 +24,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.NotFound]: '*',
 };
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export const routeConfig: Record<AppRoutes, AppAuthRoutes> = {
     [AppRoutes.Main]: {
         path: RoutePath.main,
         element: <MainPage />,
@@ -32,6 +36,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.Profile]: {
         path: RoutePath.profile,
         element: <ProfilePage />,
+        isAuthorized: true,
     },
     [AppRoutes.NotFound]: {
         path: RoutePath.not_found,

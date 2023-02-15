@@ -1,11 +1,12 @@
-import { Countries, Currency } from 'shared/constants';
+import { Countries } from 'entities/Counrty';
+import { Currency } from 'entities/Currency';
 
 export interface IProfile {
     firstname?: string;
     lastname?: string;
     age?: number;
-    currency?: Currency.USD;
-    country?: Countries.USA;
+    currency?: Currency;
+    country?: Countries;
     city?: string;
     username?: string;
     avatar?: string;

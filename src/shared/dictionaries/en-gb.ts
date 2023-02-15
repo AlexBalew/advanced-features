@@ -32,4 +32,6 @@ export const enGB = {
     USERNAME: 'Username',
     INSERT_AVATAR_LINK: 'Insert avatar link',
     AVATAR: 'Avatar',
+    CURRENCY: 'Currency',
+    COUNTRY: 'Country',
 };
