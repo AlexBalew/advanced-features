@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'shared/types';
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
 import { Countries } from 'entities/Counrty';
-import Batman from 'shared/assets/tests/batman-test.jpg';
+import Wick from 'shared/assets/tests/wick.jpg';
 import { Currency } from 'entities/Currency';
 import ProfilePage from './ProfilePage';
 
@@ -28,7 +28,7 @@ Primary.decorators = [StoreDecorator({
             country: Countries.SPAIN,
             city: 'Madrid',
             currency: Currency.EUR,
-            avatar: Batman,
+            avatar: Wick,
         },
         readonly: true,
     },
@@ -48,7 +48,7 @@ PrimaryDark.decorators = [
                 country: Countries.SPAIN,
                 city: 'Madrid',
                 currency: Currency.EUR,
-                avatar: Batman,
+                avatar: Wick,
             },
         },
     }),

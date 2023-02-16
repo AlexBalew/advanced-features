@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
-import Batman from 'shared/assets/tests/batman-test.jpg';
+import Wick from 'shared/assets/tests/wick.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -24,7 +24,7 @@ Primary.args = {
         country: Countries.SPAIN,
         city: 'Madrid',
         currency: Currency.EUR,
-        avatar: Batman,
+        avatar: Wick,
     },
 };
 
