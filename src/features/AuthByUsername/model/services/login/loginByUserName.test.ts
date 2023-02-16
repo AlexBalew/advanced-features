@@ -13,7 +13,7 @@ const getState: () => StateSchema = jest.fn();
 const mockNavigate = jest.fn();
 
 describe('loginByUserName test', () => {
-    test('loginByUserName should work correctly id data feom server was returned', async () => {
+    test('loginByUserName should work correctly id data from server was returned', async () => {
         const userData = { userName: 'admin', id: '48' };
         mockedAxios.post.mockReturnValue(Promise.resolve({
             data: userData,
