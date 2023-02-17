@@ -1,11 +1,9 @@
 import { useTheme } from 'app/providers';
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
-import LightTheme from 'shared/assets/icons/light-mode.svg';
-import DarkTheme from 'shared/assets/icons/dark-mode.svg';
 import { Theme } from 'shared/types';
 import { AppButtonTheme } from 'shared/ui/types';
-import { Button } from 'shared/ui';
+import { Button, Icon } from 'shared/ui';
 import classes from './ThemeSwitcher.module.scss';
 
 interface IProps {
@@ -15,13 +13,34 @@ interface IProps {
 export const ThemeSwitcher = memo(({ className }: IProps) => {
     const { theme, toggleTheme } = useTheme();
 
+    const getIconClassName = (theme: Theme) => {
+        let className: string;
+        switch (theme) {
+        case Theme.Dark:
+            className = classes.primary;
+            break;
+        case Theme.Light:
+            className = classes.purple;
+            break;
+        case Theme.Purple:
+            className = classes.primary;
+            break;
+        default: className = classes.primary;
+        }
+
+        return className;
+    };
+
     return (
         <Button
             className={classNames(classes.root, {}, [className])}
             theme={AppButtonTheme.Pure}
             onClick={toggleTheme}
         >
-            {theme === Theme.Dark ? <DarkTheme /> : <LightTheme />}
+            <Icon
+                name="Settings"
+                className={getIconClassName(theme)}
+            />
         </Button>
     );
 });

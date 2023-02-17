@@ -1,4 +1,11 @@
 .root {
-    width: 60px;
-    height: 20px;
+    position: relative;
+}
+
+.primary {
+    background: var(--inverted-primary-color);
+}
+
+.purple {
+    background: #672d70;
 }
