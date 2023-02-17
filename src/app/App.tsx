@@ -1,14 +1,15 @@
 import { classNames } from 'shared/utils';
 import { Navbar, Sidebar } from 'widgets';
 import { Suspense, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserIsMounted, userActions } from 'entities/User';
 import { Loader } from 'shared/ui';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
 
 export const App = () => {
     const dispatch = useDispatch();
+    const isMounted = useSelector(getUserIsMounted);
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
@@ -20,7 +21,7 @@ export const App = () => {
                 <Navbar />
                 <div className="content">
                     <Sidebar />
-                    <AppRouter />
+                    {isMounted && <AppRouter />}
                 </div>
             </Suspense>
         </div>

@@ -1,38 +1,35 @@
-import { getUserAuthData } from 'entities/User';
-import { memo, Suspense, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/RouteConfig';
 import { PageLoader } from 'widgets/page-loader';
+import { RequireAuth } from './RequireAuth';
 
-const AppRouter = () => {
-    const isAuthorised = useSelector(getUserAuthData);
-
-    const routes = useMemo(() => Object.values(routeConfig).filter((route) => {
-        if (route.isAuthorized && !isAuthorised) {
-            return false;
-        }
-
-        return true;
-    }), [isAuthorised]);
-
-    return (
-        <Routes>
-            {routes.map(({ path, element }) => (
-                <Route
-                    key={path}
-                    path={path}
-                    element={(
+const AppRouter = () => (
+    <Routes>
+        {Object.values(routeConfig).map(({ path, element, isAuthorized }) => (
+            <Route
+                key={path}
+                path={path}
+                element={isAuthorized
+                    ? (
+                        <RequireAuth>
+                            <Suspense fallback={<PageLoader />}>
+                                <div className="content-wrapper">
+                                    {element}
+                                </div>
+                            </Suspense>
+                        </RequireAuth>
+                    )
+                    : (
                         <Suspense fallback={<PageLoader />}>
                             <div className="content-wrapper">
                                 {element}
                             </div>
                         </Suspense>
                     )}
-                />
-            ))}
-        </Routes>
-    );
-};
+            />
+        ))}
+    </Routes>
+);
 
 export default memo(AppRouter);
