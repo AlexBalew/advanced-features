@@ -25,4 +25,16 @@ export const SidebarItemList: ISidebarItem[] = [
         linkTitle: 'Profile',
         isAuth: true,
     },
+    {
+        path: RoutePath.articles,
+        IconNname: 'Articles',
+        linkTitle: 'Articles',
+        isAuth: true,
+    },
+    {
+        path: RoutePath.article,
+        IconNname: 'Details',
+        linkTitle: 'Article details',
+        isAuth: true,
+    },
 ];

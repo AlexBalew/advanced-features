@@ -39,4 +39,6 @@ export const enGB = {
     INCORRECT_CITY: 'Incorrect city',
     NO_DATA_ERROR: 'No data was presented',
     USER_NAME_ERROR: 'Name and first name must not be empty',
+    ARTICLES: 'Articles',
+    ARTICLE_DETAILS: 'Article Details',
 };

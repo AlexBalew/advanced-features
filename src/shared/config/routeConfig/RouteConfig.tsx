@@ -3,6 +3,8 @@ import {
     MainPage,
     ProfilePage,
     NotFoundPage,
+    ArticlesPage,
+    ArticleDetailsPage,
 } from 'pages';
 import { RouteProps } from 'react-router-dom';
 
@@ -14,6 +16,8 @@ export const enum AppRoutes {
     Main = 'main',
     About = 'about',
     Profile = 'profile',
+    Articles = 'articles',
+    Article_details = 'article',
     NotFound = 'not_found'
 }
 
@@ -21,6 +25,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.Main]: '/',
     [AppRoutes.About]: '/about',
     [AppRoutes.Profile]: '/profile',
+    [AppRoutes.Articles]: '/articles',
+    [AppRoutes.Article_details]: '/article/',
     [AppRoutes.NotFound]: '*',
 };
 
@@ -37,6 +43,14 @@ export const routeConfig: Record<AppRoutes, AppAuthRoutes> = {
         path: RoutePath.profile,
         element: <ProfilePage />,
         isAuthorized: true,
+    },
+    [AppRoutes.Articles]: {
+        path: RoutePath.articles,
+        element: <ArticlesPage />,
+    },
+    [AppRoutes.Article_details]: {
+        path: `${RoutePath.article}:id`,
+        element: <ArticleDetailsPage />,
     },
     [AppRoutes.NotFound]: {
         path: RoutePath.not_found,

@@ -30,7 +30,16 @@ Primary.decorators = [StoreDecorator({
             currency: Currency.EUR,
             avatar: Wick,
         },
-        readonly: true,
+        data: {
+            username: 'User X',
+            firstname: 'Bob',
+            lastname: 'Doe',
+            age: 23,
+            country: Countries.SPAIN,
+            city: 'Madrid',
+            currency: Currency.EUR,
+            avatar: Wick,
+        },
     },
 })];
 
@@ -41,6 +50,16 @@ PrimaryDark.decorators = [
     StoreDecorator({
         profile: {
             form: {
+                username: 'neo',
+                firstname: 'Bob',
+                lastname: 'Doe',
+                age: 23,
+                country: Countries.SPAIN,
+                city: 'Madrid',
+                currency: Currency.EUR,
+                avatar: Wick,
+            },
+            data: {
                 username: 'User X',
                 firstname: 'Bob',
                 lastname: 'Doe',
