@@ -1,7 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
-import Wick from 'shared/assets/tests/wick.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -16,16 +13,6 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...
 
 export const Primary = Template.bind({});
 Primary.args = {
-    data: {
-        username: 'neo',
-        firstname: 'Bob',
-        lastname: 'Doe',
-        age: 23,
-        country: Countries.SPAIN,
-        city: 'Madrid',
-        currency: Currency.EUR,
-        avatar: Wick,
-    },
 };
 
 export const PrimaryError = Template.bind({});
