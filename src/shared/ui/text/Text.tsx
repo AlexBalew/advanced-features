@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
 import { Mode } from 'shared/utils/classNames';
-import { TextAlign, TextTheme } from '../types';
+import { TextAlign, TextSize, TextTheme } from '../types';
 import classes from './Text.module.scss';
 
 interface IProps {
@@ -10,6 +10,7 @@ interface IProps {
     text?: string;
     theme?: TextTheme;
     align?: TextAlign;
+    size?: TextSize;
 }
 
 export const Text = memo(({
@@ -18,9 +19,11 @@ export const Text = memo(({
     text,
     theme = TextTheme.Primary,
     align = TextAlign.Left,
+    size = TextSize.M,
 }: IProps) => {
     const mods: Mode = {
         [classes[align]]: true,
+        [classes[size]]: true,
     };
 
     return (

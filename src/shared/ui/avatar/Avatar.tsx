@@ -5,9 +5,10 @@ import classes from './Avatar.module.scss';
 
 interface IProps {
     className?: string;
-    src: string;
+    src?: string;
     alt: string;
     size?: number;
+    radius?: string;
 }
 
 export const Avatar = memo(({
@@ -15,14 +16,16 @@ export const Avatar = memo(({
     src,
     alt,
     size,
+    radius,
 }: IProps) => {
     const mods: Mode = {
     };
 
     const styles = useMemo<CSSProperties>(() => ({
-        with: size || 100,
+        width: size || 100,
         height: size || 100,
-    }), [size]);
+        borderRadius: radius,
+    }), [radius, size]);
 
     return (
         <img

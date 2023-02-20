@@ -13,6 +13,7 @@ interface IProps {
   className?: string;
   name: IconName;
   size?: number;
+  stroke?: string;
   onClick?: MouseEventHandler<SVGElement>;
   onMouseOver?: MouseEventHandler<SVGElement>;
   onMouseOut?: MouseEventHandler<SVGElement>;
@@ -23,6 +24,7 @@ const Icon: FunctionComponent<IProps> = ({
     size = 24,
     name,
     className,
+    stroke,
     onClick,
     onMouseOver,
     onMouseOut,
@@ -31,6 +33,7 @@ const Icon: FunctionComponent<IProps> = ({
     height: size,
     width: size,
     name,
+    stroke,
     className,
     onClick,
     onMouseOver,

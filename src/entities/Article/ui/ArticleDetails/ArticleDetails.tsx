@@ -1,8 +1,13 @@
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
-import { Skeleton, Text } from 'shared/ui';
+import {
+    Avatar,
+    Skeleton,
+    Text,
+    Icon,
+} from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/types';
 import {
     classNames,
@@ -10,6 +15,7 @@ import {
     ReducersList,
     useAppDispatch,
 } from 'shared/utils';
+import { ArticleBlockType, IArticleBlock } from '../../model/types/article';
 import {
     getArticleDetails,
     getArticleDetailsError,
@@ -18,6 +24,8 @@ import {
 import { fetchArticleById } from '../../model/services/fetchArticleById';
 import { articleDetailsReducer } from '../../model/slice/artcileDetailsSlice';
 import classes from './ArticleDetails.module.scss';
+import { ArticleTextBlock } from '../ArticleTextBlock';
+import { ArticleImageBlock } from '../ArticleImageBlock';
 
 interface IProps {
     className?: string;
@@ -33,10 +41,31 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
     const dispatch = useAppDispatch();
 
     const isLoading = useSelector(getArticleDetailsIsLoading);
-    // const isLoading = true;
     const error = useSelector(getArticleDetailsError);
     const data = useSelector(getArticleDetails);
     let content;
+
+    const renderBlock = useCallback((block: IArticleBlock) => {
+        switch (block.type) {
+        case ArticleBlockType.Text:
+            return (
+                <ArticleTextBlock
+                    block={block}
+                    key={block.id}
+                    className={classes.block}
+                />
+            );
+        case ArticleBlockType.Image:
+            return (
+                <ArticleImageBlock
+                    block={block}
+                    key={block.id}
+                    className={classes.block}
+                />
+            );
+        default: return null;
+        }
+    }, []);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -67,7 +96,32 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
     }
 
     if (!error && !isLoading) {
-        content = t(enGB.ARTICLE_DETAILS);
+        content = (
+            <>
+                <div className={classes.avatarWrapper}>
+                    <Avatar
+                        size={300}
+                        src={data?.img}
+                        alt={enGB.AVATAR}
+                        className={classes.avatar}
+                    />
+                </div>
+                <Text
+                    className={classes.title}
+                    title={data?.title}
+                    text={data?.subtitle}
+                />
+                <div className={classes.articleInfo}>
+                    <Icon name="EyeOpen" size={20} className={classes.icon} />
+                    <Text text={String(data?.views)} />
+                </div>
+                <div className={classes.articleInfo}>
+                    <Icon name="Calendar" size={20} className={classes.icon} />
+                    <Text text={String(data?.createdAt)} />
+                </div>
+                {data?.blocks?.map(renderBlock)}
+            </>
+        );
     }
 
     return (

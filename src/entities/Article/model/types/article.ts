@@ -36,5 +36,5 @@ export interface IArticle {
     views?: number;
     createdAt?: string;
     type?: ArticleType[];
-    blocks?: IArticleBlock;
+    blocks?: IArticleBlock[];
 }

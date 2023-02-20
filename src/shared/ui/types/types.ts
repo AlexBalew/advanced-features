@@ -34,3 +34,9 @@ export interface SelectOption {
     value: string;
     label: string;
 }
+
+export const enum TextSize {
+    M = 'size_m',
+    L = 'size_l',
+    XL = 'size_xl',
+}

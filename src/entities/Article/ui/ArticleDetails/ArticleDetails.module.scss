@@ -7,7 +7,7 @@
 }
 
 .title {
-    margin-top: 20px;
+    margin-top: var(--common-margin);
 }
 
 .skeleton {
@@ -21,6 +21,7 @@
 
 .icon {
     margin-right: 8px;
+    stroke: var(--primary-color);
 }
 
 .avatarWrapper {

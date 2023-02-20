@@ -1,6 +1,11 @@
 .root {
     cursor: pointer;
     padding: var(--button-padding);
+
+    &:hover {
+        opacity: 0.7;
+        stroke-opacity: 0.7;
+    }
 }
 
 .pure,

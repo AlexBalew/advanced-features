@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook';
 import { Theme } from 'shared/types';
-import { TextTheme } from '../types';
+import { TextSize, TextTheme } from '../types';
 import { Text } from './Text';
 
 export default {
@@ -63,3 +63,24 @@ TextWuthErrorDark.args = {
     theme: TextTheme.Error,
 };
 TextOnlyDark.decorators = [ThemeDecorator(Theme.Dark)];
+
+export const PrimarySizeM = Template.bind({});
+PrimarySizeM.args = {
+    title: 'Title',
+    text: 'lorem ipsum',
+    size: TextSize.M,
+};
+
+export const PrimarySizeL = Template.bind({});
+PrimarySizeL.args = {
+    title: 'Title',
+    text: 'lorem ipsum',
+    size: TextSize.L,
+};
+
+export const PrimarySizeXL = Template.bind({});
+PrimarySizeXL.args = {
+    title: 'Title',
+    text: 'lorem ipsum',
+    size: TextSize.XL,
+};

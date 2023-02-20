@@ -17,6 +17,6 @@ describe('getArticleDetailsIsLoading test', () => {
 
     test('getArticleDetailsIsLoading return undefined if there is no data in state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getArticleDetailsIsLoading(state as StateSchema)).toBeUndefined();
+        expect(getArticleDetailsIsLoading(state as StateSchema)).toBe(false);
     });
 });

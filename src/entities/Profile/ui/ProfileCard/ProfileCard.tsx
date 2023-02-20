@@ -4,6 +4,7 @@ import { IProfile } from 'entities/Profile';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
+import { RadiusType } from 'shared/types';
 import {
     Avatar,
     Input,
@@ -77,7 +78,11 @@ export const ProfileCard = memo(({
                 {data?.avatar
                     && (
                         <div className={classes.avatarWrapper}>
-                            <Avatar src={data?.avatar} alt={t(enGB.AVATAR)} />
+                            <Avatar
+                                src={data?.avatar}
+                                alt={t(enGB.AVATAR)}
+                                radius={RadiusType.Circle}
+                            />
                         </div>
                     )}
                 <Input
