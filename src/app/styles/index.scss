@@ -20,5 +20,7 @@ body {
 
 .content-wrapper {
     flex-grow: 1;
-    padding: var(--common-padding);
+    padding: var(--common-padding) var(--common-padding) 45px;
+    height: calc(100vh - var(--navbar-height));
+    overflow-y: auto;
 }

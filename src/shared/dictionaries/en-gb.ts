@@ -41,4 +41,5 @@ export const enGB = {
     USER_NAME_ERROR: 'Name and first name must not be empty',
     ARTICLES: 'Articles',
     ARTICLE_DETAILS: 'Article Details',
+    NO_ARTICLE: 'Article was not found',
 };
