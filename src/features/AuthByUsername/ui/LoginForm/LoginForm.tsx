@@ -52,10 +52,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
     }, [dispatch, onSuccess, password, userName]);
 
     return (
-        <DynamicComponentLoader
-            reducers={initialReducers}
-            removeAfterUnmount
-        >
+        <DynamicComponentLoader reducers={initialReducers}>
             <div className={classNames(classes.root, {}, [className])}>
                 <Text title={enGB.AUTORIZATION} />
                 {error && <Text text={enGB.AUTH_FAILED_MESSAGE} theme={TextTheme.Error} />}

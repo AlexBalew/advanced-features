@@ -105,6 +105,12 @@
       "text": "Where is the detonator??",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "It's isn't real",
+      "id": "Vo3ukVb"
     }
   ],
   "users": [
@@ -123,14 +129,28 @@
       "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
     }
   ],
-  "profile": {
-    "firstname": "John",
-    "lastname": "Wick",
-    "age": 50,
-    "currency": "USD",
-    "country": "USA",
-    "city": "LA",
-    "username": "neo",
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "John",
+      "lastname": "Wick",
+      "age": 50,
+      "currency": "USD",
+      "country": "USA",
+      "city": "LA",
+      "username": "neo",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
+    },
+    {
+      "id": "2",
+      "firstname": "Bruce",
+      "lastname": "Wayne",
+      "age": 48,
+      "currency": "USD",
+      "country": "USA",
+      "city": "Gotham",
+      "username": "Bat",
+      "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
+    }
+  ]
 }

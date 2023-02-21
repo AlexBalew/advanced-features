@@ -122,7 +122,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
     }
 
     return (
-        <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
+        <DynamicComponentLoader reducers={reducers}>
             <div
                 className={classNames(classes.root, {}, [className])}
             >

@@ -17,6 +17,7 @@ import { ValidationErrors } from 'entities/Profile/model/types/profile';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { enGB } from 'shared/dictionaries';
 import { Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/types';
@@ -40,6 +41,7 @@ interface IProps {
 const ProfilePage = ({ className }: IProps) => {
     const dispatch = useAppDispatch();
     const { t } = useTranslation('profile');
+    const { id } = useParams<{ id: string }>();
 
     const validationErrorDictionary = {
         [ValidationErrors.Server_Error]: t(enGB.SERVER_ERROR),
@@ -87,10 +89,14 @@ const ProfilePage = ({ className }: IProps) => {
         dispatch(profileActions.updateProfile({ country }));
     }, [dispatch]);
 
-    useInitialEffect(() => dispatch(fetchProfileData()));
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
+    });
 
     return (
-        <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
+        <DynamicComponentLoader reducers={reducers}>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validationErrors?.length && validationErrors.map((error) => (

@@ -4,7 +4,8 @@ import { getProfileFormData } from '../../selectors/getProfileFormData';
 import { IProfile, ValidationErrors } from '../../types/profile';
 import { validateProfileData } from '../validateProfileData';
 
-export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<ValidationErrors[]>>(
+export const updateProfileData = createAsyncThunk<
+IProfile, void, ThunkConfig<ValidationErrors[]>>(
     'profile/updateProfileData',
     async (_, {
         extra,
@@ -20,7 +21,7 @@ export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<Va
         }
 
         try {
-            const response = await extra.api.put<IProfile>('/profile', formData);
+            const response = await extra.api.put<IProfile>(`/profile/${formData?.id}`, formData);
 
             if (!response.data) {
                 throw new Error();

@@ -101,7 +101,7 @@ describe('profileSlice test', () => {
     test('fetchProfileData fulfilled test', () => {
         expect(profileReducer(
             mockState,
-            fetchProfileData.fulfilled(mockState.form as IProfile, ''),
+            fetchProfileData.fulfilled(mockState.form as IProfile, '', ''),
         )).toEqual({
             ...mockState,
             data: mockState.form,
@@ -112,7 +112,7 @@ describe('profileSlice test', () => {
     test('fetchProfileData rejected test', () => {
         expect(profileReducer(
             mockState,
-            fetchProfileData.rejected(null, '', undefined, 'error'),
+            fetchProfileData.rejected(null, '', '', 'error'),
         )).toEqual({
             ...mockState,
             isLoading: false,

@@ -1,9 +1,15 @@
 import { IComment } from 'entities/Comment/model/types';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
 import { RadiusType } from 'shared/types';
-import { Avatar, Skeleton, Text } from 'shared/ui';
+import {
+    AppLink,
+    Avatar,
+    Skeleton,
+    Text,
+} from 'shared/ui';
 import { classNames } from 'shared/utils';
 import classes from './CommentCard.module.scss';
 
@@ -18,7 +24,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(classes.root, {}, [className])}>
+            <div className={classNames(classes.root, {}, [className, classes.loading])}>
                 <div className={classes.header}>
                     <Skeleton width={50} height={50} border={RadiusType.Circle} />
                     <Skeleton height={16} width={100} className={classes.userName} />
@@ -28,9 +34,13 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
         );
     }
 
+    if (!comment) {
+        return null;
+    }
+
     return (
         <div className={classNames(classes.root, {}, [className])}>
-            <div className={classes.header}>
+            <AppLink to={`${RoutePath.profile}${comment?.user?.id}`} className={classes.header}>
                 {comment?.user?.avatar
                     ? (
                         <Avatar
@@ -42,7 +52,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
                     )
                     : null}
                 <Text className={classes.userName} text={comment?.user?.userName} />
-            </div>
+            </AppLink>
             <Text className={classes.text} text={comment?.text} />
         </div>
     );

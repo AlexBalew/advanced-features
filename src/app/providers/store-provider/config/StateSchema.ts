@@ -9,16 +9,20 @@ import { AxiosInstance } from 'axios';
 import { IArticleDetailsSchema } from 'entities/Article';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
+import { addCommentFormSchema } from 'features/AddNewComment';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
     user: IUserSchema;
+
+    // async reducers
     loginForm?: ILoginSchema;
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
+    addComment?: addCommentFormSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

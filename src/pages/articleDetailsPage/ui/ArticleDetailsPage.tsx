@@ -12,11 +12,14 @@ import {
 import { Text } from 'shared/ui';
 import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
+import { AddCommentForm } from 'features/AddNewComment';
+import { useCallback } from 'react';
 import classes from './ArticleDetailsPage.module.scss';
 import { articleDetailsCommentsReducer } from '../model';
 import { getArticleComments } from '../model/slices/articlesDetailsCommentsSlice';
 import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
+import { addCommentForArticle } from '../model/services/addCommentForArticle';
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -28,9 +31,12 @@ const ArticleDetailsPage = () => {
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const commentError = useSelector(getArticleCommentsError);
 
     useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
+
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
 
     if (!id) {
         return (
@@ -39,10 +45,11 @@ const ArticleDetailsPage = () => {
     }
 
     return (
-        <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
+        <DynamicComponentLoader reducers={reducers}>
             <div className={classNames(classes.root, {}, [])}>
                 <ArticleDetails id={id} />
                 <Text className={classes.commentTitle} title={t(enGB.COMMENTS)} />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}

@@ -15,6 +15,7 @@ const mockedAxios = jest.mocked(axios, true);
 const mockState: StateSchema = {
     profile: {
         form: {
+            id: '1',
             username: 'Doe',
             age: 23,
             avatar: '',

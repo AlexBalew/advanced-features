@@ -18,7 +18,7 @@ interface IProps {
 export const DynamicComponentLoader: FC<IProps> = ({
     reducers,
     children,
-    removeAfterUnmount,
+    removeAfterUnmount = true,
 }) => {
     const store = useStore() as StoreWithManager;
 

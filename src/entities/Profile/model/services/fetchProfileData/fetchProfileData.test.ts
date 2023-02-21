@@ -29,7 +29,7 @@ describe('fetchProfileData test', () => {
         mockedAxios.get.mockReturnValue(Promise.resolve({
             data: mockData,
         }));
-        const action = fetchProfileData();
+        const action = fetchProfileData('1');
         const result = await action(dispatch, getState, {
             api: mockedAxios,
             navigate: mockNavigate,
@@ -45,7 +45,7 @@ describe('fetchProfileData test', () => {
             mockedAxios.get.mockReturnValue(Promise.resolve({
                 status: 403,
             }));
-            const action = fetchProfileData();
+            const action = fetchProfileData('1');
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
                 navigate: mockNavigate,
