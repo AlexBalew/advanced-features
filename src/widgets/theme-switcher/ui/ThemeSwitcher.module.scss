@@ -2,10 +2,20 @@
     position: relative;
 }
 
-.primary {
+.primary,
+.purple {
     background: var(--inverted-primary-color);
+    height: 22px;
+    width: 22px;
 }
 
 .purple {
     background: #672d70;
+}
+
+.icon {
+    fill: var(--primary-color);
+    position: absolute;
+    left: 5px;
+    top: 5px;
 }

@@ -14,7 +14,7 @@ import {
     getProfileValidationErrors,
 } from 'entities/Profile/model/selectors';
 import { ValidationErrors } from 'entities/Profile/model/types/profile';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
@@ -25,6 +25,7 @@ import {
     DynamicComponentLoader,
     ReducersList,
     useAppDispatch,
+    useInitialEffect,
 } from 'shared/utils';
 import { ProfilePageHeader } from './ProfilePageHeader';
 
@@ -86,11 +87,7 @@ const ProfilePage = ({ className }: IProps) => {
         dispatch(profileActions.updateProfile({ country }));
     }, [dispatch]);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch]);
+    useInitialEffect(() => dispatch(fetchProfileData()));
 
     return (
         <DynamicComponentLoader reducers={reducers} removeAfterUnmount>

@@ -2,13 +2,35 @@ import { ArticleDetails } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { enGB } from 'shared/dictionaries';
-import { classNames } from 'shared/utils';
+import {
+    classNames,
+    DynamicComponentLoader,
+    ReducersList,
+    useAppDispatch,
+    useInitialEffect,
+} from 'shared/utils';
 import { Text } from 'shared/ui';
+import { CommentList } from 'entities/Comment';
+import { useSelector } from 'react-redux';
 import classes from './ArticleDetailsPage.module.scss';
+import { articleDetailsCommentsReducer } from '../model';
+import { getArticleComments } from '../model/slices/articlesDetailsCommentsSlice';
+import { getArticleCommentsError, getArticleCommentsIsLoading } from '../model/selectors';
+import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
+
+const reducers: ReducersList = {
+    articleDetailsComments: articleDetailsCommentsReducer,
+};
 
 const ArticleDetailsPage = () => {
     const { t } = useTranslation('articles');
     const { id } = useParams<{ id: string }>();
+    const dispatch = useAppDispatch();
+    const comments = useSelector(getArticleComments.selectAll);
+    const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const commentError = useSelector(getArticleCommentsError);
+
+    useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
     if (!id) {
         return (
@@ -17,9 +39,16 @@ const ArticleDetailsPage = () => {
     }
 
     return (
-        <div className={classNames(classes.root, {}, [])}>
-            <ArticleDetails id={id} />
-        </div>
+        <DynamicComponentLoader reducers={reducers} removeAfterUnmount>
+            <div className={classNames(classes.root, {}, [])}>
+                <ArticleDetails id={id} />
+                <Text className={classes.commentTitle} title={t(enGB.COMMENTS)} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </div>
+        </DynamicComponentLoader>
     );
 };
 

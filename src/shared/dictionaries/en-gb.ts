@@ -42,4 +42,6 @@ export const enGB = {
     ARTICLES: 'Articles',
     ARTICLE_DETAILS: 'Article Details',
     NO_ARTICLE: 'Article was not found',
+    COMMENTS: 'Comments',
+    NO_COMMENTS: 'No comments yet...',
 };

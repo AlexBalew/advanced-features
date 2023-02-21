@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
@@ -14,6 +14,7 @@ import {
     DynamicComponentLoader,
     ReducersList,
     useAppDispatch,
+    useInitialEffect,
 } from 'shared/utils';
 import { ArticleBlockType, IArticleBlock } from '../../model/types/article';
 import {
@@ -67,11 +68,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => dispatch(fetchArticleById(id)));
 
     if (isLoading) {
         content = (

@@ -37,10 +37,12 @@ export const ThemeSwitcher = memo(({ className }: IProps) => {
             theme={AppButtonTheme.Pure}
             onClick={toggleTheme}
         >
-            <Icon
-                name="Settings"
-                className={getIconClassName(theme)}
-            />
+            <div className={getIconClassName(theme)}>
+                <Icon
+                    name="Settings"
+                    className={classes.icon}
+                />
+            </div>
         </Button>
     );
 });
