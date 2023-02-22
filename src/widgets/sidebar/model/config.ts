@@ -1,12 +1,5 @@
 import { RoutePath } from 'shared/config';
-import { IconName } from 'shared/ui/icon';
-
-export interface ISidebarItem {
-    path: string;
-    IconNname: IconName;
-    linkTitle: string;
-    isAuth?: boolean;
-}
+import { ISidebarItem } from './types/items';
 
 export const SidebarItemList: ISidebarItem[] = [
     {

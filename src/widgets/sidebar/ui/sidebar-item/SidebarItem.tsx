@@ -4,8 +4,7 @@ import { AppLink, Icon } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';
-import { ISidebarItem } from '../../model/config';
-
+import { ISidebarItem } from '../../model/types';
 import classes from './SidebarItem.module.scss';
 
 interface IProps {

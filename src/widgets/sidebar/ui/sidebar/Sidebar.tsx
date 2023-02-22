@@ -4,9 +4,10 @@ import { LangSwitcher } from 'widgets/lang-switcher';
 import { ThemeSwitcher } from 'widgets/theme-switcher';
 import { Button } from 'shared/ui/button';
 import { AppButtonSize, AppButtonTheme } from 'shared/ui/types';
-import { SidebarItemList } from 'widgets/sidebar/model/config';
+import { useSelector } from 'react-redux';
 import { SidebarItem } from '../sidebar-item/SidebarItem';
 import classes from './Sidebar.module.scss';
+import { getSidebarItemsData } from '../../model';
 
 interface IProps {
     className?: string;
@@ -14,18 +15,19 @@ interface IProps {
 
 export const Sidebar = memo(({ className }: IProps) => {
     const [collapsed, setCollapsed] = useState<boolean>(true);
+    const sidebarItemList = useSelector(getSidebarItemsData);
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
 
-    const linkItems = useMemo(() => SidebarItemList.map((item) => (
+    const linkItems = useMemo(() => sidebarItemList.map((item) => (
         <SidebarItem
             key={item.linkTitle}
             item={item}
             collapsed={collapsed}
         />
-    )), [collapsed]);
+    )), [sidebarItemList, collapsed]);
 
     return (
         <div
