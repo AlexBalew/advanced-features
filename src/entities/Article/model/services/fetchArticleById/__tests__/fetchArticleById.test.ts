@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IArticle } from '../../../../model/types/article';
+import { ArticleType, IArticle } from '../../../../model/types/article';
 import { fetchArticleById } from '../fetchArtcileById';
 
 jest.mock('axios');
@@ -16,6 +16,7 @@ const mockId = '1';
 const mockData: IArticle = {
     id: '1',
     title: 'title',
+    type: [ArticleType.Movies],
 };
 
 describe('fetchArticleById test', () => {

@@ -1,3 +1,5 @@
+import { IUser } from 'entities/User';
+
 export const enum ArticleType {
     Comics = 'Comics',
     News = 'News',
@@ -34,7 +36,13 @@ export interface IArticle {
     subtitle?: string;
     img?: string;
     views?: number;
+    user?: IUser;
     createdAt?: string;
-    type?: ArticleType[];
+    type: ArticleType[];
     blocks?: IArticleBlock[];
+}
+
+export const enum ArticleListView {
+    List = 'list',
+    Tiles = 'tiles',
 }

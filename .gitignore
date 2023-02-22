@@ -6,6 +6,7 @@ node_modules
 /storybook-static
 /.loki/report.html
 /.loki/report.json
+/extractedTranslations
 
 # Local History for Visual Studio Code
 .history/

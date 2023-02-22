@@ -1,2 +1,2 @@
-export { ArticleType, IArticleDetailsSchema } from './model';
-export { ArticleDetails } from './ui';
+export { ArticleType, IArticleDetailsSchema, ArticleListView } from './model';
+export { ArticleDetails, ArticleList } from './ui';

@@ -1,13 +1,14 @@
 import { enGB } from 'shared/dictionaries';
 import { articleDetailsReducer } from '../../../model/slice/artcileDetailsSlice';
 import { IArticleDetailsSchema } from '../../types/articleDetailsSchema';
-import { IArticle } from '../../types/article';
+import { ArticleType, IArticle } from '../../types/article';
 import { fetchArticleById } from '../../services/fetchArticleById';
 
 const mockState: IArticleDetailsSchema = {
     data: {
         id: '1',
         title: 'title',
+        type: [ArticleType.Movies],
     },
     isLoading: false,
     error: undefined,

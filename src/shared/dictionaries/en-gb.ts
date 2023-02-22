@@ -46,4 +46,6 @@ export const enGB = {
     NO_COMMENTS: 'No comments yet...',
     ADD_YOUR_COMMENT: 'Add your comment',
     SEND: 'Send',
+    READ_MORE: 'Read more',
+    BACK: 'Back',
 };
