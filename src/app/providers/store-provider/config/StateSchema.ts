@@ -9,9 +9,10 @@ import { AxiosInstance } from 'axios';
 import { IArticleDetailsSchema } from 'entities/Article';
 import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
-import { addCommentFormSchema } from 'features/AddNewComment';
+import { AddCommentFormSchema } from 'features/AddNewComment';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
+import { ArticlesPageSchema } from 'pages/articlesPage/model';
 import { NavigateOptions, To } from 'react-router-dom';
 
 export interface StateSchema {
@@ -22,7 +23,8 @@ export interface StateSchema {
     profile?: IProfileSchema;
     articleDetails?: IArticleDetailsSchema;
     articleDetailsComments?: IArticleDetailsCommentsSchema;
-    addComment?: addCommentFormSchema;
+    addComment?: AddCommentFormSchema;
+    articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

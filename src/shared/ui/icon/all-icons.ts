@@ -6,6 +6,8 @@ import Articles from 'shared/assets/icons/articles.svg';
 import Details from 'shared/assets/icons/details.svg';
 import Calendar from 'shared/assets/icons/calendar.svg';
 import EyeOpen from 'shared/assets/icons/eye-open.svg';
+import List from 'shared/assets/icons/list.svg';
+import TilesList from 'shared/assets/icons/tiles-list.svg';
 
 export default {
     Home,
@@ -16,4 +18,6 @@ export default {
     Details,
     Calendar,
     EyeOpen,
+    List,
+    TilesList,
 };

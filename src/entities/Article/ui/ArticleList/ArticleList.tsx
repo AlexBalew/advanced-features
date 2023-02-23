@@ -14,11 +14,10 @@ interface IProps {
 
 const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.Tiles ? 12 : 3)
     .fill(0)
-    .map((index) => (
-        // eslint-disable-next-line react/no-array-index-key
+    .map(() => (
         <ArticleListItemSkeleton
             className={classes.card}
-            key={index}
+            key={Math.random()}
             view={view}
         />
     ));
