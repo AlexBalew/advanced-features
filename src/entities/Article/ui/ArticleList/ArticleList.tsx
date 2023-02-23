@@ -41,19 +41,12 @@ export const ArticleList = memo((
         />
     );
 
-    if (isLoading) {
-        return (
-            <div className={classNames(classes.root, {}, [className, classes[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(classes.root, {}, [className, classes[view]])}>
             {articles?.length > 0
                 ? articles?.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

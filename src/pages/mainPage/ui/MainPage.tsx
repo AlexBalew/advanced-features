@@ -1,13 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
+import { Page } from 'widgets';
 
 const MainPage = () => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <Page>
             {t(enGB.MAIN_PAGE)}
-        </div>
+        </Page>
     );
 };
 

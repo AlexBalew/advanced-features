@@ -4,8 +4,10 @@ import axios from 'axios';
 import { ArticleType } from 'entities/Article';
 import { IArticle } from 'entities/Article/model/types/article';
 import { fetchArticles } from '../fetchArticles';
+import { getArticleListLimit } from '../../selectors';
 
 jest.mock('axios');
+jest.mock('../../selectors');
 
 const mockedAxios = jest.mocked(axios, true);
 
@@ -28,10 +30,13 @@ const mockData: IArticle[] = [
 
 describe('fetchArticles test', () => {
     test('fetchArticles should work correctly id data from server was returned', async () => {
+        (getArticleListLimit as jest.Mock).mockReturnValue(5);
         mockedAxios.get.mockReturnValue(Promise.resolve({
             data: mockData,
         }));
-        const action = fetchArticles();
+        const action = fetchArticles({
+            page: 1,
+        });
         const result = await action(dispatch, getState, {
             api: mockedAxios,
             navigate: mockNavigate,
@@ -47,7 +52,9 @@ describe('fetchArticles test', () => {
             mockedAxios.get.mockReturnValue(Promise.resolve({
                 status: 403,
             }));
-            const action = fetchArticles();
+            const action = fetchArticles({
+                page: 1,
+            });
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
                 navigate: mockNavigate,

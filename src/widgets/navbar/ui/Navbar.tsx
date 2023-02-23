@@ -33,7 +33,7 @@ export const Navbar = memo(({ className }: IProps) => {
 
     if (userAuthData) {
         return (
-            <div className={classNames(classes.root, {}, [className])}>
+            <header className={classNames(classes.root, {}, [className])}>
                 <Button
                     className={classes.links}
                     theme={AppButtonTheme.Background_inverted}
@@ -41,12 +41,12 @@ export const Navbar = memo(({ className }: IProps) => {
                 >
                     {t(enGB.LOGOUT)}
                 </Button>
-            </div>
+            </header>
         );
     }
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
+        <header className={classNames(classes.root, {}, [className])}>
             <Button
                 className={classes.links}
                 theme={AppButtonTheme.Background_inverted}
@@ -60,6 +60,6 @@ export const Navbar = memo(({ className }: IProps) => {
                     onClose={onCloseModal}
                 />
             )}
-        </div>
+        </header>
     );
 });

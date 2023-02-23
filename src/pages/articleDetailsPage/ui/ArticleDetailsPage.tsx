@@ -15,12 +15,13 @@ import { useSelector } from 'react-redux';
 import { AddCommentForm } from 'features/AddNewComment';
 import { useCallback } from 'react';
 import { RoutePath } from 'shared/config';
-import classes from './ArticleDetailsPage.module.scss';
+import { Page } from 'widgets';
 import { articleDetailsCommentsReducer } from '../model';
 import { getArticleComments } from '../model/slices/articlesDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../model/selectors';
 import { fetchCommentsByArticleId } from '../model/services/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../model/services/addCommentForArticle';
+import classes from './ArticleDetailsPage.module.scss';
 
 const reducers: ReducersList = {
     articleDetailsComments: articleDetailsCommentsReducer,
@@ -46,13 +47,15 @@ const ArticleDetailsPage = () => {
 
     if (!id) {
         return (
-            <Text title={t(enGB.NO_ARTICLE)} />
+            <Page>
+                <Text title={t(enGB.NO_ARTICLE)} />
+            </Page>
         );
     }
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <div className={classNames(classes.root, {}, [])}>
+            <Page className={classNames(classes.root, {}, [])}>
                 <Button onClick={onbackToArticleList}>
                     {t(enGB.BACK)}
                 </Button>
@@ -63,7 +66,7 @@ const ArticleDetailsPage = () => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicComponentLoader>
     );
 };

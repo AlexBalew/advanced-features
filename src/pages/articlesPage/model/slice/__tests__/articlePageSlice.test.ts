@@ -11,6 +11,8 @@ const mockState: ArticlesPageSchema = {
     isLoading: false,
     view: ArticleListView.List,
     error: undefined,
+    hasMore: true,
+    page: 1,
 };
 
 describe('articlesPageSlice test', () => {
@@ -29,7 +31,7 @@ describe('articlesPageSlice test', () => {
         expect(articlesPageReducer(
             mockState,
             articlesPageActions.initState(),
-        )).toEqual({ ...mockState, view: localStorage.getItem(LOCAL_STORAGE_VIEW_KEY) });
+        )).toEqual({ ...mockState, view: localStorage.getItem(LOCAL_STORAGE_VIEW_KEY), limit: 4 });
     });
 
     test('fetchArticles pending test', () => {
@@ -46,17 +48,18 @@ describe('articlesPageSlice test', () => {
     test('fetchArticles fulfilled test', () => {
         expect(articlesPageReducer(
             mockState,
-            fetchArticles.fulfilled(mockState.entities as unknown as IArticle[], ''),
+            fetchArticles.fulfilled(mockState.entities as unknown as IArticle[], '', {}),
         )).toEqual({
             ...mockState,
             isLoading: false,
+            hasMore: false,
         });
     });
 
     test('fetchArticles rejected test', () => {
         expect(articlesPageReducer(
             mockState,
-            fetchArticles.rejected(null, '', undefined, 'error'),
+            fetchArticles.rejected(null, '', {}, 'error'),
         )).toEqual({
             ...mockState,
             isLoading: false,

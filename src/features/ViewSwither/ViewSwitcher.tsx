@@ -38,6 +38,7 @@ export const ViewSwitcher = memo(({ className, view, onViewClick }: IProps) => {
         <div className={classNames(classes.root, {}, [className])}>
             {viewTypes.map((type) => (
                 <Button
+                    key={type.view}
                     theme={AppButtonTheme.Pure}
                     onClick={onSwitchView(type.view)}
                 >

@@ -28,6 +28,7 @@ import {
     useAppDispatch,
     useInitialEffect,
 } from 'shared/utils';
+import { Page } from 'widgets';
 import { ProfilePageHeader } from './ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -97,7 +98,7 @@ const ProfilePage = ({ className }: IProps) => {
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <div className={classNames('', {}, [className])}>
+            <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validationErrors?.length && validationErrors.map((error) => (
                     <Text
@@ -120,7 +121,7 @@ const ProfilePage = ({ className }: IProps) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicComponentLoader>
 
     );

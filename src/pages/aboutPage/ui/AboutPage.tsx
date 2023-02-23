@@ -1,12 +1,12 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
+import { Page } from 'widgets';
 
 const AboutPage = () => {
     const { t } = useTranslation(enGB.ABOUT);
 
     return (
-        <div>{t(enGB.ABOUT)}</div>
+        <Page>{t(enGB.ABOUT)}</Page>
     );
 };
 

@@ -9,12 +9,12 @@ import {
     useAppDispatch,
     useInitialEffect,
 } from 'shared/utils';
+import { Page } from 'widgets';
 import {
-    getArticleListError,
     getArticleListIsLoading,
     getArticleListView,
 } from '../model/selectors';
-import { fetchArticles } from '../model/services/fetchArticles';
+import { fetchArticles, fetchNextArticlesPage } from '../model/services';
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -31,27 +31,35 @@ const ArticlesPage = () => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticleListIsLoading);
     const view = useSelector(getArticleListView);
-    const error = useSelector(getArticleListError);
 
     const onChangeView = useCallback((view: ArticleListView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
+    const onLoadNextDataPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
     useInitialEffect(() => {
-        dispatch(fetchArticles());
         dispatch(articlesPageActions.initState());
+        dispatch(fetchArticles({
+            page: 1,
+        }));
     });
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <div className={classNames(classes.root, {}, [])}>
+            <Page
+                className={classNames(classes.root, {}, [])}
+                onEndScroll={onLoadNextDataPart}
+            >
                 <ViewSwitcher view={view} onViewClick={onChangeView} />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicComponentLoader>
     );
 };

@@ -14,17 +14,13 @@ const AppRouter = () => (
                     ? (
                         <RequireAuth>
                             <Suspense fallback={<PageLoader />}>
-                                <div className="content-wrapper">
-                                    {element}
-                                </div>
+                                {element}
                             </Suspense>
                         </RequireAuth>
                     )
                     : (
                         <Suspense fallback={<PageLoader />}>
-                            <div className="content-wrapper">
-                                {element}
-                            </div>
+                            {element}
                         </Suspense>
                     )}
             />
