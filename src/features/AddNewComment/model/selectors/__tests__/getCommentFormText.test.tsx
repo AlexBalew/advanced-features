@@ -11,8 +11,8 @@ describe('getCommentFormText test', () => {
         expect(getCommentFormText(state as StateSchema)).toEqual(state.addComment?.text);
     });
 
-    test('getCommentFormText should return undefined if there is no text in state', () => {
+    test('getCommentFormText should return empty string if there is no text in state', () => {
         const state: DeepPartial<StateSchema> = {};
-        expect(getCommentFormText(state as StateSchema)).toBeUndefined();
+        expect(getCommentFormText(state as StateSchema)).toBe('');
     });
 });

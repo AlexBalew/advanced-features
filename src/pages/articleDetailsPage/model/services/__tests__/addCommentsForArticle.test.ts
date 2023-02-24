@@ -15,6 +15,9 @@ jest.mock('entities/Article/model');
 const mockedAxios = jest.mocked(axios, true);
 
 const mockState: StateSchema = {
+    scrollSaver: {
+        scroll: {},
+    },
     user: {},
     addComment: {
         text: 'text',

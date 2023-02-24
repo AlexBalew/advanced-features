@@ -33,7 +33,7 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
     }, [dispatch]);
 
     const onSendHandler = useCallback(() => {
-        onSendComment(text || '');
+        onSendComment(text);
         dispatch(addCommentActions.setText(''));
     }, [dispatch, onSendComment, text]);
 
@@ -43,7 +43,7 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
                 <Input
                     className={classes.input}
                     placeholder={t(enGB.ADD_YOUR_COMMENT)}
-                    value={text || ''}
+                    value={text}
                     onChange={onChange}
                 />
                 <Button onClick={onSendHandler}>

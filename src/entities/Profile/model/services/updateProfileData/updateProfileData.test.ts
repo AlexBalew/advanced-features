@@ -13,6 +13,9 @@ jest.mock('../../selectors');
 const mockedAxios = jest.mocked(axios, true);
 
 const mockState: StateSchema = {
+    scrollSaver: {
+        scroll: {},
+    },
     profile: {
         form: {
             id: '1',

@@ -17,12 +17,6 @@ export const getSidebarItemsData = createSelector(
                 IconNname: 'AboutUs',
                 linkTitle: 'About us',
             },
-            {
-                path: RoutePath.article,
-                IconNname: 'Details',
-                linkTitle: 'Article details',
-                isAuth: true,
-            },
         ];
 
         if (userData) {

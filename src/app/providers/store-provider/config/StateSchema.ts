@@ -11,11 +11,13 @@ import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { AddCommentFormSchema } from 'features/AddNewComment';
 import { ILoginSchema } from 'features/AuthByUsername';
+import { IScrollSaverSchema } from 'features/ScrollSaver';
 import { IArticleDetailsCommentsSchema } from 'pages/articleDetailsPage';
 import { ArticlesPageSchema } from 'pages/articlesPage/model';
 
 export interface StateSchema {
     user: IUserSchema;
+    scrollSaver: IScrollSaverSchema;
 
     // async reducers
     loginForm?: ILoginSchema;

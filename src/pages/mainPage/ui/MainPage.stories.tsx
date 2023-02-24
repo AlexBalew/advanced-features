@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'shared/types';
-import { ThemeDecorator } from 'shared/config/storybook';
+import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
 import MainPage from './MainPage';
 
 export default {
@@ -17,9 +17,10 @@ export const Primary = Template.bind({});
 Primary.args = {
     children: 'main page',
 };
+Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     children: 'main page',
 };
-PrimaryDark.decorators = [ThemeDecorator(Theme.Dark)];
+PrimaryDark.decorators = [ThemeDecorator(Theme.Dark), StoreDecorator({})];
