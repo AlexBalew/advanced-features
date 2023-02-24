@@ -32,7 +32,6 @@ const mockState: StateSchema = {
 
 const dispatch: Dispatch = jest.fn();
 const getState: () => StateSchema = jest.fn(() => mockState);
-const mockNavigate = jest.fn();
 
 describe('updateProfileData test', () => {
     test('updateProfileData should work correctly', async () => {
@@ -52,7 +51,6 @@ describe('updateProfileData test', () => {
         const action = updateProfileData();
         const result = await action(dispatch, getState, {
             api: mockedAxios,
-            navigate: mockNavigate,
         });
         expect(mockedAxios.put).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -68,7 +66,6 @@ describe('updateProfileData test', () => {
             const action = updateProfileData();
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
-                navigate: mockNavigate,
             });
             expect(mockedAxios.put).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');
@@ -87,7 +84,6 @@ describe('updateProfileData test', () => {
         const action = updateProfileData();
         const result = await action(dispatch, getState, {
             api: mockedAxios,
-            navigate: mockNavigate,
         });
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([

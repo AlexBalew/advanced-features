@@ -14,7 +14,7 @@ import {
     getArticleListIsLoading,
     getArticleListView,
 } from '../model/selectors';
-import { fetchArticles, fetchNextArticlesPage } from '../model/services';
+import { fetchNextArticlesPage, initArticlesPage } from '../model/services';
 import {
     articlesPageActions,
     articlesPageReducer,
@@ -41,14 +41,11 @@ const ArticlesPage = () => {
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(articlesPageActions.initState());
-        dispatch(fetchArticles({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     return (
-        <DynamicComponentLoader reducers={reducers}>
+        <DynamicComponentLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
                 className={classNames(classes.root, {}, [])}
                 onEndScroll={onLoadNextDataPart}

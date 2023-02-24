@@ -13,7 +13,6 @@ const mockedAxios = jest.mocked(axios, true);
 
 const dispatch: Dispatch = jest.fn();
 const getState: () => StateSchema = jest.fn();
-const mockNavigate = jest.fn();
 
 const mockData: IArticle[] = [
     {
@@ -39,7 +38,6 @@ describe('fetchArticles test', () => {
         });
         const result = await action(dispatch, getState, {
             api: mockedAxios,
-            navigate: mockNavigate,
         });
         expect(mockedAxios.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -57,7 +55,6 @@ describe('fetchArticles test', () => {
             });
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
-                navigate: mockNavigate,
             });
             expect(mockedAxios.get).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');

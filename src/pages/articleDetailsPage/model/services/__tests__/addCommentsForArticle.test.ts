@@ -25,7 +25,6 @@ const mockText = 'new text';
 
 const dispatch: Dispatch = jest.fn();
 const getState: () => StateSchema = jest.fn(() => mockState);
-const mockNavigate = jest.fn();
 
 describe('addCommentForArticle test', () => {
     test('addCommentForArticle should work correctly', async () => {
@@ -37,7 +36,6 @@ describe('addCommentForArticle test', () => {
         const action = addCommentForArticle(mockText);
         const result = await action(dispatch, getState, {
             api: mockedAxios,
-            navigate: mockNavigate,
         });
         expect(mockedAxios.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
@@ -53,7 +51,6 @@ describe('addCommentForArticle test', () => {
             const action = addCommentForArticle(mockText);
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
-                navigate: mockNavigate,
             });
             expect(mockedAxios.post).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');

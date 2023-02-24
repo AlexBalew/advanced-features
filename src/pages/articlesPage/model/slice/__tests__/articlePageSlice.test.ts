@@ -31,7 +31,12 @@ describe('articlesPageSlice test', () => {
         expect(articlesPageReducer(
             mockState,
             articlesPageActions.initState(),
-        )).toEqual({ ...mockState, view: localStorage.getItem(LOCAL_STORAGE_VIEW_KEY), limit: 4 });
+        )).toEqual({
+            ...mockState,
+            view: localStorage.getItem(LOCAL_STORAGE_VIEW_KEY),
+            limit: 4,
+            _isInitialized: true,
+        });
     });
 
     test('fetchArticles pending test', () => {

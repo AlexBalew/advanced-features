@@ -12,10 +12,10 @@ declare module '*.svg' {
 
     const SVG: React.VFC<React.SVGProps<SVGSVGElement>>;
     export const ReactComponent: React.FunctionComponent<React.SVGProps<
-    SVGSVGElement
-  > & { title?: string }>;
-  const src: string;
-  export default src;
+        SVGSVGElement
+    > & { title?: string }>;
+    const src: string;
+    export default src;
 }
 
 declare module '*.png';
@@ -29,3 +29,7 @@ declare const __PROJECT__: 'frontend' | 'storybook' | 'jest';
 type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;
 } : T;
+
+type OptionalRecord<K extends keyof any, T> = {
+    [P in K]?: T
+}
