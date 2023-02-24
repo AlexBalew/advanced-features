@@ -1,4 +1,4 @@
-import { AddCommentFormSchema } from '../../types/AddCommentFormSchema';
+import { AddCommentFormSchema } from '../../types';
 import { addCommentActions, addCommentReducer } from '../addCommentSlice';
 
 const mockState: AddCommentFormSchema = {
