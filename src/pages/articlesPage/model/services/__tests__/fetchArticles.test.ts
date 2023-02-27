@@ -33,9 +33,7 @@ describe('fetchArticles test', () => {
         mockedAxios.get.mockReturnValue(Promise.resolve({
             data: mockData,
         }));
-        const action = fetchArticles({
-            page: 1,
-        });
+        const action = fetchArticles({});
         const result = await action(dispatch, getState, {
             api: mockedAxios,
         });
@@ -50,9 +48,7 @@ describe('fetchArticles test', () => {
             mockedAxios.get.mockReturnValue(Promise.resolve({
                 status: 403,
             }));
-            const action = fetchArticles({
-                page: 1,
-            });
+            const action = fetchArticles({});
             const result = await action(dispatch, getState, {
                 api: mockedAxios,
             });

@@ -12,3 +12,5 @@ export interface IThemeContextProps {
 export const enum RadiusType {
     Circle = '50%',
 }
+
+export type SortType = 'asc' | 'desc';

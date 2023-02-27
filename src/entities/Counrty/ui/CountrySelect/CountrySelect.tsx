@@ -13,7 +13,7 @@ interface IProps {
     readOnly?: boolean;
 }
 
-const countryOptions: SelectOption[] = [
+const countryOptions: SelectOption<Countries>[] = [
     { label: Countries.CANADA, value: Countries.CANADA },
     { label: Countries.SPAIN, value: Countries.SPAIN },
     { label: Countries.USA, value: Countries.USA },

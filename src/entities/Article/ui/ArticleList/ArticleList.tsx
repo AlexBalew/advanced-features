@@ -1,5 +1,8 @@
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
+import { Text, TextSize } from 'shared/ui';
+import { useTranslation } from 'react-i18next';
+import { enGB } from 'shared/dictionaries';
 import { ArticleListView, IArticle } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
@@ -30,6 +33,7 @@ export const ArticleList = memo((
         view = ArticleListView.List,
     }: IProps,
 ) => {
+    const { t } = useTranslation();
     const renderArticle = (
         article: IArticle,
     ) => (
@@ -40,6 +44,14 @@ export const ArticleList = memo((
             article={article}
         />
     );
+
+    if (!isLoading && !articles.length) {
+        return (
+            <div className={classNames(classes.root, {}, [className, classes[view]])}>
+                <Text size={TextSize.L} title={t(enGB.NO_ARTICLES)} />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(classes.root, {}, [className, classes[view]])}>

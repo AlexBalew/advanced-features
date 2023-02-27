@@ -5,3 +5,7 @@ export { getArticleListHasMore } from './getArticleListPageHasMore';
 export { getArticleListPageNum } from './getArticleListPageNum';
 export { getArticleListLimit } from './getArticleListLimit';
 export { getArticleListIsInitialized } from './getArticleListIsInitialized';
+export { getArticleListSearchValue } from './getArticleListSearchValue';
+export { getArticleListSortField } from './getArticleListSortFiled';
+export { getArticleListOrder } from './getArticleListOrder';
+export { getArticleType } from './getArticleType';

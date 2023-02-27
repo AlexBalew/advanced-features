@@ -30,8 +30,8 @@ export const enum TextAlign {
     Center = 'center',
 }
 
-export interface SelectOption {
-    value: string;
+export interface SelectOption<T extends string> {
+    value: T;
     label: string;
 }
 
@@ -39,4 +39,9 @@ export const enum TextSize {
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',
+}
+
+export const enum CardTheme {
+    Common = 'common',
+    Outline = 'outline',
 }

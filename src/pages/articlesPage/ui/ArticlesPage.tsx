@@ -1,7 +1,7 @@
-import { ArticleList, ArticleListView } from 'entities/Article';
-import { ViewSwitcher } from 'features/ViewSwither';
+import { ArticleList } from 'entities/Article';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import {
     classNames,
     DynamicComponentLoader,
@@ -10,16 +10,13 @@ import {
     useInitialEffect,
 } from 'shared/utils';
 import { Page } from 'widgets';
-import {
-    getArticleListIsLoading,
-    getArticleListView,
-} from '../model/selectors';
+import { getArticleListIsLoading, getArticleListView } from '../model/selectors';
 import { fetchNextArticlesPage, initArticlesPage } from '../model/services';
 import {
-    articlesPageActions,
     articlesPageReducer,
     getArticles,
 } from '../model/slice/articlePageSlice';
+import { ArticlesPageFilter } from './ArtcilesPageFilter/ArticlesPageFilter';
 import classes from './ArticlesPage.module.scss';
 
 const reducers: ReducersList = {
@@ -31,17 +28,14 @@ const ArticlesPage = () => {
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticleListIsLoading);
     const view = useSelector(getArticleListView);
-
-    const onChangeView = useCallback((view: ArticleListView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
+    const [searchParams] = useSearchParams();
 
     const onLoadNextDataPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
+        dispatch(initArticlesPage(searchParams));
     });
 
     return (
@@ -50,8 +44,9 @@ const ArticlesPage = () => {
                 className={classNames(classes.root, {}, [])}
                 onEndScroll={onLoadNextDataPart}
             >
-                <ViewSwitcher view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilter />
                 <ArticleList
+                    className={classes.list}
                     isLoading={isLoading}
                     view={view}
                     articles={articles}

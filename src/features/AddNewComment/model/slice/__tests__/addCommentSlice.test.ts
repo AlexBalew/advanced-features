@@ -1,7 +1,7 @@
-import { IAddCommentFormSchema } from '../../types';
+import { addCommentFormSchema } from '../../types';
 import { addCommentActions, addCommentReducer } from '../addCommentSlice';
 
-const mockState: IAddCommentFormSchema = {
+const mockState: addCommentFormSchema = {
     text: 'text',
     error: undefined,
 };

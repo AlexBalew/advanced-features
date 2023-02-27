@@ -1,4 +1,4 @@
-import { IArticle } from 'entities/Article/model/types/article';
+import { ArticleSortField, ArticleType, IArticle } from 'entities/Article/model/types/article';
 import { ArticleListView } from 'entities/Article';
 import { LOCAL_STORAGE_VIEW_KEY } from 'shared/constants';
 import { ArticlesPageSchema } from '../../types/articlePageSchema';
@@ -13,6 +13,11 @@ const mockState: ArticlesPageSchema = {
     error: undefined,
     hasMore: true,
     page: 1,
+    limit: 9,
+    order: 'asc',
+    searchValue: '',
+    sortField: ArticleSortField.Created_At,
+    type: ArticleType.All,
 };
 
 describe('articlesPageSlice test', () => {
@@ -42,7 +47,7 @@ describe('articlesPageSlice test', () => {
     test('fetchArticles pending test', () => {
         expect(articlesPageReducer(
             mockState,
-            fetchArticles.pending,
+            fetchArticles.pending('', { replace: true }),
         )).toEqual({
             ...mockState,
             isLoading: true,

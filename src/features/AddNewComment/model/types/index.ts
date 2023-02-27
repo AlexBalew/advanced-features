@@ -1,1 +1,1 @@
-export { IAddCommentFormSchema } from './addCommentFormSchema';
+export { addCommentFormSchema } from './addCommentFormSchema';

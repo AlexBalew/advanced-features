@@ -1,6 +1,7 @@
 import { IUser } from 'entities/User';
 
 export const enum ArticleType {
+    All = 'All',
     Comics = 'Comics',
     News = 'News',
     Music = 'Music',
@@ -45,4 +46,10 @@ export interface IArticle {
 export const enum ArticleListView {
     List = 'list',
     Tiles = 'tiles',
+}
+
+export const enum ArticleSortField {
+    Views = 'views',
+    Title = 'title',
+    Created_At = 'created_at'
 }

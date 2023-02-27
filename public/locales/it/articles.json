@@ -2,5 +2,20 @@
     "Articles": "Articoli",
     "Article details": "Dettagli dell'articolo",
     "Article was not found": "L'articolo non è stato trovato",
-    "Comments": "Commenti"
+    "Comments": "Commenti",
+    "Sort by": "Ordina per",
+    "Search": "Ricerca",
+    "by": "di",
+    "Sort": "Ordinare",
+    "ascending": "ascendente",
+    "descending": "discendente",
+    "date": "data",
+    "title": "titolo",
+    "views": "visualizzazioni",
+    "Comics": "I fumetti",
+    "News": "Notizia",
+    "Movies": "Film",
+    "All": "Tutto",
+    "Music": "Musica",
+    "No articles found": "Nessun articolo trovato"
 }

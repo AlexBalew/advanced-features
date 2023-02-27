@@ -13,7 +13,7 @@ interface IProps {
     readOnly?: boolean;
 }
 
-const currencyOptions: SelectOption[] = [
+const currencyOptions: SelectOption<Currency>[] = [
     { label: Currency.EUR, value: Currency.EUR },
     { label: Currency.USD, value: Currency.USD },
 ];

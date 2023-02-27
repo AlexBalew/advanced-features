@@ -2,5 +2,20 @@
     "Articles": "Articles",
     "Article details": "Article details",
     "Article was not found": "Article was not found",
-    "Comments": "Comments"
+    "Comments": "Comments",
+    "Sort by": "Sort by",
+    "Search": "Search",
+    "by": "by",
+    "Sort": "Sort",
+    "ascending": "ascending",
+    "descending": "descending",
+    "date": "date",
+    "title": "title",
+    "views": "views",
+    "Comics": "Comics",
+    "News": "News",
+    "Movies": "Movies",
+    "All": "All",
+    "Music": "Music",
+    "No articles found": "No articles found"
 }
