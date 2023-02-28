@@ -5,10 +5,11 @@ import {
     NotFoundPage,
     ArticlesPage,
     ArticleDetailsPage,
+    ArticleEditPage,
 } from 'pages';
 import { RouteProps } from 'react-router-dom';
 
-type AppAuthRoutes = RouteProps & {
+export type AppAuthRoutes = RouteProps & {
     isAuthorized?: boolean;
 }
 
@@ -18,6 +19,8 @@ export const enum AppRoutes {
     Profile = 'profile',
     Articles = 'articles',
     Article_details = 'article',
+    Article_create = 'article_create',
+    Article_edit = 'article_edit',
     NotFound = 'not_found'
 }
 
@@ -27,6 +30,8 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.Profile]: '/profile/',
     [AppRoutes.Articles]: '/articles',
     [AppRoutes.Article_details]: '/article/',
+    [AppRoutes.Article_create]: '/article/create',
+    [AppRoutes.Article_edit]: '/article/:id/edit',
     [AppRoutes.NotFound]: '*',
 };
 
@@ -47,10 +52,22 @@ export const routeConfig: Record<AppRoutes, AppAuthRoutes> = {
     [AppRoutes.Articles]: {
         path: RoutePath.articles,
         element: <ArticlesPage />,
+        isAuthorized: true,
     },
     [AppRoutes.Article_details]: {
         path: `${RoutePath.article}:id`,
         element: <ArticleDetailsPage />,
+        isAuthorized: true,
+    },
+    [AppRoutes.Article_create]: {
+        path: RoutePath.article_create,
+        element: <ArticleEditPage />,
+        isAuthorized: true,
+    },
+    [AppRoutes.Article_edit]: {
+        path: RoutePath.article_edit,
+        element: <ArticleEditPage />,
+        isAuthorized: true,
     },
     [AppRoutes.NotFound]: {
         path: RoutePath.not_found,

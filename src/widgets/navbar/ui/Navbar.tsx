@@ -3,9 +3,10 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
+import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
-import { Button } from 'shared/ui';
-import { AppButtonTheme } from 'shared/ui/types';
+import { AppLink, Button, Text } from 'shared/ui';
+import { AppButtonTheme, AppLinkTheme, TextTheme } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
 import classes from './Navbar.module.scss';
 
@@ -34,6 +35,18 @@ export const Navbar = memo(({ className }: IProps) => {
     if (userAuthData) {
         return (
             <header className={classNames(classes.root, {}, [className])}>
+                <Text
+                    className={classes.appTitle}
+                    title={enGB.ARTICLES_APP}
+                    theme={TextTheme.Inverted}
+                />
+                <AppLink
+                    className={classes.createLink}
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.Secondary}
+                >
+                    {t(enGB.CREATE_ARTICLE)}
+                </AppLink>
                 <Button
                     className={classes.links}
                     theme={AppButtonTheme.Background_inverted}

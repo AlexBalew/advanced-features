@@ -21,6 +21,7 @@ export const enum AppButtonSize {
 
 export const enum TextTheme {
     Primary = 'primary',
+    Inverted = 'inverted',
     Error = 'error',
 }
 

@@ -4,3 +4,4 @@ export { getArticleRecommendationsError } from './recommendations/getArticleReco
 export {
     getArticleRecommendationsIsLoading,
 } from './recommendations/getArticleRecommendationsIsLoading';
+export { getCanEditArticle } from './article/article';

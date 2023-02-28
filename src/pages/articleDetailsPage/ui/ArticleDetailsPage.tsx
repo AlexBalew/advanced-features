@@ -31,6 +31,7 @@ import {
     addCommentForArticle,
 } from '../model/services';
 import classes from './ArticleDetailsPage.module.scss';
+import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDeatilsPageReducer,
@@ -40,7 +41,6 @@ const ArticleDetailsPage = () => {
     const { t } = useTranslation('articles');
     const { id } = useParams<{ id: string }>();
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
     const comments = useSelector(getArticleComments.selectAll);
     const recommendations = useSelector(getArticleRecommendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
@@ -55,10 +55,6 @@ const ArticleDetailsPage = () => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    const onbackToArticleList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     if (!id) {
         return (
             <Page>
@@ -70,9 +66,7 @@ const ArticleDetailsPage = () => {
     return (
         <DynamicComponentLoader reducers={reducers}>
             <Page className={classNames(classes.root, {}, [])}>
-                <Button onClick={onbackToArticleList}>
-                    {t(enGB.BACK)}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}

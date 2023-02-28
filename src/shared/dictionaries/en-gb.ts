@@ -64,4 +64,8 @@ export const enGB = {
     MOVIES: 'Movies',
     NO_ARTICLES: 'No articles found',
     RECOMMENDATIONS: 'Recommendations',
+    EDIT_PAGE: 'Edit page',
+    CREATE_PAGE: 'Create page',
+    ARTICLES_APP: 'Articles app',
+    CREATE_ARTICLE: 'Create article',
 };

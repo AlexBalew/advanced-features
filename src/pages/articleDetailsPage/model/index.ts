@@ -9,3 +9,4 @@ export {
 export { IArticleDetailsRecommendationsSchema } from './types/ArticleDetailsRecommendationsSchema';
 export { IArticleDetailsPageSchema } from './types';
 export { articleDeatilsPageReducer } from './slices/index';
+export { getCanEditArticle } from './selectors';
