@@ -2,17 +2,15 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers';
 import { articleDetailsReducer } from 'entities/Article/model/slice/artcileDetailsSlice';
 import { profileReducer } from 'entities/Profile';
-import { addCommentReducer } from 'features/AddNewComment/model/slice/addCommentSlice';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
-import { articleDetailsCommentsReducer } from 'pages/articleDetailsPage/model';
+import { articleDeatilsPageReducer } from 'pages/articleDetailsPage/model';
 import { ReducersList } from 'shared/utils';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
-    addComment: addCommentReducer,
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDeatilsPageReducer,
 };
 
 export const StoreDecorator = (

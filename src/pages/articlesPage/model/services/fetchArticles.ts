@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers';
-import { ArticleType, IArticle } from 'entities/Article/model/types/article';
+import { ArticleType, IArticle } from 'entities/Article';
 import { addQueryParams } from 'shared/utils';
 import {
     getArticleListLimit,

@@ -1,8 +1,7 @@
 import { StateSchema } from 'app/providers';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ArticleType } from 'entities/Article';
-import { IArticle } from 'entities/Article/model/types/article';
+import { ArticleType, IArticle } from 'entities/Article';
 import { fetchArticles } from '../fetchArticles';
 import { getArticleListLimit } from '../../selectors';
 

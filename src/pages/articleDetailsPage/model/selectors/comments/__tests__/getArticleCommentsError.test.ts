@@ -4,12 +4,14 @@ import { getArticleCommentsError } from '../getArticleCommentsError';
 describe('getArticleCommentsError test', () => {
     test('getArticleCommentsError return correct data', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComments: {
-                error: 'error',
+            articleDetailsPage: {
+                comments: {
+                    error: 'error',
+                },
             },
         };
         expect(getArticleCommentsError(state as StateSchema))
-            .toEqual(state.articleDetailsComments?.error);
+            .toEqual(state.articleDetailsPage?.comments?.error);
     });
 
     test('getArticleCommentsError return undefined if there is no data in state', () => {

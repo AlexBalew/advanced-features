@@ -1,6 +1,5 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
 import {
@@ -9,6 +8,7 @@ import {
     Card,
     Avatar,
     Button,
+    AppLink,
 } from 'shared/ui';
 import { classNames } from 'shared/utils';
 import {
@@ -23,20 +23,17 @@ interface IProps {
     className?: string;
     article: IArticle;
     view: ArticleListView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo(({
     className,
     article,
     view,
+    target,
 }: IProps) => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
     // const [isHovered, hoverActions] = useHover();
-
-    const onOpenArticle = useCallback(() => {
-        navigate(`${RoutePath.article}${article.id}`);
-    }, [article.id, navigate]);
 
     const types = <Text text={article.type.join(', ')} className={classes.types} />;
     const views = (
@@ -66,9 +63,14 @@ export const ArticleListItem = memo(({
                         <ArticleTextBlock block={textBlock} className={classes.textBlock} />
                     )}
                     <div className={classes.footer}>
-                        <Button onClick={onOpenArticle}>
-                            {`${t(enGB.READ_MORE)}...`}
-                        </Button>
+                        <AppLink
+                            to={`${RoutePath.article}${article.id}`}
+                            target={target}
+                        >
+                            <Button>
+                                {`${t(enGB.READ_MORE)}...`}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -81,17 +83,19 @@ export const ArticleListItem = memo(({
             // {...hoverActions} js hover implementation
             className={classNames(classes.root, {}, [className, classes[view]])}
         >
-            <Card onClick={onOpenArticle}>
-                <Text className={classes.date} text={article.createdAt} />
-                <div className={classes.imageWrapper}>
-                    <img className={classes.img} src={article.img} alt={article.title} />
-                </div>
-                <div className={classes.infoWrapper}>
-                    {types}
-                    {views}
-                </div>
-                <Text text={article.title} className={classes.title} />
-            </Card>
+            <AppLink to={`${RoutePath.article}${article.id}`} target={target}>
+                <Card>
+                    <Text className={classes.date} text={article.createdAt} />
+                    <div className={classes.imageWrapper}>
+                        <img className={classes.img} src={article.img} alt={article.title} />
+                    </div>
+                    <div className={classes.infoWrapper}>
+                        {types}
+                        {views}
+                    </div>
+                    <Text text={article.title} className={classes.title} />
+                </Card>
+            </AppLink>
         </div>
     );
 });

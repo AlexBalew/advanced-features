@@ -3,7 +3,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { getUserAuthData, IUser } from 'entities/User';
 import { getArticleDetails } from 'entities/Article/model';
-import { IArticle } from 'entities/Article/model/types/article';
+import { IArticle } from 'entities/Article';
 import { enGB } from 'shared/dictionaries';
 import { addCommentForArticle } from '../addCommentForArticle';
 

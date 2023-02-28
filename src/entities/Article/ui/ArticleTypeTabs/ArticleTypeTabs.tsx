@@ -12,7 +12,7 @@ interface IProps {
 }
 
 export const ArticleTypeTabs = memo(({ value, className, onChangeType }: IProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('articles');
 
     const tabs = useMemo<ITab[]>(() => [
         {

@@ -63,4 +63,5 @@ export const enGB = {
     NEWS: 'News',
     MOVIES: 'Movies',
     NO_ARTICLES: 'No articles found',
+    RECOMMENDATIONS: 'Recommendations',
 };

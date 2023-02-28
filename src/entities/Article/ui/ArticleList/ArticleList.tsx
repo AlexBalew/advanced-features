@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from 'shared/utils';
 import { Text, TextSize } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
@@ -13,6 +13,7 @@ interface IProps {
     articles: IArticle[];
     isLoading?: boolean;
     view?: ArticleListView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleListView) => new Array(view === ArticleListView.Tiles ? 12 : 3)
@@ -30,6 +31,7 @@ export const ArticleList = memo((
         className,
         articles,
         isLoading,
+        target,
         view = ArticleListView.List,
     }: IProps,
 ) => {
@@ -41,6 +43,7 @@ export const ArticleList = memo((
             view={view}
             key={article.id}
             className={classes.card}
+            target={target}
             article={article}
         />
     );

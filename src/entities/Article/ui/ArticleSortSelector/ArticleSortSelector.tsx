@@ -1,11 +1,11 @@
-import { ArticleListView, ArticleSortField } from 'entities/Article/model';
-import { memo, useCallback, useMemo } from 'react';
+import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
 import { SortType } from 'shared/types';
 import { Select } from 'shared/ui';
 import { SelectOption } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
+import { ArticleSortField } from '../../model';
 import classes from './ArticleSortSelector.module.scss';
 
 interface IProps {
