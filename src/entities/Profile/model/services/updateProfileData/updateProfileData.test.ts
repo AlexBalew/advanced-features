@@ -7,10 +7,16 @@ import { Currency } from 'entities/Currency';
 import { updateProfileData } from './updateProfileData';
 import { getProfileFormData } from '../../selectors';
 
-jest.mock('axios');
-jest.mock('../../selectors');
+jest.mock('axios', () => ({
+    put: jest.fn(),
+    create: jest.fn(() => ({
+        interceptors: {
+            request: { use: jest.fn() },
+        },
+    })),
+}));
 
-const mockedAxios = jest.mocked(axios, true);
+jest.mock('../../selectors');
 
 const mockState: StateSchema = {
     scrollSaver: {
@@ -48,14 +54,14 @@ describe('updateProfileData test', () => {
             firstname: 'John',
             lastname: 'D',
         });
-        mockedAxios.put.mockReturnValue(Promise.resolve({
+        (axios.put as jest.Mock).mockReturnValue(Promise.resolve({
             data: mockState.profile?.form,
         }));
         const action = updateProfileData();
         const result = await action(dispatch, getState, {
-            api: mockedAxios,
+            api: axios,
         });
-        expect(mockedAxios.put).toHaveBeenCalled();
+        expect(axios.put).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(mockState.profile?.form);
     });
@@ -63,14 +69,14 @@ describe('updateProfileData test', () => {
     test(
         'updateProfileData should work correctly when there error code was returned by server',
         async () => {
-            mockedAxios.put.mockReturnValue(Promise.resolve({
+            (axios.put as jest.Mock).mockReturnValue(Promise.resolve({
                 status: 403,
             }));
             const action = updateProfileData();
             const result = await action(dispatch, getState, {
-                api: mockedAxios,
+                api: axios,
             });
-            expect(mockedAxios.put).toHaveBeenCalled();
+            expect(axios.put).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');
             expect(result.payload).toEqual([ValidationErrors.Server_Error]);
         },
@@ -86,7 +92,7 @@ describe('updateProfileData test', () => {
         (getProfileFormData as jest.Mock).mockReturnValue({});
         const action = updateProfileData();
         const result = await action(dispatch, getState, {
-            api: mockedAxios,
+            api: axios,
         });
         expect(result.meta.requestStatus).toBe('rejected');
         expect(result.payload).toEqual([

@@ -5,10 +5,16 @@ import { ArticleType, IArticle } from 'entities/Article';
 import { fetchArticles } from '../fetchArticles';
 import { getArticleListLimit } from '../../selectors';
 
-jest.mock('axios');
-jest.mock('../../selectors');
+jest.mock('axios', () => ({
+    get: jest.fn(),
+    create: jest.fn(() => ({
+        interceptors: {
+            request: { use: jest.fn() },
+        },
+    })),
+}));
 
-const mockedAxios = jest.mocked(axios, true);
+jest.mock('../../selectors');
 
 const dispatch: Dispatch = jest.fn();
 const getState: () => StateSchema = jest.fn();
@@ -29,14 +35,14 @@ const mockData: IArticle[] = [
 describe('fetchArticles test', () => {
     test('fetchArticles should work correctly id data from server was returned', async () => {
         (getArticleListLimit as jest.Mock).mockReturnValue(5);
-        mockedAxios.get.mockReturnValue(Promise.resolve({
+        (axios.get as jest.Mock).mockReturnValue(Promise.resolve({
             data: mockData,
         }));
         const action = fetchArticles({});
         const result = await action(dispatch, getState, {
-            api: mockedAxios,
+            api: axios,
         });
-        expect(mockedAxios.get).toHaveBeenCalled();
+        expect(axios.get).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(mockData);
     });
@@ -44,14 +50,14 @@ describe('fetchArticles test', () => {
     test(
         'fetchArticles should work correctly when there error code was returned by server',
         async () => {
-            mockedAxios.get.mockReturnValue(Promise.resolve({
+            (axios.get as jest.Mock).mockReturnValue(Promise.resolve({
                 status: 403,
             }));
             const action = fetchArticles({});
             const result = await action(dispatch, getState, {
-                api: mockedAxios,
+                api: axios,
             });
-            expect(mockedAxios.get).toHaveBeenCalled();
+            expect(axios.get).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');
             expect(dispatch).toHaveBeenCalledTimes(2);
             expect(result.payload).toBe('error');
