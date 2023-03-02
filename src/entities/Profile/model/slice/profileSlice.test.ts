@@ -1,6 +1,6 @@
-import { ValidationErrors } from 'entities/Profile/model/types/profile';
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
+import { ValidationErrors } from '../../model/types/profile';
 import { fetchProfileData, updateProfileData } from '../services';
 import { IProfileSchema, IProfile } from '../types/profile';
 import { profileActions, profileReducer } from './profileSlice';

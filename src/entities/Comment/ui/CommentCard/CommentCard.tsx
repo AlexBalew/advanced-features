@@ -1,4 +1,3 @@
-import { IComment } from 'entities/Comment/model/types';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config';
@@ -11,6 +10,7 @@ import {
     Text,
 } from 'shared/ui';
 import { classNames } from 'shared/utils';
+import { IComment } from '../../model/types';
 import classes from './CommentCard.module.scss';
 
 interface IProps {

@@ -2,14 +2,6 @@ import { ArticleListView } from 'entities/Article';
 import { ArticleSortField, ArticleType } from 'entities/Article/model';
 import { ArticleSortSelector, ArticleTypeTabs } from 'entities/Article/ui';
 import { ViewSwitcher } from 'features/ViewSwither';
-import {
-    getArticleListOrder,
-    getArticleListSearchValue,
-    getArticleListSortField,
-    getArticleListView,
-    getArticleType,
-} from 'pages/articlesPage/model/selectors';
-import { fetchArticles } from 'pages/articlesPage/model/services';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -17,6 +9,14 @@ import { enGB } from 'shared/dictionaries';
 import { SortType } from 'shared/types';
 import { Card, Input } from 'shared/ui';
 import { classNames, useAppDispatch, useDebounce } from 'shared/utils';
+import {
+    getArticleListOrder,
+    getArticleListSearchValue,
+    getArticleListSortField,
+    getArticleListView,
+    getArticleType,
+} from '../../model/selectors';
+import { fetchArticles } from '../../model/services';
 import { articlesPageActions } from '../../model/slice/articlePageSlice';
 import classes from './ArticlesPageFilter.module.scss';
 

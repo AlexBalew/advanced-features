@@ -1,7 +1,6 @@
-import { ValidationErrors } from 'entities/Profile/model/types/profile';
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
-import { IProfile } from '../../types/profile';
+import { IProfile, ValidationErrors } from '../../types/profile';
 import { validateProfileData } from './validateProfileData';
 
 const mockData: IProfile = {

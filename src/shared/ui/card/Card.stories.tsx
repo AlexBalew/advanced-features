@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'shared/types';
-import { Text } from 'shared/ui';
 import { ThemeDecorator } from 'shared/config/storybook';
 import { enGB } from 'shared/dictionaries';
+import { Text } from '../text';
 import { Card } from './Card';
 
 export default {

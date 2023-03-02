@@ -1,6 +1,5 @@
 import { Countries, CountrySelect } from 'entities/Counrty';
 import { Currency, CurrencySelect } from 'entities/Currency';
-import { IProfile } from 'entities/Profile';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
@@ -13,6 +12,7 @@ import {
 } from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
+import { IProfile } from '../../model/types/profile';
 import classes from './ProfileCard.module.scss';
 
 interface IProps {

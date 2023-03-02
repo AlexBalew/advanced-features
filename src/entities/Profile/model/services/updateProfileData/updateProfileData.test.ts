@@ -1,9 +1,9 @@
-import { ValidationErrors } from 'entities/Profile/model/types/profile';
 import { StateSchema } from 'app/providers';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
+import { ValidationErrors } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 import { getProfileFormData } from '../../selectors';
 

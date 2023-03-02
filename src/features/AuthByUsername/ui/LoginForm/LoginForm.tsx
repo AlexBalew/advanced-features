@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react';
-import { loginActions, loginByUserName } from 'features/AuthByUsername/model';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
 import { Button, Input, Text } from 'shared/ui';
@@ -10,6 +9,7 @@ import {
     useAppDispatch,
 } from 'shared/utils';
 import { TextTheme } from 'shared/ui/types';
+import { loginActions, loginByUserName } from '../../model';
 import { loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
 import {
