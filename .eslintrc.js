@@ -48,6 +48,7 @@ module.exports = {
             ['error', {
                 markupOnly: true,
                 ignoreAttribute: [
+                    'role',
                     'data-testid',
                     'to',
                     'type',

@@ -64,6 +64,13 @@ TextWuthErrorDark.args = {
 };
 TextOnlyDark.decorators = [ThemeDecorator(Theme.Dark)];
 
+export const PrimarySizeS = Template.bind({});
+PrimarySizeS.args = {
+    title: 'Title',
+    text: 'lorem ipsum',
+    size: TextSize.S,
+};
+
 export const PrimarySizeM = Template.bind({});
 PrimarySizeM.args = {
     title: 'Title',

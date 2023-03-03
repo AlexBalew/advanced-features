@@ -53,7 +53,7 @@ export const Page = memo(({ className, children, onEndScroll }: IProps) => {
     });
 
     return (
-        <section
+        <main
             ref={wrapperRef}
             className={classNames(classes.root, {}, [className])}
             onScroll={onScroll}
@@ -65,6 +65,6 @@ export const Page = memo(({ className, children, onEndScroll }: IProps) => {
                     ref={triggerRef}
                 />
             )}
-        </section>
+        </main>
     );
 });

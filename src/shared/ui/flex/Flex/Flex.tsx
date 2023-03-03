@@ -1,14 +1,16 @@
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames } from 'shared/utils';
 import { Mode } from 'shared/utils/classNames';
 import classes from './Flex.module.scss';
+
+type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 type FlexAlign = 'center' | 'start' | 'end';
 type FlexJustify = 'center' | 'start' | 'end' | 'between';
 type FlexDirection = 'row' | 'column';
 type FlexGap = '4' | '8' | '16' | '20' | '32';
 
-export interface FlexProps {
+export interface FlexProps extends DivProps {
     className?: string;
     children: ReactNode;
     align?: FlexAlign;

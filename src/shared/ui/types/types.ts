@@ -37,6 +37,7 @@ export interface SelectOption<T extends string> {
 }
 
 export const enum TextSize {
+    S = 'size_s',
     M = 'size_m',
     L = 'size_l',
     XL = 'size_xl',

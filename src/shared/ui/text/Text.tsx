@@ -13,6 +13,15 @@ interface IProps {
     size?: TextSize;
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3';
+
+const mapTextSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+    [TextSize.S]: 'h3',
+    [TextSize.M]: 'h2',
+    [TextSize.L]: 'h1',
+    [TextSize.XL]: 'h1',
+};
+
 export const Text = memo(({
     className,
     title,
@@ -26,9 +35,11 @@ export const Text = memo(({
         [classes[size]]: true,
     };
 
+    const HeaderTag = mapTextSizeToHeaderTag[size];
+
     return (
         <div className={classNames(classes.root, mods, [className, classes[theme]])}>
-            {title && <p className={classes.title}>{title}</p>}
+            {title && <HeaderTag className={classes.title}>{title}</HeaderTag>}
             {text && <p className={classes.text}>{text}</p>}
         </div>
     );
