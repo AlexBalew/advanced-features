@@ -68,4 +68,5 @@ export const enGB = {
     CREATE_PAGE: 'Create page',
     ARTICLES_APP: 'Articles app',
     CREATE_ARTICLE: 'Create article',
+    ELEMENT: 'Element',
 };

@@ -2,19 +2,3 @@
     padding: var(--common-padding);
     border: 2px solid var(--inverted-bg-color);
 }
-
-.input {
-    margin-top: 10px;
-}
-
-.loader,
-.error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.avatarWrapper {
-    display: flex;
-    justify-content: center;
-}

@@ -19,7 +19,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { enGB } from 'shared/dictionaries';
-import { Text } from 'shared/ui';
+import { Column, Text } from 'shared/ui';
 import { TextTheme } from 'shared/ui/types';
 import {
     classNames,
@@ -99,28 +99,30 @@ const ProfilePage = ({ className }: IProps) => {
     return (
         <DynamicComponentLoader reducers={reducers}>
             <Page className={classNames('', {}, [className])}>
-                <ProfilePageHeader />
-                {validationErrors?.length && validationErrors.map((error) => (
-                    <Text
-                        key={error}
-                        theme={TextTheme.Error}
-                        text={validationErrorDictionary[error]}
+                <Column gap="16" max>
+                    <ProfilePageHeader />
+                    {validationErrors?.length && validationErrors.map((error) => (
+                        <Text
+                            key={error}
+                            theme={TextTheme.Error}
+                            text={validationErrorDictionary[error]}
+                        />
+                    ))}
+                    <ProfileCard
+                        data={formData}
+                        error={error}
+                        isLoading={isLoading}
+                        readOnly={readOnly}
+                        onChangeFirstName={onChangeFirstName}
+                        onChangeLastName={onChangeLastName}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUserName={onChangeUserName}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
                     />
-                ))}
-                <ProfileCard
-                    data={formData}
-                    error={error}
-                    isLoading={isLoading}
-                    readOnly={readOnly}
-                    onChangeFirstName={onChangeFirstName}
-                    onChangeLastName={onChangeLastName}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeUserName={onChangeUserName}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                />
+                </Column>
             </Page>
         </DynamicComponentLoader>
 

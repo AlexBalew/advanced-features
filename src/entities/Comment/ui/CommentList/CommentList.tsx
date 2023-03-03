@@ -1,10 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/utils';
-import { Text } from 'shared/ui';
+import { Column, Text } from 'shared/ui';
 import { enGB } from 'shared/dictionaries';
 import { IComment } from '../../model/types';
-import classes from './CommentList.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
 
 interface IProps {
@@ -18,26 +17,25 @@ export const CommentList = memo(({ className, isLoading, comments }: IProps) => 
 
     if (isLoading) {
         return (
-            <div>
+            <Column gap="20" max>
                 <CommentCard isLoading />
                 <CommentCard isLoading />
                 <CommentCard isLoading />
-            </div>
+            </Column>
         );
     }
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
+        <Column gap="20" max className={classNames('', {}, [className])}>
             {comments?.length
                 ? comments.map((comment) => (
                     <CommentCard
                         key={comment.id}
-                        className={classes.comment}
                         comment={comment}
                         isLoading={isLoading}
                     />
                 ))
                 : <Text text={t(enGB.NO_COMMENTS)} />}
-        </div>
+        </Column>
     );
 });

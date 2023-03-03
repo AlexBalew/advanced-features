@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
-import { Button } from 'shared/ui';
+import { Button, Row } from 'shared/ui';
 import { classNames } from 'shared/utils';
 import { getCanEditArticle } from '../../model';
-import classes from './ArticleDetailsPageHeader.module.scss';
 
 interface IProps {
     className?: string;
@@ -29,18 +28,17 @@ export const ArticleDetailsPageHeader = memo(({ className }: IProps) => {
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
+        <Row max justify="between" className={classNames('', {}, [className])}>
             <Button onClick={onbackToArticleList}>
                 {t(enGB.BACK)}
             </Button>
             {canBeEdited && (
                 <Button
-                    className={classes.editBtn}
                     onClick={onEditArticle}
                 >
                     {t(enGB.EDIT)}
                 </Button>
             )}
-        </div>
+        </Row>
     );
 });

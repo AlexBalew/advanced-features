@@ -6,6 +6,8 @@ import { RadiusType } from 'shared/types';
 import {
     AppLink,
     Avatar,
+    Column,
+    Row,
     Skeleton,
     Text,
 } from 'shared/ui';
@@ -24,13 +26,17 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(classes.root, {}, [className, classes.loading])}>
-                <div className={classes.header}>
+            <Column
+                gap="4"
+                max
+                className={classNames(classes.root, {}, [className, classes.loading])}
+            >
+                <Row gap="8" className={classes.header}>
                     <Skeleton width={50} height={50} border={RadiusType.Circle} />
                     <Skeleton height={16} width={100} className={classes.userName} />
-                </div>
+                </Row>
                 <Skeleton className={classes.text} height={50} width="100%" />
-            </div>
+            </Column>
         );
     }
 
@@ -39,21 +45,23 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
     }
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
-            <AppLink to={`${RoutePath.profile}${comment?.user?.id}`} className={classes.header}>
-                {comment?.user?.avatar
-                    ? (
-                        <Avatar
-                            size={50}
-                            radius={RadiusType.Circle}
-                            src={comment?.user?.avatar}
-                            alt={t(enGB.AVATAR)}
-                        />
-                    )
-                    : null}
-                <Text className={classes.userName} text={comment?.user?.userName} />
+        <Column max gap="4" className={classNames(classes.root, {}, [className])}>
+            <AppLink to={`${RoutePath.profile}${comment?.user?.id}`}>
+                <Row>
+                    {comment?.user?.avatar
+                        ? (
+                            <Avatar
+                                size={50}
+                                radius={RadiusType.Circle}
+                                src={comment?.user?.avatar}
+                                alt={t(enGB.AVATAR)}
+                            />
+                        )
+                        : null}
+                    <Text className={classes.userName} text={comment?.user?.userName} />
+                </Row>
             </AppLink>
-            <Text className={classes.text} text={comment?.text} />
-        </div>
+            <Text text={comment?.text} />
+        </Column>
     );
 });

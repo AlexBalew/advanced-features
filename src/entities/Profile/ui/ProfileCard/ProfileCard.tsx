@@ -6,8 +6,10 @@ import { enGB } from 'shared/dictionaries';
 import { RadiusType } from 'shared/types';
 import {
     Avatar,
+    Column,
     Input,
     Loader,
+    Row,
     Text,
 } from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/types';
@@ -53,93 +55,99 @@ export const ProfileCard = memo(({
 
     if (isLoading) {
         return (
-            <div className={classNames(classes.root, mods, [className, classes.loader])}>
+            <Row
+                max
+                justify="center"
+                className={classNames(classes.root, mods, [className])}
+            >
                 <Loader />
-            </div>
+            </Row>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(classes.root, mods, [className, classes.error])}>
+            <Row
+                max
+                justify="center"
+                className={classNames(classes.root, mods, [className])}
+            >
                 <Text
                     theme={TextTheme.Error}
                     title={t(enGB.COMMON_ERROR_TITLE)}
                     text={t(enGB.COMMON_ERROR_DESCR)}
                     align={TextAlign.Center}
                 />
-            </div>
+            </Row>
         );
     }
 
     return (
-        <div className={classNames(classes.root, mods, [className])}>
-            <div className={classes.data}>
-                {data?.avatar
-                    && (
-                        <div className={classes.avatarWrapper}>
-                            <Avatar
-                                src={data?.avatar}
-                                alt={t(enGB.AVATAR)}
-                                radius={RadiusType.Circle}
-                            />
-                        </div>
-                    )}
-                <Input
-                    value={data?.firstname}
-                    placeholder={t(enGB.YOUR_NAME)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeFirstName}
-                />
-                <Input
-                    value={data?.lastname}
-                    placeholder={t(enGB.YOUR_LAST_NAME)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeLastName}
-                />
-                <Input
-                    type="number"
-                    pattern="[0-9]{0,5}"
-                    value={data?.age}
-                    placeholder={t(enGB.YOUR_AGE)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeAge}
-                />
-                <CountrySelect
-                    pickedOption={data?.country}
-                    onChange={onChangeCountry}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.city}
-                    placeholder={t(enGB.CITY)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeCity}
-                />
-                <CurrencySelect
-                    pickedOption={data?.currency}
-                    onChange={onChangeCurrency}
-                    readOnly={readOnly}
-                />
-                <Input
-                    value={data?.username}
-                    placeholder={t(enGB.USERNAME)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeUserName}
-                />
-                <Input
-                    value={data?.avatar}
-                    placeholder={t(enGB.INSERT_AVATAR_LINK)}
-                    className={classes.input}
-                    readOnly={readOnly}
-                    onChange={onChangeAvatar}
-                />
-            </div>
-        </div>
+        <Column gap="8" max className={classNames(classes.root, mods, [className])}>
+            {data?.avatar
+                && (
+                    <Row justify="center" max>
+                        <Avatar
+                            src={data?.avatar}
+                            alt={t(enGB.AVATAR)}
+                            radius={RadiusType.Circle}
+                        />
+                    </Row>
+                )}
+            <Input
+                value={data?.firstname}
+                placeholder={t(enGB.YOUR_NAME)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeFirstName}
+            />
+            <Input
+                value={data?.lastname}
+                placeholder={t(enGB.YOUR_LAST_NAME)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeLastName}
+            />
+            <Input
+                type="number"
+                pattern="[0-9]{0,5}"
+                value={data?.age}
+                placeholder={t(enGB.YOUR_AGE)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeAge}
+            />
+            <CountrySelect
+                pickedOption={data?.country}
+                onChange={onChangeCountry}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.city}
+                placeholder={t(enGB.CITY)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeCity}
+            />
+            <CurrencySelect
+                pickedOption={data?.currency}
+                onChange={onChangeCurrency}
+                readOnly={readOnly}
+            />
+            <Input
+                value={data?.username}
+                placeholder={t(enGB.USERNAME)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeUserName}
+            />
+            <Input
+                value={data?.avatar}
+                placeholder={t(enGB.INSERT_AVATAR_LINK)}
+                className={classes.input}
+                readOnly={readOnly}
+                onChange={onChangeAvatar}
+            />
+        </Column>
     );
 });

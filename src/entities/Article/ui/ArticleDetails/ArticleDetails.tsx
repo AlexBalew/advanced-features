@@ -7,6 +7,8 @@ import {
     Skeleton,
     Text,
     Icon,
+    Column,
+    Row,
 } from 'shared/ui';
 import { TextAlign, TextTheme } from 'shared/ui/types';
 import {
@@ -53,16 +55,16 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
                 <ArticleTextBlock
                     block={block}
                     key={block.id}
-                    className={classes.block}
                 />
             );
         case ArticleBlockType.Image:
             return (
-                <ArticleImageBlock
-                    block={block}
-                    key={block.id}
-                    className={classes.block}
-                />
+                <Row justify="center" max>
+                    <ArticleImageBlock
+                        block={block}
+                        key={block.id}
+                    />
+                </Row>
             );
         default: return null;
         }
@@ -72,13 +74,13 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
 
     if (isLoading) {
         content = (
-            <>
+            <Column gap="16" max>
                 <Skeleton className={classes.avatar} width={200} height={200} border="50%" />
                 <Skeleton className={classes.title} width={300} height={32} />
                 <Skeleton className={classes.skeleton} width={600} height={24} />
                 <Skeleton className={classes.skeleton} width="100%" height={200} />
                 <Skeleton className={classes.skeleton} width="100%" height={200} />
-            </>
+            </Column>
         );
     }
 
@@ -95,27 +97,29 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
     if (!error && !isLoading) {
         content = (
             <>
-                <div className={classes.avatarWrapper}>
+                <Row justify="center" max className={classes.avatarWrapper}>
                     <Avatar
                         size={300}
                         src={data?.img}
                         alt={enGB.AVATAR}
                         className={classes.avatar}
                     />
-                </div>
-                <Text
-                    className={classes.title}
-                    title={data?.title}
-                    text={data?.subtitle}
-                />
-                <div className={classes.articleInfo}>
-                    <Icon name="EyeOpen" size={20} className={classes.icon} />
-                    <Text text={String(data?.views)} />
-                </div>
-                <div className={classes.articleInfo}>
-                    <Icon name="Calendar" size={20} className={classes.icon} />
-                    <Text text={String(data?.createdAt)} />
-                </div>
+                </Row>
+                <Column gap="4">
+                    <Text
+                        className={classes.title}
+                        title={data?.title}
+                        text={data?.subtitle}
+                    />
+                    <Row gap="8">
+                        <Icon name="EyeOpen" size={20} className={classes.icon} />
+                        <Text text={String(data?.views)} />
+                    </Row>
+                    <Row gap="8">
+                        <Icon name="Calendar" size={20} className={classes.icon} />
+                        <Text text={String(data?.createdAt)} />
+                    </Row>
+                </Column>
                 {data?.blocks?.map(renderBlock)}
             </>
         );
@@ -123,11 +127,12 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <div
+            <Column
+                gap="16"
                 className={classNames(classes.root, {}, [className])}
             >
                 {content}
-            </div>
+            </Column>
         </DynamicComponentLoader>
     );
 });

@@ -5,10 +5,9 @@ import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
-import { Button, Text } from 'shared/ui';
+import { Button, Row, Text } from 'shared/ui';
 import { AppButtonTheme } from 'shared/ui/types';
 import { classNames, useAppDispatch } from 'shared/utils';
-import classes from './ProfilePageHeader.module.scss';
 
 interface IProps {
     className?: string;
@@ -36,41 +35,36 @@ const ProfilePageHeader = ({ className }: IProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
-            <div className={classes.header}>
-                <Text title={t(enGB.PROFILE)} />
-                {canEdit && (
-                    <div className={classes.btnWrapper}>
-                        {readOnly ? (
+        <Row justify="between" max className={classNames('', {}, [className])}>
+            <Text title={t(enGB.PROFILE)} />
+            {canEdit && (
+                <div>
+                    {readOnly ? (
+                        <Button
+                            theme={AppButtonTheme.Outline}
+                            onClick={onEdit}
+                        >
+                            {t(enGB.EDIT)}
+                        </Button>
+                    ) : (
+                        <Row gap="8">
                             <Button
-                                className={classes.editBtn}
-                                theme={AppButtonTheme.Outline}
-                                onClick={onEdit}
+                                theme={AppButtonTheme.Outline_Red}
+                                onClick={onCancel}
                             >
-                                {t(enGB.EDIT)}
+                                {t(enGB.CANCEL)}
                             </Button>
-                        ) : (
-                            <>
-                                <Button
-                                    className={classes.editBtn}
-                                    theme={AppButtonTheme.Outline_Red}
-                                    onClick={onCancel}
-                                >
-                                    {t(enGB.CANCEL)}
-                                </Button>
-                                <Button
-                                    className={classes.saveBtn}
-                                    theme={AppButtonTheme.Outline}
-                                    onClick={onSave}
-                                >
-                                    {t(enGB.SAVE)}
-                                </Button>
-                            </>
-                        )}
-                    </div>
-                )}
-            </div>
-        </div>
+                            <Button
+                                theme={AppButtonTheme.Outline}
+                                onClick={onSave}
+                            >
+                                {t(enGB.SAVE)}
+                            </Button>
+                        </Row>
+                    )}
+                </div>
+            )}
+        </Row>
     );
 };
 

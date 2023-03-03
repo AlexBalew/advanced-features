@@ -2,7 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
-import { Button, Input } from 'shared/ui';
+import { Button, Input, Row } from 'shared/ui';
 import {
     classNames,
     DynamicComponentLoader,
@@ -39,9 +39,13 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <div className={classNames(classes.root, {}, [className])}>
+            <Row
+                gap="8"
+                max
+                justify="between"
+                className={classNames(classes.root, {}, [className])}
+            >
                 <Input
-                    className={classes.input}
                     placeholder={t(enGB.ADD_YOUR_COMMENT)}
                     value={text}
                     onChange={onChange}
@@ -49,7 +53,7 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
                 <Button onClick={onSendHandler}>
                     {t(enGB.SEND)}
                 </Button>
-            </div>
+            </Row>
         </DynamicComponentLoader>
     );
 };

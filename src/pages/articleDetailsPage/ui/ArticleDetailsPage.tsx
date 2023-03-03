@@ -1,6 +1,6 @@
 import { ArticleDetails, ArticleList, ArticleListView } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { enGB } from 'shared/dictionaries';
 import {
     classNames,
@@ -9,12 +9,11 @@ import {
     useAppDispatch,
     useInitialEffect,
 } from 'shared/utils';
-import { Button, Text, TextSize } from 'shared/ui';
+import { Column, Text, TextSize } from 'shared/ui';
 import { CommentList } from 'entities/Comment';
 import { useSelector } from 'react-redux';
 import { AddCommentForm } from 'features/AddNewComment';
 import { useCallback } from 'react';
-import { RoutePath } from 'shared/config';
 import { Page } from 'widgets';
 import {
     articleDeatilsPageReducer,
@@ -66,30 +65,32 @@ const ArticleDetailsPage = () => {
     return (
         <DynamicComponentLoader reducers={reducers}>
             <Page className={classNames(classes.root, {}, [])}>
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text
-                    size={TextSize.L}
-                    className={classes.commentTitle}
-                    title={t(enGB.RECOMMENDATIONS)}
-                />
-                <ArticleList
-                    className={classes.recommendations}
-                    articles={recommendations}
-                    view={ArticleListView.Tiles}
-                    target="_blank"
-                    isLoading={recommendationsIsLoading}
-                />
-                <Text
-                    size={TextSize.L}
-                    className={classes.commentTitle}
-                    title={t(enGB.COMMENTS)}
-                />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                <Column gap="16" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
+                        size={TextSize.L}
+                        className={classes.commentTitle}
+                        title={t(enGB.RECOMMENDATIONS)}
+                    />
+                    <ArticleList
+                        className={classes.recommendations}
+                        articles={recommendations}
+                        view={ArticleListView.Tiles}
+                        target="_blank"
+                        isLoading={recommendationsIsLoading}
+                    />
+                    <Text
+                        size={TextSize.L}
+                        className={classes.commentTitle}
+                        title={t(enGB.COMMENTS)}
+                    />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentList
+                        isLoading={commentsIsLoading}
+                        comments={comments}
+                    />
+                </Column>
             </Page>
         </DynamicComponentLoader>
     );

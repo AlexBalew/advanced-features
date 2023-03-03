@@ -12,3 +12,4 @@ export * from './skeleton';
 export * from './card';
 export * from './tabs';
 export * from './types';
+export * from './flex';

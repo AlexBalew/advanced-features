@@ -5,6 +5,7 @@ import { ThemeSwitcher } from 'widgets/theme-switcher';
 import { Button } from 'shared/ui/button';
 import { AppButtonSize, AppButtonTheme } from 'shared/ui/types';
 import { useSelector } from 'react-redux';
+import { Column } from 'shared/ui';
 import { SidebarItem } from '../sidebar-item/SidebarItem';
 import classes from './Sidebar.module.scss';
 import { getSidebarItemsData } from '../../model';
@@ -46,9 +47,9 @@ export const Sidebar = memo(({ className }: IProps) => {
                 {collapsed ? '>' : '<'}
 
             </Button>
-            <div className={classes.links}>
+            <Column gap="8" className={classes.links}>
                 {linkItems}
-            </div>
+            </Column>
             <div className={classes.switchers}>
                 <ThemeSwitcher className={classes.theme} />
                 <LangSwitcher shortened={collapsed} />
