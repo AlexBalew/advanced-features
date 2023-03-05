@@ -1,4 +1,5 @@
 export const enum Currency {
     USD = 'USD',
-    EUR = 'EUR'
+    EUR = 'EUR',
+    CAD = 'CAD',
 }

@@ -1,0 +1,39 @@
+.root {
+    position: relative;
+}
+
+.btn {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+.options {
+    background: var(--app-select-bg-color);
+    position: absolute;
+    z-index: 11998;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px var(--app-select-bg-color);
+}
+
+.optionItem {
+    padding: 10px 20px;
+}
+
+.active {
+    background: var(--inverted-primary-color);
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.label {
+    margin-right: 10px;
+}
+
+.topDirection {
+    bottom: 100%;
+}

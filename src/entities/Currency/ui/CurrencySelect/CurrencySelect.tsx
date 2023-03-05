@@ -1,9 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
-import { Select } from 'shared/ui';
-import { SelectOption } from 'shared/ui/types';
-import { classNames } from 'shared/utils';
+import { AppSelect, IAppSelectOption } from 'shared/ui';
 import { Currency } from '../../model/types/currency';
 
 interface IProps {
@@ -13,9 +11,10 @@ interface IProps {
     readOnly?: boolean;
 }
 
-const currencyOptions: SelectOption<Currency>[] = [
+const currencyOptions: IAppSelectOption<Currency>[] = [
     { label: Currency.EUR, value: Currency.EUR },
     { label: Currency.USD, value: Currency.USD },
+    { label: Currency.CAD, value: Currency.CAD, disabled: true },
 ];
 
 export const CurrencySelect = memo(({
@@ -31,13 +30,13 @@ export const CurrencySelect = memo(({
     }, [onChange]);
 
     return (
-        <Select
-            className={classNames('', {}, [className])}
-            label={t(enGB.CURRENCY)}
-            options={currencyOptions}
-            pickedOption={pickedOption}
-            onChange={onChangeHandler}
+        <AppSelect
+            direction="top"
             readOnly={readOnly}
+            selectLabel={t(enGB.CURRENCY)}
+            pickedLabel={pickedOption}
+            options={currencyOptions}
+            onChange={onChangeHandler}
         />
     );
 });

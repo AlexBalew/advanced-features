@@ -1,8 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
-import { Select } from 'shared/ui';
-import { SelectOption } from 'shared/ui/types';
+import { AppSelect, IAppSelectOption } from 'shared/ui';
 import { classNames } from 'shared/utils';
 import { Countries } from '../../model/types/country';
 
@@ -13,9 +12,9 @@ interface IProps {
     readOnly?: boolean;
 }
 
-const countryOptions: SelectOption<Countries>[] = [
+const countryOptions: IAppSelectOption<Countries>[] = [
     { label: Countries.CANADA, value: Countries.CANADA },
-    { label: Countries.SPAIN, value: Countries.SPAIN },
+    { label: Countries.SPAIN, value: Countries.SPAIN, disabled: true },
     { label: Countries.USA, value: Countries.USA },
 ];
 
@@ -32,11 +31,12 @@ export const CountrySelect = memo(({
     }, [onChange]);
 
     return (
-        <Select
+        <AppSelect
+            direction="top"
             className={classNames('', {}, [className])}
-            label={t(enGB.COUNTRY)}
+            selectLabel={t(enGB.COUNTRY)}
             options={countryOptions}
-            pickedOption={pickedOption}
+            pickedLabel={pickedOption}
             onChange={onChangeHandler}
             readOnly={readOnly}
         />

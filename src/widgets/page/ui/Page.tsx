@@ -1,6 +1,8 @@
 import { StateSchema } from 'app/providers';
-import { getScrollPositionByPath } from 'features/ScrollSaver';
-import { scrollSaverSliceActions } from 'features/ScrollSaver/model/slice/scrollSaverSlice';
+import {
+    getScrollPositionByPath,
+    scrollSaverSliceActions,
+} from 'features/ScrollSaver';
 import {
     memo,
     MutableRefObject,

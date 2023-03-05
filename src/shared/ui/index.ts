@@ -13,3 +13,4 @@ export * from './card';
 export * from './tabs';
 export * from './types';
 export * from './flex';
+export * from './app-select';
