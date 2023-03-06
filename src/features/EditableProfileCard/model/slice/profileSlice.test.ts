@@ -1,8 +1,8 @@
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
-import { ValidationErrors } from '../../model/types/profile';
+import { IProfile, ValidationErrors } from 'entities/Profile';
 import { fetchProfileData, updateProfileData } from '../services';
-import { IProfileSchema, IProfile } from '../types/profile';
+import { IProfileSchema } from '../types/EditableProfileCardSchema';
 import { profileActions, profileReducer } from './profileSlice';
 
 const mockState: IProfileSchema = {

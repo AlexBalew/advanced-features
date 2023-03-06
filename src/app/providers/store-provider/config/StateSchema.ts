@@ -1,3 +1,4 @@
+import { rtkApi } from 'shared/api';
 import {
     EnhancedStore,
     ReducersMapObject,
@@ -7,17 +8,18 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { IArticleDetailsSchema } from 'entities/Article';
-import { IProfileSchema } from 'entities/Profile';
 import { IUserSchema } from 'entities/User';
 import { addCommentFormSchema } from 'features/AddNewComment';
 import { ILoginSchema } from 'features/AuthByUsername';
 import { IScrollSaverSchema } from 'features/ScrollSaver';
 import { IArticleDetailsPageSchema } from 'pages/articleDetailsPage/model/types';
 import { ArticlesPageSchema } from 'pages/articlesPage/model';
+import { IProfileSchema } from 'features/EditableProfileCard';
 
 export interface StateSchema {
     user: IUserSchema;
     scrollSaver: IScrollSaverSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
 
     // async reducers
     loginForm?: ILoginSchema;

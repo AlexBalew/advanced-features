@@ -5,6 +5,7 @@ import { getUserAuthData, IUser } from 'entities/User';
 import { getArticleDetails } from 'entities/Article/model';
 import { IArticle } from 'entities/Article';
 import { enGB } from 'shared/dictionaries';
+import { ConfigState } from '@reduxjs/toolkit/dist/query/core/apiState';
 import { addCommentForArticle } from '../addCommentForArticle';
 
 jest.mock('axios');
@@ -17,6 +18,13 @@ const mockedAxios = jest.mocked(axios, true);
 const mockState: StateSchema = {
     scrollSaver: {
         scroll: {},
+    },
+    rtkApi: {
+        config: {} as ConfigState<'rtkApi'>,
+        mutations: {},
+        provided: {},
+        queries: {},
+        subscriptions: {},
     },
     user: {},
     addComment: {

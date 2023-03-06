@@ -1,5 +1,5 @@
 import { Menu } from '@headlessui/react';
-import { Fragment, ReactNode } from 'react';
+import { Fragment, Key, ReactNode } from 'react';
 import { classNames } from 'shared/utils';
 import { AppLink } from '../app-link';
 import { DropdownDirection } from '../types';
@@ -54,14 +54,23 @@ export function Dropdown({
 
                     if (item.href) {
                         return (
-                            <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+                            <Menu.Item
+                                key={item.content as Key}
+                                as={AppLink}
+                                to={item.href}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );
                     }
 
                     return (
-                        <Menu.Item as={Fragment} disabled={item.disabled}>
+                        <Menu.Item
+                            key={item.content as Key}
+                            as={Fragment}
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     );

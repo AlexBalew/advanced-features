@@ -1,8 +1,7 @@
 import { StateSchema } from 'app/providers';
 import { Countries } from 'entities/Counrty';
 import { Currency } from 'entities/Currency';
-import { ValidationErrors } from '../../types/profile';
-import { getProfileReadOnly } from '../getProfileReadOnly';
+import { ValidationErrors } from 'entities/Profile';
 import { getProfileValidationErrors } from '../getProfileValidationErrors';
 
 describe('getProfileValidationErrors test', () => {

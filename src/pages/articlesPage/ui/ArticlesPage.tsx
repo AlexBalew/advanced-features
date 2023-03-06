@@ -1,6 +1,4 @@
-import { ArticleList } from 'entities/Article';
 import { useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import {
     classNames,
@@ -10,13 +8,10 @@ import {
     useInitialEffect,
 } from 'shared/utils';
 import { Page } from 'widgets';
-import { getArticleListIsLoading, getArticleListView } from '../model/selectors';
 import { fetchNextArticlesPage, initArticlesPage } from '../model/services';
-import {
-    articlesPageReducer,
-    getArticles,
-} from '../model/slice/articlePageSlice';
+import { articlesPageReducer } from '../model/slice/articlePageSlice';
 import { ArticlesPageFilter } from './ArtcilesPageFilter/ArticlesPageFilter';
+import { ArticleInfiniteList } from './ArticleInfiniteList';
 import classes from './ArticlesPage.module.scss';
 
 const reducers: ReducersList = {
@@ -25,9 +20,6 @@ const reducers: ReducersList = {
 
 const ArticlesPage = () => {
     const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticleListIsLoading);
-    const view = useSelector(getArticleListView);
     const [searchParams] = useSearchParams();
 
     const onLoadNextDataPart = useCallback(() => {
@@ -45,12 +37,7 @@ const ArticlesPage = () => {
                 onEndScroll={onLoadNextDataPart}
             >
                 <ArticlesPageFilter />
-                <ArticleList
-                    className={classes.list}
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                />
+                <ArticleInfiniteList className={classes.list} />
             </Page>
         </DynamicComponentLoader>
     );

@@ -1,5 +1,3 @@
-import { profileActions, updateProfileData } from 'entities/Profile';
-import { getProfileData, getProfileReadOnly } from 'entities/Profile/model/selectors';
 import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -8,12 +6,18 @@ import { enGB } from 'shared/dictionaries';
 import { Button, Row, Text } from 'shared/ui';
 import { AppButtonTheme } from 'shared/ui/types';
 import { classNames, useAppDispatch } from 'shared/utils';
+import {
+    getProfileData,
+    getProfileReadOnly,
+    profileActions,
+    updateProfileData,
+} from '../../../model';
 
 interface IProps {
     className?: string;
 }
 
-const ProfilePageHeader = ({ className }: IProps) => {
+export const ProfilePageHeader = ({ className }: IProps) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
 
@@ -67,5 +71,3 @@ const ProfilePageHeader = ({ className }: IProps) => {
         </Row>
     );
 };
-
-export default ProfilePageHeader;
