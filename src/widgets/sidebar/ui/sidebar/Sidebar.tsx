@@ -7,8 +7,8 @@ import { AppButtonSize, AppButtonTheme } from 'shared/ui/types';
 import { useSelector } from 'react-redux';
 import { Column } from 'shared/ui';
 import { SidebarItem } from '../sidebar-item/SidebarItem';
-import classes from './Sidebar.module.scss';
 import { getSidebarItemsData } from '../../model';
+import classes from './Sidebar.module.scss';
 
 interface IProps {
     className?: string;
@@ -47,7 +47,7 @@ export const Sidebar = memo(({ className }: IProps) => {
                 {collapsed ? '>' : '<'}
 
             </Button>
-            <Column role="navigation" gap="8" className={classes.links}>
+            <Column role="navigation" gap="16" className={classes.links}>
                 {linkItems}
             </Column>
             <div className={classes.switchers}>

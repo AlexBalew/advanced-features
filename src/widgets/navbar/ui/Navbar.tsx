@@ -5,7 +5,14 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
-import { AppLink, Button, Text } from 'shared/ui';
+import { RadiusType } from 'shared/types';
+import {
+    AppLink,
+    Avatar,
+    Button,
+    Text,
+} from 'shared/ui';
+import { Dropdown } from 'shared/ui/dropdown/Dropdown';
 import { AppButtonTheme, AppLinkTheme, TextTheme } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
 import classes from './Navbar.module.scss';
@@ -47,13 +54,28 @@ export const Navbar = memo(({ className }: IProps) => {
                 >
                     {t(enGB.CREATE_ARTICLE)}
                 </AppLink>
-                <Button
-                    className={classes.links}
-                    theme={AppButtonTheme.Background_inverted}
-                    onClick={onLogout}
-                >
-                    {t(enGB.LOGOUT)}
-                </Button>
+                <Dropdown
+                    direction="bottom right"
+                    className={classes.dropdown}
+                    items={[
+                        {
+                            content: t(enGB.LOGOUT),
+                            onClick: onLogout,
+                        },
+                        {
+                            content: t(enGB.PROFILE),
+                            href: RoutePath.profile + userAuthData.id,
+                        },
+                    ]}
+                    trigger={(
+                        <Avatar
+                            radius={RadiusType.Circle}
+                            size={30}
+                            alt={enGB.AVATAR}
+                            src={userAuthData.avatar}
+                        />
+                    )}
+                />
             </header>
         );
     }

@@ -1,11 +1,10 @@
-import { Fragment, useState } from 'react';
+import { Fragment } from 'react';
 import { classNames } from 'shared/utils';
 import { Listbox } from '@headlessui/react';
-import { Mode } from 'shared/utils/classNames';
 import { Button } from '../button';
+import { Row } from '../flex';
+import { DropdownDirection } from '../types';
 import classes from './AppSelect.module.scss';
-
-type DropDownDirection = 'top' | 'bottom';
 
 export interface IAppSelectOption<T extends string> {
     label: string;
@@ -21,12 +20,14 @@ interface IProps<T extends string> {
     defaultLabel?: string;
     readOnly?: boolean;
     onChange: (pickedLabel: T) => void;
-    direction: DropDownDirection;
+    direction: DropdownDirection;
 }
 
-const mapDirectionToClass: Record<DropDownDirection, string> = {
-    bottom: classes.bottomDirection,
-    top: classes.topDirection,
+const mapDirectionToClass: Record<DropdownDirection, string> = {
+    'bottom left': classes.bottomLeft,
+    'bottom right': classes.bottomRight,
+    'top left': classes.topLeft,
+    'top right': classes.topRight,
 };
 
 export const AppSelect = <T extends string>({
@@ -35,16 +36,22 @@ export const AppSelect = <T extends string>({
     selectLabel,
     defaultLabel,
     readOnly,
-    direction = 'bottom',
+    direction = 'bottom right',
     pickedLabel,
     onChange,
 }: IProps<T>) => {
     const optionClasses = [mapDirectionToClass[direction]];
 
     return (
-        <div className={classNames(classes.root, {}, [className])}>
+        <Row gap="4">
             {selectLabel && <span className={classes.label}>{selectLabel}</span>}
-            <Listbox disabled={readOnly} value={pickedLabel} onChange={onChange}>
+            <Listbox
+                as="div"
+                className={classNames(classes.root, {}, [className])}
+                disabled={readOnly}
+                value={pickedLabel}
+                onChange={onChange}
+            >
                 <Listbox.Button disabled={readOnly} className={classes.btn}>
                     <Button>
                         {pickedLabel ?? defaultLabel}
@@ -77,7 +84,7 @@ export const AppSelect = <T extends string>({
                     ))}
                 </Listbox.Options>
             </Listbox>
-        </div>
+        </Row>
     );
 };
 

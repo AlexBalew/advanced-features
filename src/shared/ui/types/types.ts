@@ -47,3 +47,5 @@ export const enum CardTheme {
     Common = 'common',
     Outline = 'outline',
 }
+
+export type DropdownDirection = 'top left' | 'top right' | 'bottom left' | 'bottom right';

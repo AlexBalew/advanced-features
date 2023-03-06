@@ -31,9 +31,26 @@
 }
 
 .label {
+    bottom: 0;
     margin-right: 10px;
 }
 
-.topDirection {
+.bottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.bottomRight {
+    top: 100%;
+    right: 0;
+}
+
+.topLeft {
     bottom: 100%;
+    left: 0;
+}
+
+.topRight {
+    bottom: 100%;
+    right: 0;
 }

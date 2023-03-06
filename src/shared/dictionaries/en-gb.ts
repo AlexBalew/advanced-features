@@ -69,4 +69,5 @@ export const enGB = {
     ARTICLES_APP: 'Articles app',
     CREATE_ARTICLE: 'Create article',
     ELEMENT: 'Element',
+    OPEN: 'Open',
 };

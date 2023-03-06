@@ -32,7 +32,7 @@ export const CountrySelect = memo(({
 
     return (
         <AppSelect
-            direction="top"
+            direction="top right"
             className={classNames('', {}, [className])}
             selectLabel={t(enGB.COUNTRY)}
             options={countryOptions}

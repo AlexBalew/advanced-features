@@ -31,7 +31,7 @@ export const CurrencySelect = memo(({
 
     return (
         <AppSelect
-            direction="top"
+            direction="top right"
             readOnly={readOnly}
             selectLabel={t(enGB.CURRENCY)}
             pickedLabel={pickedOption}
