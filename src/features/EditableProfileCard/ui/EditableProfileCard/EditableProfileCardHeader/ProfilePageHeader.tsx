@@ -47,6 +47,7 @@ export const ProfilePageHeader = ({ className }: IProps) => {
                         <Button
                             theme={AppButtonTheme.Outline}
                             onClick={onEdit}
+                            data-testid="ProfilePageHeader.EditButton"
                         >
                             {t(enGB.EDIT)}
                         </Button>
@@ -55,11 +56,13 @@ export const ProfilePageHeader = ({ className }: IProps) => {
                             <Button
                                 theme={AppButtonTheme.Outline_Red}
                                 onClick={onCancel}
+                                data-testid="ProfilePageHeader.CancelButton"
                             >
                                 {t(enGB.CANCEL)}
                             </Button>
                             <Button
                                 theme={AppButtonTheme.Outline}
+                                data-testid="ProfilePageHeader.SaveButton"
                                 onClick={onSave}
                             >
                                 {t(enGB.SAVE)}

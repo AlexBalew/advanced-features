@@ -27,7 +27,7 @@ export const ArticleRecommendations = ({ className }: IProps) => {
         return <Loader />;
     }
 
-    if (isError) {
+    if (isError || !recommendations) {
         return (
             <Text title={t(enGB.COMMON_ERROR_TITLE)} />
         );

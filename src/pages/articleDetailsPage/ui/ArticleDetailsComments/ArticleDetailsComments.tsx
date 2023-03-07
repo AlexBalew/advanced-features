@@ -32,6 +32,7 @@ export const ArticleDetailsComments = memo(({ id, className }: IProps) => {
 
     return (
         <Column
+            max
             gap="16"
             className={classNames('', {}, [className])}
         >

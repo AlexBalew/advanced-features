@@ -11,6 +11,7 @@ interface IProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+    'data-testid'?: string;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -29,6 +30,7 @@ export const Text = memo(({
     theme = TextTheme.Primary,
     align = TextAlign.Left,
     size = TextSize.M,
+    'data-testid': dataTestId = 'Text',
 }: IProps) => {
     const mods: Mode = {
         [classes[align]]: true,
@@ -39,8 +41,22 @@ export const Text = memo(({
 
     return (
         <div className={classNames(classes.root, mods, [className, classes[theme]])}>
-            {title && <HeaderTag className={classes.title}>{title}</HeaderTag>}
-            {text && <p className={classes.text}>{text}</p>}
+            {title && (
+                <HeaderTag
+                    data-testid={`${dataTestId}.Header`}
+                    className={classes.title}
+                >
+                    {title}
+                </HeaderTag>
+            )}
+            {text && (
+                <p
+                    data-testid={`${dataTestId}.Content`}
+                    className={classes.text}
+                >
+                    {text}
+                </p>
+            )}
         </div>
     );
 });

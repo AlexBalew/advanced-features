@@ -30,7 +30,7 @@ const reducers: ReducersList = {
 
 interface IProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 export const EditableProfileCard = memo((props: IProps) => {
@@ -103,6 +103,7 @@ export const EditableProfileCard = memo((props: IProps) => {
                         key={error}
                         theme={TextTheme.Error}
                         text={validationErrorDictionary[error]}
+                        data-testid="EditableProfileCard.Error"
                     />
                 ))}
                 <ProfileCard
