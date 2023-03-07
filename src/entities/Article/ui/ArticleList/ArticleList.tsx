@@ -51,7 +51,7 @@ export const ArticleList = memo((
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(classes.root, {}, [className, classes[view]])}>
-                <Text size={TextSize.L} title={t(enGB.NO_ARTICLES)} />
+                <Text size={TextSize.L} title={t<string>(enGB.NO_ARTICLES)} />
             </div>
         );
     }

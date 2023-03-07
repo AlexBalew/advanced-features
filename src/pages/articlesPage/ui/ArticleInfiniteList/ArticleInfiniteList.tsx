@@ -24,7 +24,7 @@ export const ArticleInfiniteList = ({ className }: IProps) => {
     const error = useSelector(getArticleListError);
 
     if (error) {
-        return <Text title={t(enGB.COMMON_ERROR_TITLE)} />;
+        return <Text title={t<string>(enGB.COMMON_ERROR_TITLE)} />;
     }
 
     return (

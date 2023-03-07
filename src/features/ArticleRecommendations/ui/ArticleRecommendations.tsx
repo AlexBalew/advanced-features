@@ -29,7 +29,7 @@ export const ArticleRecommendations = ({ className }: IProps) => {
 
     if (isError || !recommendations) {
         return (
-            <Text title={t(enGB.COMMON_ERROR_TITLE)} />
+            <Text title={t<string>(enGB.COMMON_ERROR_TITLE)} />
         );
     }
 
@@ -40,7 +40,7 @@ export const ArticleRecommendations = ({ className }: IProps) => {
         >
             <Text
                 size={TextSize.L}
-                title={t(enGB.RECOMMENDATIONS)}
+                title={t<string>(enGB.RECOMMENDATIONS)}
             />
             <ArticleList
                 articles={recommendations}

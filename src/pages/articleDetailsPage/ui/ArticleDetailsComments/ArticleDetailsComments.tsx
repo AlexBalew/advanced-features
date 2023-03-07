@@ -1,6 +1,6 @@
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddNewComment';
-import { memo, useCallback } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
@@ -38,7 +38,7 @@ export const ArticleDetailsComments = memo(({ id, className }: IProps) => {
         >
             <Text
                 size={TextSize.L}
-                title={t(enGB.COMMENTS)}
+                title={t<string>(enGB.COMMENTS)}
             />
             <AddCommentForm onSendComment={onSendComment} />
             <CommentList

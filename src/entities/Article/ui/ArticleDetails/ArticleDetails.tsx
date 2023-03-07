@@ -87,7 +87,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
     if (error) {
         content = (
             <Text
-                title={t(enGB.COMMON_ERROR_TITLE)}
+                title={t<string>(enGB.COMMON_ERROR_TITLE)}
                 align={TextAlign.Center}
                 theme={TextTheme.Error}
             />

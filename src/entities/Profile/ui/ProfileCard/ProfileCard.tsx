@@ -74,8 +74,8 @@ export const ProfileCard = memo(({
             >
                 <Text
                     theme={TextTheme.Error}
-                    title={t(enGB.COMMON_ERROR_TITLE)}
-                    text={t(enGB.COMMON_ERROR_DESCR)}
+                    title={t<string>(enGB.COMMON_ERROR_TITLE)}
+                    text={t<string>(enGB.COMMON_ERROR_DESCR)}
                     align={TextAlign.Center}
                 />
             </Row>
@@ -96,7 +96,7 @@ export const ProfileCard = memo(({
                 )}
             <Input
                 value={data?.firstname}
-                placeholder={t(enGB.YOUR_NAME)}
+                placeholder={t<string>(enGB.YOUR_NAME)}
                 className={classes.input}
                 readOnly={readOnly}
                 data-testid="ProfileCard.FirstName"
@@ -104,7 +104,7 @@ export const ProfileCard = memo(({
             />
             <Input
                 value={data?.lastname}
-                placeholder={t(enGB.YOUR_LAST_NAME)}
+                placeholder={t<string>(enGB.YOUR_LAST_NAME)}
                 className={classes.input}
                 readOnly={readOnly}
                 data-testid="ProfileCard.LastName"
@@ -114,7 +114,7 @@ export const ProfileCard = memo(({
                 type="number"
                 pattern="[0-9]{0,5}"
                 value={data?.age}
-                placeholder={t(enGB.YOUR_AGE)}
+                placeholder={t<string>(enGB.YOUR_AGE)}
                 className={classes.input}
                 readOnly={readOnly}
                 onChange={onChangeAge}
@@ -126,7 +126,7 @@ export const ProfileCard = memo(({
             />
             <Input
                 value={data?.city}
-                placeholder={t(enGB.CITY)}
+                placeholder={t<string>(enGB.CITY)}
                 className={classes.input}
                 readOnly={readOnly}
                 onChange={onChangeCity}
@@ -138,14 +138,14 @@ export const ProfileCard = memo(({
             />
             <Input
                 value={data?.username}
-                placeholder={t(enGB.USERNAME)}
+                placeholder={t<string>(enGB.USERNAME)}
                 className={classes.input}
                 readOnly={readOnly}
                 onChange={onChangeUserName}
             />
             <Input
                 value={data?.avatar}
-                placeholder={t(enGB.INSERT_AVATAR_LINK)}
+                placeholder={t<string>(enGB.INSERT_AVATAR_LINK)}
                 className={classes.input}
                 readOnly={readOnly}
                 onChange={onChangeAvatar}

@@ -1,7 +1,7 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { StoreWithManager } from 'app/providers';
 import { StateSchema, StateSchemaKey } from 'app/providers/store-provider/config/StateSchema';
-import { FC, useEffect } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
 
 export type ReducersList = {
@@ -13,6 +13,7 @@ type ReducersListEntry = [StateSchemaKey, Reducer];
 interface IProps {
     reducers: ReducersList;
     removeAfterUnmount?: boolean;
+    children: ReactNode;
 }
 
 export const DynamicComponentLoader: FC<IProps> = ({

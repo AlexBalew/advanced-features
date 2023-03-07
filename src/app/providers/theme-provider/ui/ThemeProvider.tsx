@@ -1,10 +1,16 @@
-import { FC, useMemo, useState } from 'react';
+import {
+    FC,
+    ReactNode,
+    useMemo,
+    useState,
+} from 'react';
 import { LOCAL_STORAGE_THEME_KEY } from 'shared/constants';
 import { Theme } from 'shared/types';
 import { ThemeContext } from '../hooks';
 
 interface IProps {
     initialTheme?: Theme;
+    children: ReactNode;
 }
 
 const ThemeProvider: FC<IProps> = ({ children, initialTheme }) => {

@@ -33,7 +33,7 @@ export const CurrencySelect = memo(({
         <AppSelect
             direction="top right"
             readOnly={readOnly}
-            selectLabel={t(enGB.CURRENCY)}
+            selectLabel={t<string>(enGB.CURRENCY)}
             pickedLabel={pickedOption}
             options={currencyOptions}
             onChange={onChangeHandler}

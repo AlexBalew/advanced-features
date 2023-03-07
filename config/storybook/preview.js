@@ -3,6 +3,7 @@ import {
     StyleDecorator,
     ThemeDecorator,
     RouterDecorator,
+    SuspenseDecorator,
 } from '../../src/shared/config/storybook';
 import { Theme } from '../../src/shared/types/types';
 
@@ -19,3 +20,4 @@ export const parameters = {
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.Light));
 addDecorator(RouterDecorator);
+addDecorator(SuspenseDecorator);

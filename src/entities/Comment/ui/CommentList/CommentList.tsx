@@ -35,7 +35,7 @@ export const CommentList = memo(({ className, isLoading, comments }: IProps) => 
                         isLoading={isLoading}
                     />
                 ))
-                : <Text text={t(enGB.NO_COMMENTS)} />}
+                : <Text text={t<string>(enGB.NO_COMMENTS)} />}
         </Column>
     );
 });

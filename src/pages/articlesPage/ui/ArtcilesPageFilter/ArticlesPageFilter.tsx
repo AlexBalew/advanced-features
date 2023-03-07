@@ -81,7 +81,7 @@ export const ArticlesPageFilter = memo(({ className }: Iprops) => {
             </div>
             <Card className={classes.search}>
                 <Input
-                    placeholder={t(enGB.SEARCH)}
+                    placeholder={t<string>(enGB.SEARCH)}
                     onChange={onChangeSearch}
                     value={searchValue}
                 />

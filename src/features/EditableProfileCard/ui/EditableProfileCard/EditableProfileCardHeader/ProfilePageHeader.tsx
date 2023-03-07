@@ -40,7 +40,7 @@ export const ProfilePageHeader = ({ className }: IProps) => {
 
     return (
         <Row justify="between" max className={classNames('', {}, [className])}>
-            <Text title={t(enGB.PROFILE)} />
+            <Text title={t<string>(enGB.PROFILE)} />
             {canEdit && (
                 <div>
                     {readOnly ? (

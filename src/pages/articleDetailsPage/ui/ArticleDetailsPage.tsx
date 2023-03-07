@@ -11,7 +11,6 @@ import { Column, Text } from 'shared/ui';
 import { Page } from 'widgets';
 import { ArticleRecommendations } from 'features/ArticleRecommendations';
 import { articleDeatilsPageReducer } from '../model';
-import { fetchCommentsByArticleId } from '../model/services';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import classes from './ArticleDetailsPage.module.scss';
@@ -27,7 +26,7 @@ const ArticleDetailsPage = () => {
     if (!id) {
         return (
             <Page>
-                <Text title={t(enGB.NO_ARTICLE)} />
+                <Text title={t<string>(enGB.NO_ARTICLE)} />
             </Page>
         );
     }

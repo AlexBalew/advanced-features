@@ -1,0 +1,1 @@
+export { SuspenseDecorator } from './SuspenseDecorator';

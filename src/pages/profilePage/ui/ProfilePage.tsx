@@ -15,7 +15,7 @@ const ProfilePage = ({ className }: IProps) => {
     const { id } = useParams<{ id: string }>();
 
     if (!id) {
-        return <Text title={t(enGB.COMMON_ERROR_TITLE)} />;
+        return <Text title={t<string>(enGB.COMMON_ERROR_TITLE)} />;
     }
 
     return (

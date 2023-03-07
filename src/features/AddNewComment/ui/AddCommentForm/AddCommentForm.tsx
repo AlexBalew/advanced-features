@@ -46,7 +46,7 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
                 className={classNames(classes.root, {}, [className])}
             >
                 <Input
-                    placeholder={t(enGB.ADD_YOUR_COMMENT)}
+                    placeholder={t<string>(enGB.ADD_YOUR_COMMENT)}
                     value={text}
                     onChange={onChange}
                 />

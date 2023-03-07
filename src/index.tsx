@@ -1,10 +1,12 @@
-import { render } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary, StoreProvider, ThemeProvider } from 'app/providers';
+import { createRoot } from 'react-dom/client';
 import { App } from './app/App';
 import 'shared/config/i18n/i18n';
 
-render(
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
@@ -14,5 +16,4 @@ render(
             </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,
-    document.getElementById('root'),
 );

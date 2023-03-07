@@ -54,14 +54,14 @@ export const ArticleSortSelector = memo(({
     return (
         <div className={classNames(classes.root, {}, [className])}>
             <Select
-                label={t(enGB.SORT_BY)}
+                label={t<string>(enGB.SORT_BY)}
                 options={sortFieldOtions}
                 pickedOption={sortField}
                 onChange={onChangeSort}
             />
             <Select
                 className={classes.order}
-                label={t(enGB.SORT)}
+                label={t<string>(enGB.SORT)}
                 options={orderOtions}
                 pickedOption={order}
                 onChange={onChangeOrder}
