@@ -1350,16 +1350,23 @@
     {
       "id": "1",
       "userName": "neo",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "password": "4848",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
     },
     {
       "id": "2",
       "userName": "Bat",
-      "role": "USER",
-      "password": "4848",
+      "roles": ["USER"],
+      "password": "123",
       "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
+    },
+    {
+      "id": "3",
+      "userName": "manager",
+      "roles": ["MANAGER"],
+      "password": "456",
+      "avatar": "https://www.slashfilm.com/img/gallery/michael-scotts-12-most-redeeming-moments-in-the-office/intro-1634858598.jpg"
     }
   ],
   "profile": [
@@ -1384,6 +1391,17 @@
       "city": "Gotham",
       "username": "Bat",
       "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
+    },
+    {
+      "id": "3",
+      "firstname": "Michael",
+      "lastname": "Scott",
+      "age": 46,
+      "currency": "USD",
+      "country": "USA",
+      "city": "Scranton",
+      "username": "Boss",
+      "avatar": "https://www.slashfilm.com/img/gallery/michael-scotts-12-most-redeeming-moments-in-the-office/intro-1634858598.jpg"
     }
   ]
 }

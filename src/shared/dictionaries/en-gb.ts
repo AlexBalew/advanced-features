@@ -70,4 +70,8 @@ export const enGB = {
     CREATE_ARTICLE: 'Create article',
     ELEMENT: 'Element',
     OPEN: 'Open',
+    ADMIN_PAGE: 'Admin page',
+    ADMIN: 'admin',
+    ADMIN_PANEL: 'Admin panel',
+    ACCESS_IS_FORBIDDEN: 'Access is forbidden',
 };

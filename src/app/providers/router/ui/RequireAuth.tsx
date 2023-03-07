@@ -3,7 +3,11 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 import { RoutePath } from 'shared/config';
 
-export const RequireAuth = ({ children }: { children: JSX.Element }) => {
+interface IProps {
+    children: JSX.Element;
+}
+
+export const RequireAuth = ({ children }: IProps) => {
     const auth = useSelector(getUserAuthData);
     const location = useLocation();
 

@@ -5,3 +5,5 @@ export * from './profilePage';
 export * from './articlesPage';
 export * from './articleDetailsPage';
 export * from './articleEditPage';
+export * from './adminPage';
+export * from './forbiddenPage';
