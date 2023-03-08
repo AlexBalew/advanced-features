@@ -3,6 +3,6 @@ export {
     ArticleListView,
     ArticleSortField,
     ArticleBlockType,
-} from './types/article';
-export { IArticleDetailsSchema } from './types/articleDetailsSchema';
+} from './constants';
+export type { IArticleDetailsSchema } from './types/articleDetailsSchema';
 export { getArticleDetails } from './selectors/getArticleDetails';

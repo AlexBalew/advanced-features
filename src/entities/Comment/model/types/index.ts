@@ -1,1 +1,1 @@
-export { IComment } from './comment';
+export type { IComment } from './comment';

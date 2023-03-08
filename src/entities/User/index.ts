@@ -1,5 +1,6 @@
 export { userActions, userReducer } from './model/slice/userSlice';
-export { IUser, IUserSchema, UserRoles } from './model/types/user';
+export { type IUser, type IUserSchema } from './model/types/user';
+export { UserRoles } from './model/constants';
 export {
     getUserAuthData,
     getUserIsMounted,

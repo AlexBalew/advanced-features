@@ -1,1 +1,1 @@
-export { ISidebarItem } from './items';
+export type { ISidebarItem } from './items';

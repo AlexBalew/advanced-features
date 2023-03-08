@@ -11,8 +11,9 @@ import {
     Loader,
     Row,
     Text,
+    TextAlign,
+    TextTheme,
 } from 'shared/ui';
-import { TextAlign, TextTheme } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
 import { IProfile } from '../../model/types/profile';
 import classes from './ProfileCard.module.scss';

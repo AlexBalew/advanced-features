@@ -1,17 +1,5 @@
 import { IUser } from 'entities/User';
-
-export const enum ArticleType {
-    All = 'All',
-    Comics = 'Comics',
-    News = 'News',
-    Music = 'Music',
-    Movies = 'Movies',
-}
-
-export const enum ArticleBlockType {
-    Text = 'Text',
-    Image = 'Image'
-}
+import { ArticleBlockType, ArticleType } from '../constants';
 
 export interface IArticleBlockBase {
     id: string;
@@ -41,15 +29,4 @@ export interface IArticle {
     createdAt?: string;
     type: ArticleType[];
     blocks?: IArticleBlock[];
-}
-
-export const enum ArticleListView {
-    List = 'list',
-    Tiles = 'tiles',
-}
-
-export const enum ArticleSortField {
-    Views = 'views',
-    Title = 'title',
-    Created_At = 'created_at'
 }

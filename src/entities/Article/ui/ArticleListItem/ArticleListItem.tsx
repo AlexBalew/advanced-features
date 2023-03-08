@@ -11,11 +11,8 @@ import {
     AppLink,
 } from 'shared/ui';
 import { classNames } from 'shared/utils';
-import {
-    ArticleBlockType,
-    ArticleListView, IArticle,
-    IArticleBlockText,
-} from '../../model/types/article';
+import { ArticleBlockType, ArticleListView } from '../../model';
+import { IArticle, IArticleBlockText } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock';
 import classes from './ArticleListItem.module.scss';
 

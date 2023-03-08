@@ -2,8 +2,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import { useTranslation } from 'react-i18next';
 import { enGB } from 'shared/dictionaries';
-import { Button } from 'shared/ui';
-import { AppButtonTheme } from 'shared/ui/types';
+import { AppButtonTheme, Button } from 'shared/ui';
 import classes from './PageError.module.scss';
 
 export const PageError = () => {

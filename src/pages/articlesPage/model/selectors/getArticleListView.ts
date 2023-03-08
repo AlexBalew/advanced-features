@@ -1,4 +1,4 @@
-import { ArticleListView } from 'entities/Article/model/types/article';
+import { ArticleListView } from 'entities/Article';
 import { StateSchema } from 'app/providers';
 
 export const getArticleListView = (

@@ -1,6 +1,6 @@
 import { CommentList } from 'entities/Comment';
 import { AddCommentForm } from 'features/AddNewComment';
-import { memo, Suspense, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';

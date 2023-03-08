@@ -1,8 +1,9 @@
 import { enGB } from 'shared/dictionaries';
 import { articleDetailsReducer } from '../../../model/slice/artcileDetailsSlice';
 import { IArticleDetailsSchema } from '../../types/articleDetailsSchema';
-import { ArticleType, IArticle } from '../../types/article';
 import { fetchArticleById } from '../../services/fetchArticleById';
+import { ArticleType } from '../../constants';
+import { IArticle } from '../../types/article';
 
 const mockState: IArticleDetailsSchema = {
     data: {

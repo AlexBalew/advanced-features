@@ -9,8 +9,9 @@ import {
     Icon,
     Column,
     Row,
+    TextAlign,
+    TextTheme,
 } from 'shared/ui';
-import { TextAlign, TextTheme } from 'shared/ui/types';
 import {
     classNames,
     DynamicComponentLoader,
@@ -18,7 +19,8 @@ import {
     useAppDispatch,
     useInitialEffect,
 } from 'shared/utils';
-import { ArticleBlockType, IArticleBlock } from '../../model/types/article';
+import { ArticleBlockType } from '../../model';
+import { IArticleBlock } from '../../model/types/article';
 import {
     getArticleDetails,
     getArticleDetailsError,

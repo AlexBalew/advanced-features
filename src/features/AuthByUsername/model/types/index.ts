@@ -1,1 +1,1 @@
-export { ILoginSchema } from './loginSchema';
+export type { ILoginSchema } from './loginSchema';

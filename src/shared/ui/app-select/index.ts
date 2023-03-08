@@ -1,1 +1,1 @@
-export { AppSelect, IAppSelectOption } from './AppSelect';
+export { AppSelect, type IAppSelectOption } from './AppSelect';

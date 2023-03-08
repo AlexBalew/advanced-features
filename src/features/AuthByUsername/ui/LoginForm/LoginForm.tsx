@@ -1,14 +1,18 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { enGB } from 'shared/dictionaries';
-import { Button, Input, Text } from 'shared/ui';
+import {
+    Button,
+    Input,
+    Text,
+    TextTheme,
+} from 'shared/ui';
 import {
     classNames,
     DynamicComponentLoader,
     ReducersList,
     useAppDispatch,
 } from 'shared/utils';
-import { TextTheme } from 'shared/ui/types';
 import { loginActions, loginByUserName } from '../../model';
 import { loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';

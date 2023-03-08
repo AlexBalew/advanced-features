@@ -1,7 +1,8 @@
 import { StateSchema } from 'app/providers';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { ArticleType, IArticle } from '../../../../model/types/article';
+import { ArticleType } from '../../../constants';
+import { IArticle } from '../../../types/article';
 import { fetchArticleById } from '../fetchArtcileById';
 
 jest.mock('axios');

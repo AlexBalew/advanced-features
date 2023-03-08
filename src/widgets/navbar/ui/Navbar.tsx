@@ -12,13 +12,15 @@ import { RoutePath } from 'shared/config';
 import { enGB } from 'shared/dictionaries';
 import { RadiusType } from 'shared/types';
 import {
+    AppButtonTheme,
     AppLink,
+    AppLinkTheme,
     Avatar,
     Button,
     Text,
+    TextTheme,
 } from 'shared/ui';
 import { Dropdown } from 'shared/ui/dropdown/Dropdown';
-import { AppButtonTheme, AppLinkTheme, TextTheme } from 'shared/ui/types';
 import { classNames } from 'shared/utils';
 import classes from './Navbar.module.scss';
 

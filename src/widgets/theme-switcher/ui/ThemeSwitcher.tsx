@@ -1,9 +1,8 @@
 import { useTheme } from 'app/providers';
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
-import { Theme } from 'shared/types';
-import { AppButtonTheme } from 'shared/ui/types';
-import { Button, Icon } from 'shared/ui';
+import { AppButtonTheme, Button, Icon } from 'shared/ui';
+import { Theme } from 'shared/constants';
 import classes from './ThemeSwitcher.module.scss';
 
 interface IProps {

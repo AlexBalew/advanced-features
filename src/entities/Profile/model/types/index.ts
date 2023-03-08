@@ -1,1 +1,2 @@
-export { IProfile, ValidationErrors } from './profile';
+export { type IProfile } from './profile';
+export { ValidationErrors } from '../constants';

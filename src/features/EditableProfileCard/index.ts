@@ -1,5 +1,5 @@
 export { EditableProfileCard } from './ui';
-export { IProfileSchema } from './model/types/EditableProfileCardSchema';
+export type { IProfileSchema } from './model/types/EditableProfileCardSchema';
 export {
     profileActions,
     profileReducer,

@@ -1,3 +1,3 @@
 export { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage.async';
-export { IArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
-export { IArticleDetailsRecommendationsSchema, getCanEditArticle } from './model';
+export type { IArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
+export type { IArticleDetailsRecommendationsSchema, getCanEditArticle } from './model';

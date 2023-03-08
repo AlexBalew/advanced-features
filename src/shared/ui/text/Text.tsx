@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
 import { Mode } from 'shared/utils/classNames';
-import { TextAlign, TextSize, TextTheme } from '../types';
+import { TextAlign, TextSize, TextTheme } from '../constants';
 import classes from './Text.module.scss';
 
 interface IProps {

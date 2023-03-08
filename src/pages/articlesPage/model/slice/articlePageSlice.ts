@@ -6,7 +6,7 @@ import {
     ArticleSortField,
     ArticleType,
     IArticle,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article';
 import { LOCAL_STORAGE_VIEW_KEY } from 'shared/constants';
 import { fetchArticles } from '../services/fetchArticles';
 import { ArticlesPageSchema } from '../types/articlePageSchema';

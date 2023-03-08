@@ -1,6 +1,5 @@
 import { memo } from 'react';
-import { AppLinkTheme } from 'shared/ui/types';
-import { AppLink, Icon } from 'shared/ui';
+import { AppLink, AppLinkTheme, Icon } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'entities/User';

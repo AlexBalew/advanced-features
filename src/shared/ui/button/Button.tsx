@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames } from 'shared/utils';
-import { AppButtonSize, AppButtonTheme } from '../types';
+import { AppButtonSize, AppButtonTheme } from '../constants';
 import classes from './Button.module.scss';
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
