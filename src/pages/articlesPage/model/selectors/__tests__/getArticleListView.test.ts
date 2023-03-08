@@ -1,5 +1,5 @@
 import { ArticleListView } from 'entities/Article';
-import { StateSchema } from 'app/providers';
+import { StateSchema } from 'app/providers/store-provider';
 import { getArticleListView } from '../getArticleListView';
 
 describe('getArticleListView test', () => {

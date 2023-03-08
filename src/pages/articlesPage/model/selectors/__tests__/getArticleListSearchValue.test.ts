@@ -1,4 +1,4 @@
-import { StateSchema } from 'app/providers';
+import { StateSchema } from 'app/providers/store-provider';
 import { getArticleListSearchValue } from '../getArticleListSearchValue';
 
 describe('getArticleListSearchValue test', () => {

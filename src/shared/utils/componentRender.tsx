@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { StateSchema, StoreProvider } from 'app/providers';
+import { StateSchema, StoreProvider } from 'app/providers/store-provider';
 import { DeepPartial, ReducersMapObject } from '@reduxjs/toolkit';
 
 export interface componentRenderOptions {

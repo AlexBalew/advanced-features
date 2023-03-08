@@ -1,4 +1,4 @@
-import { useTheme } from 'app/providers';
+import { useTheme } from 'app/providers/theme-provider';
 import { memo } from 'react';
 import { classNames } from 'shared/utils';
 import { AppButtonTheme, Button, Icon } from 'shared/ui';

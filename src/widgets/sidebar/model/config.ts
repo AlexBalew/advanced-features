@@ -1,4 +1,4 @@
-import { RoutePath } from 'shared/config';
+import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
 import { ISidebarItem } from './types/items';
 
 export const SidebarItemList: ISidebarItem[] = [

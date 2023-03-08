@@ -1,5 +1,5 @@
 import { Story } from '@storybook/react';
-import { StateSchema, StoreProvider } from 'app/providers';
+import { StateSchema, StoreProvider } from 'app/providers/store-provider';
 import { articleDetailsReducer } from 'entities/Article/model/slice/artcileDetailsSlice';
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from 'features/EditableProfileCard';

@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { enGB } from 'shared/dictionaries';
 import { Column, Text } from 'shared/ui';
 import { classNames } from 'shared/utils';
-import { Page } from 'widgets';
+import { Page } from 'widgets/page';
 
 interface IProps {
     className?: string;

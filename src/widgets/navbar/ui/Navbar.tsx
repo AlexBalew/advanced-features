@@ -8,7 +8,7 @@ import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config';
+import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
 import { enGB } from 'shared/dictionaries';
 import { RadiusType } from 'shared/types';
 import {

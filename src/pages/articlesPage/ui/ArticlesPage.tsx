@@ -7,7 +7,7 @@ import {
     useAppDispatch,
     useInitialEffect,
 } from 'shared/utils';
-import { Page } from 'widgets';
+import { Page } from 'widgets/page';
 import { fetchNextArticlesPage, initArticlesPage } from '../model/services';
 import { articlesPageReducer } from '../model/slice/articlePageSlice';
 import { ArticlesPageFilter } from './ArtcilesPageFilter/ArticlesPageFilter';

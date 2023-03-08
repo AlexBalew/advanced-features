@@ -1,5 +1,5 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { PageError } from 'widgets';
+import { PageError } from 'widgets/page-error';
 
 interface IProps {
   children?: ReactNode;

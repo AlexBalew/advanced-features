@@ -1,6 +1,6 @@
 import { SortType } from 'shared/types';
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers';
+import { StateSchema } from 'app/providers/store-provider';
 import {
     ArticleListView,
     ArticleSortField,

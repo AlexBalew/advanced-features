@@ -1,5 +1,6 @@
 import { classNames } from 'shared/utils';
-import { Navbar, Sidebar } from 'widgets';
+import { Navbar } from 'widgets/navbar';
+import { Sidebar } from 'widgets/sidebar';
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserIsMounted, userActions } from 'entities/User';

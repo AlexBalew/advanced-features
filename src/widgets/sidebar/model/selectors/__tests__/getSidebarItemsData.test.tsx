@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers';
+import { StateSchema } from 'app/providers/store-provider';
 import { getUserAuthData } from 'entities/User';
-import { RoutePath } from 'shared/config';
+import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
 import { getSidebarItemsData } from '../getSidebarItemsData';
 
 jest.mock('entities/User');

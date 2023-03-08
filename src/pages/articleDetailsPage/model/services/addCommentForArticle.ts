@@ -1,7 +1,7 @@
 import { enGB } from 'shared/dictionaries';
 import { getUserAuthData } from 'entities/User';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers';
+import { ThunkConfig } from 'app/providers/store-provider';
 import { IComment } from 'entities/Comment';
 import { getArticleDetails } from 'entities/Article/model';
 import { fetchCommentsByArticleId } from './fetchCommentsByArticleId';

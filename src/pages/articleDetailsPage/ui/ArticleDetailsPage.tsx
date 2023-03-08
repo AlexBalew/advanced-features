@@ -8,7 +8,7 @@ import {
     ReducersList,
 } from 'shared/utils';
 import { Column, Text } from 'shared/ui';
-import { Page } from 'widgets';
+import { Page } from 'widgets/page';
 import { ArticleRecommendations } from 'features/ArticleRecommendations';
 import { articleDeatilsPageReducer } from '../model';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';

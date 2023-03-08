@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers';
+import { ThunkConfig } from 'app/providers/store-provider';
 import { ArticleType, IArticle } from 'entities/Article';
 import { addQueryParams } from 'shared/utils';
 import {
