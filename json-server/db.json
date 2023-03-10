@@ -16,6 +16,34 @@
       "author": "typicode"
     }
   ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "First notification",
+      "description": "Hello!",
+      "userId": "1"
+    },
+    {
+      "id": "2",
+      "title": "Second notification",
+      "description": "Lorem ipsum",
+      "userId": "1",
+      "href": "http://localhost:3000/main"
+    },
+    {
+      "id": "3",
+      "title": "Third notification",
+      "description": "This is the third notification",
+      "userId": "2"
+    },
+    {
+      "id": "4",
+      "title": "Fourth notification",
+      "description": "Just a notification",
+      "userId": "3",
+      "href": "http://localhost:3000/admin"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -1350,21 +1378,27 @@
     {
       "id": "1",
       "userName": "neo",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "password": "4848",
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
     },
     {
       "id": "2",
       "userName": "Bat",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "password": "123",
       "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
     },
     {
       "id": "3",
       "userName": "manager",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "password": "456",
       "avatar": "https://www.slashfilm.com/img/gallery/michael-scotts-12-most-redeeming-moments-in-the-office/intro-1634858598.jpg"
     }

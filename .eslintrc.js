@@ -49,6 +49,8 @@ module.exports = {
                 markupOnly: true,
                 ignoreAttribute: [
                     'role',
+                    'border',
+                    'height',
                     'data-testid',
                     'to',
                     'type',

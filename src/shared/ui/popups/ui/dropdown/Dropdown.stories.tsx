@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { enGB } from 'shared/dictionaries';
-import { Button } from '../button';
+import { Button } from '../../../button';
 import { Dropdown } from './Dropdown';
 
 export default {

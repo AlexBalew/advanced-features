@@ -1,0 +1,12 @@
+.notifications {
+    min-height: 150px;
+    max-height: 300px;
+    width: 500px;
+    overflow-y: auto;
+    padding-bottom: 1px;
+}
+
+.icon {
+    fill: var(--inverted-bg-color);
+    stroke: var(--inverted-primary-color);
+}

@@ -13,6 +13,6 @@ export * from './card';
 export * from './tabs';
 export * from './types';
 export * from './flex';
-export * from './app-select';
-export * from './dropdown';
+export * from './popups/ui/app-select';
+export * from './popups/ui/dropdown';
 export * from './constants';

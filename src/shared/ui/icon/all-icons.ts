@@ -8,6 +8,7 @@ import Calendar from 'shared/assets/icons/calendar.svg';
 import EyeOpen from 'shared/assets/icons/eye-open.svg';
 import List from 'shared/assets/icons/list.svg';
 import TilesList from 'shared/assets/icons/tiles-list.svg';
+import Notification from 'shared/assets/icons/notification.svg';
 
 export default {
     Home,
@@ -20,4 +21,5 @@ export default {
     EyeOpen,
     List,
     TilesList,
+    Notification,
 };

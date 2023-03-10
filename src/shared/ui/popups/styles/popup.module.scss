@@ -1,0 +1,41 @@
+.root {
+    position: relative;
+}
+
+.active {
+    border-radius: 8px;
+    background: var(--inverted-primary-color);
+}
+
+.bottomLeft {
+    top: 100%;
+    left: 0;
+}
+
+.bottomRight {
+    top: 100%;
+    right: 0;
+}
+
+.topLeft {
+    bottom: 100%;
+    left: 0;
+}
+
+.topRight {
+    bottom: 100%;
+    right: 0;
+}
+
+.disabled {
+    opacity: 0.6;
+}
+
+.trigger {
+    background: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}

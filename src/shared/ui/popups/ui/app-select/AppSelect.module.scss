@@ -1,0 +1,16 @@
+.options {
+    background: var(--app-select-bg-color);
+    position: absolute;
+    z-index: 11998;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px var(--app-select-bg-color);
+}
+
+.optionItem {
+    padding: 10px 20px;
+}
+
+.label {
+    bottom: 0;
+    margin-right: 10px;
+}
