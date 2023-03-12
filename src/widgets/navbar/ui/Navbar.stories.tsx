@@ -27,13 +27,13 @@ Dark.decorators = [StoreDecorator({
 
 })];
 
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {};
-LoggedIn.decorators = [StoreDecorator({
-    user: {
-        authData: {
-            id: '1',
-            userName: 'Neo',
-        },
-    },
-})];
+// export const LoggedIn = Template.bind({});
+// LoggedIn.args = {};
+// LoggedIn.decorators = [StoreDecorator({
+//     user: {
+//         authData: {
+//             id: '1',
+//             userName: 'Neo',
+//         },
+//     },
+// })];

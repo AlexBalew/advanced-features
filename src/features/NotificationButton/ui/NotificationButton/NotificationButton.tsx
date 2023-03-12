@@ -1,6 +1,12 @@
 import { NotificationList } from 'entities/Notification';
-import { memo } from 'react';
-import { AppButtonTheme, Button, Icon } from 'shared/ui';
+import { memo, useCallback, useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
+import {
+    AppButtonTheme,
+    Button,
+    Drawer,
+    Icon,
+} from 'shared/ui';
 import { AppPopover } from 'shared/ui/popups';
 import { classNames } from 'shared/utils';
 import classes from './NotificationButton.module.scss';
@@ -9,18 +15,43 @@ interface IProps {
     className?: string;
 }
 
-export const NotificationButton = memo(({ className }: IProps) => (
-    <AppPopover
-        className={classNames('', {}, [className])}
-        trigger={(
-            <Button theme={AppButtonTheme.Pure}>
-                <Icon
-                    name="Notification"
-                    className={classes.icon}
-                />
-            </Button>
-        )}
-    >
-        <NotificationList className={classes.notifications} />
-    </AppPopover>
-));
+export const NotificationButton = memo(({ className }: IProps) => {
+    const [isOpened, setIsOpened] = useState<boolean>(false);
+
+    const onCloseDrawer = useCallback(() => {
+        setIsOpened(false);
+    }, []);
+
+    const onOpenDrawer = useCallback(() => {
+        setIsOpened(true);
+    }, []);
+
+    const trigger = (
+        <Button theme={AppButtonTheme.Pure} onClick={onOpenDrawer}>
+            <Icon
+                name="Notification"
+                className={classes.icon}
+            />
+        </Button>
+    );
+
+    return (
+        <>
+            <BrowserView>
+                <AppPopover
+                    className={classNames('', {}, [className])}
+                    trigger={trigger}
+                >
+                    <NotificationList className={classes.notifications} />
+                </AppPopover>
+            </BrowserView>
+            <MobileView>
+                {trigger}
+                <Drawer isOpened={isOpened} onClose={onCloseDrawer}>
+                    <NotificationList />
+                </Drawer>
+            </MobileView>
+        </>
+
+    );
+});
