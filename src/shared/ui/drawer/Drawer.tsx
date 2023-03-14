@@ -8,7 +8,7 @@ import { Overlay } from '../overlay';
 import { Portal } from '../portal';
 import classes from './Drawer.module.scss';
 
-interface DrawerProps {
+interface IProps {
     className?: string;
     children: ReactNode;
     isOpened?: boolean;
@@ -18,7 +18,7 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerContent = memo((props: DrawerProps) => {
+export const DrawerContent = memo((props: IProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
@@ -96,7 +96,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
     );
 });
 
-const DrawerAsync = (props: DrawerProps) => {
+const DrawerAsync = (props: IProps) => {
     const { isLoaded } = useAnimationLibs();
 
     if (!isLoaded) {
@@ -106,7 +106,7 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-export const Drawer = (props: DrawerProps) => (
+export const Drawer = (props: IProps) => (
     <AnimationProvider>
         <DrawerAsync {...props} />
     </AnimationProvider>

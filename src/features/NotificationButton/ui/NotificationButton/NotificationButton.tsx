@@ -48,11 +48,9 @@ export const NotificationButton = memo(({ className }: IProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <AnimationProvider>
-                    <Drawer isOpened={isOpened} onClose={onCloseDrawer} lazy>
-                        <NotificationList />
-                    </Drawer>
-                </AnimationProvider>
+                <Drawer isOpened={isOpened} onClose={onCloseDrawer} lazy>
+                    <NotificationList />
+                </Drawer>
             </MobileView>
         </>
 
