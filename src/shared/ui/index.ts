@@ -18,3 +18,4 @@ export * from './popups/ui/dropdown';
 export * from './constants';
 export * from './overlay';
 export * from './drawer';
+export * from './rating-star';

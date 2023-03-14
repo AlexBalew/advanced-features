@@ -9,6 +9,9 @@ import EyeOpen from '@/shared/assets/icons/eye-open.svg';
 import List from '@/shared/assets/icons/list.svg';
 import TilesList from '@/shared/assets/icons/tiles-list.svg';
 import Notification from '@/shared/assets/icons/notification.svg';
+import StarFilled from '@/shared/assets/icons/rating-star-filled.svg';
+import StarEmpty from '@/shared/assets/icons/rating-star-empty.svg';
+import StarHalfFilled from '@/shared/assets/icons/rating-star-half.svg';
 
 export default {
     Home,
@@ -22,4 +25,7 @@ export default {
     List,
     TilesList,
     Notification,
+    StarFilled,
+    StarEmpty,
+    StarHalfFilled,
 };

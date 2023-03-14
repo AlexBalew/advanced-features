@@ -1,0 +1,15 @@
+.root {
+    cursor: pointer;
+}
+
+.default {
+    fill: var(--primary-color);
+}
+
+.hovered {
+    stroke: var(--primary-color);
+}
+
+.isSelected {
+    cursor: auto;
+}

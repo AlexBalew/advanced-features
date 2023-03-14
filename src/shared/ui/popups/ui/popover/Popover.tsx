@@ -23,7 +23,10 @@ export const AppPopover = ({
 
     return (
         <Popover className={classNames(classes.root, {}, [className, popupClasses.root])}>
-            <Popover.Button className={popupClasses.trigger}>
+            <Popover.Button
+                as="div"
+                className={popupClasses.trigger}
+            >
                 {trigger}
             </Popover.Button>
             <Popover.Panel className={classNames(classes.panel, {}, menuClasses)}>

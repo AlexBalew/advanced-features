@@ -10,6 +10,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: AppButtonSize;
     disabled?: boolean;
     children?: ReactNode;
+    fullWidth?: boolean;
 }
 
 export const Button = memo(({
@@ -18,12 +19,14 @@ export const Button = memo(({
     theme = AppButtonTheme.Outline,
     square = false,
     disabled = false,
+    fullWidth = false,
     size = AppButtonSize.M,
     ...otherProps
 }: IProps) => {
     const mods: Record<string, boolean> = {
         [classes.square]: square,
         [classes.disabled]: disabled,
+        [classes.fullWidth]: fullWidth,
     };
 
     return (

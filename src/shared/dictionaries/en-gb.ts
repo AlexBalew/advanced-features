@@ -74,4 +74,6 @@ export const enGB = {
     ADMIN: 'admin',
     ADMIN_PANEL: 'Admin panel',
     ACCESS_IS_FORBIDDEN: 'Access is forbidden',
+    YOUR_REVIEW: 'Your review',
+    CLOSE: 'Close',
 };
