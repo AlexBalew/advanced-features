@@ -1,8 +1,8 @@
-import { StateSchema } from 'app/providers/store-provider';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
+import { StateSchema } from '@/app/providers/store-provider';
+import { Countries } from '@/entities/Counrty';
+import { Currency } from '@/entities/Currency';
 import { fetchProfileData } from './fetchProfileData';
 
 jest.mock('axios', () => ({

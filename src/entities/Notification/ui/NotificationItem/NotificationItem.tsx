@@ -4,8 +4,8 @@ import {
     Card,
     CardTheme,
     Text,
-} from 'shared/ui';
-import { classNames } from 'shared/utils';
+} from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { INotification } from '../../model';
 import classes from './NotificationItem.module.scss';
 

@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { RadiusType } from 'shared/types';
-import { Card, Skeleton } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { RadiusType } from '@/shared/types';
+import { Card, Skeleton } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { ArticleListView } from '../../model';
 import classes from './ArticleListItem.module.scss';
 

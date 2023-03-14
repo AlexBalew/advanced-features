@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook';
+import { StoreDecorator } from '@/shared/config/storybook';
 import { ArticleBlockType, ArticleType } from '../../model';
 import { IArticle } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';

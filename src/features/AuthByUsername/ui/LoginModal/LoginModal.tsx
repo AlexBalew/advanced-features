@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
-import { Loader, Modal } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { Loader, Modal } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { LoginForm } from '../LoginForm';
 
 interface IProps {

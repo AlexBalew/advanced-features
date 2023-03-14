@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { enGB } from 'shared/dictionaries';
-import { classNames } from 'shared/utils';
-import { Page } from 'widgets/page';
+import { enGB } from '@/shared/dictionaries';
+import { classNames } from '@/shared/utils';
+import { Page } from '@/widgets/page';
 import classes from './ArticleEditPage.module.scss';
 
 interface IProps {

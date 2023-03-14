@@ -1,5 +1,5 @@
-import { ArticleType } from 'entities/Article';
-import { StateSchema } from 'app/providers/store-provider';
+import { ArticleType } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/store-provider';
 
 export const getArticleType = (
     state: StateSchema,

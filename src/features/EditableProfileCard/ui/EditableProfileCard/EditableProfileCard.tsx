@@ -1,18 +1,18 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { Column, Text, TextTheme } from 'shared/ui';
+import { useSelector } from 'react-redux';
+import { Column, Text, TextTheme } from '@/shared/ui';
 import {
     classNames,
     DynamicComponentLoader,
     ReducersList,
     useAppDispatch,
     useInitialEffect,
-} from 'shared/utils';
-import { enGB } from 'shared/dictionaries';
-import { useSelector } from 'react-redux';
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
-import { ValidationErrors, ProfileCard } from 'entities/Profile';
+} from '@/shared/utils';
+import { enGB } from '@/shared/dictionaries';
+import { Countries } from '@/entities/Counrty';
+import { Currency } from '@/entities/Currency';
+import { ValidationErrors, ProfileCard } from '@/entities/Profile';
 import {
     getProfileError,
     getProfileFormData,

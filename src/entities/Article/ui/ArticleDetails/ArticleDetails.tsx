@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { enGB } from 'shared/dictionaries';
+import { enGB } from '@/shared/dictionaries';
 import {
     Avatar,
     Skeleton,
@@ -11,14 +11,14 @@ import {
     Row,
     TextAlign,
     TextTheme,
-} from 'shared/ui';
+} from '@/shared/ui';
 import {
     classNames,
     DynamicComponentLoader,
     ReducersList,
     useAppDispatch,
     useInitialEffect,
-} from 'shared/utils';
+} from '@/shared/utils';
 import { ArticleBlockType } from '../../model';
 import { IArticleBlock } from '../../model/types/article';
 import {

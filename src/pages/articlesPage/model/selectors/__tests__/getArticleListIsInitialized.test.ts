@@ -1,5 +1,5 @@
-import { ArticleListView } from 'entities/Article';
-import { StateSchema } from 'app/providers/store-provider';
+import { ArticleListView } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/store-provider';
 import { getArticleListIsInitialized } from '../getArticleListIsInitialized';
 
 describe('getArticleListIsInitialized test', () => {

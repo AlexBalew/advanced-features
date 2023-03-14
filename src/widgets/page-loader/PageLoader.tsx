@@ -1,5 +1,5 @@
-import { Loader } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { Loader } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import styles from './PageLoader.module.scss';
 
 interface IProps {

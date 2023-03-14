@@ -1,15 +1,15 @@
-import { NotificationList } from 'entities/Notification';
 import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { NotificationList } from '@/entities/Notification';
 import {
     AppButtonTheme,
     Button,
     Drawer,
     Icon,
-} from 'shared/ui';
-import { AppPopover } from 'shared/ui/popups';
-import { classNames } from 'shared/utils';
-import { AnimationProvider } from 'shared/utils/components';
+} from '@/shared/ui';
+import { AppPopover } from '@/shared/ui/popups';
+import { classNames } from '@/shared/utils';
+import { AnimationProvider } from '@/shared/utils/components';
 import classes from './NotificationButton.module.scss';
 
 interface IProps {

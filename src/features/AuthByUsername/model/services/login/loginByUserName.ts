@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { IUser, userActions } from 'entities/User';
-import { USER_LS_KEY } from 'shared/constants';
-import { ThunkConfig } from 'app/providers/store-provider';
+import { IUser, userActions } from '@/entities/User';
+import { USER_LS_KEY } from '@/shared/constants';
+import { ThunkConfig } from '@/app/providers/store-provider';
 
 interface IProps {
     userName: string;

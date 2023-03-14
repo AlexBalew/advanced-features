@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
-import { Theme } from 'shared/constants';
+import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook';
+import { Theme } from '@/shared/constants';
 import AboutPage from './AboutPage';
 
 export default {

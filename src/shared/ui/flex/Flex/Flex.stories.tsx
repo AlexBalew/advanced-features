@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { enGB } from 'shared/dictionaries';
+import { enGB } from '@/shared/dictionaries';
 import { Flex } from './Flex';
 
 export default {

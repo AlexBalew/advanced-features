@@ -1,5 +1,5 @@
-import { enGB } from 'shared/dictionaries';
-import { IComment } from 'entities/Comment';
+import { enGB } from '@/shared/dictionaries';
+import { IComment } from '@/entities/Comment';
 import { IArticleDetailsCommentsSchema } from '../../types/ArticleDetailsCommentsSchema';
 import { fetchCommentsByArticleId } from '../../services/fetchCommentsByArticleId';
 import { articleDetailsCommentsReducer } from '../articlesDetailsCommentsSlice';

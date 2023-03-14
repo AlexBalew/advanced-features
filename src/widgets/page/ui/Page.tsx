@@ -1,8 +1,3 @@
-import { StateSchema } from 'app/providers/store-provider';
-import {
-    getScrollPositionByPath,
-    scrollSaverSliceActions,
-} from 'features/ScrollSaver';
 import {
     memo,
     MutableRefObject,
@@ -13,13 +8,18 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { classNames } from 'shared/utils';
+import {
+    getScrollPositionByPath,
+    scrollSaverSliceActions,
+} from '@/features/ScrollSaver';
+import { StateSchema } from '@/app/providers/store-provider';
+import { classNames } from '@/shared/utils';
 import {
     useAppDispatch,
     useInfiniteScroll,
     useInitialEffect,
     useThrottle,
-} from 'shared/utils/hooks';
+} from '@/shared/utils/hooks';
 import classes from './Page.module.scss';
 
 interface IProps {

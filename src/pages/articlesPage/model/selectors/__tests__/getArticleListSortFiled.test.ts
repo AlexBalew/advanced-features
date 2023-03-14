@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/store-provider';
-import { ArticleSortField } from 'entities/Article/model';
+import { StateSchema } from '@/app/providers/store-provider';
+import { ArticleSortField } from '@/entities/Article/model';
 import { getArticleListSortField } from '../getArticleListSortFiled';
 
 describe('getArticleListSortField test', () => {

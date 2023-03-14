@@ -3,8 +3,8 @@ import {
     ArticleType,
     IArticle,
     ArticleListView,
-} from 'entities/Article';
-import { LOCAL_STORAGE_VIEW_KEY } from 'shared/constants';
+} from '@/entities/Article';
+import { LOCAL_STORAGE_VIEW_KEY } from '@/shared/constants';
 import { ArticlesPageSchema } from '../../types/articlePageSchema';
 import { articlesPageActions, articlesPageReducer } from '../articlePageSlice';
 import { fetchArticles } from '../../services/fetchArticles';

@@ -1,8 +1,8 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { enGB } from 'shared/dictionaries';
-import { AppSelect, IAppSelectOption } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { enGB } from '@/shared/dictionaries';
+import { AppSelect, IAppSelectOption } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { Countries } from '../../model/types/country';
 
 interface IProps {

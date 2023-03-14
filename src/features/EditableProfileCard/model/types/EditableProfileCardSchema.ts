@@ -1,4 +1,4 @@
-import { IProfile, ValidationErrors } from 'entities/Profile';
+import { IProfile, ValidationErrors } from '@/entities/Profile';
 
 export interface IProfileSchema {
     data?: IProfile;

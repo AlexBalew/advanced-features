@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios';
-import { USER_LS_KEY } from 'shared/constants';
+import { USER_LS_KEY } from '@/shared/constants';
 
 // as an another option instead of using .env
 // const baseUrl = __IS_DEV__ ? 'http://localhost:8000' : 'https://advanced-feature.com';

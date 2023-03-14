@@ -1,6 +1,6 @@
 import { Menu } from '@headlessui/react';
 import { Fragment, Key, ReactNode } from 'react';
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import { AppLink } from '../../../app-link';
 import { DropdownDirection } from '../../../types';
 import { mapDirectionToClass } from '../../styles';

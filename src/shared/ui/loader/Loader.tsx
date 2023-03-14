@@ -1,4 +1,4 @@
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import './Loader.scss';
 
 interface IProps {

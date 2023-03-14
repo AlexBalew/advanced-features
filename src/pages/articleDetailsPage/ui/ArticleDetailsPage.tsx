@@ -1,15 +1,15 @@
-import { ArticleDetails } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { enGB } from 'shared/dictionaries';
+import { ArticleDetails } from '@/entities/Article';
+import { enGB } from '@/shared/dictionaries';
 import {
     classNames,
     DynamicComponentLoader,
     ReducersList,
-} from 'shared/utils';
-import { Column, Text } from 'shared/ui';
-import { Page } from 'widgets/page';
-import { ArticleRecommendations } from 'features/ArticleRecommendations';
+} from '@/shared/utils';
+import { Column, Text } from '@/shared/ui';
+import { Page } from '@/widgets/page';
+import { ArticleRecommendations } from '@/features/ArticleRecommendations';
 import { articleDeatilsPageReducer } from '../model';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments';

@@ -1,7 +1,7 @@
-import { getUserAuthData } from 'entities/User';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
-import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
+import { getUserAuthData } from '@/entities/User';
+import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
 
 interface IProps {
     children: JSX.Element;

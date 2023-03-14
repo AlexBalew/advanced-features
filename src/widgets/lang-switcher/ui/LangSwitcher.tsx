@@ -1,8 +1,8 @@
 import { memo } from 'react';
-import { classNames } from 'shared/utils';
-import { AppButtonTheme, Button } from 'shared/ui';
-import { enGB } from 'shared/dictionaries';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/utils';
+import { AppButtonTheme, Button } from '@/shared/ui';
+import { enGB } from '@/shared/dictionaries';
 import classes from './LangSwitcher.module.scss';
 
 interface IProps {

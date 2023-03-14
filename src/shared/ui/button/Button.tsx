@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import { AppButtonSize, AppButtonTheme } from '../constants';
 import classes from './Button.module.scss';
 

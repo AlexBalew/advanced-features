@@ -1,10 +1,10 @@
-import { EditableProfileCard } from 'features/EditableProfileCard';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { enGB } from 'shared/dictionaries';
-import { Column, Text } from 'shared/ui';
-import { classNames } from 'shared/utils';
-import { Page } from 'widgets/page';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
+import { enGB } from '@/shared/dictionaries';
+import { Column, Text } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
+import { Page } from '@/widgets/page';
 
 interface IProps {
     className?: string;

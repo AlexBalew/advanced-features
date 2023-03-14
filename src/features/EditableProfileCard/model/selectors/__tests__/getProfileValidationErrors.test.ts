@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/store-provider';
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
-import { ValidationErrors } from 'entities/Profile';
+import { StateSchema } from '@/app/providers/store-provider';
+import { Countries } from '@/entities/Counrty';
+import { Currency } from '@/entities/Currency';
+import { ValidationErrors } from '@/entities/Profile';
 import { getProfileValidationErrors } from '../getProfileValidationErrors';
 
 describe('getProfileValidationErrors test', () => {

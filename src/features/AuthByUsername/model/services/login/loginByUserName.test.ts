@@ -1,7 +1,7 @@
-import { userActions } from 'entities/User';
-import { StateSchema } from 'app/providers/store-provider';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { userActions } from '@/entities/User';
+import { StateSchema } from '@/app/providers/store-provider';
 import { loginByUserName } from './loginByUserName';
 
 jest.mock('axios');

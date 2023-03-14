@@ -4,8 +4,8 @@ import React, {
     useEffect,
     useRef,
 } from 'react';
-import { classNames } from 'shared/utils';
-import { Mode } from 'shared/utils/classNames';
+import { classNames } from '@/shared/utils';
+import { Mode } from '@/shared/utils/classNames';
 import classes from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>

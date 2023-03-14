@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
-import { classNames } from 'shared/utils';
 import { Listbox } from '@headlessui/react';
+import { classNames } from '@/shared/utils';
 import { Button } from '../../../button';
 import { Row } from '../../../flex';
 import { DropdownDirection } from '../../../types';

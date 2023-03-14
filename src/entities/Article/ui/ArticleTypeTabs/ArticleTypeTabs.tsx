@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
-import { ITab, Tabs } from 'shared/ui';
-import { enGB } from 'shared/dictionaries';
-import { classNames } from 'shared/utils';
+import { ITab, Tabs } from '@/shared/ui';
+import { enGB } from '@/shared/dictionaries';
+import { classNames } from '@/shared/utils';
 import { ArticleType } from '../../model';
 
 interface IProps {

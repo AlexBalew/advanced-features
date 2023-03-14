@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/store-provider';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { IComment } from 'entities/Comment';
+import { StateSchema } from '@/app/providers/store-provider';
+import { IComment } from '@/entities/Comment';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId';
 
 jest.mock('axios');

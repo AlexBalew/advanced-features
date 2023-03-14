@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleListView } from 'entities/Article';
+import { ArticleListView } from '@/entities/Article';
 import { ViewSwitcher } from './ViewSwitcher';
 
 export default {

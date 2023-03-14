@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook';
-import { Theme } from 'shared/constants';
-import { enGB } from 'shared/dictionaries';
+import { ThemeDecorator } from '@/shared/config/storybook';
+import { Theme } from '@/shared/constants';
+import { enGB } from '@/shared/dictionaries';
 import { Text } from '../text';
 import { Card } from './Card';
 

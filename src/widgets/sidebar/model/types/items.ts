@@ -1,4 +1,4 @@
-import { IconName } from 'shared/ui';
+import { IconName } from '@/shared/ui';
 
 export interface ISidebarItem {
     path: string;

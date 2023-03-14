@@ -1,8 +1,8 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
-import { classNames } from 'shared/utils';
-import { Text, TextSize } from 'shared/ui';
 import { useTranslation } from 'react-i18next';
-import { enGB } from 'shared/dictionaries';
+import { classNames } from '@/shared/utils';
+import { Text, TextSize } from '@/shared/ui';
+import { enGB } from '@/shared/dictionaries';
 import { ArticleListView } from '../../model';
 import { IArticle } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem';

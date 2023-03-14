@@ -1,12 +1,12 @@
-import { getArticleDetails } from 'entities/Article';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
-import { enGB } from 'shared/dictionaries';
-import { Button, Row } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { getArticleDetails } from '@/entities/Article';
+import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
+import { enGB } from '@/shared/dictionaries';
+import { Button, Row } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { getCanEditArticle } from '../../model';
 
 interface IProps {

@@ -1,6 +1,6 @@
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
-import { IProfile, ValidationErrors } from 'entities/Profile';
+import { Countries } from '@/entities/Counrty';
+import { Currency } from '@/entities/Currency';
+import { IProfile, ValidationErrors } from '@/entities/Profile';
 import { validateProfileData } from './validateProfileData';
 
 const mockData: IProfile = {

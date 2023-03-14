@@ -4,8 +4,8 @@ import {
     useCallback,
     useMemo,
 } from 'react';
-import { classNames } from 'shared/utils';
-import { Mode } from 'shared/utils/classNames';
+import { classNames } from '@/shared/utils';
+import { Mode } from '@/shared/utils/classNames';
 import { SelectOption } from '../types';
 import classes from './Select.module.scss';
 

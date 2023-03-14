@@ -1,8 +1,8 @@
 /* eslint-disable i18next/no-literal-string */
 /* eslint-disable react/jsx-one-expression-per-line */
 import { useTranslation } from 'react-i18next';
-import { enGB } from 'shared/dictionaries';
-import { AppButtonTheme, Button } from 'shared/ui';
+import { enGB } from '@/shared/dictionaries';
+import { AppButtonTheme, Button } from '@/shared/ui';
 import classes from './PageError.module.scss';
 
 export const PageError = () => {

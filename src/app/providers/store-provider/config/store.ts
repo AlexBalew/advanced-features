@@ -5,10 +5,10 @@ import {
     Reducer,
     ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { userReducer } from 'entities/User';
-import { scrollSaverReducer } from 'features/ScrollSaver';
-import { rtkApi } from 'shared/api';
-import { api } from 'shared/api/api';
+import { userReducer } from '@/entities/User';
+import { scrollSaverReducer } from '@/features/ScrollSaver';
+import { rtkApi } from '@/shared/api';
+import { api } from '@/shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 

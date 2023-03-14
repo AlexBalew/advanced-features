@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/store-provider';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { StateSchema } from '@/app/providers/store-provider';
 import { ArticleType } from '../../../constants';
 import { IArticle } from '../../../types/article';
 import { fetchArticleById } from '../fetchArtcileById';

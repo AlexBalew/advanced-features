@@ -1,4 +1,4 @@
-import { enGB } from 'shared/dictionaries';
+import { enGB } from '@/shared/dictionaries';
 import { articleDetailsReducer } from '../../../model/slice/artcileDetailsSlice';
 import { IArticleDetailsSchema } from '../../types/articleDetailsSchema';
 import { fetchArticleById } from '../../services/fetchArticleById';

@@ -1,7 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
-import { enGB } from 'shared/dictionaries';
+import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
+import { enGB } from '@/shared/dictionaries';
 import {
     Text,
     Icon,
@@ -9,8 +9,8 @@ import {
     Avatar,
     Button,
     AppLink,
-} from 'shared/ui';
-import { classNames } from 'shared/utils';
+} from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { ArticleBlockType, ArticleListView } from '../../model';
 import { IArticle, IArticleBlockText } from '../../model/types/article';
 import { ArticleTextBlock } from '../ArticleTextBlock';

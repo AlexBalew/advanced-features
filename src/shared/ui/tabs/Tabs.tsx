@@ -1,5 +1,5 @@
 import { memo, ReactNode, useCallback } from 'react';
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import { Card } from '../card';
 import { CardTheme } from '../constants';
 import classes from './Tabs.module.scss';

@@ -1,7 +1,7 @@
-import { ArticleListView } from 'entities/Article';
 import { memo, useCallback, useMemo } from 'react';
-import { Icon, Button, AppButtonTheme } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { ArticleListView } from '@/entities/Article';
+import { Icon, Button, AppButtonTheme } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { IView } from './types';
 import classes from './ViewSwitcher.module.scss';
 

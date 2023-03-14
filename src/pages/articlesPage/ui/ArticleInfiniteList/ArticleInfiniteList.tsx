@@ -1,9 +1,9 @@
-import { ArticleList } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/utils';
-import { Text } from 'shared/ui';
-import { enGB } from 'shared/dictionaries';
+import { ArticleList } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/utils';
+import { Text } from '@/shared/ui';
+import { enGB } from '@/shared/dictionaries';
 import {
     getArticleListError,
     getArticleListIsLoading,

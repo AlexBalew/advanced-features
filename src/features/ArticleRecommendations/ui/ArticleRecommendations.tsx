@@ -1,14 +1,14 @@
-import { ArticleList, ArticleListView } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
-import { RECOMMENDATIONS_LIMIT } from 'shared/constants';
-import { enGB } from 'shared/dictionaries';
+import { ArticleList, ArticleListView } from '@/entities/Article';
+import { RECOMMENDATIONS_LIMIT } from '@/shared/constants';
+import { enGB } from '@/shared/dictionaries';
 import {
     Column,
     Loader,
     Text,
     TextSize,
-} from 'shared/ui';
-import { classNames } from 'shared/utils';
+} from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { useGetArticleRecommendations } from '../api';
 
 interface IProps {

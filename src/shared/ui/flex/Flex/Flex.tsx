@@ -1,6 +1,6 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
-import { classNames } from 'shared/utils';
-import { Mode } from 'shared/utils/classNames';
+import { classNames } from '@/shared/utils';
+import { Mode } from '@/shared/utils/classNames';
 import classes from './Flex.module.scss';
 
 type DivProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;

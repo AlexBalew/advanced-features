@@ -1,5 +1,5 @@
 import { HTMLAttributes, memo, ReactNode } from 'react';
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import { CardTheme } from '../constants';
 import classes from './Card.module.scss';
 

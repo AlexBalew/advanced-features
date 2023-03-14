@@ -1,15 +1,15 @@
-import { getUserAuthData } from 'entities/User';
 import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { enGB } from 'shared/dictionaries';
+import { getUserAuthData } from '@/entities/User';
+import { enGB } from '@/shared/dictionaries';
 import {
     AppButtonTheme,
     Button,
     Row,
     Text,
-} from 'shared/ui';
-import { classNames, useAppDispatch } from 'shared/utils';
+} from '@/shared/ui';
+import { classNames, useAppDispatch } from '@/shared/utils';
 import {
     getProfileData,
     getProfileReadOnly,

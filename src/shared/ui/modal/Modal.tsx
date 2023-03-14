@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import { MODAL_CLOSE_DELAY } from 'shared/constants';
-import { classNames } from 'shared/utils';
-import { Mode } from 'shared/utils/classNames';
-import { useModal } from 'shared/utils/hooks';
+import { MODAL_CLOSE_DELAY } from '@/shared/constants';
+import { classNames } from '@/shared/utils';
+import { Mode } from '@/shared/utils/classNames';
+import { useModal } from '@/shared/utils/hooks';
 import { Overlay } from '../overlay';
 import { Portal } from '../portal';
 import classes from './Modal.module.scss';

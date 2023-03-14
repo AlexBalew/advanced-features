@@ -1,7 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { enGB } from 'shared/dictionaries';
-import { AppSelect, IAppSelectOption } from 'shared/ui';
+import { enGB } from '@/shared/dictionaries';
+import { AppSelect, IAppSelectOption } from '@/shared/ui';
 import { Currency } from '../../model/types/currency';
 
 interface IProps {

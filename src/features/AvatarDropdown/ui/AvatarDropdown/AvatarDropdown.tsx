@@ -1,17 +1,17 @@
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     getUserAuthData,
     isUserAdmin,
     isUserManager,
     userActions,
-} from 'entities/User';
-import { memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/RouteConfig';
-import { enGB } from 'shared/dictionaries';
-import { RadiusType } from 'shared/types';
-import { Avatar, Dropdown } from 'shared/ui';
-import { classNames } from 'shared/utils';
+} from '@/entities/User';
+import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
+import { enGB } from '@/shared/dictionaries';
+import { RadiusType } from '@/shared/types';
+import { Avatar, Dropdown } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 
 interface IProps {
     className?: string;

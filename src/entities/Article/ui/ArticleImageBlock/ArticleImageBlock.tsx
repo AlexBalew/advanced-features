@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { classNames } from 'shared/utils';
-import { Text } from 'shared/ui';
+import { classNames } from '@/shared/utils';
+import { Text } from '@/shared/ui';
 import { IArticleBlockImage } from '../../model/types/article';
 import classes from './ArticleImageBlock.module.scss';
 

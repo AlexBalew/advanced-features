@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { classNames } from 'shared/utils';
+import { classNames } from '@/shared/utils';
 import classes from './Overlay.module.scss';
 
 interface IProps {

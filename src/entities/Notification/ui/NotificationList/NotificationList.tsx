@@ -1,6 +1,6 @@
 import { memo } from 'react';
-import { Column, Skeleton } from 'shared/ui';
-import { classNames } from 'shared/utils';
+import { Column, Skeleton } from '@/shared/ui';
+import { classNames } from '@/shared/utils';
 import { useGetNotifications } from '../../api/notificationApi';
 import { NotificationItem } from '../NotificationItem';
 import classes from './NotificationList.module.scss';

@@ -1,5 +1,5 @@
-import { ArticleSortField } from 'entities/Article';
-import { StateSchema } from 'app/providers/store-provider';
+import { ArticleSortField } from '@/entities/Article';
+import { StateSchema } from '@/app/providers/store-provider';
 
 export const getArticleListSortField = (
     state: StateSchema,

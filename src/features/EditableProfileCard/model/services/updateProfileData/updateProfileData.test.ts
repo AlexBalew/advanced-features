@@ -1,10 +1,10 @@
-import { StateSchema } from 'app/providers/store-provider';
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { Countries } from 'entities/Counrty';
-import { Currency } from 'entities/Currency';
 import { ConfigState } from '@reduxjs/toolkit/dist/query/core/apiState';
-import { ValidationErrors } from 'entities/Profile';
+import { StateSchema } from '@/app/providers/store-provider';
+import { Countries } from '@/entities/Counrty';
+import { Currency } from '@/entities/Currency';
+import { ValidationErrors } from '@/entities/Profile';
 import { updateProfileData } from './updateProfileData';
 import { getProfileFormData } from '../../selectors';
 
