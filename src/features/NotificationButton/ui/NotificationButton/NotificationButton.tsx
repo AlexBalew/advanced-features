@@ -9,6 +9,7 @@ import {
 } from 'shared/ui';
 import { AppPopover } from 'shared/ui/popups';
 import { classNames } from 'shared/utils';
+import { AnimationProvider } from 'shared/utils/components';
 import classes from './NotificationButton.module.scss';
 
 interface IProps {
@@ -47,9 +48,11 @@ export const NotificationButton = memo(({ className }: IProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpened={isOpened} onClose={onCloseDrawer} lazy>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpened={isOpened} onClose={onCloseDrawer} lazy>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </>
 
