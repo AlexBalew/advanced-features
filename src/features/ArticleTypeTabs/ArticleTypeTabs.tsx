@@ -3,7 +3,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { ITab, Tabs } from '@/shared/ui';
 import { enGB } from '@/shared/dictionaries';
 import { classNames } from '@/shared/utils';
-import { ArticleType } from '../../model';
+import { ArticleType } from '../../entities/Article/model';
 
 interface IProps {
     className?: string;
