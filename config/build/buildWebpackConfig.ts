@@ -22,7 +22,7 @@ export function buildWebpackConfig({
             rules: buildLoaders(isDev),
         },
         resolve: buildResolvers(paths),
-        devtool: isDev ? 'inline-source-map' : undefined,
+        devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
         devServer: isDev ? buildDevServer(port) : undefined,
     };
 }
