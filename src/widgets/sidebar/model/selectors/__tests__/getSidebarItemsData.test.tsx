@@ -1,6 +1,6 @@
 import { StateSchema } from '@/app/providers/store-provider';
 import { getUserAuthData } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
+import { getPathArticles, getPathProfile } from '@/shared/config';
 import { getSidebarItemsData } from '../getSidebarItemsData';
 
 jest.mock('entities/User');
@@ -18,13 +18,13 @@ describe('getSidebarItemsData test', () => {
         (getUserAuthData as jest.Mock).mockReturnValue(state.user?.authData);
         expect(getSidebarItemsData(state as StateSchema).length).toBe(4);
         expect(getSidebarItemsData(state as StateSchema)[2]).toEqual({
-            path: `${RoutePath.profile}${state.user?.authData?.id}`,
+            path: getPathProfile(state.user?.authData?.id!),
             IconNname: 'Profile',
             linkTitle: 'Profile',
             isAuth: true,
         });
         expect(getSidebarItemsData(state as StateSchema)[3]).toEqual({
-            path: RoutePath.articles,
+            path: getPathArticles(),
             IconNname: 'Articles',
             linkTitle: 'Articles',
             isAuth: true,

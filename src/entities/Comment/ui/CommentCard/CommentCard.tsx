@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
 import { enGB } from '@/shared/dictionaries';
 import { RadiusType } from '@/shared/types';
 import {
@@ -14,6 +13,7 @@ import {
 import { classNames } from '@/shared/utils';
 import { IComment } from '../../model/types';
 import classes from './CommentCard.module.scss';
+import { getPathProfile } from '@/shared/config';
 
 interface IProps {
     className?: string;
@@ -40,13 +40,13 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
         );
     }
 
-    if (!comment) {
+    if (!comment?.user) {
         return null;
     }
 
     return (
         <Column max gap="4" className={classNames(classes.root, {}, [className])}>
-            <AppLink to={`${RoutePath.profile}${comment?.user?.id}`}>
+            <AppLink to={getPathProfile(comment?.user?.id)}>
                 <Row>
                     {comment?.user?.avatar
                         ? (

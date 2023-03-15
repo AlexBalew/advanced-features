@@ -1,6 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
+import { getPathArticleDetails } from '@/shared/config';
 import { enGB } from '@/shared/dictionaries';
 import {
     Text,
@@ -61,7 +61,7 @@ export const ArticleListItem = memo(({
                     )}
                     <div className={classes.footer}>
                         <AppLink
-                            to={`${RoutePath.article}${article.id}`}
+                            to={getPathArticleDetails(article.id)}
                             target={target}
                         >
                             <Button>
@@ -80,7 +80,7 @@ export const ArticleListItem = memo(({
             // {...hoverActions} js hover implementation
             className={classNames(classes.root, {}, [className, classes[view]])}
         >
-            <AppLink to={`${RoutePath.article}${article.id}`} target={target}>
+            <AppLink to={getPathArticleDetails(article.id)} target={target}>
                 <Card>
                     <Text className={classes.date} text={article.createdAt} />
                     <div className={classes.imageWrapper}>

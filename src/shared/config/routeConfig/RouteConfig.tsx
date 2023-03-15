@@ -28,66 +28,63 @@ export const enum AppRoutes {
     NotFound = 'not_found'
 }
 
-export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.Main]: '/',
-    [AppRoutes.About]: '/about',
-    [AppRoutes.Profile]: '/profile/',
-    [AppRoutes.Articles]: '/articles',
-    [AppRoutes.Article_details]: '/article/',
-    [AppRoutes.Article_create]: '/article/create',
-    [AppRoutes.Article_edit]: '/article/:id/edit',
-    [AppRoutes.Admin]: '/admin',
-    [AppRoutes.Forbidden]: '/forbidden',
-    [AppRoutes.NotFound]: '*',
-};
+export const getPathMain = (): string => '/';
+export const getPathAbout = (): string => '/about';
+export const getPathProfile = (id: string): string => `/profile/${id}`;
+export const getPathArticles = (): string => '/articles';
+export const getPathArticleDetails = (id: string): string => `/article/${id}`;
+export const getPathArticleCreate = (): string => '/article/create';
+export const getPathArticleEdit = (id: string): string => `/article/${id}/edit`;
+export const getPathAdmin = (): string => '/admin';
+export const getPathForbidden = (): string => '/forbidden';
 
 export const routeConfig: Record<AppRoutes, AppAuthRoutes> = {
     [AppRoutes.Main]: {
-        path: RoutePath.main,
+        path: getPathMain(),
         element: <MainPage />,
     },
     [AppRoutes.About]: {
-        path: RoutePath.about,
+        path: getPathAbout(),
         element: <AboutPage />,
     },
     [AppRoutes.Profile]: {
-        path: `${RoutePath.profile}:id`,
+        path: getPathProfile(':id'),
         element: <ProfilePage />,
         isAuthorized: true,
     },
     [AppRoutes.Articles]: {
-        path: RoutePath.articles,
+        path: getPathArticles(),
         element: <ArticlesPage />,
         isAuthorized: true,
     },
     [AppRoutes.Article_details]: {
-        path: `${RoutePath.article}:id`,
+        path: getPathArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         isAuthorized: true,
     },
     [AppRoutes.Article_create]: {
-        path: RoutePath.article_create,
+        path: getPathArticleCreate(),
         element: <ArticleEditPage />,
         isAuthorized: true,
     },
     [AppRoutes.Article_edit]: {
-        path: RoutePath.article_edit,
+        path: getPathArticleEdit(':id'),
         element: <ArticleEditPage />,
         isAuthorized: true,
     },
     [AppRoutes.Admin]: {
-        path: RoutePath.admin,
+        path: getPathAdmin(),
         element: <AdminPage />,
         isAuthorized: true,
         roles: [UserRoles.ADMIN, UserRoles.MANAGER],
     },
     [AppRoutes.Forbidden]: {
-        path: RoutePath.forbidden,
+        path: getPathForbidden(),
         element: <ForbiddenPage />,
         isAuthorized: true,
     },
     [AppRoutes.NotFound]: {
-        path: RoutePath.not_found,
+        path: '*',
         element: <NotFoundPage />,
     },
 };

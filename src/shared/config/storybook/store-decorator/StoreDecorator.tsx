@@ -5,11 +5,13 @@ import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from '@/features/EditableProfileCard';
 import { articleDeatilsPageReducer } from '@/pages/articleDetailsPage/model';
 import { ReducersList } from '@/shared/utils';
+import { addCommentReducer } from '@/features/AddNewComment/model/slice/addCommentSlice';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
+    addComment: addCommentReducer,
     articleDetailsPage: articleDeatilsPageReducer,
 };
 

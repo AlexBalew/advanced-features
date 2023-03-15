@@ -1,19 +1,24 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
 import { ISidebarItem } from '../types';
+import {
+    getPathAbout,
+    getPathArticles,
+    getPathMain,
+    getPathProfile,
+} from '@/shared/config';
 
 export const getSidebarItemsData = createSelector(
     getUserAuthData,
     (userData): ISidebarItem[] => {
         const sideBarItemsList: ISidebarItem[] = [
             {
-                path: RoutePath.main,
+                path: getPathMain(),
                 IconNname: 'Home',
                 linkTitle: 'Home',
             },
             {
-                path: RoutePath.about,
+                path: getPathAbout(),
                 IconNname: 'AboutUs',
                 linkTitle: 'About us',
             },
@@ -22,13 +27,13 @@ export const getSidebarItemsData = createSelector(
         if (userData) {
             sideBarItemsList.push(
                 {
-                    path: `${RoutePath.profile}${userData?.id}`,
+                    path: getPathProfile(userData?.id),
                     IconNname: 'Profile',
                     linkTitle: 'Profile',
                     isAuth: true,
                 },
                 {
-                    path: RoutePath.articles,
+                    path: getPathArticles(),
                     IconNname: 'Articles',
                     linkTitle: 'Articles',
                     isAuth: true,

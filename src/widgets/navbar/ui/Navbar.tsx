@@ -5,8 +5,8 @@ import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
 import { enGB } from '@/shared/dictionaries';
+import { getPathArticleCreate } from '@/shared/config';
 import {
     AppButtonTheme,
     AppLink,
@@ -46,7 +46,7 @@ export const Navbar = memo(({ className }: IProps) => {
                 />
                 <AppLink
                     className={classes.createLink}
-                    to={RoutePath.article_create}
+                    to={getPathArticleCreate()}
                     theme={AppLinkTheme.Secondary}
                 >
                     {t(enGB.CREATE_ARTICLE)}

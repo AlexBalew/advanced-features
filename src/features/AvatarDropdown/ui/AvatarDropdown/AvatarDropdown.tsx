@@ -7,11 +7,11 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/config/routeConfig/RouteConfig';
 import { enGB } from '@/shared/dictionaries';
 import { RadiusType } from '@/shared/types';
 import { Avatar, Dropdown } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
+import { getPathAdmin, getPathProfile } from '@/shared/config';
 
 interface IProps {
     className?: string;
@@ -41,7 +41,7 @@ export const AvatarDropdown = memo(({ className }: IProps) => {
             items={[
                 ...(isAdminPanelAvailable ? [{
                     content: t(enGB.ADMIN_PANEL),
-                    href: RoutePath.admin,
+                    href: getPathAdmin(),
                 }] : []),
                 {
                     content: t(enGB.LOGOUT),
@@ -49,7 +49,7 @@ export const AvatarDropdown = memo(({ className }: IProps) => {
                 },
                 {
                     content: t(enGB.PROFILE),
-                    href: RoutePath.profile + userAuthData.id,
+                    href: getPathProfile(userAuthData.id),
                 },
             ]}
             trigger={(
