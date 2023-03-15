@@ -14,6 +14,7 @@ import { articleDeatilsPageReducer } from '../model';
 import { ArticleDetailsPageHeader } from './ArticleDetailsPageHeader';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 import classes from './ArticleDetailsPage.module.scss';
+import { ArticleRating } from '@/features/ArticleRating';
 
 const reducers: ReducersList = {
     articleDetailsPage: articleDeatilsPageReducer,
@@ -37,6 +38,7 @@ const ArticleDetailsPage = () => {
                 <Column gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
                     <ArticleRecommendations />
                     <ArticleDetailsComments id={id} />
                 </Column>

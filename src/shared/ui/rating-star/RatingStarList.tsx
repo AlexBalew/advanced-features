@@ -18,7 +18,7 @@ export const RatingStarList = memo(({
     selectedStars = 0,
     onSelect,
 }: IProps) => {
-    const [currentStarCount, setCurrentStarCount] = useState<number>(0);
+    const [currentStarCount, setCurrentStarCount] = useState<number>(selectedStars);
     const [isSelected, setIsSelected] = useState<boolean>(Boolean(selectedStars));
 
     const onHover = useCallback((starsCount: number) => () => {

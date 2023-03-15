@@ -23,6 +23,7 @@ interface IProps {
     title?: string;
     feedbackTitle?: string;
     hasFeedback?: boolean;
+    rate?: number;
     onCancel?: (starsCount: number) => void;
     onAccept?: (starsCount: number, feedback?: string) => void;
 }
@@ -32,12 +33,13 @@ export const Rating = memo(({
     title,
     feedbackTitle,
     hasFeedback,
+    rate = 0,
     onCancel,
     onAccept,
 }: IProps) => {
     const { t } = useTranslation();
     const [isModalOpened, setIsModalOpened] = useState<boolean>(false);
-    const [starsCount, seStarsCount] = useState<number>(0);
+    const [starsCount, seStarsCount] = useState<number>(rate);
     const [feedback, setFeedback] = useState<string>('');
 
     const onSelectStars = useCallback((selectedStarsCount: number) => {
@@ -71,45 +73,45 @@ export const Rating = memo(({
     );
 
     return (
-        <Card className={classNames(classes.root, {}, [className])}>
-            <Row align="center" gap="8">
-                <Text title={title} />
-                <RatingStarList size={40} onSelect={onSelectStars} />
-                <BrowserView>
-                    <Modal isOpened={isModalOpened} lazy>
-                        <Column max gap="32" align="center">
-                            {modalContent}
-                            <Row max gap="16" justify="end">
-                                <Button
-                                    onClick={cancelHandler}
-                                    theme={AppButtonTheme.Outline_Red}
-                                >
-                                    {t(enGB.CLOSE)}
-                                </Button>
-                                <Button
-                                    onClick={acceptHandler}
-                                >
-                                    {t(enGB.SEND)}
-                                </Button>
-                            </Row>
-                        </Column>
-                    </Modal>
-                </BrowserView>
-                <MobileView>
-                    <Drawer
-                        isOpened={isModalOpened}
-                        lazy
-                        onClose={cancelHandler}
-                    >
-                        <Column gap="32">
-                            {modalContent}
-                            <Button onClick={acceptHandler} size={AppButtonSize.L} fullWidth>
+        <Card className={classNames(classes.root, {}, [className])} max>
+            <Column align="center" gap="8">
+                <Text title={starsCount ? t<string>(enGB.RATING) : title} />
+                <RatingStarList size={30} onSelect={onSelectStars} selectedStars={starsCount} />
+            </Column>
+            <BrowserView>
+                <Modal isOpened={isModalOpened} lazy>
+                    <Column max gap="32" align="center">
+                        {modalContent}
+                        <Row max gap="16" justify="end">
+                            <Button
+                                onClick={cancelHandler}
+                                theme={AppButtonTheme.Outline_Red}
+                            >
+                                {t(enGB.CLOSE)}
+                            </Button>
+                            <Button
+                                onClick={acceptHandler}
+                            >
                                 {t(enGB.SEND)}
                             </Button>
-                        </Column>
-                    </Drawer>
-                </MobileView>
-            </Row>
+                        </Row>
+                    </Column>
+                </Modal>
+            </BrowserView>
+            <MobileView>
+                <Drawer
+                    isOpened={isModalOpened}
+                    lazy
+                    onClose={cancelHandler}
+                >
+                    <Column gap="32">
+                        {modalContent}
+                        <Button onClick={acceptHandler} size={AppButtonSize.L} fullWidth>
+                            {t(enGB.SEND)}
+                        </Button>
+                    </Column>
+                </Drawer>
+            </MobileView>
         </Card>
     );
 });

@@ -76,4 +76,7 @@ export const enGB = {
     ACCESS_IS_FORBIDDEN: 'Access is forbidden',
     YOUR_REVIEW: 'Your review',
     CLOSE: 'Close',
+    RATE_THIS_ARTICLE: 'Rate this article',
+    LEAVE_YOUR_FEEDBACK: 'Leave your feedback here',
+    RATING: 'Rating',
 };

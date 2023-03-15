@@ -7,16 +7,18 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     children?: ReactNode;
     theme?: CardTheme;
+    max?: boolean;
 }
 
 export const Card = memo(({
     className,
     children,
     theme = CardTheme.Common,
+    max,
     ...otherProps
 }: IProps) => (
     <div
-        className={classNames(classes.root, {}, [className, classes[theme]])}
+        className={classNames(classes.root, { [classes.max]: max }, [className, classes[theme]])}
         {...otherProps}
     >
         {children}
