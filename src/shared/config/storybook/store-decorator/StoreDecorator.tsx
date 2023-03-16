@@ -1,12 +1,11 @@
-/* eslint-disable balev-fsd-path-plugin/fsd-public-api-imports */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/store-provider';
-import { articleDetailsReducer } from '@/entities/Article/model/slice/artcileDetailsSlice';
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
 import { profileReducer } from '@/features/EditableProfileCard';
-import { articleDeatilsPageReducer } from '@/pages/articleDetailsPage/model';
 import { ReducersList } from '@/shared/utils';
-import { addCommentReducer } from '@/features/AddNewComment/model/slice/addCommentSlice';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { articleDeatilsPageReducer } from '@/pages/articleDetailsPage/testing';
+import { addCommentReducer } from '@/features/AddNewComment/testing';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,

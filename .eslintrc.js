@@ -75,7 +75,10 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'balev-fsd-path-plugin/fsd-path-checker': ['error', { alias: '@' }],
-        'balev-fsd-path-plugin/fsd-public-api-imports': ['error', { alias: '@' }],
+        'balev-fsd-path-plugin/fsd-public-api-imports': ['error', {
+            alias: '@',
+            testFilesPatterns: ['**/*test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+        }],
     },
     globals: {
         __IS_DEV__: true,
