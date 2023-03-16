@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThunkConfig } from '@/app/providers/store-provider';
 import { ArticleType, IArticle } from '@/entities/Article';
 import { addQueryParams } from '@/shared/utils';

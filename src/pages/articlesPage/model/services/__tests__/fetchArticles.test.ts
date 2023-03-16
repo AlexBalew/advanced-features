@@ -1,6 +1,5 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
-// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema } from '@/app/providers/store-provider';
 import { ArticleType, IArticle } from '@/entities/Article';
 import { fetchArticles } from '../fetchArticles';

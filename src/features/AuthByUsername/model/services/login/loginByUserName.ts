@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IUser, userActions } from '@/entities/User';
 import { USER_LS_KEY } from '@/shared/constants';
-// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThunkConfig } from '@/app/providers/store-provider';
 
 interface IProps {

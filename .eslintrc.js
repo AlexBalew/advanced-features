@@ -83,7 +83,7 @@ module.exports = {
         }],
         'balev-fsd-path-plugin/layer-imports': ['error', {
             alias: '@',
-            ignoreImportPatterns: ['**/StoreProvider'],
+            ignoreImportPatterns: ['**/store-provider'],
         }],
     },
     globals: {

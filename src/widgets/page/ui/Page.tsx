@@ -12,7 +12,6 @@ import {
     getScrollPositionByPath,
     scrollSaverSliceActions,
 } from '@/features/ScrollSaver';
-// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema } from '@/app/providers/store-provider';
 import { classNames } from '@/shared/utils';
 import {

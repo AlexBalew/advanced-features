@@ -5,4 +5,5 @@ export type {
     StoreWithManager,
     ThunkExtraArg,
     ThunkConfig,
+    StateSchemaKey,
 } from './config/StateSchema';
