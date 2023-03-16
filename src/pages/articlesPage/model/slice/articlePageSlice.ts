@@ -1,5 +1,6 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { SortType } from '@/shared/types';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema } from '@/app/providers/store-provider';
 import {
     ArticleListView,

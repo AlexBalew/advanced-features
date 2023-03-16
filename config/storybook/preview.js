@@ -5,7 +5,7 @@ import {
     RouterDecorator,
     SuspenseDecorator,
 } from '../../src/shared/config/storybook';
-import { Theme } from '../../src/shared/constants/constants';
+import { Theme } from '../../src/shared/constants/theme';
 
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },

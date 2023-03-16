@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema } from '@/app/providers/store-provider';
 import { UserRoles } from '../constants';
 

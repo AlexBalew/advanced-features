@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook';
-import { Theme } from '@/shared/constants';
 import AdminPage from './AdminPage';
+import { Theme } from '@/shared/constants/theme';
 
 export default {
     title: 'pages/AdminPage',

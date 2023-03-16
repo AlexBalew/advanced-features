@@ -1,12 +1,12 @@
 import {
     memo, ReactNode, useCallback, useEffect,
 } from 'react';
-import { useTheme } from '@/app/providers/theme-provider';
 import { classNames } from '@/shared/utils';
 import { AnimationProvider, useAnimationLibs } from '@/shared/utils/components';
 import { Overlay } from '../overlay';
 import { Portal } from '../portal';
 import classes from './Drawer.module.scss';
+import { useTheme } from '@/shared/utils/hooks';
 
 interface IProps {
     className?: string;

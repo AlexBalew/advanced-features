@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook';
-import { Theme } from '@/shared/constants';
 import { Skeleton } from './Skeleton';
+import { Theme } from '@/shared/constants/theme';
 
 export default {
     title: 'shared/Skeleton',

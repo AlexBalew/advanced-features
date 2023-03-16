@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { enGB } from '@/shared/dictionaries';
 import { getUserAuthData } from '@/entities/User';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThunkConfig } from '@/app/providers/store-provider';
 import { IComment } from '@/entities/Comment';
 import { getArticleDetails } from '@/entities/Article';

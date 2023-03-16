@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
+import { Theme } from '@/shared/constants/theme';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThemeProvider } from '@/app/providers/theme-provider';
-import { Theme } from '@/shared/constants';
 
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     <ThemeProvider initialTheme={theme}>

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortType } from '@/shared/types';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThunkConfig } from '@/app/providers/store-provider';
 import { getArticleListIsInitialized } from '../selectors';
 import { articlesPageActions } from '../slice/articlePageSlice';

@@ -1,6 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { userActions } from '@/entities/User';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema } from '@/app/providers/store-provider';
 import { loginByUserName } from './loginByUserName';
 

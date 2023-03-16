@@ -1,7 +1,9 @@
 import { Reducer } from '@reduxjs/toolkit';
 import { FC, ReactNode, useEffect } from 'react';
 import { useStore } from 'react-redux';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StoreWithManager } from '@/app/providers/store-provider';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { StateSchema, StateSchemaKey } from '@/app/providers/store-provider/config/StateSchema';
 
 export type ReducersList = {

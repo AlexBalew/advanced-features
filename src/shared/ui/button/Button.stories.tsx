@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/theme-decorator/ThemeDecorator';
-import { Theme } from '@/shared/constants';
 import { AppButtonSize, AppButtonTheme } from '../constants';
 import { Button } from './Button';
+import { Theme } from '@/shared/constants/theme';
 
 export default {
     title: 'shared/Button',

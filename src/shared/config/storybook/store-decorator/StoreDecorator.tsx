@@ -1,3 +1,4 @@
+/* eslint-disable balev-fsd-path-plugin/layer-imports */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/store-provider';
 import { profileReducer } from '@/features/EditableProfileCard';

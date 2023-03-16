@@ -4,8 +4,9 @@ import {
     useMemo,
     useState,
 } from 'react';
-import { LOCAL_STORAGE_THEME_KEY, Theme } from '@/shared/constants';
-import { ThemeContext } from '../hooks';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/constants';
+import { Theme } from '@/shared/constants/theme';
+import { ThemeContext } from '@/shared/context/ThemeContext';
 
 interface IProps {
     initialTheme?: Theme;

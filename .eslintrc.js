@@ -79,6 +79,10 @@ module.exports = {
             alias: '@',
             testFilesPatterns: ['**/*test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
         }],
+        'balev-fsd-path-plugin/layer-imports': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider'],
+        }],
     },
     globals: {
         __IS_DEV__: true,

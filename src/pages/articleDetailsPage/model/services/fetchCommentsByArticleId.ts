@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { IComment } from '@/entities/Comment';
+// eslint-disable-next-line balev-fsd-path-plugin/layer-imports
 import { ThunkConfig } from '@/app/providers/store-provider';
 
 export const fetchCommentsByArticleId = createAsyncThunk<

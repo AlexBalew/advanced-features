@@ -4,9 +4,3 @@ export const MODAL_CLOSE_DELAY = 300;
 export const DRAWER_CLOSE_DELAY = 400;
 export const USER_LS_KEY = 'user';
 export const RECOMMENDATIONS_LIMIT = 4;
-
-export const enum Theme {
-    Dark = 'app_dark_theme',
-    Light = 'app_light_theme',
-    Purple = 'app_purple_theme',
-}

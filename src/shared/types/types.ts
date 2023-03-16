@@ -1,4 +1,4 @@
-import { Theme } from '../constants';
+import { Theme } from '../constants/theme';
 
 export interface IThemeContextProps {
     theme?: Theme,
