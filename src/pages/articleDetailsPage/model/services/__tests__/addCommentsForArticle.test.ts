@@ -8,12 +8,17 @@ import { getArticleDetails, IArticle } from '@/entities/Article';
 import { enGB } from '@/shared/dictionaries';
 import { addCommentForArticle } from '../addCommentForArticle';
 
-jest.mock('axios');
+jest.mock('axios', () => ({
+    post: jest.fn(),
+    create: jest.fn(() => ({
+        interceptors: {
+            request: { use: jest.fn() },
+        },
+    })),
+}));
 jest.mock('../../selectors');
 jest.mock('entities/User');
 jest.mock('entities/Article/model');
-
-const mockedAxios = jest.mocked(axios, true);
 
 const mockState: StateSchema = {
     scrollSaver: {
@@ -41,14 +46,14 @@ describe('addCommentForArticle test', () => {
     test('addCommentForArticle should work correctly', async () => {
         (getUserAuthData as jest.Mock).mockReturnValue({} as IUser);
         (getArticleDetails as jest.Mock).mockReturnValue({} as IArticle);
-        mockedAxios.post.mockReturnValue(Promise.resolve({
+        (axios.post as jest.Mock).mockReturnValue(Promise.resolve({
             data: mockState.addComment?.text,
         }));
         const action = addCommentForArticle(mockText);
         const result = await action(dispatch, getState, {
-            api: mockedAxios,
+            api: axios,
         });
-        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(axios.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe('fulfilled');
         expect(result.payload).toEqual(mockState.addComment?.text);
     });
@@ -56,14 +61,14 @@ describe('addCommentForArticle test', () => {
     test(
         'addCommentForArticle should work correctly when there error code was returned by server',
         async () => {
-            mockedAxios.post.mockReturnValue(Promise.resolve({
+            (axios.post as jest.Mock).mockReturnValue(Promise.resolve({
                 status: 403,
             }));
             const action = addCommentForArticle(mockText);
             const result = await action(dispatch, getState, {
-                api: mockedAxios,
+                api: axios,
             });
-            expect(mockedAxios.post).toHaveBeenCalled();
+            expect(axios.post).toHaveBeenCalled();
             expect(result.meta.requestStatus).toBe('rejected');
             expect(result.payload).toEqual(enGB.COMMON_ERROR_TITLE);
         },

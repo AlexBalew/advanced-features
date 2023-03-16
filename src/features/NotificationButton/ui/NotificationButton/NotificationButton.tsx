@@ -9,7 +9,6 @@ import {
 } from '@/shared/ui';
 import { AppPopover } from '@/shared/ui/popups';
 import { classNames } from '@/shared/utils';
-import { AnimationProvider } from '@/shared/utils/components';
 import classes from './NotificationButton.module.scss';
 
 interface IProps {

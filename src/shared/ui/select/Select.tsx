@@ -1,6 +1,5 @@
 import {
     ChangeEvent,
-    memo,
     useCallback,
     useMemo,
 } from 'react';
