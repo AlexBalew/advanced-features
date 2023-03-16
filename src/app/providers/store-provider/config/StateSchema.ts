@@ -13,8 +13,8 @@ import { addCommentFormSchema } from '@/features/AddNewComment';
 import { ILoginSchema } from '@/features/AuthByUsername';
 import { IScrollSaverSchema } from '@/features/ScrollSaver';
 import { IArticleDetailsPageSchema } from '@/pages/articleDetailsPage';
-import { ArticlesPageSchema } from '@/pages/articlesPage';
 import { IProfileSchema } from '@/features/EditableProfileCard';
+import { ArticlesPageSchema } from '@/pages/articlesPage';
 
 export interface StateSchema {
     user: IUserSchema;

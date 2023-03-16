@@ -1,9 +1,10 @@
 import { memo, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { AppAuthRoutes, routeConfig } from '@/shared/config/routeConfig/RouteConfig';
 import { PageLoader } from '@/widgets/page-loader';
 import { RequireAuth } from './RequireAuth';
 import { RequireRole } from './RequireRole';
+import { routeConfig } from '../config/routeConfig';
+import { AppAuthRoutes } from '@/shared/types/router';
 
 const AppRouter = () => (
     <Routes>
