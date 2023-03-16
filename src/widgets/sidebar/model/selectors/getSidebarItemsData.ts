@@ -6,7 +6,7 @@ import {
     getPathArticles,
     getPathMain,
     getPathProfile,
-} from '@/shared/config';
+} from '@/shared/config/routeConfig/RouteConfig';
 
 export const getSidebarItemsData = createSelector(
     getUserAuthData,

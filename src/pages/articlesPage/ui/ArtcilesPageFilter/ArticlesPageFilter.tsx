@@ -1,8 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticleListView } from '@/entities/Article';
-import { ArticleSortField, ArticleType } from '@/entities/Article/model';
+import { ArticleListView, ArticleSortField, ArticleType } from '@/entities/Article';
 import { ViewSwitcher } from '@/features/ViewSwither';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';

@@ -12,8 +12,8 @@ import { IUserSchema } from '@/entities/User';
 import { addCommentFormSchema } from '@/features/AddNewComment';
 import { ILoginSchema } from '@/features/AuthByUsername';
 import { IScrollSaverSchema } from '@/features/ScrollSaver';
-import { IArticleDetailsPageSchema } from '@/pages/articleDetailsPage/model/types';
-import { ArticlesPageSchema } from '@/pages/articlesPage/model';
+import { IArticleDetailsPageSchema } from '@/pages/articleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/articlesPage';
 import { IProfileSchema } from '@/features/EditableProfileCard';
 
 export interface StateSchema {

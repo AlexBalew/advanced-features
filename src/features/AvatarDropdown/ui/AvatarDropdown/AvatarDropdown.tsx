@@ -11,7 +11,7 @@ import { enGB } from '@/shared/dictionaries';
 import { RadiusType } from '@/shared/types';
 import { Avatar, Dropdown } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
-import { getPathAdmin, getPathProfile } from '@/shared/config';
+import { getPathAdmin, getPathProfile } from '@/shared/config/routeConfig/RouteConfig';
 
 interface IProps {
     className?: string;

@@ -13,7 +13,7 @@ import {
 import { classNames } from '@/shared/utils';
 import { IComment } from '../../model/types';
 import classes from './CommentCard.module.scss';
-import { getPathProfile } from '@/shared/config';
+import { getPathProfile } from '@/shared/config/routeConfig/RouteConfig';
 
 interface IProps {
     className?: string;

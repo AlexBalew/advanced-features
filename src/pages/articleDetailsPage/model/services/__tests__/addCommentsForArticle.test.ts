@@ -3,8 +3,7 @@ import axios from 'axios';
 import { ConfigState } from '@reduxjs/toolkit/dist/query/core/apiState';
 import { StateSchema } from '@/app/providers/store-provider';
 import { getUserAuthData, IUser } from '@/entities/User';
-import { getArticleDetails } from '@/entities/Article/model';
-import { IArticle } from '@/entities/Article';
+import { getArticleDetails, IArticle } from '@/entities/Article';
 import { enGB } from '@/shared/dictionaries';
 import { addCommentForArticle } from '../addCommentForArticle';
 

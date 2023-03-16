@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router';
 import { getUserRoles, UserRoles } from '@/entities/User';
-import { getPathForbidden } from '@/shared/config';
+import { getPathForbidden } from '@/shared/config/routeConfig/RouteConfig';
 
 interface IProps {
     children: JSX.Element;

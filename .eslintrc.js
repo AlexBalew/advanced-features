@@ -74,7 +74,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'balev-fsd-path-plugin/fsd-path-checker': 'error',
+        'balev-fsd-path-plugin/fsd-path-checker': ['error', { alias: '@' }],
+        'balev-fsd-path-plugin/fsd-public-api-imports': ['error', { alias: '@' }],
     },
     globals: {
         __IS_DEV__: true,

@@ -1,3 +1,4 @@
+/* eslint-disable balev-fsd-path-plugin/fsd-public-api-imports */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/store-provider';
 import { articleDetailsReducer } from '@/entities/Article/model/slice/artcileDetailsSlice';

@@ -1,5 +1,5 @@
 import { StateSchema } from '@/app/providers/store-provider';
-import { ArticleType } from '@/entities/Article/model';
+import { ArticleType } from '@/entities/Article';
 import { getArticleType } from '../getArticleType';
 
 describe('getArticleType test', () => {

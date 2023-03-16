@@ -6,7 +6,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { enGB } from '@/shared/dictionaries';
-import { getPathArticleCreate } from '@/shared/config';
+import { getPathArticleCreate } from '@/shared/config/routeConfig/RouteConfig';
 import {
     AppButtonTheme,
     AppLink,

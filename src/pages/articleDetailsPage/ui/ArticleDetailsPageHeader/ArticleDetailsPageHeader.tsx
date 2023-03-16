@@ -7,7 +7,7 @@ import { enGB } from '@/shared/dictionaries';
 import { Button, Row } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import { getCanEditArticle } from '../../model';
-import { getPathArticleEdit, getPathArticles } from '@/shared/config';
+import { getPathArticleEdit, getPathArticles } from '@/shared/config/routeConfig/RouteConfig';
 
 interface IProps {
     className?: string;
