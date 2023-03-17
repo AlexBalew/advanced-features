@@ -1,6 +1,10 @@
 import { CSSProperties, memo, useMemo } from 'react';
 import { classNames } from '@/shared/utils';
 import { Mode } from '@/shared/utils/classNames';
+import { AppImage } from '../app-image';
+import { Icon } from '../icon';
+import { Skeleton } from '../skeleton';
+import { RadiusType } from '@/shared/types';
 import classes from './Avatar.module.scss';
 
 interface IProps {
@@ -27,8 +31,13 @@ export const Avatar = memo(({
         borderRadius: radius,
     }), [radius, size]);
 
+    const errorFallback = <Icon className={classes.icon} name="ProfileALt" size={size} />;
+    const fallback = <Skeleton width={size} height={size} border={RadiusType.Circle} />;
+
     return (
-        <img
+        <AppImage
+            fallback={fallback}
+            errorFallback={errorFallback}
             src={src}
             style={styles}
             className={classNames(classes.root, mods, [className])}

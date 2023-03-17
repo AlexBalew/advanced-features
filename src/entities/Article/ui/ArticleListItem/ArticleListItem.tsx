@@ -9,6 +9,8 @@ import {
     Avatar,
     Button,
     AppLink,
+    AppImage,
+    Skeleton,
 } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import { ArticleBlockType, ArticleListView } from '../../model';
@@ -55,7 +57,12 @@ export const ArticleListItem = memo(({
                     </div>
                     <Text title={article.title} className={classes.title} />
                     {types}
-                    <img src={article.img} className={classes.img} alt={article.title} />
+                    <AppImage
+                        fallback={<Skeleton width="100%" height={250} />}
+                        src={article.img}
+                        className={classes.img}
+                        alt={article.title}
+                    />
                     {textBlock && (
                         <ArticleTextBlock block={textBlock} className={classes.textBlock} />
                     )}
@@ -84,7 +91,12 @@ export const ArticleListItem = memo(({
                 <Card>
                     <Text className={classes.date} text={article.createdAt} />
                     <div className={classes.imageWrapper}>
-                        <img className={classes.img} src={article.img} alt={article.title} />
+                        <AppImage
+                            fallback={<Skeleton width={200} height={200} />}
+                            className={classes.img}
+                            src={article.img}
+                            alt={article.title}
+                        />
                     </div>
                     <div className={classes.infoWrapper}>
                         {types}

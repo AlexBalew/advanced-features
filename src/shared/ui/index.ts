@@ -19,3 +19,4 @@ export * from './constants';
 export * from './overlay';
 export * from './drawer';
 export * from './rating-star';
+export * from './app-image';
