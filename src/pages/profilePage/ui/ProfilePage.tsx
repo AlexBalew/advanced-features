@@ -19,7 +19,7 @@ const ProfilePage = ({ className }: IProps) => {
     }
 
     return (
-        <Page className={classNames('', {}, [className])}>
+        <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
             <Column gap="16" max>
                 <EditableProfileCard id={id} />
             </Column>

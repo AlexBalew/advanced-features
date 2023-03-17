@@ -7,7 +7,7 @@ export const NotFoundPage = () => {
     const { t } = useTranslation();
 
     return (
-        <Page className={classes.root}>
+        <Page data-testid="NotFoundPage" className={classes.root}>
             <div className={classes.error}>{enGB[404]}</div>
             <div>{t(enGB.NOT_FOUND)}</div>
         </Page>

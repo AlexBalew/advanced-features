@@ -14,6 +14,7 @@ import {
 } from '@/features/ScrollSaver';
 import { StateSchema } from '@/app/providers/store-provider';
 import { classNames } from '@/shared/utils';
+import { TestProps } from '@/shared/types';
 import {
     useAppDispatch,
     useInfiniteScroll,
@@ -22,13 +23,14 @@ import {
 } from '@/shared/utils/hooks';
 import classes from './Page.module.scss';
 
-interface IProps {
+interface IProps extends TestProps {
     className?: string;
     children: ReactNode;
     onEndScroll?: () => void;
 }
 
-export const Page = memo(({ className, children, onEndScroll }: IProps) => {
+export const Page = memo((props: IProps) => {
+    const { children, className, onEndScroll } = props;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
@@ -59,6 +61,7 @@ export const Page = memo(({ className, children, onEndScroll }: IProps) => {
             ref={wrapperRef}
             className={classNames(classes.root, {}, [className])}
             onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onEndScroll && (
