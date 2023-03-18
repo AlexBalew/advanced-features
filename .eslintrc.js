@@ -8,7 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
-    ],
+        'plugin:storybook/recommended'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -20,8 +20,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
-        'i18next',
-        'react-hooks',
+        'i18next', 'react-hooks',
         'balev-fsd-path-plugin',
         'unused-imports',
     ],
@@ -29,10 +28,9 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
-        'react/jsx-filename-extension': [
-            2,
-            { extensions: ['.js', '.jsx', '.tsx'] },
-        ],
+        'react/jsx-filename-extension': [2, {
+            extensions: ['.js', '.jsx', '.tsx'],
+        }],
         'import/no-unresolved': 'off',
         'unused-imports/no-unused-imports': 'error',
         'import/prefer-default-export': 'off',
@@ -46,37 +44,39 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'i18next/no-literal-string':
-            ['error', {
-                markupOnly: true,
-                ignoreAttribute: [
-                    'role',
-                    'border',
-                    'height',
-                    'data-testid',
-                    'to',
-                    'type',
-                    'name',
-                    'className',
-                    'reducerName',
-                    'target',
-                    'align',
-                    'direction',
-                    'max',
-                    'justify',
-                    'gap',
-                    'as',
-                ],
-            },
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: [
+                'role',
+                'border',
+                'height',
+                'data-testid',
+                'to', 'type',
+                'name',
+                'className',
+                'reducerName',
+                'target',
+                'align',
+                'direction',
+                'max',
+                'justify',
+                'gap',
+                'as',
             ],
-        'max-len': ['error', { code: 100, ignoreComments: true }],
+        }],
+        'max-len': ['error', {
+            code: 100,
+            ignoreComments: true,
+        }],
         'jsx-a11y/click-events-have-key-events': 'off',
         'jsx-a11y/no-static-element-interactions': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'balev-fsd-path-plugin/fsd-path-checker': ['error', { alias: '@' }],
+        'balev-fsd-path-plugin/fsd-path-checker': ['error', {
+            alias: '@',
+        }],
         'balev-fsd-path-plugin/fsd-public-api-imports': ['error', {
             alias: '@',
             testFilesPatterns: ['**/*test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
@@ -91,12 +91,10 @@ module.exports = {
         __API__: true,
         __PROJECT__: true,
     },
-    overrides: [
-        {
-            files: ['**/src/**/*.test.{ts,tsx}'],
-            rules: {
-                'i18next/no-literal-string': 'off',
-            },
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off',
         },
-    ],
+    }],
 };

@@ -101,18 +101,18 @@ Primary.decorators = [StoreDecorator({
     },
 })];
 
-export const isLoading = Template.bind({});
-isLoading.args = {};
-isLoading.decorators = [StoreDecorator({
+export const IsLoading = Template.bind({});
+IsLoading.args = {};
+IsLoading.decorators = [StoreDecorator({
     articleDetails: {
         data: article,
         isLoading: true,
     },
 })];
 
-export const withError = Template.bind({});
-withError.args = {};
-withError.decorators = [StoreDecorator({
+export const WithError = Template.bind({});
+WithError.args = {};
+WithError.decorators = [StoreDecorator({
     articleDetails: {
         data: article,
         error: 'error',
