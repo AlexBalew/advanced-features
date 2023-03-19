@@ -1401,6 +1401,16 @@
       ],
       "password": "456",
       "avatar": "https://www.slashfilm.com/img/gallery/michael-scotts-12-most-redeeming-moments-in-the-office/intro-1634858598.jpg"
+    },
+    {
+      "id": "4",
+      "userName": "testuser",
+      "roles": [
+        "ADMIN",
+        "MANAGER"
+      ],
+      "password": "qwerty",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRypXDphKoD5kuzgrgPXONIjlzGMNx-eZXKnA&usqp=CAU"
     }
   ],
   "profile": [
@@ -1436,6 +1446,16 @@
       "city": "Scranton",
       "username": "Boss",
       "avatar": "https://www.slashfilm.com/img/gallery/michael-scotts-12-most-redeeming-moments-in-the-office/intro-1634858598.jpg"
+    },    {
+      "id": "4",
+      "firstname": "Test",
+      "lastname": "User",
+      "age": 1,
+      "currency": "EUR",
+      "country": "Canada",
+      "city": "Toronto",
+      "username": "testuser",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRypXDphKoD5kuzgrgPXONIjlzGMNx-eZXKnA&usqp=CAU"
     }
   ],
   "article-ratings": [

@@ -33,6 +33,7 @@ const ArticlesPage = () => {
     return (
         <DynamicComponentLoader reducers={reducers} removeAfterUnmount={false}>
             <Page
+                data-testid="ArticlesPage"
                 className={classNames(classes.root, {}, [])}
                 onEndScroll={onLoadNextDataPart}
             >
