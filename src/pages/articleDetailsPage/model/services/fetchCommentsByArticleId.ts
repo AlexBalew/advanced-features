@@ -4,14 +4,14 @@ import { ThunkConfig } from '@/app/providers/store-provider';
 
 export const fetchCommentsByArticleId = createAsyncThunk<
 IComment[], string | undefined, ThunkConfig<string>>(
-    'article/fetchCommentsByArticleId',
+    'articleDetails/fetchCommentsByArticleId',
     async (artcileId, { extra, rejectWithValue }) => {
         if (!artcileId) {
             return rejectWithValue('error');
         }
 
         try {
-            const response = await extra.api.get<IComment[]>('comments', {
+            const response = await extra.api.get<IComment[]>('/comments', {
                 params: {
                     artcileId,
                     _expand: 'user',

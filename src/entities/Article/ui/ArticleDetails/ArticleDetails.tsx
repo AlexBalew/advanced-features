@@ -107,7 +107,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
                         className={classes.avatar}
                     />
                 </Row>
-                <Column gap="4">
+                <Column gap="4" data-testid="ArticleDetails.Info">
                     <Text
                         className={classes.title}
                         title={data?.title}

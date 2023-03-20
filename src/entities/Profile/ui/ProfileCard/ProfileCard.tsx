@@ -84,7 +84,12 @@ export const ProfileCard = memo(({
     }
 
     return (
-        <Column gap="8" max className={classNames(classes.root, mods, [className])}>
+        <Column
+            gap="8"
+            max
+            className={classNames(classes.root, mods, [className])}
+            data-testid="ProfileCard"
+        >
             {data?.avatar
                 && (
                     <Row justify="center" max>

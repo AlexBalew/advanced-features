@@ -44,13 +44,18 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
                 max
                 justify="between"
                 className={classNames(classes.root, {}, [className])}
+                data-testid="AddCommentForm"
             >
                 <Input
                     placeholder={t<string>(enGB.ADD_YOUR_COMMENT)}
                     value={text}
+                    data-testid="AddCommentForm.Input"
                     onChange={onChange}
                 />
-                <Button onClick={onSendHandler}>
+                <Button
+                    data-testid="AddCommentForm.Button"
+                    onClick={onSendHandler}
+                >
                     {t(enGB.SEND)}
                 </Button>
             </Row>

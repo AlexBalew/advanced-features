@@ -48,7 +48,10 @@ export const ArticleListItem = memo(({
         ) as IArticleBlockText;
 
         return (
-            <div className={classNames(classes.root, {}, [className, classes[view]])}>
+            <div
+                className={classNames(classes.root, {}, [className, classes[view]])}
+                data-testid="ArticleListItem"
+            >
                 <Card>
                     <div className={classes.header}>
                         <Avatar size={30} src={article.user?.avatar} alt={enGB.AVATAR} />
@@ -86,6 +89,7 @@ export const ArticleListItem = memo(({
         <div
             // {...hoverActions} js hover implementation
             className={classNames(classes.root, {}, [className, classes[view]])}
+            data-testid="ArticleListItem"
         >
             <AppLink to={getPathArticleDetails(article.id)} target={target}>
                 <Card>

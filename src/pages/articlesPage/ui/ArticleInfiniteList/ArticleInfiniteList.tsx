@@ -1,7 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Article';
-import { useAppDispatch } from '@/shared/utils';
 import { Text } from '@/shared/ui';
 import { enGB } from '@/shared/dictionaries';
 import {
@@ -16,7 +15,6 @@ interface IProps {
 }
 
 export const ArticleInfiniteList = ({ className }: IProps) => {
-    const dispatch = useAppDispatch();
     const { t } = useTranslation();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticleListIsLoading);

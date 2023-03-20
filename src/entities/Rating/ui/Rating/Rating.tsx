@@ -67,13 +67,18 @@ export const Rating = memo(({
             <Input
                 placeholder={t<string>(enGB.YOUR_REVIEW)}
                 value={feedback}
+                data-testid="Rating.Input"
                 onChange={setFeedback}
             />
         </>
     );
 
     return (
-        <Card className={classNames(classes.root, {}, [className])} max>
+        <Card
+            className={classNames(classes.root, {}, [className])}
+            max
+            data-testid="Rating"
+        >
             <Column align="center" gap="8">
                 <Text title={starsCount ? t<string>(enGB.RATING) : title} />
                 <RatingStarList size={30} onSelect={onSelectStars} selectedStars={starsCount} />
@@ -84,12 +89,14 @@ export const Rating = memo(({
                         {modalContent}
                         <Row max gap="16" justify="end">
                             <Button
-                                onClick={cancelHandler}
                                 theme={AppButtonTheme.Outline_Red}
+                                data-testid="Rating.Close"
+                                onClick={cancelHandler}
                             >
                                 {t(enGB.CLOSE)}
                             </Button>
                             <Button
+                                data-testid="Rating.Send"
                                 onClick={acceptHandler}
                             >
                                 {t(enGB.SEND)}

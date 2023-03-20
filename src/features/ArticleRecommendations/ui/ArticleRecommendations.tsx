@@ -37,6 +37,7 @@ export const ArticleRecommendations = ({ className }: IProps) => {
         <Column
             gap="16"
             className={classNames('', {}, [className])}
+            data-testid="ArticleRecommendations"
         >
             <Text
                 size={TextSize.L}

@@ -30,6 +30,7 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
                 gap="4"
                 max
                 className={classNames(classes.root, {}, [className, classes.loading])}
+                data-testid="CommentCard.Loading"
             >
                 <Row gap="8" className={classes.header}>
                     <Skeleton width={50} height={50} border={RadiusType.Circle} />
@@ -45,7 +46,12 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
     }
 
     return (
-        <Column max gap="4" className={classNames(classes.root, {}, [className])}>
+        <Column
+            max
+            gap="4"
+            className={classNames(classes.root, {}, [className])}
+            data-testid="CommentCard.Content"
+        >
             <AppLink to={getPathProfile(comment?.user?.id)}>
                 <Row>
                     {comment?.user?.avatar
