@@ -1,0 +1,73 @@
+{
+    "id": "3",
+    "userId": "1",
+    "title": "Flash",
+    "subtitle": "DC Comics character",
+    "img": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/The_Flash_Family.jpg/220px-The_Flash_Family.jpg",
+    "views": 990,
+    "createdAt": "05/02/2023",
+    "type": [
+      "Comics"
+    ],
+    "blocks": [
+      {
+        "id": "1",
+        "type": "Text",
+        "title": "Common info",
+        "paragraphs": [
+          "The Flash (or simply Flash) is the name of several superheroes appearing in American comic books published by DC Comics. Created by writer Gardner Fox and artist Harry Lampert, the original Flash first appeared in Flash Comics #1 (cover date January 1940/release month November 1939). Nicknamed 'the Scarlet Speedster', all incarnations of the Flash possess 'superspeed', which includes the ability to run, move, and think extremely fast, use superhuman reflexes, and seemingly violate certain laws of physics."
+        ]
+      },
+      {
+        "id": "2",
+        "type": "Text",
+        "title": "Publication history - Golden Age",
+        "paragraphs": [
+          "The Flash first appeared in the Golden Age Flash Comics #1 (January 1940), from All-American Publications, one of three companies that would eventually merge to form DC Comics. Created by writer Gardner Fox and artist Harry Lampert, this Flash was Jay Garrick, a college student who gained his speed through the inhalation of hard water vapors. When re-introduced in the 1960s Garrick's origin was modified slightly, gaining his powers through exposure to heavy water. Jay Garrick was a popular character in the 1940s, supporting both Flash Comics and All-Flash Quarterly (later published bi-monthly as simply All-Flash); co-starring in Comic Cavalcade; and being a charter member of the Justice Society of America, the first superhero team, whose adventures ran in All Star Comics. With superheroes' post-war decline in popularity, Flash Comics was canceled with issue #104 (1949) which featured an evil version of the Flash called the Rival. The Justice Society's final Golden Age story ran in All Star Comics #57 (1951; the title itself continued as All Star Western)."
+        ]
+      },
+      {
+        "id": "3",
+        "type": "Image",
+        "src": "https://pictures.abebooks.com/isbn/9781563895067-uk.jpg",
+        "title": "Flash - Golden Age"
+      },
+      {
+        "id": "4",
+        "type": "Text",
+        "title": "Publication history - Silver Age",
+        "paragraphs": [
+          "In 1956, DC Comics successfully revived superheroes, ushering in what became known as the Silver Age of comic books. Rather than bringing back the same Golden Age heroes, DC rethought them as new characters for the modern age. The Flash was the first revival, in the tryout comic book Showcase #4 (October 1956). This new Flash was Barry Allen, a police scientist who gained super-speed when bathed by chemicals after a shelf of them was struck by lightning. He adopted the name The Scarlet Speedster after reading a comic book featuring the Golden Age Flash.[1] After several more appearances in Showcase, Allen's character was given his own title, The Flash, the first issue of which was #105 (resuming where Flash Comics had left off). Barry Allen and the new Flash were created by writers Robert Kanigher and John Broome and cartoonist Carmine Infantino. The Silver Age Flash proved popular enough that several other Golden Age heroes were revived in new incarnations (see: Green Lantern). A new superhero team, the Justice League of America, was also created, with the Flash as a main, charter member."
+        ]
+      },
+      {
+        "id": "5",
+        "type": "Image",
+        "src": "https://m.media-amazon.com/images/I/9112NvuNHoL.jpg",
+        "title": "Flash - Silver Age"
+      },
+      {
+        "id": "6",
+        "type": "Text",
+        "title": "Publication history - Modern Age",
+        "paragraphs": [
+          "The third Flash was Wally West, introduced in The Flash #110 (December 1959) as Kid Flash. West, Allen's nephew by marriage, gained the Flash's powers through an accident identical to Allen's. Adopting the identity of Kid Flash, he maintained membership in the Teen Titans for years. Following Allen's death, West adopted the Flash identity in Crisis on Infinite Earths #12 and was given his own series, beginning with The Flash (vol. 2) #1 in 1987.[1] Many issues began with the catchphrase: 'My name is Wally West. I'm the fastest man alive.' Due to the Infinite Crisis miniseries and the 'One Year Later' jump in time in the DC Universe, DC canceled The Flash (vol. 2) in January 2006 at #230. A new series, The Flash: The Fastest Man Alive, began on June 21, 2006. The initial story arc of this series, written by Danny Bilson and Paul De Meo with art by Ken Lashley, focused on Bart Allen's acceptance of the role of the Flash."
+        ]
+      },
+      {
+        "id": "7",
+        "type": "Image",
+        "src": "https://i.ebayimg.com/images/g/bYEAAOSweYdjuO-h/s-l500.png",
+        "title": "Flash - Modern Age"
+      }
+    ],
+    "user": {
+      "id": "1",
+      "userName": "neo",
+      "roles": [
+        "ADMIN"
+      ],
+      "password": "4848",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
+    }
+  }

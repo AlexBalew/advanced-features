@@ -1,0 +1,322 @@
+[
+    {
+      "id": "1",
+      "userId": "1",
+      "title": "Batman",
+      "subtitle": "Who is the Batman?",
+      "img": "https://i.pinimg.com/736x/6b/6e/db/6b6edb53a211d0c0c9f2c857fc0d1418--batman-backgrounds-savior.jpg",
+      "views": 1022,
+      "createdAt": "30/01/2023",
+      "type": [
+        "Comics"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "Text",
+          "title": "Common info",
+          "paragraphs": [
+            "Batman is a superhero appearing in American comic books published by DC Comics. The character was created by artist Bob Kane and writer Bill Finger, and debuted in the 27th issue of the comic book Detective Comics on March 30, 1939. In the DC Universe continuity, Batman is the alias of Bruce Wayne, a wealthy American playboy, philanthropist, and industrialist who resides in Gotham City. Batman's origin story features him swearing vengeance against criminals after witnessing the murder of his parents Thomas and Martha as a child, a vendetta tempered with the ideal of justice. He trains himself physically and intellectually, crafts a bat-inspired persona, and monitors the Gotham streets at night. Kane, Finger, and other creators accompanied Batman with supporting characters, including his sidekicks Robin and Batgirl; allies Alfred Pennyworth, James Gordon, and Catwoman; and foes such as the Penguin, the Riddler, Two-Face, and his archenemy, the Joker. Kane conceived Batman in early 1939 to capitalize on the popularity of DC's Superman; although Kane frequently claimed sole creation credit, Finger substantially developed the concept from a generic superhero into something more bat-like. The character received his own spin-off publication, Batman, in 1940. Batman was originally introduced as a ruthless vigilante who frequently killed or maimed criminals, but evolved into a character with a stringent moral code and strong sense of justice. Unlike most superheroes, Batman does not possess any superpowers, instead relying on his intellect, fighting skills, and wealth. The 1960s Batman television series used a camp aesthetic, which continued to be associated with the character for years after the show ended. Various creators worked to return the character to his darker roots in the 1970s and 1980s, culminating with the 1986 miniseries The Dark Knight Returns by Frank Miller."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "Text",
+          "title": "Creation",
+          "paragraphs": [
+            "In early 1939, the success of Superman in Action Comics prompted editors at National Comics Publications (the future DC Comics) to request more superheroes for its titles. In response, Bob Kane created 'the Bat-Man'. Collaborator Bill Finger recalled that 'Kane had an idea for a character called 'Batman,' and he'd like me to see the drawings. I went over to Kane's, and he had drawn a character who looked very much like Superman with kind of ...reddish tights, I believe, with boots ...no gloves, no gauntlets ...with a small domino mask, swinging on a rope. He had two stiff wings that were sticking out, looking like bat wings. And under it was a big sign ...BATMAN'. The bat-wing-like cape was suggested by Bob Kane, inspired as a child by Leonardo da Vinci's sketch of an ornithopter flying device. Finger suggested giving the character a cowl instead of a simple domino mask, a cape instead of wings, and gloves; he also recommended removing the red sections from the original costume. Finger said he devised the name Bruce Wayne for the character's secret identity: 'Bruce Wayne's first name came from Robert the Bruce, the Scottish patriot. Wayne, being a playboy, was a man of gentry. I searched for a name that would suggest colonialism. I tried Adams, Hancock ...then I thought of Mad Anthony Wayne.' He later said his suggestions were influenced by Lee Falk's popular The Phantom, a syndicated newspaper comic-strip character with which Kane was also familiar."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/b/b3/Batman_ad.jpg",
+          "title": "First published image of Batman"
+        },
+        {
+          "id": "4",
+          "type": "Text",
+          "title": "Early years",
+          "paragraphs": [
+            "The first Batman story, 'The Case of the Chemical Syndicate', was published in Detective Comics #27 (cover dated May 1939). It was inspired, some say plagiarized, by the 60 page story “Partners of Peril” in The Shadow #113, which was written by Theodore Tinsley and illustrated by Tom Lovell.[21] Finger said, 'Batman was originally written in the style of the pulps', and this influence was evident with Batman showing little remorse over killing or maiming criminals. Batman proved a hit character, and he received his own solo title in 1940 while continuing to star in Detective Comics. By that time, Detective Comics was the top-selling and most influential publisher in the industry; Batman and the company's other major hero, Superman, were the cornerstones of the company's success.[23] The two characters were featured side by side as the stars of World's Finest Comics, which was originally titled World's Best Comics when it debuted in fall 1940. Creators including Jerry Robinson and Dick Sprang also worked on the strips during this period."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bc/Detective_Comics_27_%28May_1939%29.png/220px-Detective_Comics_27_%28May_1939%29.png",
+          "title": "Batman made his debut in Detective Comics #27"
+        },
+        {
+          "id": "6",
+          "type": "Text",
+          "title": "Modern Age - The Dark Knight Returns",
+          "paragraphs": [
+            "Frank Miller's limited series The Dark Knight Returns returned the character to his darker roots, both in atmosphere and tone. The comic book, which tells the story of a 55-year-old Batman coming out of retirement in a possible future, reinvigorated interest in the character. The Dark Knight Returns was a financial success and has since become one of the medium's most noted touchstones. The series also sparked a major resurgence in the character's popularity"
+          ]
+        },
+        {
+          "id": "7",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/7/77/Dark_knight_returns.jpg",
+          "title": "The Dark Knight Returns 1986"
+        }
+      ],
+      "user": {
+        "id": "1",
+        "userName": "neo",
+        "roles": [
+          "ADMIN"
+        ],
+        "password": "4848",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
+      }
+    },
+    {
+      "id": "2",
+      "userId": "2",
+      "title": "Thor",
+      "subtitle": "Marvel Comics",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/Thor_by_Olivier_Coipel.png/220px-Thor_by_Olivier_Coipel.png",
+      "views": 1048,
+      "createdAt": "1/02/2023",
+      "type": [
+        "Comics"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "Text",
+          "title": "Common info",
+          "paragraphs": [
+            "Thor Odinson is a character appearing in American comic books published by Marvel Comics. Created by artist Jack Kirby, writer Stan Lee, and scripter Larry Lieber, the character first appeared in Journey into Mystery #83 (August 1962), debuting in the Silver Age of Comic Books. Thor is based on the Norse mythological god of the same name. He is the Asgardian god of thunder, whose enchanted hammer Mjolnir enables him to fly and manipulate weather, among his other superhuman attributes. A founding member of the superhero team the Avengers, Thor has a host of supporting characters and enemies. Thor has starred in several ongoing series and limited series, and appears in all volumes of the Avengers series. The character has been used in Marvel Comics merchandise, animated television series, films, video games, clothing and toys."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "Text",
+          "title": "Publication history",
+          "paragraphs": [
+            "The Marvel Comics superhero Thor debuted in the science fiction/fantasy anthology title Journey into Mystery #83 (cover-date August 1962), and was created by editor-plotter Stan Lee, scripter Larry Lieber, and penciller-plotter Jack Kirby.n a 1984 interview Kirby said 'I did a version of Thor for D.C. in the fifties before I did him for Marvel. I created Thor at Marvel because I was forever enamored of legends, which is why I knew about Balder, Heimdall, and Odin. I tried to update Thor and put him into a superhero costume, but he was still Thor'. The story was included in Tales of the Unexpected #16, from 1957; and although the character had a different design, some details would be reused by Kirby when he created the Marvel Comics version. And in a 1992 interview, Kirby said knew the Thor legends very well, but I wanted to modernize them. I felt that might be a new thing for comics, taking the old legends and modernizing them."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Unexpected_Thor.JPG/220px-Unexpected_Thor.JPG",
+          "title": "Thor, as depicted by Jack Kirby in Tales of the Unexpected #16 (1957)"
+        },
+        {
+          "id": "4",
+          "type": "Text",
+          "title": "Early years 1960s",
+          "paragraphs": [
+            "Thor's father Odin decides his son needed to be taught humility and consequently incarnates Thor (without memories of godhood) on Earth as a mortal, partially disabled human medical student, Donald Blake. After becoming a doctor, Blake witnesses the arrival of an alien scouting party while he is on vacation in Norway. Blake flees from the aliens into a cave. After discovering Thor's hammer Mjolnir (disguised as a walking stick) and striking it against a rock, he transforms into the thunder god.[61] Later, in Thor #159, Blake is revealed to have always been Thor, Odin's enchantment having caused him to forget his history as The Thunder God and believe himself mortal."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Journey_into_Mystery_no._83_%28cover_art%29.jpg/220px-Journey_into_Mystery_no._83_%28cover_art%29.jpg",
+          "title": "Journey into Mystery #83 (Aug. 1962)"
+        },
+        {
+          "id": "6",
+          "type": "Text",
+          "title": "1980s",
+          "paragraphs": [
+            "Thor eventually confronts the threat of the Celestial Fourth Host, and after an extended series of encounters learns of the apparent true origin of Asgard and Odin's plans to defend Earth from the alien judges. Despite the attempt by Odin to stop the Celestials by occupying the Destroyer armor (now 2,000 feet tall as holding the life essence of every Asgardian) and wielding the Odinsword (and aided by the Uni-Mind, an entity composed of the Eternals) and Thor himself, the aliens depart when presented with an offering by Gaea on behalf of the 'Skymothers' (e.g. Frigga and Hera) of twelve perfect humans. Thor also learns Gaea was his birth mother."
+          ]
+        },
+        {
+          "id": "7",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b4/Thor_Vol_1_378.jpg/220px-Thor_Vol_1_378.jpg",
+          "title": "First appearance of Thor's battle armor: Thor #378 (April 1987)."
+        }
+      ],
+      "user": {
+        "id": "2",
+        "userName": "Bat",
+        "roles": [
+          "USER"
+        ],
+        "password": "123",
+        "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
+      }
+    },
+    {
+      "id": "3",
+      "userId": "1",
+      "title": "Flash",
+      "subtitle": "DC Comics character",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/The_Flash_Family.jpg/220px-The_Flash_Family.jpg",
+      "views": 990,
+      "createdAt": "05/02/2023",
+      "type": [
+        "Comics"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "Text",
+          "title": "Common info",
+          "paragraphs": [
+            "The Flash (or simply Flash) is the name of several superheroes appearing in American comic books published by DC Comics. Created by writer Gardner Fox and artist Harry Lampert, the original Flash first appeared in Flash Comics #1 (cover date January 1940/release month November 1939). Nicknamed 'the Scarlet Speedster', all incarnations of the Flash possess 'superspeed', which includes the ability to run, move, and think extremely fast, use superhuman reflexes, and seemingly violate certain laws of physics."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "Text",
+          "title": "Publication history - Golden Age",
+          "paragraphs": [
+            "The Flash first appeared in the Golden Age Flash Comics #1 (January 1940), from All-American Publications, one of three companies that would eventually merge to form DC Comics. Created by writer Gardner Fox and artist Harry Lampert, this Flash was Jay Garrick, a college student who gained his speed through the inhalation of hard water vapors. When re-introduced in the 1960s Garrick's origin was modified slightly, gaining his powers through exposure to heavy water. Jay Garrick was a popular character in the 1940s, supporting both Flash Comics and All-Flash Quarterly (later published bi-monthly as simply All-Flash); co-starring in Comic Cavalcade; and being a charter member of the Justice Society of America, the first superhero team, whose adventures ran in All Star Comics. With superheroes' post-war decline in popularity, Flash Comics was canceled with issue #104 (1949) which featured an evil version of the Flash called the Rival. The Justice Society's final Golden Age story ran in All Star Comics #57 (1951; the title itself continued as All Star Western)."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "Image",
+          "src": "https://pictures.abebooks.com/isbn/9781563895067-uk.jpg",
+          "title": "Flash - Golden Age"
+        },
+        {
+          "id": "4",
+          "type": "Text",
+          "title": "Publication history - Silver Age",
+          "paragraphs": [
+            "In 1956, DC Comics successfully revived superheroes, ushering in what became known as the Silver Age of comic books. Rather than bringing back the same Golden Age heroes, DC rethought them as new characters for the modern age. The Flash was the first revival, in the tryout comic book Showcase #4 (October 1956). This new Flash was Barry Allen, a police scientist who gained super-speed when bathed by chemicals after a shelf of them was struck by lightning. He adopted the name The Scarlet Speedster after reading a comic book featuring the Golden Age Flash.[1] After several more appearances in Showcase, Allen's character was given his own title, The Flash, the first issue of which was #105 (resuming where Flash Comics had left off). Barry Allen and the new Flash were created by writers Robert Kanigher and John Broome and cartoonist Carmine Infantino. The Silver Age Flash proved popular enough that several other Golden Age heroes were revived in new incarnations (see: Green Lantern). A new superhero team, the Justice League of America, was also created, with the Flash as a main, charter member."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "Image",
+          "src": "https://m.media-amazon.com/images/I/9112NvuNHoL.jpg",
+          "title": "Flash - Silver Age"
+        },
+        {
+          "id": "6",
+          "type": "Text",
+          "title": "Publication history - Modern Age",
+          "paragraphs": [
+            "The third Flash was Wally West, introduced in The Flash #110 (December 1959) as Kid Flash. West, Allen's nephew by marriage, gained the Flash's powers through an accident identical to Allen's. Adopting the identity of Kid Flash, he maintained membership in the Teen Titans for years. Following Allen's death, West adopted the Flash identity in Crisis on Infinite Earths #12 and was given his own series, beginning with The Flash (vol. 2) #1 in 1987.[1] Many issues began with the catchphrase: 'My name is Wally West. I'm the fastest man alive.' Due to the Infinite Crisis miniseries and the 'One Year Later' jump in time in the DC Universe, DC canceled The Flash (vol. 2) in January 2006 at #230. A new series, The Flash: The Fastest Man Alive, began on June 21, 2006. The initial story arc of this series, written by Danny Bilson and Paul De Meo with art by Ken Lashley, focused on Bart Allen's acceptance of the role of the Flash."
+          ]
+        },
+        {
+          "id": "7",
+          "type": "Image",
+          "src": "https://i.ebayimg.com/images/g/bYEAAOSweYdjuO-h/s-l500.png",
+          "title": "Flash - Modern Age"
+        }
+      ],
+      "user": {
+        "id": "1",
+        "userName": "neo",
+        "roles": [
+          "ADMIN"
+        ],
+        "password": "4848",
+        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT94ar7hyopWcULyu8zjdyGkwmdV1VBQ_z2KRhZL_aDY6LhyYCxE9KoVl6qThCBVhPu3u8&usqp=CAU"
+      }
+    },
+    {
+      "id": "4",
+      "userId": "2",
+      "title": "Superman",
+      "subtitle": "Superhero",
+      "img": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Supermanflying.png/220px-Supermanflying.png",
+      "views": 2022,
+      "createdAt": "8/02/2023",
+      "type": [
+        "Comics"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "Text",
+          "title": "Common info",
+          "paragraphs": [
+            "Superman is a superhero who appears in American comic books published by DC Comics. The character was created by writer Jerry Siegel and artist Joe Shuster, and debuted in the comic book Action Comics #1 (cover-dated June 1938 and published April 18, 1938).[1] Superman has been adapted to a number of other media, including radio serials, novels, films, television shows, theater productions, and video games."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "Text",
+          "title": "Creation",
+          "paragraphs": [
+            "Jerry Siegel and Joe Shuster met in 1932 while attending Glenville High School in Cleveland and bonded over their admiration of fiction. Siegel aspired to become a writer and Shuster aspired to become an illustrator. Siegel wrote amateur science fiction stories, which he self-published as a magazine called Science Fiction: The Advance Guard of Future Civilization. His friend Shuster often provided illustrations for his work. In January 1933, Siegel published a short story in his magazine titled 'The Reign of the Superman'. The titular character is a homeless man named Bill Dunn who is tricked by an evil scientist into consuming an experimental drug. The drug gives Dunn the powers of mind-reading, mind-control, and clairvoyance. He uses these powers maliciously for profit and amusement, but then the drug wears off, leaving him a powerless vagrant again. Shuster provided illustrations, depicting Dunn as a bald man."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "Image",
+          "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Reign_of_the_Superman.jpg/220px-Reign_of_the_Superman.jpg",
+          "title": "'The Reign of the Superman', a short story by Jerry Siegel (January 1933)"
+        },
+        {
+          "id": "4",
+          "type": "Text",
+          "title": "Golden Age",
+          "paragraphs": [
+            "By the time the US had entered WWII, Superman had inspired a boom in the comic book industry and had engendered the new genre of the 'superheroes' (although, controversy still exists over whether Superman can be considered the first superhero), which by then had included Batman, Captain America, Namor the Sub-Mariner, Captain Marvel, Robin, the Flash, Green Lantern, and Wonder Woman. By this time, the character had also leaped from the comics into other media. In 1939, Superman's adventures were seen in newspaper strips, although they were often reprints of what was already appearing in the comics. Also, The Adventures of Superman radio program was broadcast to the nation with millions of listeners. And while Captain Marvel beat him to live action cinema in The Adventures of Captain Marvel (in a serial originally intended for Superman), a series of lavishly budgeted animated cartoons produced by Max Fleischer hit theaters and continue to astound viewers today."
+          ]
+        },
+        {
+          "id": "5",
+          "type": "Image",
+          "src": "https://m.media-amazon.com/images/I/91rEux8SKeL.jpg",
+          "title": "Superman - Golden Age"
+        },
+        {
+          "id": "6",
+          "type": "Text",
+          "title": "Silver Age",
+          "paragraphs": [
+            "Early in the Silver Age of Comic Books, as DC was introducing new versions of old heroes, they explained that the old versions lived in a parallel dimension they called 'Earth-Two'. Although Superman had remained in continuous publication and was not explicitly revised for the Silver Age, the various inconsistencies between his original appearance (see Kal-L) and the version depicted in the 1960s were explained in the same way. The Superman presented during this period was the Superman of 'Earth-One'."
+          ]
+        },
+        {
+          "id": "7",
+          "type": "Image",
+          "src": "https://m.media-amazon.com/images/I/91tMkNWilRL.jpg",
+          "title": "Superman - Silver Age"
+        },
+        {
+          "id": "8",
+          "type": "Text",
+          "title": "Bronze Age",
+          "paragraphs": [
+            "Despite a changing market, Superman's stories remained similar to those which defined the Silver Age for quite a while. However, by the 1970s, it became apparent that even the Man of Steel needed some polishing. Superman entered the 1970s under famed artist and writer Jack Kirby. Kirby chose to revamp the spin-off title Superman's Pal, Jimmy Olsen, using it as a platform for his Fourth World concept. Among the creations first appearing therein was Darkseid, an alien warlord powerful enough to pose a great threat to even Superman himself."
+          ]
+        },
+        {
+          "id": "9",
+          "type": "Image",
+          "src": "https://static.wikia.nocookie.net/superman/images/7/79/Kryptonite_Nevermore.jpg/revision/latest?cb=20100616205306",
+          "title": "Superman - Bronze Age"
+        },
+        {
+          "id": "10",
+          "type": "Text",
+          "title": "Modern Age",
+          "paragraphs": [
+            "In a 12-issue 1985 miniseries entitled Crisis on Infinite Earths all of the DC heroes battled an evil being called the Anti-Monitor, resulting in the destruction of most of DC's alternate dimensions. Following this series, the backstories of all of DC's characters were altered and updated. Even Superman got an overhaul in 1986's John Byrne's The Man of Steel. This 1986 reboot brought substantial changes to the character and met huge success at the time, being one of the top-selling books. During Crisis, the various parallel Earths are combined into one, retroactively eliminating some of Earth-Two's heroes from existence. Kal-L, the Earth-Two Superman, his wife Lois Lane of Earth-Two, the Superboy of Earth-Prime and Alexander Luthor, Jr. of Earth-Three, have no reality to call their own, and they enter a 'paradise dimension' at the end of the series. Kal-L is not seen again until the miniseries The Kingdom, in which it is revealed that he has found a means of exiting his dimension, but chooses not to do so yet."
+          ]
+        },
+        {
+          "id": "11",
+          "type": "Image",
+          "src": "https://qph.cf2.quoracdn.net/main-qimg-496f226b787ce610060065ad698150f1-lq",
+          "title": "Superman - Modern Age"
+        }
+      ],
+      "user": {
+        "id": "2",
+        "userName": "Bat",
+        "roles": [
+          "USER"
+        ],
+        "password": "123",
+        "avatar": "https://www.meme-arsenal.com/memes/e62752831eebdb63c0fc4e22f02fd24f.jpg"
+      }
+    }
+]
