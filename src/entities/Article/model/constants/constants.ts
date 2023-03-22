@@ -8,7 +8,7 @@ export const enum ArticleType {
 
 export const enum ArticleBlockType {
     Text = 'Text',
-    Image = 'Image'
+    Image = 'Image',
 }
 
 export const enum ArticleListView {
@@ -19,5 +19,5 @@ export const enum ArticleListView {
 export const enum ArticleSortField {
     Views = 'views',
     Title = 'title',
-    Created_At = 'created_at'
+    Created_At = 'created_at',
 }

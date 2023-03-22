@@ -16,10 +16,7 @@ export const BugButton = () => {
     }, [error]);
 
     return (
-        <Button
-            onClick={onThrow}
-            style={{ color: 'red' }}
-        >
+        <Button onClick={onThrow} style={{ color: 'red' }}>
             {t('Crash app')}
         </Button>
     );

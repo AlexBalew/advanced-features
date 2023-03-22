@@ -15,16 +15,17 @@ export const ThemeSwitcher = memo(({ className }: IProps) => {
     const getIconClassName = (theme: Theme) => {
         let className: string;
         switch (theme) {
-        case Theme.Dark:
-            className = classes.primary;
-            break;
-        case Theme.Light:
-            className = classes.purple;
-            break;
-        case Theme.Purple:
-            className = classes.primary;
-            break;
-        default: className = classes.primary;
+            case Theme.Dark:
+                className = classes.primary;
+                break;
+            case Theme.Light:
+                className = classes.purple;
+                break;
+            case Theme.Purple:
+                className = classes.primary;
+                break;
+            default:
+                className = classes.primary;
         }
 
         return className;
@@ -37,10 +38,7 @@ export const ThemeSwitcher = memo(({ className }: IProps) => {
             onClick={toggleTheme}
         >
             <div className={getIconClassName(theme)}>
-                <Icon
-                    name="Settings"
-                    className={classes.icon}
-                />
+                <Icon name="Settings" className={classes.icon} />
             </div>
         </Button>
     );

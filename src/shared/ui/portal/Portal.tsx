@@ -6,7 +6,5 @@ interface IProps {
     container?: HTMLElement;
 }
 
-export const Portal = ({
-    children,
-    container = document.body,
-}: IProps) => createPortal(children, container);
+export const Portal = ({ children, container = document.body }: IProps) =>
+    createPortal(children, container);

@@ -2,16 +2,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getPathArticleDetails } from '@/shared/config/routeConfig/RouteConfig';
 import { enGB } from '@/shared/dictionaries';
-import {
-    Text,
-    Icon,
-    Card,
-    Avatar,
-    Button,
-    AppLink,
-    AppImage,
-    Skeleton,
-} from '@/shared/ui';
+import { Text, Icon, Card, Avatar, Button, AppLink, AppImage, Skeleton } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import { ArticleBlockType, ArticleListView } from '../../model';
 import { IArticle, IArticleBlockText } from '../../model/types/article';
@@ -25,12 +16,7 @@ interface IProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = memo(({
-    className,
-    article,
-    view,
-    target,
-}: IProps) => {
+export const ArticleListItem = memo(({ className, article, view, target }: IProps) => {
     const { t } = useTranslation();
     // const [isHovered, hoverActions] = useHover();
 
@@ -70,13 +56,8 @@ export const ArticleListItem = memo(({
                         <ArticleTextBlock block={textBlock} className={classes.textBlock} />
                     )}
                     <div className={classes.footer}>
-                        <AppLink
-                            to={getPathArticleDetails(article.id)}
-                            target={target}
-                        >
-                            <Button>
-                                {`${t(enGB.READ_MORE)}...`}
-                            </Button>
+                        <AppLink to={getPathArticleDetails(article.id)} target={target}>
+                            <Button>{`${t(enGB.READ_MORE)}...`}</Button>
                         </AppLink>
                         {views}
                     </div>

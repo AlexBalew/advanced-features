@@ -22,7 +22,9 @@ describe('article-details', () => {
     });
 
     it('user can send comment on the article', () => {
-        cy.intercept('GET', '**/artciles/*', { fixture: 'article-details.json' });
+        cy.intercept('GET', '**/artciles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info');
         cy.getByTestId('AddCommentForm').scrollIntoView();
         cy.addComment('test text');

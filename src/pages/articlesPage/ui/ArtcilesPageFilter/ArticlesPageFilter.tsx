@@ -39,37 +39,51 @@ export const ArticlesPageFilter = memo(({ className }: Iprops) => {
 
     const fetchDebouncedData = useDebounce(fetchData, 500);
 
-    const onChangeView = useCallback((view: ArticleListView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
+    const onChangeView = useCallback(
+        (view: ArticleListView) => {
+            dispatch(articlesPageActions.setView(view));
+        },
+        [dispatch],
+    );
 
-    const onChangeOrder = useCallback((order: SortType) => {
-        dispatch(articlesPageActions.setOrder(order));
-        dispatch(articlesPageActions.setPage(1));
-        fetchDebouncedData();
-    }, [dispatch, fetchDebouncedData]);
+    const onChangeOrder = useCallback(
+        (order: SortType) => {
+            dispatch(articlesPageActions.setOrder(order));
+            dispatch(articlesPageActions.setPage(1));
+            fetchDebouncedData();
+        },
+        [dispatch, fetchDebouncedData],
+    );
 
-    const onChangeSortField = useCallback((sortField: ArticleSortField) => {
-        dispatch(articlesPageActions.setSortField(sortField));
-        dispatch(articlesPageActions.setPage(1));
-        fetchDebouncedData();
-    }, [dispatch, fetchDebouncedData]);
+    const onChangeSortField = useCallback(
+        (sortField: ArticleSortField) => {
+            dispatch(articlesPageActions.setSortField(sortField));
+            dispatch(articlesPageActions.setPage(1));
+            fetchDebouncedData();
+        },
+        [dispatch, fetchDebouncedData],
+    );
 
-    const onChangeSearch = useCallback((newSearchValue: string) => {
-        dispatch(articlesPageActions.setSearchValue(newSearchValue));
-        dispatch(articlesPageActions.setPage(1));
-        fetchDebouncedData();
-    }, [dispatch, fetchDebouncedData]);
+    const onChangeSearch = useCallback(
+        (newSearchValue: string) => {
+            dispatch(articlesPageActions.setSearchValue(newSearchValue));
+            dispatch(articlesPageActions.setPage(1));
+            fetchDebouncedData();
+        },
+        [dispatch, fetchDebouncedData],
+    );
 
-    const onChangeType = useCallback((value: ArticleType) => {
-        dispatch(articlesPageActions.setArticleType(value));
-        dispatch(articlesPageActions.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeType = useCallback(
+        (value: ArticleType) => {
+            dispatch(articlesPageActions.setArticleType(value));
+            dispatch(articlesPageActions.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
     return (
         <div className={classNames(classes.root, {}, [className])}>
-
             <div className={classes.sortWrapper}>
                 <ViewSwitcher view={view} onViewClick={onChangeView} />
                 <ArticleSortSelector
@@ -86,11 +100,7 @@ export const ArticlesPageFilter = memo(({ className }: Iprops) => {
                     value={searchValue}
                 />
             </Card>
-            <ArticleTypeTabs
-                className={classes.tabs}
-                value={type}
-                onChangeType={onChangeType}
-            />
+            <ArticleTypeTabs className={classes.tabs} value={type} onChangeType={onChangeType} />
         </div>
     );
 });

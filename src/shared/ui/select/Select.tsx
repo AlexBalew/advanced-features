@@ -1,8 +1,4 @@
-import {
-    ChangeEvent,
-    useCallback,
-    useMemo,
-} from 'react';
+import { ChangeEvent, useCallback, useMemo } from 'react';
 import { classNames } from '@/shared/utils';
 import { Mode } from '@/shared/utils/classNames';
 import { SelectOption } from '../types';
@@ -25,23 +21,24 @@ export const Select = <T extends string>({
     readOnly,
     onChange,
 }: IProps<T>) => {
-    const mods: Mode = {
+    const mods: Mode = {};
 
-    };
+    const onChangeHandler = useCallback(
+        (e: ChangeEvent<HTMLSelectElement>) => {
+            onChange?.(e.target.value as T);
+        },
+        [onChange],
+    );
 
-    const onChangeHandler = useCallback((e: ChangeEvent<HTMLSelectElement>) => {
-        onChange?.(e.target.value as T);
-    }, [onChange]);
-
-    const optionList = useMemo(() => options?.map((option) => (
-        <option
-            className={classes.option}
-            value={option.value}
-            key={option.value}
-        >
-            {option.label}
-        </option>
-    )), [options]);
+    const optionList = useMemo(
+        () =>
+            options?.map((option) => (
+                <option className={classes.option} value={option.value} key={option.value}>
+                    {option.label}
+                </option>
+            )),
+        [options],
+    );
 
     return (
         <div className={classNames(classes.root, mods, [className])}>

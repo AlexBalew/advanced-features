@@ -10,9 +10,7 @@ interface IProps {
 }
 
 export const ArticleTextBlock = memo(({ className, block }: IProps) => (
-    <div
-        className={classNames(classes.root, {}, [className])}
-    >
+    <div className={classNames(classes.root, {}, [className])}>
         {block.title && <Text title={block.title} className={classes.title} />}
         {block.paragraphs?.map((paragraph) => (
             <Text key={paragraph} text={paragraph} className={classes.paragraph} />

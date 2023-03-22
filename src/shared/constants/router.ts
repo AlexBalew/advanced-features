@@ -8,5 +8,5 @@ export const enum AppRoutes {
     Article_edit = 'article_edit',
     Admin = 'admin',
     Forbidden = 'forbidden',
-    NotFound = 'not_found'
+    NotFound = 'not_found',
 }

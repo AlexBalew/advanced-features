@@ -9,15 +9,11 @@ describe('getArticleType test', () => {
                 type: ArticleType.Comics,
             },
         };
-        expect(getArticleType(state as StateSchema))
-            .toEqual(state.articlesPage?.type);
+        expect(getArticleType(state as StateSchema)).toEqual(state.articlesPage?.type);
     });
 
-    test(
-        "getArticleType should return 'All' field if there is no data in state",
-        () => {
-            const state: DeepPartial<StateSchema> = {};
-            expect(getArticleType(state as StateSchema)).toBe(ArticleType.All);
-        },
-    );
+    test("getArticleType should return 'All' field if there is no data in state", () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticleType(state as StateSchema)).toBe(ArticleType.All);
+    });
 });

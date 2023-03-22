@@ -24,9 +24,7 @@ export const LangSwitcher = memo(({ className, shortened }: IProps) => {
             theme={AppButtonTheme.Pure}
             onClick={switchLanguage}
         >
-            {shortened
-                ? t(enGB.LANGUAGE_SHORTENED)
-                : t(enGB.LANGUAGE)}
+            {shortened ? t(enGB.LANGUAGE_SHORTENED) : t(enGB.LANGUAGE)}
         </Button>
     );
 });

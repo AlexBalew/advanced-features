@@ -11,8 +11,9 @@ describe('getArticleDetailsIsLoading test', () => {
                 isLoading: true,
             },
         };
-        expect(getArticleDetailsIsLoading(state as StateSchema))
-            .toEqual(state.articleDetails?.isLoading);
+        expect(getArticleDetailsIsLoading(state as StateSchema)).toEqual(
+            state.articleDetails?.isLoading,
+        );
     });
 
     test('getArticleDetailsIsLoading return undefined if there is no data in state', () => {

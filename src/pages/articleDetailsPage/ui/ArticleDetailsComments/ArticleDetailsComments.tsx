@@ -26,25 +26,18 @@ export const ArticleDetailsComments = memo(({ id, className }: IProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
 
     return (
-        <Column
-            max
-            gap="16"
-            className={classNames('', {}, [className])}
-        >
-            <Text
-                size={TextSize.L}
-                title={t<string>(enGB.COMMENTS)}
-            />
+        <Column max gap="16" className={classNames('', {}, [className])}>
+            <Text size={TextSize.L} title={t<string>(enGB.COMMENTS)} />
             <AddCommentForm onSendComment={onSendComment} />
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
+            <CommentList isLoading={commentsIsLoading} comments={comments} />
         </Column>
     );
 });

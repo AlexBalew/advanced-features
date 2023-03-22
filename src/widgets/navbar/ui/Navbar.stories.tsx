@@ -16,16 +16,12 @@ const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
-Light.decorators = [StoreDecorator({
-
-})];
+Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.Dark)];
-Dark.decorators = [StoreDecorator({
-
-})];
+Dark.decorators = [StoreDecorator({})];
 
 // export const LoggedIn = Template.bind({});
 // LoggedIn.args = {};

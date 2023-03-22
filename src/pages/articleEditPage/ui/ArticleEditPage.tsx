@@ -17,9 +17,7 @@ const ArticleEditPage = ({ className }: IProps) => {
 
     return (
         <Page className={classNames(classes.root, {}, [className])}>
-            {isEdit
-                ? `${t(enGB.EDIT_PAGE)} ${id}`
-                : t(enGB.CREATE_PAGE)}
+            {isEdit ? `${t(enGB.EDIT_PAGE)} ${id}` : t(enGB.CREATE_PAGE)}
         </Page>
     );
 };

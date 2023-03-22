@@ -4,14 +4,9 @@ import { IProfile, ValidationErrors } from '@/entities/Profile';
 import { getProfileFormData } from '../../selectors/getProfileFormData';
 import { validateProfileData } from '../validateProfileData';
 
-export const updateProfileData = createAsyncThunk<
-IProfile, void, ThunkConfig<ValidationErrors[]>>(
+export const updateProfileData = createAsyncThunk<IProfile, void, ThunkConfig<ValidationErrors[]>>(
     'profile/updateProfileData',
-    async (_, {
-        extra,
-        rejectWithValue,
-        getState,
-    }) => {
+    async (_, { extra, rejectWithValue, getState }) => {
         const formData = getProfileFormData(getState());
 
         const errors = validateProfileData(formData);

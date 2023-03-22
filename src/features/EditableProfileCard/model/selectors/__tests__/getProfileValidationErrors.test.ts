@@ -26,12 +26,14 @@ describe('getProfileValidationErrors test', () => {
                 isLoading: true,
                 readonly: true,
                 validationError: [
-                    ValidationErrors.Incorrect_City, ValidationErrors.Incorrect_User_Data,
+                    ValidationErrors.Incorrect_City,
+                    ValidationErrors.Incorrect_User_Data,
                 ],
             },
         };
-        expect(getProfileValidationErrors(state as StateSchema))
-            .toEqual(state.profile?.validationError);
+        expect(getProfileValidationErrors(state as StateSchema)).toEqual(
+            state.profile?.validationError,
+        );
     });
 
     test('getProfileReadOnly return undefined if there is no readOnly param in state', () => {

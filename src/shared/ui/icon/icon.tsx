@@ -1,22 +1,17 @@
-import {
-    createElement,
-    FunctionComponent,
-    memo,
-    MouseEventHandler,
-} from 'react';
+import { createElement, FunctionComponent, memo, MouseEventHandler } from 'react';
 
 import allIcons from './all-icons';
 import { IconName } from './types';
 
 interface IProps {
-  id?: string;
-  className?: string;
-  name: IconName;
-  size?: number;
-  stroke?: string;
-  onClick?: MouseEventHandler<SVGElement>;
-  onMouseOver?: MouseEventHandler<SVGElement>;
-  onMouseOut?: MouseEventHandler<SVGElement>;
+    id?: string;
+    className?: string;
+    name: IconName;
+    size?: number;
+    stroke?: string;
+    onClick?: MouseEventHandler<SVGElement>;
+    onMouseOver?: MouseEventHandler<SVGElement>;
+    onMouseOut?: MouseEventHandler<SVGElement>;
 }
 
 const Icon: FunctionComponent<IProps> = ({
@@ -28,16 +23,17 @@ const Icon: FunctionComponent<IProps> = ({
     onClick,
     onMouseOver,
     onMouseOut,
-}) => createElement(allIcons[name], {
-    id,
-    height: size,
-    width: size,
-    name,
-    stroke,
-    className,
-    onClick,
-    onMouseOver,
-    onMouseOut,
-});
+}) =>
+    createElement(allIcons[name], {
+        id,
+        height: size,
+        width: size,
+        name,
+        stroke,
+        className,
+        onClick,
+        onMouseOver,
+        onMouseOut,
+    });
 
 export default memo(Icon);

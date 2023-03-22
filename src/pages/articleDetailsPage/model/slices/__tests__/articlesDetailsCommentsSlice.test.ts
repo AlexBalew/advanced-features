@@ -22,10 +22,7 @@ describe('articleDetailsCommentsSlice test', () => {
     });
 
     test('fetchCommentsByArticleId pending test', () => {
-        expect(articleDetailsCommentsReducer(
-            mockState,
-            fetchCommentsByArticleId.pending,
-        )).toEqual({
+        expect(articleDetailsCommentsReducer(mockState, fetchCommentsByArticleId.pending)).toEqual({
             ...mockState,
             error: undefined,
             isLoading: true,
@@ -33,10 +30,16 @@ describe('articleDetailsCommentsSlice test', () => {
     });
 
     test('fetchCommentsByArticleId fulfilled test', () => {
-        expect(articleDetailsCommentsReducer(
-            mockState,
-            fetchCommentsByArticleId.fulfilled(mockState.entities as unknown as IComment[], '', ''),
-        )).toEqual({
+        expect(
+            articleDetailsCommentsReducer(
+                mockState,
+                fetchCommentsByArticleId.fulfilled(
+                    mockState.entities as unknown as IComment[],
+                    '',
+                    '',
+                ),
+            ),
+        ).toEqual({
             ...mockState,
             entities: mockState.entities,
             ids: mockState.ids,
@@ -45,10 +48,12 @@ describe('articleDetailsCommentsSlice test', () => {
     });
 
     test('fetchCommentsByArticleId rejected test', () => {
-        expect(articleDetailsCommentsReducer(
-            mockState,
-            fetchCommentsByArticleId.rejected(null, '2', '', enGB.COMMON_ERROR_TITLE),
-        )).toEqual({
+        expect(
+            articleDetailsCommentsReducer(
+                mockState,
+                fetchCommentsByArticleId.rejected(null, '2', '', enGB.COMMON_ERROR_TITLE),
+            ),
+        ).toEqual({
             ...mockState,
             isLoading: false,
             error: enGB.COMMON_ERROR_TITLE,

@@ -9,8 +9,8 @@ const recommendationsAdapter = createEntityAdapter<IArticle>({
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsPage?.recommendations
-    || recommendationsAdapter.getInitialState(),
+    (state) =>
+        state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
 );
 
 const articlesDetailsRecommendationsSlice = createSlice({
@@ -28,10 +28,7 @@ const articlesDetailsRecommendationsSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action,
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false;
                 recommendationsAdapter.setAll(state, action.payload);
             })
@@ -42,6 +39,5 @@ const articlesDetailsRecommendationsSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articleDetailsRecommendationsReducer,
-} = articlesDetailsRecommendationsSlice;
+export const { reducer: articleDetailsRecommendationsReducer } =
+    articlesDetailsRecommendationsSlice;

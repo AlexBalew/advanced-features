@@ -18,17 +18,15 @@ const countryOptions: IAppSelectOption<Countries>[] = [
     { label: Countries.USA, value: Countries.USA },
 ];
 
-export const CountrySelect = memo(({
-    className,
-    pickedOption,
-    readOnly,
-    onChange,
-}: IProps) => {
+export const CountrySelect = memo(({ className, pickedOption, readOnly, onChange }: IProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((pickedOption: string) => {
-        onChange?.(pickedOption as Countries);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (pickedOption: string) => {
+            onChange?.(pickedOption as Countries);
+        },
+        [onChange],
+    );
 
     return (
         <AppSelect

@@ -20,24 +20,18 @@ describe('validateProfileData test', () => {
         expect(result).toEqual([]);
     });
 
-    test(
-        'validateProfileData should return all the correct errors if needed data was not presented',
-        () => {
-            const mockEmptyData: IProfile = {};
-            const result = validateProfileData(mockEmptyData);
-            expect(result).toEqual([
-                ValidationErrors.Incorrect_User_Data,
-                ValidationErrors.Incorrect_Country,
-                ValidationErrors.Incorrect_City,
-            ]);
-        },
-    );
+    test('validateProfileData should return all the correct errors if needed data was not presented', () => {
+        const mockEmptyData: IProfile = {};
+        const result = validateProfileData(mockEmptyData);
+        expect(result).toEqual([
+            ValidationErrors.Incorrect_User_Data,
+            ValidationErrors.Incorrect_Country,
+            ValidationErrors.Incorrect_City,
+        ]);
+    });
 
-    test(
-        'validateProfileData should return no data error if theres is no data at all',
-        () => {
-            const result = validateProfileData();
-            expect(result).toEqual([ValidationErrors.No_Data]);
-        },
-    );
+    test('validateProfileData should return no data error if theres is no data at all', () => {
+        const result = validateProfileData();
+        expect(result).toEqual([ValidationErrors.No_Data]);
+    });
 });

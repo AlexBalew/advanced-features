@@ -10,17 +10,16 @@ interface IProps extends HTMLAttributes<HTMLDivElement> {
     max?: boolean;
 }
 
-export const Card = memo(({
-    className,
-    children,
-    theme = CardTheme.Common,
-    max,
-    ...otherProps
-}: IProps) => (
-    <div
-        className={classNames(classes.root, { [classes.max]: max }, [className, classes[theme]])}
-        {...otherProps}
-    >
-        {children}
-    </div>
-));
+export const Card = memo(
+    ({ className, children, theme = CardTheme.Common, max, ...otherProps }: IProps) => (
+        <div
+            className={classNames(classes.root, { [classes.max]: max }, [
+                className,
+                classes[theme],
+            ])}
+            {...otherProps}
+        >
+            {children}
+        </div>
+    ),
+);

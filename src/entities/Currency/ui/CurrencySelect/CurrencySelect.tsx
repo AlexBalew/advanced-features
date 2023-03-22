@@ -17,17 +17,15 @@ const currencyOptions: IAppSelectOption<Currency>[] = [
     { label: Currency.CAD, value: Currency.CAD, disabled: true },
 ];
 
-export const CurrencySelect = memo(({
-    className,
-    pickedOption,
-    readOnly,
-    onChange,
-}: IProps) => {
+export const CurrencySelect = memo(({ className, pickedOption, readOnly, onChange }: IProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((pickedOption: string) => {
-        onChange?.(pickedOption as Currency);
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (pickedOption: string) => {
+            onChange?.(pickedOption as Currency);
+        },
+        [onChange],
+    );
 
     return (
         <AppSelect

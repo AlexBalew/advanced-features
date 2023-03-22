@@ -3,12 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { enGB } from '@/shared/dictionaries';
-import {
-    AppButtonTheme,
-    Button,
-    Row,
-    Text,
-} from '@/shared/ui';
+import { AppButtonTheme, Button, Row, Text } from '@/shared/ui';
 import { classNames, useAppDispatch } from '@/shared/utils';
 import {
     getProfileData,

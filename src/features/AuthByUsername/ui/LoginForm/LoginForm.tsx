@@ -1,18 +1,8 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { enGB } from '@/shared/dictionaries';
-import {
-    Button,
-    Input,
-    Text,
-    TextTheme,
-} from '@/shared/ui';
-import {
-    classNames,
-    DynamicComponentLoader,
-    ReducersList,
-    useAppDispatch,
-} from '@/shared/utils';
+import { Button, Input, Text, TextTheme } from '@/shared/ui';
+import { classNames, DynamicComponentLoader, ReducersList, useAppDispatch } from '@/shared/utils';
 import { loginActions, loginByUserName } from '../../model';
 import { loginReducer } from '../../model/slice/loginSlice';
 import classes from './LoginForm.module.scss';
@@ -40,13 +30,19 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const onChangeUserName = useCallback((value: string) => {
-        dispatch(loginActions.setUserName(value));
-    }, [dispatch]);
+    const onChangeUserName = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUserName(value));
+        },
+        [dispatch],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     const onLogin = useCallback(async () => {
         const result = await dispatch(loginByUserName({ userName, password }));
@@ -73,11 +69,7 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
                     value={password}
                     onChange={onChangePassword}
                 />
-                <Button
-                    className={classes.loginButton}
-                    onClick={onLogin}
-                    disabled={isLoading}
-                >
+                <Button className={classes.loginButton} onClick={onLogin} disabled={isLoading}>
                     {enGB.LOGIN}
                 </Button>
             </div>

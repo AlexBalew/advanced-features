@@ -52,37 +52,61 @@ export const EditableProfileCard = memo((props: IProps) => {
     const readOnly = useSelector(getProfileReadOnly);
     const validationErrors = useSelector(getProfileValidationErrors);
 
-    const onChangeFirstName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ firstname: value || '' }));
-    }, [dispatch]);
+    const onChangeFirstName = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ firstname: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeLastName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ lastname: value || '' }));
-    }, [dispatch]);
+    const onChangeLastName = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ lastname: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAge = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
-    }, [dispatch]);
+    const onChangeAge = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ city: value || '' }));
-    }, [dispatch]);
+    const onChangeCity = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeUserName = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ username: value || '' }));
-    }, [dispatch]);
+    const onChangeUserName = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ username: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAvatar = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ avatar: value || '' }));
-    }, [dispatch]);
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ avatar: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCurrency = useCallback((currency?: Currency) => {
-        dispatch(profileActions.updateProfile({ currency }));
-    }, [dispatch]);
+    const onChangeCurrency = useCallback(
+        (currency?: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCountry = useCallback((country?: Countries) => {
-        dispatch(profileActions.updateProfile({ country }));
-    }, [dispatch]);
+    const onChangeCountry = useCallback(
+        (country?: Countries) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch],
+    );
 
     useInitialEffect(() => {
         if (id) {
@@ -92,20 +116,17 @@ export const EditableProfileCard = memo((props: IProps) => {
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <Column
-                gap="8"
-                max
-                className={classNames('', {}, [className])}
-            >
+            <Column gap="8" max className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validationErrors?.length && validationErrors.map((error) => (
-                    <Text
-                        key={error}
-                        theme={TextTheme.Error}
-                        text={validationErrorDictionary[error]}
-                        data-testid="EditableProfileCard.Error"
-                    />
-                ))}
+                {validationErrors?.length &&
+                    validationErrors.map((error) => (
+                        <Text
+                            key={error}
+                            theme={TextTheme.Error}
+                            text={validationErrorDictionary[error]}
+                            data-testid="EditableProfileCard.Error"
+                        />
+                    ))}
                 <ProfileCard
                     data={formData}
                     error={error}

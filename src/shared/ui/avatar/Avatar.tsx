@@ -15,21 +15,17 @@ interface IProps {
     radius?: string;
 }
 
-export const Avatar = memo(({
-    className,
-    src,
-    alt,
-    size,
-    radius,
-}: IProps) => {
-    const mods: Mode = {
-    };
+export const Avatar = memo(({ className, src, alt, size, radius }: IProps) => {
+    const mods: Mode = {};
 
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size || 100,
-        height: size || 100,
-        borderRadius: radius,
-    }), [radius, size]);
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size || 100,
+            height: size || 100,
+            borderRadius: radius,
+        }),
+        [radius, size],
+    );
 
     const errorFallback = <Icon className={classes.icon} name="ProfileALt" size={size} />;
     const fallback = <Skeleton width={size} height={size} border={RadiusType.Circle} />;

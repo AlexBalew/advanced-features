@@ -14,9 +14,11 @@ const getState: () => StateSchema = jest.fn();
 describe('loginByUserName test', () => {
     test('loginByUserName should work correctly id data from server was returned', async () => {
         const userData = { userName: 'admin', id: '48' };
-        mockedAxios.post.mockReturnValue(Promise.resolve({
-            data: userData,
-        }));
+        mockedAxios.post.mockReturnValue(
+            Promise.resolve({
+                data: userData,
+            }),
+        );
         const action = loginByUserName({ userName: 'admin', password: '344' });
         const result = await action(dispatch, getState, {
             api: mockedAxios,
@@ -28,20 +30,19 @@ describe('loginByUserName test', () => {
         expect(result.payload).toEqual(userData);
     });
 
-    test(
-        'loginByUserName should work correctly when there error code was returned by server',
-        async () => {
-            mockedAxios.post.mockReturnValue(Promise.resolve({
+    test('loginByUserName should work correctly when there error code was returned by server', async () => {
+        mockedAxios.post.mockReturnValue(
+            Promise.resolve({
                 status: 403,
-            }));
-            const action = loginByUserName({ userName: 'admin', password: '344' });
-            const result = await action(dispatch, getState, {
-                api: mockedAxios,
-            });
-            expect(mockedAxios.post).toHaveBeenCalled();
-            expect(result.meta.requestStatus).toBe('rejected');
-            expect(dispatch).toHaveBeenCalledTimes(2);
-            expect(result.payload).toBe('invalid username or password');
-        },
-    );
+            }),
+        );
+        const action = loginByUserName({ userName: 'admin', password: '344' });
+        const result = await action(dispatch, getState, {
+            api: mockedAxios,
+        });
+        expect(mockedAxios.post).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(result.payload).toBe('invalid username or password');
+    });
 });

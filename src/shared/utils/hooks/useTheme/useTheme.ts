@@ -15,16 +15,17 @@ export const useTheme = (): useThemeResult => {
         let newTheme: Theme;
 
         switch (theme) {
-        case Theme.Dark:
-            newTheme = Theme.Light;
-            break;
-        case Theme.Light:
-            newTheme = Theme.Purple;
-            break;
-        case Theme.Purple:
-            newTheme = Theme.Dark;
-            break;
-        default: newTheme = Theme.Light;
+            case Theme.Dark:
+                newTheme = Theme.Light;
+                break;
+            case Theme.Light:
+                newTheme = Theme.Purple;
+                break;
+            case Theme.Purple:
+                newTheme = Theme.Dark;
+                break;
+            default:
+                newTheme = Theme.Light;
         }
 
         setTheme?.(newTheme);

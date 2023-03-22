@@ -9,15 +9,13 @@ describe('getArticleListSearchValue test', () => {
                 searchValue: 'search',
             },
         };
-        expect(getArticleListSearchValue(state as StateSchema))
-            .toEqual(state.articlesPage?.searchValue);
+        expect(getArticleListSearchValue(state as StateSchema)).toEqual(
+            state.articlesPage?.searchValue,
+        );
     });
 
-    test(
-        'getArticleListSearchValue should return empty if there is no data in state',
-        () => {
-            const state: DeepPartial<StateSchema> = {};
-            expect(getArticleListSearchValue(state as StateSchema)).toBe('');
-        },
-    );
+    test('getArticleListSearchValue should return empty if there is no data in state', () => {
+        const state: DeepPartial<StateSchema> = {};
+        expect(getArticleListSearchValue(state as StateSchema)).toBe('');
+    });
 });

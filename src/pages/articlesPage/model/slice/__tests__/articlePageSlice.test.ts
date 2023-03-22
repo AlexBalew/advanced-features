@@ -1,9 +1,4 @@
-import {
-    ArticleSortField,
-    ArticleType,
-    IArticle,
-    ArticleListView,
-} from '@/entities/Article';
+import { ArticleSortField, ArticleType, IArticle, ArticleListView } from '@/entities/Article';
 import { LOCAL_STORAGE_VIEW_KEY } from '@/shared/constants';
 import { ArticlesPageSchema } from '../../types/articlePageSchema';
 import { articlesPageActions, articlesPageReducer } from '../articlePageSlice';
@@ -30,17 +25,13 @@ describe('articlesPageSlice test', () => {
     });
 
     test('setView action test', () => {
-        expect(articlesPageReducer(
-            mockState,
-            articlesPageActions.setView(ArticleListView.List),
-        )).toEqual({ ...mockState, view: ArticleListView.List });
+        expect(
+            articlesPageReducer(mockState, articlesPageActions.setView(ArticleListView.List)),
+        ).toEqual({ ...mockState, view: ArticleListView.List });
     });
 
     test('initState action test', () => {
-        expect(articlesPageReducer(
-            mockState,
-            articlesPageActions.initState(),
-        )).toEqual({
+        expect(articlesPageReducer(mockState, articlesPageActions.initState())).toEqual({
             ...mockState,
             view: localStorage.getItem(LOCAL_STORAGE_VIEW_KEY),
             limit: 4,
@@ -49,10 +40,9 @@ describe('articlesPageSlice test', () => {
     });
 
     test('fetchArticles pending test', () => {
-        expect(articlesPageReducer(
-            mockState,
-            fetchArticles.pending('', { replace: true }),
-        )).toEqual({
+        expect(
+            articlesPageReducer(mockState, fetchArticles.pending('', { replace: true })),
+        ).toEqual({
             ...mockState,
             isLoading: true,
             validationError: undefined,
@@ -60,10 +50,12 @@ describe('articlesPageSlice test', () => {
     });
 
     test('fetchArticles fulfilled test', () => {
-        expect(articlesPageReducer(
-            mockState,
-            fetchArticles.fulfilled(mockState.entities as unknown as IArticle[], '', {}),
-        )).toEqual({
+        expect(
+            articlesPageReducer(
+                mockState,
+                fetchArticles.fulfilled(mockState.entities as unknown as IArticle[], '', {}),
+            ),
+        ).toEqual({
             ...mockState,
             isLoading: false,
             hasMore: false,
@@ -71,10 +63,9 @@ describe('articlesPageSlice test', () => {
     });
 
     test('fetchArticles rejected test', () => {
-        expect(articlesPageReducer(
-            mockState,
-            fetchArticles.rejected(null, '', {}, 'error'),
-        )).toEqual({
+        expect(
+            articlesPageReducer(mockState, fetchArticles.rejected(null, '', {}, 'error')),
+        ).toEqual({
             ...mockState,
             isLoading: false,
             error: 'error',

@@ -20,11 +20,7 @@ export const PageError = () => {
                     <h1>{t(enGB.OOPS)!}</h1>
                     <h2>404 - {t(enGB.THE_PAGE_CAN_NOT_BE_FOUND)}</h2>
                 </div>
-                <Button
-                    type="button"
-                    theme={AppButtonTheme.Pure}
-                    onClick={onReload}
-                >
+                <Button type="button" theme={AppButtonTheme.Pure} onClick={onReload}>
                     {t(enGB.RELOAD)}
                 </Button>
             </div>

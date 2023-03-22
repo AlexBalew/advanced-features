@@ -2,14 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { enGB } from '@/shared/dictionaries';
 import { RadiusType } from '@/shared/types';
-import {
-    AppLink,
-    Avatar,
-    Column,
-    Row,
-    Skeleton,
-    Text,
-} from '@/shared/ui';
+import { AppLink, Avatar, Column, Row, Skeleton, Text } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import { IComment } from '../../model/types';
 import classes from './CommentCard.module.scss';
@@ -54,16 +47,14 @@ export const CommentCard = memo(({ className, comment, isLoading }: IProps) => {
         >
             <AppLink to={getPathProfile(comment?.user?.id)}>
                 <Row>
-                    {comment?.user?.avatar
-                        ? (
-                            <Avatar
-                                size={50}
-                                radius={RadiusType.Circle}
-                                src={comment?.user?.avatar}
-                                alt={t(enGB.AVATAR)}
-                            />
-                        )
-                        : null}
+                    {comment?.user?.avatar ? (
+                        <Avatar
+                            size={50}
+                            radius={RadiusType.Circle}
+                            src={comment?.user?.avatar}
+                            alt={t(enGB.AVATAR)}
+                        />
+                    ) : null}
                     <Text className={classes.userName} text={comment?.user?.userName} />
                 </Row>
             </AppLink>

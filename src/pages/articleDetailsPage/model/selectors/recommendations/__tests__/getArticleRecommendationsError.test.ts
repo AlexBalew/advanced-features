@@ -10,8 +10,9 @@ describe('getArticleRecommendationsError test', () => {
                 },
             },
         };
-        expect(getArticleRecommendationsError(state as StateSchema))
-            .toEqual(state.articleDetailsPage?.recommendations?.error);
+        expect(getArticleRecommendationsError(state as StateSchema)).toEqual(
+            state.articleDetailsPage?.recommendations?.error,
+        );
     });
 
     test('getArticleRecommendationsError return undefined if there is no data in state', () => {

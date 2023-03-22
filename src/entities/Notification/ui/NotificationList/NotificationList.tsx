@@ -16,11 +16,7 @@ export const NotificationList = memo(({ className }: IProps) => {
 
     if (isLoading) {
         return (
-            <Column
-                gap="16"
-                max
-                className={classNames(classes.root, {}, [className])}
-            >
+            <Column gap="16" max className={classNames(classes.root, {}, [className])}>
                 <Skeleton width="100%" border="10px" height="80px" />
                 <Skeleton width="100%" border="10px" height="80px" />
                 <Skeleton width="100%" border="10px" height="80px" />
@@ -30,16 +26,9 @@ export const NotificationList = memo(({ className }: IProps) => {
     }
 
     return (
-        <Column
-            gap="16"
-            max
-            className={classNames(classes.root, {}, [className])}
-        >
+        <Column gap="16" max className={classNames(classes.root, {}, [className])}>
             {notifications?.map((notification) => (
-                <NotificationItem
-                    key={notification.id}
-                    item={notification}
-                />
+                <NotificationItem key={notification.id} item={notification} />
             ))}
         </Column>
     );

@@ -2,11 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { enGB } from '@/shared/dictionaries';
-import {
-    classNames,
-    DynamicComponentLoader,
-    ReducersList,
-} from '@/shared/utils';
+import { classNames, DynamicComponentLoader, ReducersList } from '@/shared/utils';
 import { Column, Text } from '@/shared/ui';
 import { Page } from '@/widgets/page';
 import { ArticleRecommendations } from '@/features/ArticleRecommendations';

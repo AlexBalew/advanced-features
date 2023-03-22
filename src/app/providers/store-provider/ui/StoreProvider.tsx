@@ -16,9 +16,5 @@ export const StoreProvider = ({ children, initialState, asyncReducers }: IProps)
         asyncReducers as ReducersMapObject<StateSchema>,
     );
 
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-    );
+    return <Provider store={store}>{children}</Provider>;
 };

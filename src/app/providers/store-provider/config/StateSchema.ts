@@ -19,7 +19,7 @@ import { ArticlesPageSchema } from '@/pages/articlesPage';
 export interface StateSchema {
     user: IUserSchema;
     scrollSaver: IScrollSaverSchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // async reducers
     loginForm?: ILoginSchema;
@@ -44,7 +44,7 @@ export interface StoreWithManager extends EnhancedStore<StateSchema> {
 }
 
 export interface ThunkExtraArg {
-    api: AxiosInstance,
+    api: AxiosInstance;
 }
 
 export interface ThunkConfig<T> {

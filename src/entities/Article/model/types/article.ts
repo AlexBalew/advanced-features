@@ -8,12 +8,12 @@ export interface IArticleBlockBase {
 }
 
 export interface IArticleBlockText extends IArticleBlockBase {
-    type: ArticleBlockType.Text
+    type: ArticleBlockType.Text;
     paragraphs?: string[];
 }
 
 export interface IArticleBlockImage extends IArticleBlockBase {
-    type: ArticleBlockType.Image
+    type: ArticleBlockType.Image;
     src: string;
 }
 

@@ -14,9 +14,9 @@ describe('addCommentSlice test', () => {
     });
 
     test('setText action test', () => {
-        expect(addCommentReducer(
-            mockState,
-            addCommentActions.setText(mockText),
-        )).toEqual({ ...mockState, text: mockText });
+        expect(addCommentReducer(mockState, addCommentActions.setText(mockText))).toEqual({
+            ...mockState,
+            text: mockText,
+        });
     });
 });

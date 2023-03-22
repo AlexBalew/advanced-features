@@ -48,9 +48,7 @@ export const AppSelect = <T extends string>({
                 onChange={onChange}
             >
                 <Listbox.Button disabled={readOnly} className={popupClasses.trigger}>
-                    <Button>
-                        {pickedLabel ?? defaultLabel}
-                    </Button>
+                    <Button>{pickedLabel ?? defaultLabel}</Button>
                 </Listbox.Button>
                 <Listbox.Options className={classNames(classes.options, {}, optionClasses)}>
                     {options.map((option) => (

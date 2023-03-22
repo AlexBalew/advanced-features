@@ -14,32 +14,38 @@ interface IProps {
 export const ArticleTypeTabs = memo(({ value, className, onChangeType }: IProps) => {
     const { t } = useTranslation('articles');
 
-    const tabs = useMemo<ITab[]>(() => [
-        {
-            content: t(enGB.ALL),
-            value: ArticleType.All,
-        },
-        {
-            content: t(enGB.COMICS),
-            value: ArticleType.Comics,
-        },
-        {
-            content: t(enGB.MOVIES),
-            value: ArticleType.Movies,
-        },
-        {
-            content: t(enGB.MUSIC),
-            value: ArticleType.Music,
-        },
-        {
-            content: t(enGB.NEWS),
-            value: ArticleType.News,
-        },
-    ], [t]);
+    const tabs = useMemo<ITab[]>(
+        () => [
+            {
+                content: t(enGB.ALL),
+                value: ArticleType.All,
+            },
+            {
+                content: t(enGB.COMICS),
+                value: ArticleType.Comics,
+            },
+            {
+                content: t(enGB.MOVIES),
+                value: ArticleType.Movies,
+            },
+            {
+                content: t(enGB.MUSIC),
+                value: ArticleType.Music,
+            },
+            {
+                content: t(enGB.NEWS),
+                value: ArticleType.News,
+            },
+        ],
+        [t],
+    );
 
-    const onTabClick = useCallback((tab: ITab) => {
-        onChangeType(tab.value as ArticleType);
-    }, [onChangeType]);
+    const onTabClick = useCallback(
+        (tab: ITab) => {
+            onChangeType(tab.value as ArticleType);
+        },
+        [onChangeType],
+    );
 
     return (
         <Tabs

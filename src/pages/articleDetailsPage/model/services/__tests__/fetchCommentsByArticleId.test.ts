@@ -25,9 +25,11 @@ const mockData: IComment[] = [
 
 describe('fetchCommentsByArticleId test', () => {
     test('fetchCommentsByArticleId should work correctly', async () => {
-        mockedAxios.get.mockReturnValue(Promise.resolve({
-            data: mockData,
-        }));
+        mockedAxios.get.mockReturnValue(
+            Promise.resolve({
+                data: mockData,
+            }),
+        );
         const action = fetchCommentsByArticleId(mockId);
         const result = await action(dispatch, getState, {
             api: mockedAxios,
@@ -37,20 +39,19 @@ describe('fetchCommentsByArticleId test', () => {
         expect(result.payload).toEqual(mockData);
     });
 
-    test(
-        'fetchCommentsByArticleId should work correctly if error code was returned by server',
-        async () => {
-            mockedAxios.get.mockReturnValue(Promise.resolve({
+    test('fetchCommentsByArticleId should work correctly if error code was returned by server', async () => {
+        mockedAxios.get.mockReturnValue(
+            Promise.resolve({
                 status: 403,
-            }));
-            const action = fetchCommentsByArticleId(mockId);
-            const result = await action(dispatch, getState, {
-                api: mockedAxios,
-            });
-            expect(mockedAxios.get).toHaveBeenCalled();
-            expect(result.meta.requestStatus).toBe('rejected');
-            expect(dispatch).toHaveBeenCalledTimes(2);
-            expect(result.payload).toBe('error');
-        },
-    );
+            }),
+        );
+        const action = fetchCommentsByArticleId(mockId);
+        const result = await action(dispatch, getState, {
+            api: mockedAxios,
+        });
+        expect(mockedAxios.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(result.payload).toBe('error');
+    });
 });

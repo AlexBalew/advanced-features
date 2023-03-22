@@ -31,16 +31,8 @@ export const ArticleDetailsPageHeader = memo(({ className }: IProps) => {
 
     return (
         <Row max justify="between" className={classNames('', {}, [className])}>
-            <Button onClick={onbackToArticleList}>
-                {t(enGB.BACK)}
-            </Button>
-            {canBeEdited && (
-                <Button
-                    onClick={onEditArticle}
-                >
-                    {t(enGB.EDIT)}
-                </Button>
-            )}
+            <Button onClick={onbackToArticleList}>{t(enGB.BACK)}</Button>
+            {canBeEdited && <Button onClick={onEditArticle}>{t(enGB.EDIT)}</Button>}
         </Row>
     );
 });

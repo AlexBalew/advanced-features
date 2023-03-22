@@ -1,6 +1,4 @@
-import {
-    memo, ReactNode, useCallback, useEffect,
-} from 'react';
+import { memo, ReactNode, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/utils';
 import { AnimationProvider, useAnimationLibs } from '@/shared/utils/components';
 import { Overlay } from '../overlay';
@@ -22,13 +20,7 @@ export const DrawerContent = memo((props: IProps) => {
     const { Spring, Gesture } = useAnimationLibs();
     const [{ y }, api] = Spring.useSpring(() => ({ y: height }));
     const { theme } = useTheme();
-    const {
-        className,
-        children,
-        onClose,
-        isOpened,
-        lazy,
-    } = props;
+    const { className, children, onClose, isOpened, lazy } = props;
 
     const openDrawer = useCallback(() => {
         api.start({ y: 0, immediate: false });
@@ -50,13 +42,7 @@ export const DrawerContent = memo((props: IProps) => {
     };
 
     const bind = Gesture.useDrag(
-        ({
-            last,
-            velocity: [, vy],
-            direction: [, dy],
-            movement: [, my],
-            cancel,
-        }) => {
+        ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
             if (my < -70) cancel();
 
             if (last) {
@@ -70,7 +56,10 @@ export const DrawerContent = memo((props: IProps) => {
             }
         },
         {
-            from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+            from: () => [0, y.get()],
+            filterTaps: true,
+            bounds: { top: 0 },
+            rubberband: true,
         },
     );
 
@@ -86,7 +75,11 @@ export const DrawerContent = memo((props: IProps) => {
                 <Overlay onClick={close} />
                 <Spring.a.div
                     className={classes.sheet}
-                    style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
+                    style={{
+                        display,
+                        bottom: `calc(-100vh + ${height - 100}px)`,
+                        y,
+                    }}
                     {...bind()}
                 >
                     {children}

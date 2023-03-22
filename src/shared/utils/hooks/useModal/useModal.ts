@@ -1,10 +1,4 @@
-import {
-    MutableRefObject,
-    useCallback,
-    useEffect,
-    useRef,
-    useState,
-} from 'react';
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 interface IProps {
     isOpened?: boolean;
@@ -27,11 +21,14 @@ export function useModal({ isOpened, animationDelay, onClose }: IProps) {
         }
     }, [animationDelay, onClose]);
 
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            close();
-        }
-    }, [close]);
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                close();
+            }
+        },
+        [close],
+    );
 
     useEffect(() => {
         if (isOpened) {

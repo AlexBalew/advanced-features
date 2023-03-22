@@ -12,20 +12,18 @@ interface IProps {
 
 const stars = [1, 2, 3, 4, 5];
 
-export const RatingStarList = memo(({
-    className,
-    size,
-    selectedStars = 0,
-    onSelect,
-}: IProps) => {
+export const RatingStarList = memo(({ className, size, selectedStars = 0, onSelect }: IProps) => {
     const [currentStarCount, setCurrentStarCount] = useState<number>(selectedStars);
     const [isSelected, setIsSelected] = useState<boolean>(Boolean(selectedStars));
 
-    const onHover = useCallback((starsCount: number) => () => {
-        if (!isSelected) {
-            setCurrentStarCount(starsCount);
-        }
-    }, [isSelected]);
+    const onHover = useCallback(
+        (starsCount: number) => () => {
+            if (!isSelected) {
+                setCurrentStarCount(starsCount);
+            }
+        },
+        [isSelected],
+    );
 
     const onLeave = useCallback(() => {
         if (!isSelected) {
@@ -33,13 +31,16 @@ export const RatingStarList = memo(({
         }
     }, [isSelected]);
 
-    const onClick = useCallback((starsCount: number) => () => {
-        if (!isSelected) {
-            onSelect?.(starsCount);
-            setCurrentStarCount(starsCount);
-            setIsSelected(true);
-        }
-    }, [isSelected, onSelect]);
+    const onClick = useCallback(
+        (starsCount: number) => () => {
+            if (!isSelected) {
+                onSelect?.(starsCount);
+                setCurrentStarCount(starsCount);
+                setIsSelected(true);
+            }
+        },
+        [isSelected, onSelect],
+    );
 
     return (
         <div className={classNames(classes.root, {}, [className])}>

@@ -10,18 +10,14 @@ interface IProps extends LinkProps {
     children?: ReactNode;
 }
 
-export const AppLink = memo(({
-    to,
-    className,
-    children,
-    theme = AppLinkTheme.Primary,
-    ...otherProps
-}: IProps) => (
-    <Link
-        to={to}
-        className={classNames(classes.appLink, {}, [className, classes[theme]])}
-        {...otherProps}
-    >
-        {children}
-    </Link>
-));
+export const AppLink = memo(
+    ({ to, className, children, theme = AppLinkTheme.Primary, ...otherProps }: IProps) => (
+        <Link
+            to={to}
+            className={classNames(classes.appLink, {}, [className, classes[theme]])}
+            {...otherProps}
+        >
+            {children}
+        </Link>
+    ),
+);

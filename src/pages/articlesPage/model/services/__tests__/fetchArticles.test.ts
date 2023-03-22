@@ -35,9 +35,11 @@ const mockData: IArticle[] = [
 describe('fetchArticles test', () => {
     test('fetchArticles should work correctly id data from server was returned', async () => {
         (getArticleListLimit as jest.Mock).mockReturnValue(5);
-        (axios.get as jest.Mock).mockReturnValue(Promise.resolve({
-            data: mockData,
-        }));
+        (axios.get as jest.Mock).mockReturnValue(
+            Promise.resolve({
+                data: mockData,
+            }),
+        );
         const action = fetchArticles({});
         const result = await action(dispatch, getState, {
             api: axios,
@@ -47,20 +49,19 @@ describe('fetchArticles test', () => {
         expect(result.payload).toEqual(mockData);
     });
 
-    test(
-        'fetchArticles should work correctly when there error code was returned by server',
-        async () => {
-            (axios.get as jest.Mock).mockReturnValue(Promise.resolve({
+    test('fetchArticles should work correctly when there error code was returned by server', async () => {
+        (axios.get as jest.Mock).mockReturnValue(
+            Promise.resolve({
                 status: 403,
-            }));
-            const action = fetchArticles({});
-            const result = await action(dispatch, getState, {
-                api: axios,
-            });
-            expect(axios.get).toHaveBeenCalled();
-            expect(result.meta.requestStatus).toBe('rejected');
-            expect(dispatch).toHaveBeenCalledTimes(2);
-            expect(result.payload).toBe('error');
-        },
-    );
+            }),
+        );
+        const action = fetchArticles({});
+        const result = await action(dispatch, getState, {
+            api: axios,
+        });
+        expect(axios.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(dispatch).toHaveBeenCalledTimes(2);
+        expect(result.payload).toBe('error');
+    });
 });

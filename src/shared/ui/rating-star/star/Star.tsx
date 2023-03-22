@@ -15,38 +15,46 @@ interface IProps {
     onClick: (starsCount: number) => void;
 }
 
-export const Star = memo(({
-    name,
-    starNumber = 1,
-    size,
-    isSelected,
-    currentStarCount = 0,
-    onHover,
-    onLeave,
-    onClick,
-}: IProps) => {
-    const mods: Mode = {
-        [classes.default]: true,
-        [classes.hovered]: currentStarCount >= starNumber,
-        [classes.isSelected]: isSelected,
-    };
+export const Star = memo(
+    ({
+        name,
+        starNumber = 1,
+        size,
+        isSelected,
+        currentStarCount = 0,
+        onHover,
+        onLeave,
+        onClick,
+    }: IProps) => {
+        const mods: Mode = {
+            [classes.default]: true,
+            [classes.hovered]: currentStarCount >= starNumber,
+            [classes.isSelected]: isSelected,
+        };
 
-    const onHoverHandler = useCallback((starsCount: number) => () => {
-        onHover(starsCount);
-    }, [onHover]);
+        const onHoverHandler = useCallback(
+            (starsCount: number) => () => {
+                onHover(starsCount);
+            },
+            [onHover],
+        );
 
-    const onClickHandler = useCallback((starsCount: number) => () => {
-        onClick(starsCount);
-    }, [onClick]);
+        const onClickHandler = useCallback(
+            (starsCount: number) => () => {
+                onClick(starsCount);
+            },
+            [onClick],
+        );
 
-    return (
-        <Icon
-            size={size}
-            className={classNames(classes.root, mods, [])}
-            name={name as IconName}
-            onMouseOut={onLeave}
-            onMouseOver={onHoverHandler(starNumber)}
-            onClick={onClickHandler(starNumber)}
-        />
-    );
-});
+        return (
+            <Icon
+                size={size}
+                className={classNames(classes.root, mods, [])}
+                name={name as IconName}
+                onMouseOut={onLeave}
+                onMouseOver={onHoverHandler(starNumber)}
+                onClick={onClickHandler(starNumber)}
+            />
+        );
+    },
+);

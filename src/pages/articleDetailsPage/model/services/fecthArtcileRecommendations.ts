@@ -2,8 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/store-provider';
 import { IArticle } from '@/entities/Article';
 
-export const fetchArticleRecommendations = createAsyncThunk<
-IArticle[], void, ThunkConfig<string>>(
+export const fetchArticleRecommendations = createAsyncThunk<IArticle[], void, ThunkConfig<string>>(
     'article/fetchArticleRecommendations',
     async (_, { extra, rejectWithValue }) => {
         try {

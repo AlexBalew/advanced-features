@@ -13,30 +13,36 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
 }
 
-export const Button = memo(({
-    className,
-    children,
-    theme = AppButtonTheme.Outline,
-    square = false,
-    disabled = false,
-    fullWidth = false,
-    size = AppButtonSize.M,
-    ...otherProps
-}: IProps) => {
-    const mods: Record<string, boolean> = {
-        [classes.square]: square,
-        [classes.disabled]: disabled,
-        [classes.fullWidth]: fullWidth,
-    };
+export const Button = memo(
+    ({
+        className,
+        children,
+        theme = AppButtonTheme.Outline,
+        square = false,
+        disabled = false,
+        fullWidth = false,
+        size = AppButtonSize.M,
+        ...otherProps
+    }: IProps) => {
+        const mods: Record<string, boolean> = {
+            [classes.square]: square,
+            [classes.disabled]: disabled,
+            [classes.fullWidth]: fullWidth,
+        };
 
-    return (
-        <button
-            type="button"
-            className={classNames(classes.root, mods, [className, classes[theme], classes[size]])}
-            disabled={disabled}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
-});
+        return (
+            <button
+                type="button"
+                className={classNames(classes.root, mods, [
+                    className,
+                    classes[theme],
+                    classes[size],
+                ])}
+                disabled={disabled}
+                {...otherProps}
+            >
+                {children}
+            </button>
+        );
+    },
+);

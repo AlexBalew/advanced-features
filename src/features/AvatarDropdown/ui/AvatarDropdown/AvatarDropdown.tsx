@@ -1,12 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserAuthData,
-    isUserAdmin,
-    isUserManager,
-    userActions,
-} from '@/entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { enGB } from '@/shared/dictionaries';
 import { RadiusType } from '@/shared/types';
 import { Avatar, Dropdown } from '@/shared/ui';
@@ -39,10 +34,14 @@ export const AvatarDropdown = memo(({ className }: IProps) => {
             className={classNames('', {}, [className])}
             direction="bottom right"
             items={[
-                ...(isAdminPanelAvailable ? [{
-                    content: t(enGB.ADMIN_PANEL),
-                    href: getPathAdmin(),
-                }] : []),
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t(enGB.ADMIN_PANEL),
+                              href: getPathAdmin(),
+                          },
+                      ]
+                    : []),
                 {
                     content: t(enGB.LOGOUT),
                     onClick: onLogout,
@@ -52,14 +51,14 @@ export const AvatarDropdown = memo(({ className }: IProps) => {
                     href: getPathProfile(userAuthData.id),
                 },
             ]}
-            trigger={(
+            trigger={
                 <Avatar
                     radius={RadiusType.Circle}
                     size={30}
                     alt={enGB.AVATAR}
                     src={userAuthData.avatar}
                 />
-            )}
+            }
         />
     );
 });

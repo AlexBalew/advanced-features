@@ -2,16 +2,7 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from '@/shared/dictionaries';
-import {
-    Avatar,
-    Skeleton,
-    Text,
-    Icon,
-    Column,
-    Row,
-    TextAlign,
-    TextTheme,
-} from '@/shared/ui';
+import { Avatar, Skeleton, Text, Icon, Column, Row, TextAlign, TextTheme } from '@/shared/ui';
 import {
     classNames,
     DynamicComponentLoader,
@@ -52,23 +43,16 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
 
     const renderBlock = useCallback((block: IArticleBlock) => {
         switch (block.type) {
-        case ArticleBlockType.Text:
-            return (
-                <ArticleTextBlock
-                    block={block}
-                    key={block.id}
-                />
-            );
-        case ArticleBlockType.Image:
-            return (
-                <Row justify="center" max>
-                    <ArticleImageBlock
-                        block={block}
-                        key={block.id}
-                    />
-                </Row>
-            );
-        default: return null;
+            case ArticleBlockType.Text:
+                return <ArticleTextBlock block={block} key={block.id} />;
+            case ArticleBlockType.Image:
+                return (
+                    <Row justify="center" max>
+                        <ArticleImageBlock block={block} key={block.id} />
+                    </Row>
+                );
+            default:
+                return null;
         }
     }, []);
 
@@ -108,11 +92,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
                     />
                 </Row>
                 <Column gap="4" data-testid="ArticleDetails.Info">
-                    <Text
-                        className={classes.title}
-                        title={data?.title}
-                        text={data?.subtitle}
-                    />
+                    <Text className={classes.title} title={data?.title} text={data?.subtitle} />
                     <Row gap="8">
                         <Icon name="EyeOpen" size={20} className={classes.icon} />
                         <Text text={String(data?.views)} />
@@ -129,10 +109,7 @@ export const ArticleDetails = memo(({ className, id }: IProps) => {
 
     return (
         <DynamicComponentLoader reducers={reducers}>
-            <Column
-                gap="16"
-                className={classNames(classes.root, {}, [className])}
-            >
+            <Column gap="16" className={classNames(classes.root, {}, [className])}>
                 {content}
             </Column>
         </DynamicComponentLoader>

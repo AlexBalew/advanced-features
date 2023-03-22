@@ -23,40 +23,36 @@ const mapTextSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.XL]: 'h1',
 };
 
-export const Text = memo(({
-    className,
-    title,
-    text,
-    theme = TextTheme.Primary,
-    align = TextAlign.Left,
-    size = TextSize.M,
-    'data-testid': dataTestId = 'Text',
-}: IProps) => {
-    const mods: Mode = {
-        [classes[align]]: true,
-        [classes[size]]: true,
-    };
+export const Text = memo(
+    ({
+        className,
+        title,
+        text,
+        theme = TextTheme.Primary,
+        align = TextAlign.Left,
+        size = TextSize.M,
+        'data-testid': dataTestId = 'Text',
+    }: IProps) => {
+        const mods: Mode = {
+            [classes[align]]: true,
+            [classes[size]]: true,
+        };
 
-    const HeaderTag = mapTextSizeToHeaderTag[size];
+        const HeaderTag = mapTextSizeToHeaderTag[size];
 
-    return (
-        <div className={classNames(classes.root, mods, [className, classes[theme]])}>
-            {title && (
-                <HeaderTag
-                    data-testid={`${dataTestId}.Header`}
-                    className={classes.title}
-                >
-                    {title}
-                </HeaderTag>
-            )}
-            {text && (
-                <p
-                    data-testid={`${dataTestId}.Content`}
-                    className={classes.text}
-                >
-                    {text}
-                </p>
-            )}
-        </div>
-    );
-});
+        return (
+            <div className={classNames(classes.root, mods, [className, classes[theme]])}>
+                {title && (
+                    <HeaderTag data-testid={`${dataTestId}.Header`} className={classes.title}>
+                        {title}
+                    </HeaderTag>
+                )}
+                {text && (
+                    <p data-testid={`${dataTestId}.Content`} className={classes.text}>
+                        {text}
+                    </p>
+                )}
+            </div>
+        );
+    },
+);

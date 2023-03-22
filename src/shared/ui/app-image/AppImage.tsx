@@ -1,10 +1,4 @@
-import {
-    ImgHTMLAttributes,
-    memo,
-    ReactElement,
-    useLayoutEffect,
-    useState,
-} from 'react';
+import { ImgHTMLAttributes, memo, ReactElement, useLayoutEffect, useState } from 'react';
 
 interface IProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
@@ -12,36 +6,29 @@ interface IProps extends ImgHTMLAttributes<HTMLImageElement> {
     errorFallback?: ReactElement;
 }
 
-export const AppImage = memo(({
-    className,
-    src,
-    alt = 'image',
-    fallback,
-    errorFallback,
-    ...otherProps
-}: IProps) => {
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [hasError, setHasError] = useState<boolean>(false);
+export const AppImage = memo(
+    ({ className, src, alt = 'image', fallback, errorFallback, ...otherProps }: IProps) => {
+        const [isLoading, setIsLoading] = useState<boolean>(true);
+        const [hasError, setHasError] = useState<boolean>(false);
 
-    useLayoutEffect(() => {
-        const img = new Image();
-        img.src = src ?? '';
-        img.onload = () => setIsLoading(false);
-        img.onerror = () => {
-            setIsLoading(false);
-            setHasError(true);
-        };
-    }, [src]);
+        useLayoutEffect(() => {
+            const img = new Image();
+            img.src = src ?? '';
+            img.onload = () => setIsLoading(false);
+            img.onerror = () => {
+                setIsLoading(false);
+                setHasError(true);
+            };
+        }, [src]);
 
-    if (isLoading && fallback) {
-        return fallback;
-    }
+        if (isLoading && fallback) {
+            return fallback;
+        }
 
-    if (hasError && errorFallback) {
-        return errorFallback;
-    }
+        if (hasError && errorFallback) {
+            return errorFallback;
+        }
 
-    return (
-        <img className={className} alt={alt} src={src} {...otherProps} />
-    );
-});
+        return <img className={className} alt={alt} src={src} {...otherProps} />;
+    },
+);

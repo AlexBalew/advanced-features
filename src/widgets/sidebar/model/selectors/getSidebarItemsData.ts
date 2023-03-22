@@ -8,39 +8,36 @@ import {
     getPathProfile,
 } from '@/shared/config/routeConfig/RouteConfig';
 
-export const getSidebarItemsData = createSelector(
-    getUserAuthData,
-    (userData): ISidebarItem[] => {
-        const sideBarItemsList: ISidebarItem[] = [
+export const getSidebarItemsData = createSelector(getUserAuthData, (userData): ISidebarItem[] => {
+    const sideBarItemsList: ISidebarItem[] = [
+        {
+            path: getPathMain(),
+            IconNname: 'Home',
+            linkTitle: 'Home',
+        },
+        {
+            path: getPathAbout(),
+            IconNname: 'AboutUs',
+            linkTitle: 'About us',
+        },
+    ];
+
+    if (userData) {
+        sideBarItemsList.push(
             {
-                path: getPathMain(),
-                IconNname: 'Home',
-                linkTitle: 'Home',
+                path: getPathProfile(userData?.id),
+                IconNname: 'Profile',
+                linkTitle: 'Profile',
+                isAuth: true,
             },
             {
-                path: getPathAbout(),
-                IconNname: 'AboutUs',
-                linkTitle: 'About us',
+                path: getPathArticles(),
+                IconNname: 'Articles',
+                linkTitle: 'Articles',
+                isAuth: true,
             },
-        ];
+        );
+    }
 
-        if (userData) {
-            sideBarItemsList.push(
-                {
-                    path: getPathProfile(userData?.id),
-                    IconNname: 'Profile',
-                    linkTitle: 'Profile',
-                    isAuth: true,
-                },
-                {
-                    path: getPathArticles(),
-                    IconNname: 'Articles',
-                    linkTitle: 'Articles',
-                    isAuth: true,
-                },
-            );
-        }
-
-        return sideBarItemsList;
-    },
-);
+    return sideBarItemsList;
+});

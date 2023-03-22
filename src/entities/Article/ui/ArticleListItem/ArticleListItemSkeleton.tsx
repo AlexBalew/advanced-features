@@ -34,11 +34,7 @@ export const ArticleListItemSkeleton = memo(({ view, className }: IProps) => {
         <div className={classNames(classes.ArticleListItem, {}, [className, classes[view]])}>
             <Card className={classes.card}>
                 <div className={classes.imageWrapper}>
-                    <Skeleton
-                        width={200}
-                        height={200}
-                        className={classes.img}
-                    />
+                    <Skeleton width={200} height={200} className={classes.img} />
                 </div>
                 <div className={classes.infoWrapper}>
                     <Skeleton width={130} height={16} />

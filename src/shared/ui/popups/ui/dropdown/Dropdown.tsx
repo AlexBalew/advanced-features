@@ -21,19 +21,12 @@ interface IProps {
     trigger: ReactNode;
 }
 
-export function Dropdown({
-    items,
-    trigger,
-    className,
-    direction = 'bottom right',
-}: IProps) {
+export function Dropdown({ items, trigger, className, direction = 'bottom right' }: IProps) {
     const menuClasses = [mapDirectionToClass[direction]];
 
     return (
         <Menu as="div" className={classNames('', {}, [className, popupClasses.root])}>
-            <Menu.Button className={popupClasses.trigger}>
-                {trigger}
-            </Menu.Button>
+            <Menu.Button className={popupClasses.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(classes.menu, {}, menuClasses)}>
                 {items.map((item) => {
                     const content = ({ active }: { active: boolean }) => (
@@ -41,7 +34,9 @@ export function Dropdown({
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(classes.item, { [popupClasses.active]: active })}
+                            className={classNames(classes.item, {
+                                [popupClasses.active]: active,
+                            })}
                         >
                             {item.content}
                         </button>
@@ -61,16 +56,11 @@ export function Dropdown({
                     }
 
                     return (
-                        <Menu.Item
-                            key={item.content as Key}
-                            as={Fragment}
-                            disabled={item.disabled}
-                        >
+                        <Menu.Item key={item.content as Key} as={Fragment} disabled={item.disabled}>
                             {content}
                         </Menu.Item>
                     );
                 })}
-
             </Menu.Items>
         </Menu>
     );

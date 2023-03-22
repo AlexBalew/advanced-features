@@ -27,12 +27,7 @@ const article = {
     img: 'https://i.pinimg.com/736x/6b/6e/db/6b6edb53a211d0c0c9f2c857fc0d1418--batman-backgrounds-savior.jpg',
     views: 1022,
     createdAt: '30/01/2023',
-    type: [
-        ArticleType.News,
-        ArticleType.Movies,
-        ArticleType.Music,
-        ArticleType.News,
-    ],
+    type: [ArticleType.News, ArticleType.Movies, ArticleType.Music, ArticleType.News],
     blocks: [
         {
             id: '1',
@@ -109,24 +104,20 @@ LoadingTiles.args = {
 
 export const Tiles = Template.bind({});
 Tiles.args = {
-    articles: new Array(12)
-        .fill(0)
-        .map((index) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(12).fill(0).map((index) => ({
+        ...article,
+        id: String(index),
+    })),
     isLoading: false,
     view: ArticleListView.Tiles,
 };
 
 export const List = Template.bind({});
 List.args = {
-    articles: new Array(9)
-        .fill(0)
-        .map((index) => ({
-            ...article,
-            id: String(index),
-        })),
+    articles: new Array(9).fill(0).map((index) => ({
+        ...article,
+        id: String(index),
+    })),
     isLoading: false,
     view: ArticleListView.List,
 };

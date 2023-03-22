@@ -12,26 +12,36 @@ interface IProps {
 }
 
 export const ViewSwitcher = memo(({ className, view, onViewClick }: IProps) => {
-    const viewTypes: IView[] = useMemo(() => [
-        {
-            view: ArticleListView.List,
-            icon: <Icon
-                name="List"
-                className={view === ArticleListView.List ? classes.selected : ''}
-            />,
-        },
-        {
-            view: ArticleListView.Tiles,
-            icon: <Icon
-                name="TilesList"
-                className={view === ArticleListView.Tiles ? classes.selected : ''}
-            />,
-        },
-    ], [view]);
+    const viewTypes: IView[] = useMemo(
+        () => [
+            {
+                view: ArticleListView.List,
+                icon: (
+                    <Icon
+                        name="List"
+                        className={view === ArticleListView.List ? classes.selected : ''}
+                    />
+                ),
+            },
+            {
+                view: ArticleListView.Tiles,
+                icon: (
+                    <Icon
+                        name="TilesList"
+                        className={view === ArticleListView.Tiles ? classes.selected : ''}
+                    />
+                ),
+            },
+        ],
+        [view],
+    );
 
-    const onSwitchView = useCallback((newView: ArticleListView) => () => {
-        onViewClick?.(newView);
-    }, [onViewClick]);
+    const onSwitchView = useCallback(
+        (newView: ArticleListView) => () => {
+            onViewClick?.(newView);
+        },
+        [onViewClick],
+    );
 
     return (
         <div className={classNames(classes.root, {}, [className])}>

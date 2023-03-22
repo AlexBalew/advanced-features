@@ -27,15 +27,13 @@ export const CommentList = memo(({ className, isLoading, comments }: IProps) => 
 
     return (
         <Column gap="20" max className={classNames('', {}, [className])}>
-            {comments?.length
-                ? comments.map((comment) => (
-                    <CommentCard
-                        key={comment.id}
-                        comment={comment}
-                        isLoading={isLoading}
-                    />
+            {comments?.length ? (
+                comments.map((comment) => (
+                    <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />
                 ))
-                : <Text text={t<string>(enGB.NO_COMMENTS)} />}
+            ) : (
+                <Text text={t<string>(enGB.NO_COMMENTS)} />
+            )}
         </Column>
     );
 });

@@ -7,15 +7,7 @@ import { AvatarDropdown } from '@/features/AvatarDropdown';
 import { NotificationButton } from '@/features/NotificationButton';
 import { enGB } from '@/shared/dictionaries';
 import { getPathArticleCreate } from '@/shared/config/routeConfig/RouteConfig';
-import {
-    AppButtonTheme,
-    AppLink,
-    AppLinkTheme,
-    Button,
-    Row,
-    Text,
-    TextTheme,
-} from '@/shared/ui';
+import { AppButtonTheme, AppLink, AppLinkTheme, Button, Row, Text, TextTheme } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import classes from './Navbar.module.scss';
 
@@ -69,10 +61,7 @@ export const Navbar = memo(({ className }: IProps) => {
                 {t(enGB.LOGIN)}
             </Button>
             {isAuthModalOpened && (
-                <LoginModal
-                    isOpened={isAuthModalOpened}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpened={isAuthModalOpened} onClose={onCloseModal} />
             )}
         </header>
     );

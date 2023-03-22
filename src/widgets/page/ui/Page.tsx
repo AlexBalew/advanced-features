@@ -1,17 +1,7 @@
-import {
-    memo,
-    MutableRefObject,
-    ReactNode,
-    useCallback,
-    useRef,
-    UIEvent,
-} from 'react';
+import { memo, MutableRefObject, ReactNode, useCallback, useRef, UIEvent } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import {
-    getScrollPositionByPath,
-    scrollSaverSliceActions,
-} from '@/features/ScrollSaver';
+import { getScrollPositionByPath, scrollSaverSliceActions } from '@/features/ScrollSaver';
 import { StateSchema } from '@/app/providers/store-provider';
 import { classNames } from '@/shared/utils';
 import { TestProps } from '@/shared/types';
@@ -35,16 +25,24 @@ export const Page = memo((props: IProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
-    const scrollPosition = useSelector((
-        state: StateSchema,
-    ) => getScrollPositionByPath(state, pathname));
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollPositionByPath(state, pathname),
+    );
 
-    const onScroll = useThrottle(useCallback((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollSaverSliceActions.setScrollPosition({
-            position: e.currentTarget?.scrollTop,
-            path: pathname,
-        }));
-    }, [dispatch, pathname]), 500);
+    const onScroll = useThrottle(
+        useCallback(
+            (e: UIEvent<HTMLDivElement>) => {
+                dispatch(
+                    scrollSaverSliceActions.setScrollPosition({
+                        position: e.currentTarget?.scrollTop,
+                        path: pathname,
+                    }),
+                );
+            },
+            [dispatch, pathname],
+        ),
+        500,
+    );
 
     useInfiniteScroll({
         wrapperRef,
@@ -64,12 +62,7 @@ export const Page = memo((props: IProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onEndScroll && (
-                <div
-                    className={classes.triggerRef}
-                    ref={triggerRef}
-                />
-            )}
+            {onEndScroll && <div className={classes.triggerRef} ref={triggerRef} />}
         </main>
     );
 });

@@ -1,3 +1,3 @@
 export interface IScrollSaverSchema {
-    scroll: Record<string, number>
+    scroll: Record<string, number>;
 }

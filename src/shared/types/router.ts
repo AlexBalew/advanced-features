@@ -5,4 +5,4 @@ import { UserRoles } from '@/entities/User';
 export type AppAuthRoutes = RouteProps & {
     isAuthorized?: boolean;
     roles?: UserRoles[];
-}
+};

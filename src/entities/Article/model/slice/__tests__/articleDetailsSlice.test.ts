@@ -21,10 +21,7 @@ describe('articleDetailsSlice test', () => {
     });
 
     test('fetchArticleById pending test', () => {
-        expect(articleDetailsReducer(
-            mockState,
-            fetchArticleById.pending,
-        )).toEqual({
+        expect(articleDetailsReducer(mockState, fetchArticleById.pending)).toEqual({
             ...mockState,
             isLoading: true,
             validationError: undefined,
@@ -32,10 +29,12 @@ describe('articleDetailsSlice test', () => {
     });
 
     test('fetchArticleById fulfilled test', () => {
-        expect(articleDetailsReducer(
-            mockState,
-            fetchArticleById.fulfilled(mockState.data as IArticle, '', ''),
-        )).toEqual({
+        expect(
+            articleDetailsReducer(
+                mockState,
+                fetchArticleById.fulfilled(mockState.data as IArticle, '', ''),
+            ),
+        ).toEqual({
             ...mockState,
             data: mockState.data,
             isLoading: false,
@@ -43,10 +42,12 @@ describe('articleDetailsSlice test', () => {
     });
 
     test('fetchArticleById rejected test', () => {
-        expect(articleDetailsReducer(
-            mockState,
-            fetchArticleById.rejected(null, '2', '', enGB.COMMON_ERROR_TITLE),
-        )).toEqual({
+        expect(
+            articleDetailsReducer(
+                mockState,
+                fetchArticleById.rejected(null, '2', '', enGB.COMMON_ERROR_TITLE),
+            ),
+        ).toEqual({
             ...mockState,
             isLoading: false,
             error: enGB.COMMON_ERROR_TITLE,

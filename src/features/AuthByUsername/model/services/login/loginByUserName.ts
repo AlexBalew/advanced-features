@@ -13,7 +13,8 @@ export const loginByUserName = createAsyncThunk<IUser, IProps, ThunkConfig<strin
     async ({ userName, password }, { dispatch, extra, rejectWithValue }) => {
         try {
             const response = await extra.api.post<IUser>('/login', {
-                userName, password,
+                userName,
+                password,
             });
             if (!response.data) {
                 throw new Error();

@@ -12,8 +12,7 @@ export default {
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-};
+Primary.args = {};
 
 export const PrimaryError = Template.bind({});
 PrimaryError.args = {

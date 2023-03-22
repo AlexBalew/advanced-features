@@ -15,18 +15,12 @@ interface IProps {
     lazy?: boolean;
 }
 
-export const Modal = ({
-    className,
-    children,
-    isOpened,
-    lazy,
-    onClose,
-}: IProps) => {
-    const {
-        isClosing,
-        isMounted,
-        close,
-    } = useModal({ animationDelay: MODAL_CLOSE_DELAY, isOpened, onClose });
+export const Modal = ({ className, children, isOpened, lazy, onClose }: IProps) => {
+    const { isClosing, isMounted, close } = useModal({
+        animationDelay: MODAL_CLOSE_DELAY,
+        isOpened,
+        onClose,
+    });
 
     const mods: Mode = {
         [classes.opened]: isOpened,
@@ -41,9 +35,7 @@ export const Modal = ({
         <Portal>
             <div className={classNames(classes.root, mods, [className, 'app_modal'])}>
                 <Overlay onClick={close} />
-                <div className={classes.content}>
-                    {children}
-                </div>
+                <div className={classes.content}>{children}</div>
             </div>
         </Portal>
     );

@@ -12,8 +12,6 @@ interface IProps {
 export const ArticleImageBlock = memo(({ className, block }: IProps) => (
     <div className={classNames(classes.root, {}, [className])}>
         <img src={block.src} alt={block.title} />
-        {block.title && (
-            <Text text={block.title} />
-        )}
+        {block.title && <Text text={block.title} />}
     </div>
 ));

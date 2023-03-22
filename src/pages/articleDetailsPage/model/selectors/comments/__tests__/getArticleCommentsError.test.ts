@@ -10,8 +10,9 @@ describe('getArticleCommentsError test', () => {
                 },
             },
         };
-        expect(getArticleCommentsError(state as StateSchema))
-            .toEqual(state.articleDetailsPage?.comments?.error);
+        expect(getArticleCommentsError(state as StateSchema)).toEqual(
+            state.articleDetailsPage?.comments?.error,
+        );
     });
 
     test('getArticleCommentsError return undefined if there is no data in state', () => {

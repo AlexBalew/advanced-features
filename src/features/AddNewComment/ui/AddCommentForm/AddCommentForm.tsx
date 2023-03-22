@@ -3,12 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { enGB } from '@/shared/dictionaries';
 import { Button, Input, Row } from '@/shared/ui';
-import {
-    classNames,
-    DynamicComponentLoader,
-    ReducersList,
-    useAppDispatch,
-} from '@/shared/utils';
+import { classNames, DynamicComponentLoader, ReducersList, useAppDispatch } from '@/shared/utils';
 import { getCommentFormError, getCommentFormText } from '../../model/selectors';
 import { addCommentActions, addCommentReducer } from '../../model/slice/addCommentSlice';
 import classes from './AddCommentForm.module.scss';
@@ -28,9 +23,12 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
     const error = useSelector(getCommentFormError);
     const text = useSelector(getCommentFormText);
 
-    const onChange = useCallback((value: string) => {
-        dispatch(addCommentActions.setText(value));
-    }, [dispatch]);
+    const onChange = useCallback(
+        (value: string) => {
+            dispatch(addCommentActions.setText(value));
+        },
+        [dispatch],
+    );
 
     const onSendHandler = useCallback(() => {
         onSendComment(text);
@@ -52,10 +50,7 @@ const AddCommentForm = ({ className, onSendComment }: IAddCommentFormProps) => {
                     data-testid="AddCommentForm.Input"
                     onChange={onChange}
                 />
-                <Button
-                    data-testid="AddCommentForm.Button"
-                    onClick={onSendHandler}
-                >
+                <Button data-testid="AddCommentForm.Button" onClick={onSendHandler}>
                     {t(enGB.SEND)}
                 </Button>
             </Row>

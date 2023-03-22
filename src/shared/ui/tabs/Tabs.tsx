@@ -16,15 +16,13 @@ interface IProps {
     onTabClick: (tab: ITab) => void;
 }
 
-export const Tabs = memo(({
-    tabs,
-    value,
-    className,
-    onTabClick,
-}: IProps) => {
-    const onTabClickHandler = useCallback((tab: ITab) => () => {
-        onTabClick(tab);
-    }, [onTabClick]);
+export const Tabs = memo(({ tabs, value, className, onTabClick }: IProps) => {
+    const onTabClickHandler = useCallback(
+        (tab: ITab) => () => {
+            onTabClick(tab);
+        },
+        [onTabClick],
+    );
 
     return (
         <div className={classNames(classes.root, {}, [className])}>

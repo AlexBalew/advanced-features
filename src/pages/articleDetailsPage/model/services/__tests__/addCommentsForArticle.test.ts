@@ -45,9 +45,11 @@ describe('addCommentForArticle test', () => {
     test('addCommentForArticle should work correctly', async () => {
         (getUserAuthData as jest.Mock).mockReturnValue({} as IUser);
         (getArticleDetails as jest.Mock).mockReturnValue({} as IArticle);
-        (axios.post as jest.Mock).mockReturnValue(Promise.resolve({
-            data: mockState.addComment?.text,
-        }));
+        (axios.post as jest.Mock).mockReturnValue(
+            Promise.resolve({
+                data: mockState.addComment?.text,
+            }),
+        );
         const action = addCommentForArticle(mockText);
         const result = await action(dispatch, getState, {
             api: axios,
@@ -57,19 +59,18 @@ describe('addCommentForArticle test', () => {
         expect(result.payload).toEqual(mockState.addComment?.text);
     });
 
-    test(
-        'addCommentForArticle should work correctly when there error code was returned by server',
-        async () => {
-            (axios.post as jest.Mock).mockReturnValue(Promise.resolve({
+    test('addCommentForArticle should work correctly when there error code was returned by server', async () => {
+        (axios.post as jest.Mock).mockReturnValue(
+            Promise.resolve({
                 status: 403,
-            }));
-            const action = addCommentForArticle(mockText);
-            const result = await action(dispatch, getState, {
-                api: axios,
-            });
-            expect(axios.post).toHaveBeenCalled();
-            expect(result.meta.requestStatus).toBe('rejected');
-            expect(result.payload).toEqual(enGB.COMMON_ERROR_TITLE);
-        },
-    );
+            }),
+        );
+        const action = addCommentForArticle(mockText);
+        const result = await action(dispatch, getState, {
+            api: axios,
+        });
+        expect(axios.post).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('rejected');
+        expect(result.payload).toEqual(enGB.COMMON_ERROR_TITLE);
+    });
 });

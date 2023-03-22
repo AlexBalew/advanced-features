@@ -10,12 +10,7 @@ interface IProps {
 }
 
 export const LoginModal = ({ className, isOpened, onClose }: IProps) => (
-    <Modal
-        className={classNames('', {}, [className])}
-        isOpened={isOpened}
-        onClose={onClose}
-        lazy
-    >
+    <Modal className={classNames('', {}, [className])} isOpened={isOpened} onClose={onClose} lazy>
         <Suspense fallback={<Loader />}>
             <LoginForm onSuccess={onClose} />
         </Suspense>

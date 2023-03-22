@@ -26,11 +26,6 @@ export const ArticleInfiniteList = ({ className }: IProps) => {
     }
 
     return (
-        <ArticleList
-            className={className}
-            isLoading={isLoading}
-            view={view}
-            articles={articles}
-        />
+        <ArticleList className={className} isLoading={isLoading} view={view} articles={articles} />
     );
 };

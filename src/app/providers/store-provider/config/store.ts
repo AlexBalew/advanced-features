@@ -1,9 +1,4 @@
-import {
-    CombinedState,
-    configureStore,
-    Reducer,
-    ReducersMapObject,
-} from '@reduxjs/toolkit';
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { userReducer } from '@/entities/User';
 import { scrollSaverReducer } from '@/features/ScrollSaver';
 import { rtkApi } from '@/shared/api';
@@ -28,13 +23,14 @@ export function createReduxStore(
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-            thunk: {
-                extraArgument: {
-                    api,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: {
+                        api,
+                    },
                 },
-            },
-        }).concat(rtkApi.middleware),
+            }).concat(rtkApi.middleware),
     });
 
     // @ts-ignore

@@ -9,22 +9,12 @@ interface IProps {
     border?: string;
 }
 
-export const Skeleton = ({
-    border,
-    className,
-    height,
-    width,
-}: IProps) => {
+export const Skeleton = ({ border, className, height, width }: IProps) => {
     const styles: CSSProperties = {
         width,
         height,
         borderRadius: border,
     };
 
-    return (
-        <div
-            className={classNames(classes.root, {}, [className])}
-            style={styles}
-        />
-    );
+    return <div className={classNames(classes.root, {}, [className])} style={styles} />;
 };

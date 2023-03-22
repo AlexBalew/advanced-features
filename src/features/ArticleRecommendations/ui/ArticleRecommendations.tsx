@@ -2,12 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleList, ArticleListView } from '@/entities/Article';
 import { RECOMMENDATIONS_LIMIT } from '@/shared/constants';
 import { enGB } from '@/shared/dictionaries';
-import {
-    Column,
-    Loader,
-    Text,
-    TextSize,
-} from '@/shared/ui';
+import { Column, Loader, Text, TextSize } from '@/shared/ui';
 import { classNames } from '@/shared/utils';
 import { useGetArticleRecommendations } from '../api';
 
@@ -28,9 +23,7 @@ export const ArticleRecommendations = ({ className }: IProps) => {
     }
 
     if (isError || !recommendations) {
-        return (
-            <Text title={t<string>(enGB.COMMON_ERROR_TITLE)} />
-        );
+        return <Text title={t<string>(enGB.COMMON_ERROR_TITLE)} />;
     }
 
     return (
@@ -39,15 +32,8 @@ export const ArticleRecommendations = ({ className }: IProps) => {
             className={classNames('', {}, [className])}
             data-testid="ArticleRecommendations"
         >
-            <Text
-                size={TextSize.L}
-                title={t<string>(enGB.RECOMMENDATIONS)}
-            />
-            <ArticleList
-                articles={recommendations}
-                view={ArticleListView.Tiles}
-                target="_blank"
-            />
+            <Text size={TextSize.L} title={t<string>(enGB.RECOMMENDATIONS)} />
+            <ArticleList articles={recommendations} view={ArticleListView.Tiles} target="_blank" />
         </Column>
     );
 };

@@ -21,31 +21,17 @@ interface TestProviderProps {
 }
 
 export function TestProvider({ children, options = {} }: TestProviderProps) {
-    const {
-        route = '/',
-        initialState,
-        asyncReducers,
-        theme = Theme.Light,
-    } = options;
+    const { route = '/', initialState, asyncReducers, theme = Theme.Light } = options;
 
     return (
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
-                <ThemeProvider initialTheme={theme}>
-                    {children}
-                </ThemeProvider>
+                <ThemeProvider initialTheme={theme}>{children}</ThemeProvider>
             </StoreProvider>
         </MemoryRouter>
     );
 }
 
-export function componentRender(
-    children: ReactNode,
-    options: ComponentRenderOptions = {},
-) {
-    return render(
-        <TestProvider options={options}>
-            {children}
-        </TestProvider>,
-    );
+export function componentRender(children: ReactNode, options: ComponentRenderOptions = {}) {
+    return render(<TestProvider options={options}>{children}</TestProvider>);
 }

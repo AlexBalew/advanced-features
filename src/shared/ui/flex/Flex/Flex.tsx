@@ -62,7 +62,6 @@ export const Flex = ({
         alignClasses[align],
         directionClasses[direction],
         gap && gapClasses[gap],
-
     ];
 
     const mode: Mode = {

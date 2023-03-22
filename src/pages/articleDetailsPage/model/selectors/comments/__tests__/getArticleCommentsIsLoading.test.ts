@@ -10,8 +10,9 @@ describe('getArticleCommentsIsLoading test', () => {
                 },
             },
         };
-        expect(getArticleCommentsIsLoading(state as StateSchema))
-            .toEqual(state.articleDetailsPage?.comments?.isLoading);
+        expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(
+            state.articleDetailsPage?.comments?.isLoading,
+        );
     });
 
     test('getArticleCommentsIsLoading return false if there is no data in state', () => {

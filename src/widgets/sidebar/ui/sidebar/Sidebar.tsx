@@ -21,13 +21,13 @@ export const Sidebar = memo(({ className }: IProps) => {
         setCollapsed((prev) => !prev);
     };
 
-    const linkItems = useMemo(() => sidebarItemList.map((item) => (
-        <SidebarItem
-            key={item.linkTitle}
-            item={item}
-            collapsed={collapsed}
-        />
-    )), [sidebarItemList, collapsed]);
+    const linkItems = useMemo(
+        () =>
+            sidebarItemList.map((item) => (
+                <SidebarItem key={item.linkTitle} item={item} collapsed={collapsed} />
+            )),
+        [sidebarItemList, collapsed],
+    );
 
     return (
         <aside
@@ -44,7 +44,6 @@ export const Sidebar = memo(({ className }: IProps) => {
                 onClick={onToggle}
             >
                 {collapsed ? '>' : '<'}
-
             </Button>
             <Column role="navigation" gap="16" className={classes.links}>
                 {linkItems}

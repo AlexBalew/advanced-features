@@ -6,11 +6,7 @@ interface IProps {
     callback?: () => void;
 }
 
-export function useInfiniteScroll({
-    wrapperRef,
-    triggerRef,
-    callback,
-}: IProps) {
+export function useInfiniteScroll({ wrapperRef, triggerRef, callback }: IProps) {
     useEffect(() => {
         let observer: IntersectionObserver | null;
         const wrapperElement = wrapperRef.current;

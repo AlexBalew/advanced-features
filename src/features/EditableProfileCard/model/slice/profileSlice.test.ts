@@ -26,25 +26,33 @@ describe('profileSlice test', () => {
     });
 
     test('setReadOnly action test', () => {
-        expect(profileReducer(
-            mockState,
-            profileActions.setReadOnly(true),
-        )).toEqual({ ...mockState, readonly: true });
+        expect(profileReducer(mockState, profileActions.setReadOnly(true))).toEqual({
+            ...mockState,
+            readonly: true,
+        });
     });
 
     test('updateProfile action test', () => {
-        expect(profileReducer(
-            mockState,
-            profileActions.updateProfile({ ...mockState.form, lastname: 'Dillinger' }),
-        )).toEqual({ ...mockState, form: { ...mockState.form, lastname: 'Dillinger' } });
+        expect(
+            profileReducer(
+                mockState,
+                profileActions.updateProfile({
+                    ...mockState.form,
+                    lastname: 'Dillinger',
+                }),
+            ),
+        ).toEqual({
+            ...mockState,
+            form: { ...mockState.form, lastname: 'Dillinger' },
+        });
     });
 
     test('cancelEdit action test', () => {
-        const mockEditData = { ...mockState, data: { username: 'Doe', age: 23 } };
-        expect(profileReducer(
-            mockEditData,
-            profileActions.cancelEdit(),
-        )).toEqual({
+        const mockEditData = {
+            ...mockState,
+            data: { username: 'Doe', age: 23 },
+        };
+        expect(profileReducer(mockEditData, profileActions.cancelEdit())).toEqual({
             ...mockEditData,
             form: mockEditData.data,
             readonly: true,
@@ -53,10 +61,7 @@ describe('profileSlice test', () => {
     });
 
     test('updateProfileData pending test', () => {
-        expect(profileReducer(
-            mockState,
-            updateProfileData.pending,
-        )).toEqual({
+        expect(profileReducer(mockState, updateProfileData.pending)).toEqual({
             ...mockState,
             isLoading: true,
             validationError: undefined,
@@ -64,10 +69,9 @@ describe('profileSlice test', () => {
     });
 
     test('updateProfileData fulfilled test', () => {
-        expect(profileReducer(
-            mockState,
-            updateProfileData.fulfilled(mockState.form as IProfile, ''),
-        )).toEqual({
+        expect(
+            profileReducer(mockState, updateProfileData.fulfilled(mockState.form as IProfile, '')),
+        ).toEqual({
             ...mockState,
             data: mockState.form,
             isLoading: false,
@@ -77,10 +81,12 @@ describe('profileSlice test', () => {
     });
 
     test('updateProfileData rejected test', () => {
-        expect(profileReducer(
-            mockState,
-            updateProfileData.rejected(null, '', undefined, [ValidationErrors.Incorrect_City]),
-        )).toEqual({
+        expect(
+            profileReducer(
+                mockState,
+                updateProfileData.rejected(null, '', undefined, [ValidationErrors.Incorrect_City]),
+            ),
+        ).toEqual({
             ...mockState,
             isLoading: false,
             validationError: [ValidationErrors.Incorrect_City],
@@ -88,10 +94,7 @@ describe('profileSlice test', () => {
     });
 
     test('fetchProfileData pending test', () => {
-        expect(profileReducer(
-            mockState,
-            fetchProfileData.pending,
-        )).toEqual({
+        expect(profileReducer(mockState, fetchProfileData.pending)).toEqual({
             ...mockState,
             isLoading: true,
             error: undefined,
@@ -99,10 +102,12 @@ describe('profileSlice test', () => {
     });
 
     test('fetchProfileData fulfilled test', () => {
-        expect(profileReducer(
-            mockState,
-            fetchProfileData.fulfilled(mockState.form as IProfile, '', ''),
-        )).toEqual({
+        expect(
+            profileReducer(
+                mockState,
+                fetchProfileData.fulfilled(mockState.form as IProfile, '', ''),
+            ),
+        ).toEqual({
             ...mockState,
             data: mockState.form,
             isLoading: false,
@@ -110,13 +115,12 @@ describe('profileSlice test', () => {
     });
 
     test('fetchProfileData rejected test', () => {
-        expect(profileReducer(
-            mockState,
-            fetchProfileData.rejected(null, '', '', 'error'),
-        )).toEqual({
-            ...mockState,
-            isLoading: false,
-            error: 'error',
-        });
+        expect(profileReducer(mockState, fetchProfileData.rejected(null, '', '', 'error'))).toEqual(
+            {
+                ...mockState,
+                isLoading: false,
+                error: 'error',
+            },
+        );
     });
 });

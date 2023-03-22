@@ -10,9 +10,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticlesPageFilter>;
 
-const Template: ComponentStory<typeof ArticlesPageFilter> = (
-    args,
-) => <ArticlesPageFilter {...args} />;
+const Template: ComponentStory<typeof ArticlesPageFilter> = (args) => (
+    <ArticlesPageFilter {...args} />
+);
 
 export const Primary = Template.bind({});
 Primary.args = {};

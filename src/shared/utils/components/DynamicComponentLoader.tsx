@@ -5,7 +5,7 @@ import { StoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/s
 
 export type ReducersList = {
     [reducerName in StateSchemaKey]?: Reducer<NonNullable<StateSchema[reducerName]>>;
-}
+};
 
 type ReducersListEntry = [StateSchemaKey, Reducer];
 

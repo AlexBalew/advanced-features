@@ -19,7 +19,4 @@ Primary.decorators = [StoreDecorator({})];
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {};
-PrimaryDark.decorators = [
-    ThemeDecorator(Theme.Dark),
-    StoreDecorator({}),
-];
+PrimaryDark.decorators = [ThemeDecorator(Theme.Dark), StoreDecorator({})];

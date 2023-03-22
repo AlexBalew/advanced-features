@@ -10,8 +10,9 @@ describe('getArticleRecommendationsIsLoading test', () => {
                 },
             },
         };
-        expect(getArticleRecommendationsIsLoading(state as StateSchema))
-            .toEqual(state.articleDetailsPage?.recommendations?.isLoading);
+        expect(getArticleRecommendationsIsLoading(state as StateSchema)).toEqual(
+            state.articleDetailsPage?.recommendations?.isLoading,
+        );
     });
 
     test('getArticleRecommendationsIsLoading return false if there is no data in state', () => {

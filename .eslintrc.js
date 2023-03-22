@@ -8,7 +8,9 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
-        'plugin:storybook/recommended'],
+        'plugin:storybook/recommended',
+        'prettier',
+    ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -25,9 +27,6 @@ module.exports = {
         'unused-imports',
     ],
     rules: {
-        'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4],
-        indent: [2, 4],
         'react/jsx-filename-extension': [2, {
             extensions: ['.js', '.jsx', '.tsx'],
         }],
@@ -65,7 +64,7 @@ module.exports = {
             ],
         }],
         'max-len': ['error', {
-            code: 100,
+            code: 125,
             ignoreComments: true,
         }],
         'jsx-a11y/click-events-have-key-events': 'off',
